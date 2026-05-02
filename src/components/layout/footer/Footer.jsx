@@ -1,12 +1,12 @@
-import nextGenLogo from "../../assets/logo/logoWhiteNobg.png";
-import FooterColumn from "./FooterColumn";
-import PartnerIMG from "./PartnerIMG";
-import FooterSocials from './FooterSocials';
+import nextGenLogo from "@/assets/logo/logoWhiteNobg.png";
+import FooterColumn from "@/components/layout/footer/FooterColumn";
+import PartnerIMG from "@/components/layout/footer/PartnerIMG";
+import FooterSocials from '@/components/layout/footer/FooterSocials';
 
 const Footer = () => {
   return (
     <>
-      <footer className="flex flex-col bg-brand-primary gap-10 py-10">
+      <footer className="flex flex-col bg-brand-primary gap-10 py-10 text-white">
         {/*Partners*/}
         <div className="flex-col-center">
           <h1 className="font-bold text-[32px]">
