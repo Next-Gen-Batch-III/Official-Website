@@ -1,6 +1,7 @@
 import nextGenLogo from "../../assets/logo/logoWhiteNobg.png";
 import FooterColumn from "./FooterColumn";
 import PartnerIMG from "./PartnerIMG";
+import FooterSocials from './FooterSocials';
 
 const Footer = () => {
   return (
@@ -17,9 +18,9 @@ const Footer = () => {
           <h1 className="font-bold text-[32px]">STAY CONNECTED</h1>
         </div>
         {/*FooterLinks*/}
-        <div className="grid grid-cols-4 gap-10 px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 px-8 lg:px-16">
           {/*Logo*/}
-          <div className="ml-10 w-48 h-25">
+          <div className="lg:ml-10 w-48 h-25">
             <img
               className="w-full h-full"
               src={nextGenLogo}
@@ -44,8 +45,8 @@ const Footer = () => {
               <p>Phone number: +855 123 456</p>
             </div>
             {/*Socials*/}
-            <div>
-
+            <div className="flex">
+                <FooterSocials />
             </div>
           </FooterColumn>
 
@@ -68,7 +69,7 @@ const Footer = () => {
           </FooterColumn>
         </div>
         {/*Credits*/}
-        <div className="px-25">
+        <div className="px-8 lg:px-25">
           <p>© 2026 Next-Gen Engagement Program. All rights reserved.</p>
         </div>
       </footer>
