@@ -2,26 +2,23 @@ import { SocialIcon } from 'react-social-icons'
 
 const socials = [
     {
-        title: "nextgenGitHub",
-        name: "github",
-        url: ""
-    },
-    {
-        title: "tiktokAccount",
-        name: "tiktok",
-        url: ""
-    },
-    {
-        title: "facebookPage",
+        id: 0,
+        title: "NextGenFacebook",
         name: "facebook",
         url: ""
     },
     {
-        title: "intagramAcoount",
-        name: "instagram",
+        id: 1,
+        title: "NextGenTikTok",
+        name: "tiktok",
         url: ""
     },
-    
+    {
+        id: 2,
+        title: "NextGentelegram",
+        name: "telegram",
+        url: ""
+    },
 ];
 
 const FooterSocials = () => {
@@ -29,7 +26,7 @@ const FooterSocials = () => {
         <>
             <div className='flex justify-between gap-3'>
                 {socials.map((s,index) => (
-                    <SocialIcon fallback={s.title} network={s.name} url={s.url} style={{width: '35px', height: '35px'}}/>
+                    <SocialIcon key={index} bgColor='black' fallback={s.title} network={s.name} url={s.url} style={{width: '35px', height: '35px'}}/>
                 ))}
             </div>
         </>
