@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+
+@font-face {
+  font-family: "CADTMono";
+  src: url("/src/assets/fonts/CADTMonoDisplay-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-neutral-100: #f2f2f2;
   --color-neutral-200: #e6e6e6;
@@ -19,12 +28,10 @@
   --color-brand-secondary-pink: #f97fb5;
   --color-brand-secondary-purple: #b980d0;
   --color-brand-secondary-gray: #666666;
+
+  --font-cadt: "CADTMono", monospace;
 }
 
-@font-face {
-  font-family: 'CADTMono';
-  src: url('./assets/fonts/CADTMonoDisplay-Regular.ttf') format('truetype');
-}
 
 
 @layer base {
@@ -51,6 +58,60 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+  }
+}
+@layer utilities {
+  .animate-chain-drop {
+    animation: chainDrop 0.4s ease forwards;
+    animation-delay: calc(var(--i) * 0.1s);
+  }
+
+  .animate-unroll {
+    animation: unroll 0.5s ease forwards;
+    transform-origin: top;
+  }
+  .animate-roll-up {
+    animation: rollUp 0.5s ease forwards;
+    transform-origin: top;
+  }
+
+  @keyframes chainDrop {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes rollUp {
+    0% {
+      transform: scaleY(1);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    100% {
+      transform: scaleY(0);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+
+  @keyframes unroll {
+    0% {
+      transform: scaleY(0);
+      opacity: 0;
+      visibility: visible;
+      pointer-events: none;
+    }
+    100% {
+      transform: scaleY(1);
+      opacity: 1;
+      pointer-events: auto;
+    }
   }
 }
 

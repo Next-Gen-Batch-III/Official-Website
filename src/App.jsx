@@ -1,17 +1,23 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
-import Footer from './components/footer/Footer';
+
 import News from './pages/News';
+import Navbar from './components/layout/Navbar';
+import Home from './pages/Home';
+import Footer from './components/layout/footer/Footer';
+import NewsDetail from './pages/NewsDetail';
 
 
 function App() {
 
   return (
     <>
-    
       <BrowserRouter>
+        <Navbar />
         <Routes>
-          <Route path='/' element={<News />}/>
+          <Route path="/" element={<Home />} />
+          <Route path='/news' element={<News />}/>
+          <Route path="/news/:slug" element={<NewsDetail />} />
         </Routes>
         <Footer />
       </BrowserRouter>
