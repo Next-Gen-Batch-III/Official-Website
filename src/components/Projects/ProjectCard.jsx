@@ -1,7 +1,7 @@
 import React from "react";
 import "./Project.css";
 
-const ProjectCard = ({ image, title, description }) => {
+const ProjectCard = ({ image, title, description, button }) => {
   return (
     <div className="project-card">
       <img src={image} alt={title} />
@@ -10,8 +10,11 @@ const ProjectCard = ({ image, title, description }) => {
         <h2>{title}</h2>
 
         <p>{description}</p>
-
-        <button>View Project</button>
+        {button}
+        {/* <button>
+              View Project
+              <span className="arrow">→</span>
+        </button> */}
       </div>
     </div>
   );

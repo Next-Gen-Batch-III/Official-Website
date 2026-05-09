@@ -1,6 +1,6 @@
 .project-card {
   width: 30%;
-  background: #f2f2f2;
+  background: #eef1f5;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -50,4 +50,96 @@
   font-weight: bold;
   cursor: pointer;
   margin-top: auto;
+}
+.card-content button:hover {
+  opacity: 1;
+  transform: translateX(0);
+  
+}
+.arrow {
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+.card-content button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+  background: #072b63;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.arrow {
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.card-content button:hover .arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left,
+.right {
+  flex: 1;
+  min-width: 300px;
+}
+.right {
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  margin-left: 30px;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  font-size: 16px;
+}
+
+.search-box button {
+  border: none;
+  background: #072b63;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background: #0a3a85;
 }

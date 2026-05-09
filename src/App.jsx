@@ -4,6 +4,7 @@ import Navbar from './components/layout/Navbar';
 import Home from './pages/Home';
 import Footer from './components/layout/footer/Footer';
 import Projects from './pages/Projects';
+import Project_Detail from './pages/Project_Detail';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/project-detail" element={<Project_Detail />} />
         </Routes>
         <Footer />
       </BrowserRouter>
