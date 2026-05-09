@@ -38,20 +38,7 @@
   color: #555;
   margin-bottom: 20px;
 }
-
-.card-content button {
-  width: 100%;
-  padding: 15px;
-  border: none;
-  border-radius: 15px;
-  background: #072b63;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: auto;
-}
-.card-content button:hover {
+.project-btn:hover {
   opacity: 1;
   transform: translateX(0);
   
@@ -61,7 +48,7 @@
   transform: translateX(-5px);
   transition: all 0.3s ease;
 }
-.card-content button {
+.project-btn {
   width: 100%;
   padding: 15px;
   border: none;
@@ -84,7 +71,7 @@
   transition: all 0.3s ease;
 }
 
-.card-content button:hover .arrow {
+.project-btn:hover .arrow {
   opacity: 1;
   transform: translateX(0);
 }
@@ -143,3 +130,34 @@
 .search-box button:hover {
   background: #0a3a85;
 }
+
+.left-70 {
+  width: 70%;
+} 
+.right-30 {
+  width: 30%;
+}
+.container-1 {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 20px;
+  width: 100%;
+  height: 80vh;
+  padding: 20px;
+  margin-top: 20px;
+}
+.container-2{
+  width : 100%;
+  height: 80vh;
+  background-color: #0B2341;
+}
+.box-content{
+  padding: 20px;
+  display: flex;
+  flex-direction: row; 
+  flex: 1;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+
+} 

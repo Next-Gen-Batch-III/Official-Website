@@ -1,7 +1,13 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import "./Project.css";
+import React from "react";
 
-const ProjectCard = ({ image, title, description, button }) => {
+const ProjectCard = ({
+  title,
+  description,
+  image,
+  slug,
+}) => {
   return (
     <div className="project-card">
       <img src={image} alt={title} />
@@ -10,11 +16,11 @@ const ProjectCard = ({ image, title, description, button }) => {
         <h2>{title}</h2>
 
         <p>{description}</p>
-        {button}
-        {/* <button>
-              View Project
-              <span className="arrow">→</span>
-        </button> */}
+
+        <Link to={`/projects/${slug}`} className="project-btn">
+          View Project
+          <span className="arrow">→</span>
+        </Link>
       </div>
     </div>
   );
