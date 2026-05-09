@@ -6,6 +6,7 @@ import HighlightCard from "../components/Projects/HighlightsCard";
 import ProblemImg from "../assets/icon_image/problem-icon.png";
 import ImpactImg from "../assets/icon_image/impact-icon.png";
 import AchievementImg from "../assets/icon_image/achievement-icon.png";
+import ProjectDetailCard from "../components/Projects/ProjectDetailCard";
 
 const Project_Detail = () => {
     const { slug } = useParams();
@@ -24,14 +25,21 @@ const Project_Detail = () => {
 
     return (
         <div style={{ padding: "80px 0", maxWidth: "1200px", margin: "0 auto" }}>
-            <img src={project.image} alt={project.title} style={{ width: "100%", height: "auto", marginBottom: "20px" }} />
-            <h1 style={{ fontSize: "36px", fontWeight: "bold", marginBottom: "20px" }}>{project.title}</h1>
-            <p style={{ fontSize: "18px", lineHeight: "1.6" }}>{project.article}</p>
+            <ProjectDetailCard
+            title={project.title}
+            description={project.description}
+            image={project.image}
+            />
 
             <div className="container-1">
                 <div>
                     <h1 style={{fontSize:"36px", fontWeight:"bold", color:"#f18f2d"}}>Project Overview</h1>
-                    <p>{project.description}</p>
+                    <p
+                    className="text-[18px] leading-relaxed whitespace-pre-line"
+                    >
+                    {project.article}
+                    </p>
+                
                 </div>
 
                 <div>
@@ -39,6 +47,7 @@ const Project_Detail = () => {
 
                 </div>
             </div>
+
             <div className="container-2">
                 <div>
                     <h1 style={{fontSize:"36px", fontWeight:"bold", color:"#f18f2d", padding:"40px"}}>Project Highlights</h1>
@@ -64,6 +73,38 @@ const Project_Detail = () => {
                     />
                 </div>
             </div>
+
+            <div className="container-3">
+                <h1 style={{fontSize:"36px",fontWeight:"bold", color:"#f18f2d", padding:"40px"}}>
+                    Gallery
+                </h1>
+
+                <div className="gallery">
+
+                    {/* LEFT SIDE */}
+                    <div className="left-section">
+                    <img src={project.projectImages[0]} alt="" />
+                    </div>
+
+                    {/* RIGHT SIDE */}
+                    <div className="right-section">
+
+                        <div className="right-img-1">
+                            <div>
+                            <img src={project.projectImages[1]} alt="" />
+                            </div>
+                        </div>
+
+                        <div className="right-img-2" >
+                             <img src={project.projectImages[2]} alt=""/>
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     )
 };
