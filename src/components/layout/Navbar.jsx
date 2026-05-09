@@ -10,11 +10,11 @@ const Navbar = () => {
         const mediaQuery = window.matchMedia('(min-width: 1024px)');
         const handleBreakpointChange = (event) => {
             if (event.matches) {
-                setIsMenuOpen(false);
+                setIsMenuOpen(null);
             }
         };
         if (mediaQuery.matches) {
-            setIsMenuOpen(false);
+            setIsMenuOpen(null);
         }
         mediaQuery.addEventListener('change', handleBreakpointChange);
         return () => {
