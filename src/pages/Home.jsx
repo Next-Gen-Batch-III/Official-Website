@@ -201,7 +201,7 @@ const Home = () => {
       </section>
       <section className="our-people flex flex-col gap-5 px-5 py-10 lg:px-20">
         <Title>Our People</Title>
-          <div>
+          <div className="flex flex-col gap-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10">
               {people.map((person, index) => (
                 <div key={index} className="flex">
@@ -212,7 +212,7 @@ const Home = () => {
               ))}
             </div>    
             <div className="flex justify-end">
-              <Button className="mt-10" variant="primary">All People</Button>
+              <Button variant="primary" shadowColor="#666666">All People</Button>
             </div>      
           </div>
       </section>
@@ -230,7 +230,7 @@ const Home = () => {
                   <p>{news.description}</p>                 
                 </div>
                 <div className="flex justify-end">
-                  <Button variant="primary">Read More</Button>
+                  <Button variant="primary" shadowColor="#666666">Read More</Button>
                 </div>
               </div>
         </div>
