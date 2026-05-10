@@ -33,10 +33,10 @@ const projectList = [
   { title: "QuizKH", slug: "quizkh" },
 ];
   return (
-    <div style={{ padding: "80px 0", maxWidth: "1200px", margin: "0 auto" }}>
+    <div className="px-4 sm:px-6 lg:px-8 max-w-full mx-auto">
       <div className="container">
           <div className="left">
-              <h1 style={{ textAlign: "left", fontSize: "40px", fontFamily: "Niradei", fontWeight: "bold", marginLeft:"30px"}}>
+              <h1 style={{ textAlign: "left", fontSize: "40px", fontWeight: "bold", marginLeft:"30px",marginTop:"30px" }}>
                 Student Project <span style={{ color: "#dd5c0b" }}>Showcase</span>
               </h1>
               <p style={{textAlign:"left", marginBottom:"60px" , marginLeft:"30px"}}>Explore innovative projects created by students during the Next-Gen Engagement Program.</p>

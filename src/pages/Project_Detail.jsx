@@ -17,14 +17,14 @@ const Project_Detail = () => {
 
     if (!project) {
         return (
-            <div style={{ padding: "80px 0", maxWidth: "1200px", margin: "0 auto" }}>
+            <div className="px-4 sm:px-6 lg:px-8 max-w-full mx-auto" style={{ padding: "80px 0" }}>
                 Project not found
             </div>
         );
     }
 
     return (
-        <div style={{ padding: "80px 0", maxWidth: "1200px", margin: "0 auto" }}>
+        <div className="px-4 sm:px-6 lg:px-8 max-w-full mx-auto">
             <ProjectDetailCard
             title={project.title}
             description={project.description}
