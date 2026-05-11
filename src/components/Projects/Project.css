@@ -21,7 +21,6 @@
 
 .card-content {
   padding: 20px;
-
   display: flex;
   flex-direction: column; 
   flex: 1; 
@@ -141,6 +140,7 @@
 .right-30 {
   width: 30%;
 }
+
 .container-1 {
   display: grid;
   grid-template-columns: 70% 30%;
@@ -255,6 +255,7 @@
 
 }
 
+
 @media (max-width: 768px) {
   .project-detail-card {
     flex-direction: column;
@@ -266,6 +267,13 @@
   }
   .left-section, .right-section {
     width: 100%;
+    height: auto;
+  }
+  .box-content{
+    flex-direction: column;
+    height: auto;
+  }
+  .container-2{
     height: auto;
   }
   

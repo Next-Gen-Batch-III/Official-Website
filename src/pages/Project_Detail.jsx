@@ -6,7 +6,7 @@ import HighlightCard from "../components/Projects/HighlightsCard";
 import ProblemImg from "../assets/icon_image/problem-icon.png";
 import ImpactImg from "../assets/icon_image/impact-icon.png";
 import AchievementImg from "../assets/icon_image/achievement-icon.png";
-import ProjectDetailCard from "../components/Projects/ProjectDetailCard";
+import ProjectDetailHero from "../components/Projects/ProjectDetailHero";
 
 const Project_Detail = () => {
     const { slug } = useParams();
@@ -24,12 +24,12 @@ const Project_Detail = () => {
     }
 
     return (
-        <div className="px-4 sm:px-6 lg:px-8 max-w-full mx-auto">
-            <ProjectDetailCard
-            title={project.title}
-            description={project.description}
-            image={project.image}
-            />
+        <div className="px-4 sm:px-6 lg:px-8 max-w-full mx-auto project-detail-container">
+                <ProjectDetailHero
+                title={project.title}
+                description={project.description}
+                image={project.image}
+                />
 
             <div className="container-1">
                 <div>

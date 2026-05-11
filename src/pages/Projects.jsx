@@ -100,7 +100,7 @@ const projectList = [
       >
         {"PhsarDesign".toLowerCase().includes(search.toLowerCase()) && (
           <ProjectCard
-            image={CoppsaryImg}
+            image={""}
             title="PhsarDesign"
             description="A platform that connects Cambodian artists and designers with clients through professional profiles, service listings, and a rating-based credibility system."
             slug="coppsary"
