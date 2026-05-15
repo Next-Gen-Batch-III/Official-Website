@@ -141,6 +141,16 @@
   flex-direction: column;
 }
 
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+}
+
 .footer_col {
   border-left-width: 1px;
   padding: 0 15px 0 15px;
