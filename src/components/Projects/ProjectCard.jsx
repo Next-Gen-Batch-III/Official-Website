@@ -9,7 +9,7 @@ const ProjectCard = ({
   slug,
 }) => {
   return (
-    <div className="project-card">
+    <div className="project-card ">
       <img src={image} alt={title} />
 
       <div className="card-content">

@@ -68,7 +68,7 @@ export const projects = [
     article:
       "PhsarDesign is an all-in-one creative marketplace built for Cambodia's growing digital economy. It connects local artists, designers, and fresh graduates with SMBs, startups, and clients who need branding, illustration, and social media design services.\n\nThe platform features artist profile pages, a client application and project posting system, a rating-based credibility system to help artists build reputation, and a smart pricing tool that recommends fair rates, ensuring both artists and clients are treated with consistency and transparency."
   },
-
+  
   {
     id: 3,
     title: "DOMRA",

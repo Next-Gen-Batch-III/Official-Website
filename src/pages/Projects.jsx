@@ -34,15 +34,15 @@ const projectList = [
 ];
   return (
     <div className="px-4 sm:px-6 lg:px-8 max-w-full mx-auto">
-      <div className="container">
-          <div className="left">
-              <h1 style={{ textAlign: "left", fontSize: "40px", fontWeight: "bold", marginLeft:"30px",marginTop:"30px" }}>
+      <div className="flex flex-wrap">
+          <div className="flex-1 min-w-[300px] content-center">
+              <h1 className="text-left text-[40px] font-bold ml-[30px] mt-[30px]">
                 Student Project <span style={{ color: "#dd5c0b" }}>Showcase</span>
               </h1>
-              <p style={{textAlign:"left", marginBottom:"60px" , marginLeft:"30px"}}>Explore innovative projects created by students during the Next-Gen Engagement Program.</p>
+              <p className="text-left mb-[60px] ml-[30px]">Explore innovative projects created by students during the Next-Gen Engagement Program.</p>
           </div>
 
-          <div className="right">
+          <div className="flex-1 min-w-[300px] content-center">
             <div className="search-box">
               <input
                 type="text"
@@ -90,17 +90,11 @@ const projectList = [
       </div>
 
       <div>
-      <div
-        style={{
-          display: "flex",
-          gap: "40px",
-          flexWrap: "wrap",
-          justifyContent: "center",
-        }}
-      >
+
+      <div className="flex gap-10 flex-wrap justify-center mb-[40px]">
         {"PhsarDesign".toLowerCase().includes(search.toLowerCase()) && (
           <ProjectCard
-            image={""}
+            image={CoppsaryImg}
             title="PhsarDesign"
             description="A platform that connects Cambodian artists and designers with clients through professional profiles, service listings, and a rating-based credibility system."
             slug="coppsary"
