@@ -15,7 +15,7 @@ const RecentNews = ({ slug, thumbnail, headline, subtitle, date }) => {
               edgesSize="60px"
               className="w-full"
             >
-              <img className="w-full md:h-150 lg:h-85" src={thumbnail} alt={headline} />
+              <img className="w-full md:h-150 lg:h-85 object-cover" src={thumbnail} alt={headline} />
             </EdgeContainer>
           </div>
         </Link>

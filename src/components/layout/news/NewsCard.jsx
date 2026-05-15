@@ -6,7 +6,7 @@ const NewsCard = ({ slug, thumbnail, headline, date }) => {
       <Link to={`/news/${slug}`}>
         <div className="flex flex-col h-92 bg-[#D9D9D9] shadow-[4px_4px_0px_#14284C] cursor-pointer">
           <img
-            className="w-full h-48.5 bg-gray-400"
+            className="w-full h-48.5 bg-gray-400 object-cover"
             src={thumbnail}
             alt={headline}
           />
