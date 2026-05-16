@@ -14,6 +14,7 @@ import AkharaImg from "../assets/student_project_image/Akhara.png";
 import SastraImg from "../assets/student_project_image/Sastra.png";
 import EduquestImg from "../assets/student_project_image/Eduquest.png";
 
+
 const Projects = () => {
 const [search, setSearch] = useState("");
 const navigate = useNavigate();

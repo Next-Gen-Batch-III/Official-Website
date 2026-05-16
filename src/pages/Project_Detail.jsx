@@ -101,37 +101,59 @@ const Project_Detail = () => {
       {/* GALLERY */}
       <section className="space-y-10 mb-28 px-4 sm:px-6 md:px-16 mt-[30px]">
 
-        <h1 className="text-3xl sm:text-4xl font-bold text-[#f18f2d] text-left ">
+        <h1 className="text-3xl sm:text-4xl font-bold text-[#f18f2d] text-left">
           Gallery
         </h1>
 
-        <div className="flex flex-col md:flex-row gap-4 md:gap-6 h-auto md:h-[700px]">
+            <div className="flex flex-col md:flex-row gap-2 md:gap-4">
 
-          <div className="w-full md:w-[70%]">
-            <img
-              src={project.projectImages[0]}
-              className="w-full h-full object-cover"
-            />
+            {/* Main Image */}
+            <div className="w-full md:w-[70%]">
+              {project.projectImages?.[0] ? (
+                <img
+                  src={project.projectImages[0]}
+                  alt="Project"
+                  className="w-full aspect-[16/9] md:aspect-auto md:h-[531px] object-cover rounded-xl"
+                />
+              ) : (
+                <div className="w-full aspect-[16/9] md:h-[531px] border-2 border-dashed border-gray-400 rounded-xl flex items-center justify-center text-gray-500 bg-gray-100">
+                  Image
+                </div>
+              )}
+            </div>
+
+            {/* Side Images */}
+            <div className="w-full md:w-[30%] flex flex-col gap-2 md:gap-4">
+
+              {project.projectImages?.[1] ? (
+                <img
+                  src={project.projectImages[1]}
+                  alt="Project"
+                  className="w-full aspect-[16/9] md:h-[255px] object-cover rounded-xl"
+                />
+              ) : (
+                <div className="w-full aspect-[16/9] md:h-[255px] border-2 border-dashed border-gray-400 rounded-xl flex items-center justify-center text-gray-500 bg-gray-100">
+                  Image
+                </div>
+              )}
+
+              {project.projectImages?.[2] ? (
+                <img
+                  src={project.projectImages[2]}
+                  alt="Project"
+                  className="w-full aspect-[16/9] md:h-[255px] object-cover rounded-xl"
+                />
+              ) : (
+                <div className="w-full aspect-[16/9] md:h-[255px] border-2 border-dashed border-gray-400 rounded-xl flex items-center justify-center text-gray-500 bg-gray-100">
+                  Image
+                </div>
+              )}
+
+            </div>
+
           </div>
-
-          <div className="w-full md:w-[30%] flex flex-col gap-4">
-
-            <img
-              src={project.projectImages[1]}
-              className="w-full h-1/2 object-cover "
-            />
-
-            <img
-              src={project.projectImages[2]}
-              className="w-full h-1/2 object-cover"
-            />
-
-          </div>
-
-        </div>
       </section>
-
-    </div>
+   </div>
   );
 };
 
