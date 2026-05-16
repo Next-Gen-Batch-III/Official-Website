@@ -78,6 +78,7 @@
     0% {
       opacity: 0;
       transform: translateY(-20px);
+      
     }
     100% {
       opacity: 1;
@@ -138,6 +139,16 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
 }
 
 .footer_col {
