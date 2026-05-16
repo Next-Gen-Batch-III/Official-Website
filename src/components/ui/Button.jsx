@@ -1,6 +1,6 @@
 import EdgeContainer from "@/components/ui/EdgeContainer";
 
-const Button = ({ children, onClick, variant, shadowColor, className }) => {
+const Button = ({ children, onClick, variant, shadowColor, type = "button", className }) => {
     const isPrimary = variant === "primary";
     
     const buttonBg = isPrimary ? "bg-brand-secondary-orange" : "bg-white";
@@ -26,6 +26,7 @@ const Button = ({ children, onClick, variant, shadowColor, className }) => {
             <div className={`relative transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1`}>
                 <EdgeContainer edges={["bottom-right"]} edgesSize="10px">
                     <button 
+                        type={type}
                         className={`px-3 py-2 lg:px-10 lg:py-2 font-bold uppercase transition-colors ${buttonBg} ${textColor} ${className}`}
                     >
                         {children}
