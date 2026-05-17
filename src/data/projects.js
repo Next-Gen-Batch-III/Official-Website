@@ -38,32 +38,34 @@ export const projects = [
     title: "KOMPLEX",
     slug: "komplex",
     projectImages: [Komplex1Img, Komplex2Img, Komplex3Img],
+    qrCode: "",
     problem:
-      "Cambodian students face challenges in accessing quality STEM education due to limited resources, lack of interactive learning tools, and insufficient support for diverse learning styles.",
+      "90% of Cambodian digital artists struggle to find work due to no dedicated platform, no pricing standards, and no way to build credibility.",
     impact:
-      "KOMPLEX aims to enhance STEM education accessibility and engagement for Cambodian students by providing interactive lessons, AI tutoring, and a supportive learning community.",
+      "Provides free, high-quality STEM education to all Khmer students regardless of location or financial background.",
     achievement:
-      "KOMPLEX successfully launched a beta version of the platform, receiving positive feedback from students and educators for its interactive content and AI tutoring features.",
+      "Delivered interactive lessons with 3D and graph tools, exercises, Tara AI tutor, forums, and video content.",
     description:
-      "A collaborative STEM education system featuring interactive Khmer lessons, AI tutoring, community forums, and exercises.",
+      "Education platform for Khmer students.",
     image: KomplexImg,
     article:
-      "KOMPLEX is designed to improve STEM education accessibility for Cambodian students through interactive learning and AI-powered support.",
-  },
+      "KOMPLEX is a free, collaborative educational platform built by Khmer students, for Khmer students. It brings together interactive STEM lessons featuring 3D object interactions and graph visualizations, practice exercises, AI-powered tutoring through Tara AI, community forum discussions, video content, and curated articles, all aligned with the Khmer curriculum.\n\nKOMPLEX is not just a learning tool; it is a community space where students can share experiences, celebrate achievements, and support each other's academic journeys in a way no existing platform currently offers.By providing a comprehensive, interactive, and community-driven learning environment, KOMPLEX aims to enhance STEM education accessibility and engagement for Cambodian students, empowering them to reach their full potential in the digital age."
+    },
 
   {
     id: 2,
     title: "PhsarDesign",
     slug: "phsar-design",
     projectImages: [ Phsar1Img, Phsar2Img, Phsar3Img],
+    qrCode: "",
     problem:
-      "Cambodian students face challenges in accessing quality STEM education due to limited resources, lack of interactive learning tools, and insufficient support for diverse learning styles.",
+      " STEM resources are costly, inaccessible in rural areas, and no Khmer-language platform exists for students to learn, practice, or collaborate together.",
     impact:
-      "PhsarDesign aims to create a supportive learning community for Cambodian students by providing a platform for collaboration, discussion, and resource sharing.",
+      "Connects local creative talent with real clients, enabling sustainable careers in Cambodia's digital economy.",
     achievement:
-      "PhsarDesign successfully launched a beta version of the platform, receiving positive feedback from students and educators for its user-friendly interface and collaborative features.",
+      "Delivered artist profiles, service posting, client application flow, search and filter, and a rating-based credibility system.",
     description:
-      "A community learning platform for students and teachers.",
+      "Connect with talented digital artists, designers, and creative professionals.",
     image: PhsarDesignImg,
     article:
       "PhsarDesign is an all-in-one creative marketplace built for Cambodia's growing digital economy. It connects local artists, designers, and fresh graduates with SMBs, startups, and clients who need branding, illustration, and social media design services.\n\nThe platform features artist profile pages, a client application and project posting system, a rating-based credibility system to help artists build reputation, and a smart pricing tool that recommends fair rates, ensuring both artists and clients are treated with consistency and transparency."
@@ -74,169 +76,180 @@ export const projects = [
     title: "DOMRA",
     slug: "domra",
     projectImages: [Domra1Img, Domra2Img, Domra3Img],
+    qrCode: "",
     problem:
-      "Cambodian students face challenges in accessing quality STEM education due to limited resources, lack of interactive learning tools, and insufficient support for diverse learning styles.",
+      "No reliable, standardized Khmer translations exist for technical terms, causing inconsistency in academic writing and research.",
     impact:
-      "DOMRA aims to provide a modern platform for digital innovation and creativity, enhancing the learning experience for Cambodian students.",
+      "Promotes Khmer in academic contexts and gives students and researchers a trusted multilingual reference.",
     achievement:
-      "DOMRA successfully launched a beta version of the platform, receiving positive feedback from students and educators for its innovative features and modern UI.",
+      "Delivered trilingual search, term definitions, admin panel, and community contribution system.",
     description:
-      "A modern project focused on digital innovation and creativity.",
+      "Learn Smarter, Research Deeper",
     image: DomraImg,
     article:
-      "DOMRA helps students explore digital creativity through innovative technologies and modern UI experiences.",
+      "Domra is a trilingual technical lexicon that bridges Khmer, English, and French terminology across Computer Science, Artificial Intelligence, and emerging technology fields. Built by and for the Cambodian academic community, it serves as a reliable reference tool for students, researchers, and non-technical readers who need accurate and consistent Khmer translations of technical concepts.\n\nThe platform features powerful multilingual search, term definitions with examples and references, and a community contribution system to keep the lexicon growing and up to date."
   },
   {
     id: 4,
     title: "ACET",
     slug: "acet",
     projectImages: ["", "", ""],
+    qrCode: "",
     problem:
-      "Academic conference organizers face challenges in managing paper submissions, peer reviews, and event coordination efficiently.",
+      "Students can't find conferences to join, and paper submissions get lost in email chains with no transparency or updates.",
     impact:
-      "ACET aims to streamline the management of academic conferences by providing a centralized platform for paper submissions, peer reviews, and event coordination.",
+      "Streamlines the full research lifecycle, connecting researchers, reviewers, and organizers on one transparent platform.",
     achievement:
-      "ACET successfully launched a beta version of the platform, receiving positive feedback from users for its efficient workflow and user-friendly interface.",
-    description:
-      "A digital conference management system connecting researchers, reviewers, and organizers to streamline paper submissions, peer reviews, and event management.",
+      "Delivered conference creation, paper submission, peer review workflow, and real-time status tracking.",
+     description:
+       "ACET Conference Management System",
     image: Y5Img,
     article:
-      "ACET simplifies the process of managing academic conferences by providing a centralized platform for paper submissions, peer reviews, and event coordination."
+      "ACET is a comprehensive Conference Management System that brings researchers, reviewers, students, lecturers, and event organizers together on a single unified platform. It replaces the fragmented combination of emails, spreadsheets, and informal communication channels that currently define academic conference workflows in Cambodia.\n\nFrom paper submission and peer review to final decisions and event announcements, ACET streamlines every step of the research dissemination process and making it faster, fairer, and fully transparent for all stakeholders involved.  "
   },
   {
     id: 5,
     title: "Contract-Generation",
     slug: "contract-generation",
     projectImages: ["", "", ""],
+    qrCode: "",
     problem:
-      "Educational institutions face challenges in managing lecturer course assignments, workload tracking, and contract generation with e-signature across role-based dashboards.",
+      "Schools manage lecturers through scattered Excel files, Word templates, and emails, causing errors, duplication, and poor visibility.",
     impact:
-      "Contract-Generation aims to streamline administrative tasks for educational institutions by centralizing course assignments, workload tracking, and contract management with e-signature capabilities.",
+      "Centralizes lecturer administration, saving time and reducing errors across contracts, courses, and workload tracking.",
     achievement:
-      "Contract-Generation successfully launched a beta version of the platform, receiving positive feedback from users for its efficient workflow and user-friendly interface.",
+      "Delivered lecturer management, digital contract generation with e-signature, role-based dashboards, and course mapping.",
     description:
-      "A digital administration system that centralizes lecturer course assignments, workload tracking, and contract generation with e-signature across role-based dashboards.",
+      "Smart contract management", 
     image: ContractwiseImg,
     article:
-      "Contract-Generation streamlines administrative tasks for educational institutions by centralizing course assignments, workload tracking, and contract management with e-signature capabilities." 
+      "ContractWise is a web-based Lecturer Management and Contract Generation System that centralizes all aspects of academic staffing into one platform. It replaces the fragmented use of Excel, Word documents, and email chains with a unified system that handles lecturer profiles, course and class assignments, workload tracking, and automated digital contract creation.\n\nThe system supports four distinct roles  Admin, Lecturer, and Management, each with tailored dashboards and access controls to ensure the right people see and do the right things."
+
   },
   {
     id: 6,
     title: "FINEWISE",
     slug: "finewise",
+    qrCode: "",
     projectImages:["", "", ""],
     problem:
-      "Cambodians face challenges in managing their personal finances, including tracking expenses, planning budgets, and importing bank transactions.",
+      "Only 18% of Cambodian adults are financially literate, and most people have no practical tool to track spending or stick to budgets.",
     impact:
-      "FINEWISE aims to provide a comprehensive personal finance management system that simplifies financial organization and decision-making for Cambodians.",
+      "Builds better money habits, reduces personal debt, and improves financial literacy across students, families, and professionals.",
     achievement:
-      "FINEWISE successfully launched a beta version of the platform, receiving positive feedback from users for its intuitive interface and robust feature set.",
+      "Delivered expense tracker, OCR receipt scanner, budget planner, bank import, and Telegram bot integration.",
     description:
-      " A personal finance tracking system that helps Cambodians manage daily expenses, plan budgets, scan receipts, and import bank transactions all in one place.",
+    "Smart and simple finance management",
     image: LifverseImg,
     article:
-      "FINEWISE empowers individuals to take control of their finances by providing tools for expense tracking, budget planning, receipt scanning, and bank transaction management in a single platform."
-  },
+      "Finwise is a modern personal finance tracker inspired by the Japanese Kakeibo tradition of mindful household expense recording. The web application makes personal financial management simple, engaging, and educational for everyday Cambodians.\n\nIt allows users to track daily income and expenses, plan budgets, set savings goals, scan receipts using OCR, import bank transactions directly from ABA and ACLEDA, and access their finances on the go through a synchronized Telegram bot, bringing smart money management to both desktop and mobile users."  
+    },
   {
     id: 7,
     title: "BITCAMPUS",
     slug: "bitcampus",
     projectImages: [BitCamoous1Img, BitCamoous2Img, BitCamoous3Img],
+    qrCode: "",
     problem:
-      "Aspiring programmers face challenges in accessing structured coding lessons, integrated development environments (IDEs), and comprehensive video tutorials to build confidence in their coding skills.",
+      "Beginners have no structured, approachable starting point for learning programming, existing platforms are too complex and skip the basics.",
     impact:
-      "BITCAMPUS aims to provide an accessible online learning environment for aspiring programmers, featuring structured coding lessons, an integrated development environment (IDE), and comprehensive video tutorials to build confidence in coding skills.",
+      "Lowers the barrier to coding education, enabling self-paced learning for students and hobbyists at any level.",
     achievement:
-      "BITCAMPUS successfully launched a beta version of the platform, receiving positive feedback from users for its engaging content, user-friendly interface, and effective learning tools.",
+      "Delivered free HTML/CSS/JS courses, built-in IDE, video lessons, quizzes, and payment system.",
     description:
-      " An online learning system that offers structured coding lessons, a built-in IDE, and video tutorials to help first-time learners start programming with confidence.",
+       "Learn programming one bit at a time",
     image: Bithero6Img,
     article:
-      "BITCAMPUS provides an accessible online learning environment for aspiring programmers, featuring structured coding lessons, an integrated development environment (IDE), and comprehensive video tutorials to build confidence in coding skills."
+      "BitCampus is a beginner-friendly programming learning platform built on the philosophy that learning to code should be as simple as learning the alphabet.\nThe platform offers structured lessons with clear explanations, real code examples, embedded video tutorials, and a built-in online IDE so learners can practice directly in the browser without any setup.\n\nIt is designed to serve as a confident first step for students, hobbyists, and self-learners who want to enter the world of programming at their own pace."
   },
   {
     id: 8,
     title: "Khmer Data Annotation Tool",
     slug: "khmer-data-annotation-tool",
     projectImages: ["", "", ""],
+    qrCode: "",
     problem: 
-      "Researchers face challenges in annotating Khmer datasets for training high-quality machine learning models, including time-consuming manual labeling and lack of semi-automated tools.",
+      "High-quality annotated Khmer datasets are critically lacking, and manual annotation is too slow and error-prone for researchers.",
     impact:
-      "The Khmer Data Annotation Tool aims to streamline the annotation process for researchers working with Khmer datasets by providing a user-friendly interface, semi-automated OCR suggestions, and efficient labeling tools to build high-quality training data faster.",
+       "Accelerates Khmer AI and OCR research by making dataset creation faster, more accurate, and more accessible.",    
     achievement:
-      "The Khmer Data Annotation Tool successfully launched a beta version of the platform, receiving positive feedback from researchers for its intuitive interface, time-saving features, and effectiveness in improving annotation quality.",
+      "Delivered upload, region annotation, semi-automated OCR suggestions, and ground truth validation tools.",
     description:
-      "A brief description of Project 8.",
+      "Khmer text annotation tool for accorate OCR Dataset creation",
     image: AkharaImg,
     article:
-      "Detailed article about Project 8."
-  },
+      "Akhara is a specialized web-based data annotation tool built to support the creation of high-quality Khmer language datasets. Users can upload their Khmer text image datasets, draw annotation regions on text areas, and leverage semi-automated OCR suggestions to speed up the labeling process. The tool then validates annotated text against ground truth to ensure accuracy.\n\nIt is designed for data scientists, researchers, and educators who are working to advance Khmer OCR and natural language processing research in Cambodia." 
+    },
   {
     id: 9,
     title: "Sastra",
     slug: "sastra",
     projectImages: [Sastra1Img, Sastra2Img, Sastra3Img],
-      problem:
-      "Cambodian students face challenges in accessing quality STEM education due to limited resources, lack of interactive learning tools, and insufficient support for diverse learning styles.",
+    qrCode: "",
+    problem:
+      "Most quality online learning is in English only, excluding Khmer-speaking adults, and there is no recognized proof of self-learning in Cambodia.",
     impact:
-      "Sastra aims to enhance STEM education accessibility and engagement for Cambodian students by providing interactive lessons, AI tutoring, and a supportive learning community.",
+      "Opens education access to Khmer speakers and provides verifiable credentials to support career growth.",
     achievement:
-      "Sastra successfully launched a beta version of the platform, receiving positive feedback from students and educators for its interactive content and AI tutoring features.",
+      "Delivered Khmer courses, lessons and quizzes, certificate generation, and Bakong payment integration.",
     description:
-      "A brief description of Project 9.",
+      "Online learning platform",
     image: SastraImg,
     article:
-      "Detailed article about Project 9."
+      "Sastra is a Khmer-language online learning platform that allows users to browse, purchase, and complete courses entirely in Khmer, removing the English language barrier that excludes a large portion of Cambodia's adult learners from quality online education. Upon completing a course, users earn verifiable digital certificates issued in their name, providing official recognition of their self-learning achievements.\n\nThe platform is built to serve Khmer speakers of all ages who want to grow their knowledge and career prospects on their own terms."  
   },
   {
     id: 10,
     title: "QuizKH",
     slug: "quizkh",
     projectImages: ["", "", ""],
+    qrCode: "",
     problem:
-      "Educators face challenges in creating engaging assessments for students, including time-consuming question creation and lack of interactive tools.",
+      "70% of Cambodian teachers need better free quiz tools, but quality platforms like Kahoot lock key features behind expensive subscriptions.",
     impact:
-      "QuizKH aims to streamline the assessment creation process for educators by providing a user-friendly interface, automated question generation, and interactive tools to create engaging quizzes.",
+      "Makes interactive, data-driven learning accessible to all educators and students without cost or technical barriers.",
     achievement:
-      "QuizKH successfully launched a beta version of the platform, receiving positive feedback from educators for its intuitive interface, time-saving features, and effectiveness in improving assessment quality.",
+      "Delivered live quiz hosting, PDF-to-quiz import, solo and team play modes, and Excel report exports.",
     description:
-      "A brief description of Project 10.",
+      "Free, Fast, and Interactive Quiz Platform ",
     image: EduquestImg,
     article:
-      "Detailed article about Project 10."  
+      "QuizKH is a free, interactive quiz platform that transforms how quizzes are created, hosted, and analyzed for educators, students, trainers, and event organizers. Teachers can build quizzes in minutes, instantly convert PDF documents into quiz questions, host live sessions in solo or team play mode, and export detailed performance reports to Excel, all without paying for premium tools or navigating complex setups.\n\nThe platform is designed to make interactive learning accessible to everyone, anywhere in Cambodia."
     },  
     {
-        id: 11,
-        title: "GATABLOC",
-        slug: "gatabloc",
-        projectImages: [Catabloc1Img, Catabloc2Img, Catabloc3Img],
-        problem:
-            "Students face challenges in learning algorithms and logic due to traditional teaching methods and lack of interactive tools.",
-        impact:
-            "GATABLOC aims to make learning algorithms and logic engaging for beginners by presenting coding fundamentals through interactive visual puzzles in a gamified environment.",
-        achievement:
-            "GATABLOC successfully launched a beta version of the platform, receiving positive feedback from students for its interactive content and gamified approach.",
-        description:
-            "A gamified learning system that teaches algorithms and logic through visual puzzles, making coding fundamentals fun for beginners.",
-        image: CatagangImg,
-        article:
-            "GATABLOC makes learning algorithms and logic engaging for beginners by presenting coding fundamentals through interactive visual puzzles in a gamified environment."   
-    },
+      id: 11,
+      title: "GATABLOC",
+      slug: "gatabloc",
+      qrCode: "",
+      projectImages: [Catabloc1Img, Catabloc2Img, Catabloc3Img],
+      problem:
+          "Learning algorithms on paper is abstract and frustrating for beginners, with no visual feedback to help them understand where their logic fails.",
+      impact:
+          "Makes algorithm learning visual, engaging, and stress-free, improving comprehension and motivating students to practice more.",
+      achievement:
+        "Delivered step-by-step visual puzzle games, student progress tracking, classroom assignment tools, and a community space.",
+      description:
+      " A gamified learning platform",
+      image: CatagangImg,
+      article:
+        "CATABLOC is a gamified learning platform that teaches algorithms, loops, conditionals, and logic through visual, step-by-step interactive puzzle games, designed specifically for absolute beginners who find traditional algorithm study on paper confusing and disengaging. Students can see each step of an algorithm visualized in real time as they solve puzzles, helping them truly understand the logic rather than just memorizing steps.\n\nThe platform also includes classroom features for instructors to assign work and track student progress, as well as a community space for peer engagement and collaboration."   
+      },
     {
-        id: 12,
-        title: "BAY-CANTEEN",
-        slug: "bay-canteen", 
-        projectImages: [BayCanteen1Img, BayCanteen2Img, BayCanteen3Img],   
-        problem:
-            "Students face challenges in providing feedback on canteen meals, leading to inefficiencies in meal planning and potential waste.",
-        impact:
-            "BAY-CANTEEN aims to improve meal planning for the CADT canteen by enabling students to provide real-time feedback on their meal preferences, reducing waste and increasing satisfaction.",
-        achievement:
-            "BAY-CANTEEN successfully launched a beta version of the platform, receiving positive feedback from students for its ease of use and effectiveness in improving meal planning.",
-        description:
-            "A student-facing voting system that helps the CADT canteen prepare daily meals based on real student preferences, reducing waste and improving satisfaction.",
-        image: BayCanteenImg,
-        article:
-            "BAY-CANTEEN optimizes meal preparation for the CADT canteen by allowing students to vote on their meal preferences, leading to reduced food waste and increased satisfaction."
+      id: 12,
+      title: "BAY-CANTEEN",
+      slug: "bay-canteen", 
+      qrCode: "",
+      projectImages: [BayCanteen1Img, BayCanteen2Img, BayCanteen3Img],   
+      problem:
+        "Students avoid the canteen due to repetitive, overpriced meals that don't match their preferences, with no way for the kitchen to know what students actually want.",
+      impact:
+        "Shifts meal planning from guesswork to student-driven data, reducing food waste and increasing canteen satisfaction.",
+      achievement:
+        "Delivered daily voting, menu browsing, wishlist, and feedback system.",
+      description:
+         "Smart voting for better canteen meals",
+      image: BayCanteenImg,
+      article:
+        "Bay is a digital voting platform designed for CADT students, allowing them to vote daily on their preferred canteen dishes. By collecting real-time student preferences, the platform helps the canteen kitchen plan and prepare meals that students actually want to eat. Beyond voting, students can browse the menu, save favorite dishes to a wishlist, and submit feedback.\n\nThe System is connection between students and the canteen. The goal is to transform the canteen experience by ensuring fresher, tastier, and more varied meals while minimizing food waste caused by unpopular or repetitive dishes."
     }
 ];

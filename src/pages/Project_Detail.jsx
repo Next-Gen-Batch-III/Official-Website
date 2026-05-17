@@ -5,7 +5,6 @@ import ProblemImg from "../assets/icon_image/problem-icon.png";
 import ImpactImg from "../assets/icon_image/impact-icon.png";
 import AchievementImg from "../assets/icon_image/achievement-icon.png";
 import ProjectDetailHero from "../components/Projects/ProjectDetailHero";
-import QRImg from "../assets/student_project_image/QR_bay-canteen.png";
 
 const Project_Detail = () => {
   const { slug } = useParams();
@@ -49,7 +48,7 @@ const Project_Detail = () => {
           <div className="bg-white p-5 sm:p-6 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center w-full max-w-[280px] h-fit">
 
             <img
-              src={project.qrCode || QRImg}
+              src={project.qrCode}
               alt="QR Code"
               className="w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] object-contain"
             />
@@ -79,21 +78,21 @@ const Project_Detail = () => {
             title="Problem"
             color="bg-red-500"
             icon={ProblemImg}
-            description="Description of the problem addressed by the project."
+            description={project.problem}
           />
 
           <HighlightCard
             title="Impact"
             color="bg-blue-500"
             icon={ImpactImg}
-            description="Description of the impact of the project."
+            description={project.impact}
           />
 
           <HighlightCard
             title="Achievement"
             color="bg-green-500"
             icon={AchievementImg}
-            description="Description of the achievements of the project."
+            description={project.achievement}
           />
 
         </div>
