@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from './components/layout/Navbar';
 import Home from './pages/Home';
 import Faq from './pages/Faq';
+import People from './pages/People';
 import Footer from './components/layout/footer/Footer';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/faq" element={<Faq />} />
+          <Route path="/people" element={<People />} />
         </Routes>
         <Footer />
       </BrowserRouter>
