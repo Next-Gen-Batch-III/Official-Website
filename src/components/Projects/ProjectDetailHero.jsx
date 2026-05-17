@@ -27,7 +27,7 @@ const ProjectDetailHero = ({ title, subtitle, description, image }) => {
       </div>
 
       {/* DESKTOP OVERLAY */}
-      <div className="hidden md:block absolute bottom-0 left-0 w-full bg-[#12284C]/30 backdrop-blur-md">
+      <div className="hidden md:block absolute bottom-0 left-0 w-full bg-blue-500/10 backdrop-blur-md">
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-5 text-white">
 
           <h1 className="text-3xl font-bold">{title}</h1>
