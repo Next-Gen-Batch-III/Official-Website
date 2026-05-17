@@ -30,7 +30,7 @@ const projectList = [
   { title: "FINEWISE", slug: "finewise" },
   { title: "BITCAMPUS", slug: "bitcampus" },
   { title: "Khmer Data Annotation Tool", slug: "khmer-data-annotation-tool" },
-  { title: "SASTRA", slug: "sasttra" },
+  { title: "SASTRA", slug: "sastra" },
   { title: "QuizKH", slug: "quizkh" },
 ];
   return (
@@ -181,7 +181,7 @@ const projectList = [
             image={SastraImg}
             title="SASTRA"
             description=" A Khmer-language e-learning system where users can browse, purchase, and complete courses entirely in Khmer and earn verifiable certificates upon completion."
-            slug="sasttra"
+            slug="sastra"
           />
         )}
         {"QuizKH".toLowerCase().includes(search.toLowerCase()) && (

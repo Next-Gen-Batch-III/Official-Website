@@ -67,7 +67,7 @@ const Project_Detail = () => {
       </section>
 
       {/* HIGHLIGHTS */}
-      <section className="bg-[#0B2341] text-white py-12 md:py-16 px-4 sm:px-8 md:px-16 rounded-2xl">
+      <section className="bg-[#0B2341] text-white py-12 md:py-16 px-4 sm:px-8 md:px-16">
 
         <h1 className="text-3xl sm:text-4xl font-bold text-[#f18f2d] mb-10">
           Project Highlights
@@ -115,7 +115,7 @@ const Project_Detail = () => {
               <img
                 src={project.projectImages[0]}
                 alt="Project"
-                className="w-full h-[250px] md:h-[531px] object-cover rounded-2xl"
+                className="w-full h-[250px] md:h-[531px] object-cover rounded-xl"
               />
             ) : (
               <div className="w-full h-[250px] md:h-[531px] border-2 border-dashed border-gray-400 rounded-2xl flex items-center justify-center text-gray-500 bg-gray-100">
@@ -131,7 +131,7 @@ const Project_Detail = () => {
               <img
                 src={project.projectImages[1]}
                 alt="Project"
-                className="w-full h-[255px] object-cover rounded-2xl"
+                className="w-full h-[255px] object-cover rounded-xl"
               />
             ) : (
               <div className="w-full h-[255px] border-2 border-dashed border-gray-400 rounded-2xl flex items-center justify-center text-gray-500 bg-gray-100">
@@ -143,7 +143,7 @@ const Project_Detail = () => {
               <img
                 src={project.projectImages[2]}
                 alt="Project"
-                className="w-full h-[255px] object-cover rounded-2xl"
+                className="w-full h-[255px] object-cover rounded-xl"
               />
             ) : (
               <div className="w-full h-[255px] border-2 border-dashed border-gray-400 rounded-2xl flex items-center justify-center text-gray-500 bg-gray-100">
