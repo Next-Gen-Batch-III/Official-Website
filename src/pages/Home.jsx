@@ -1,9 +1,13 @@
 import EdgeContainer from "@/components/ui/EdgeContainer";
+import Button from "@/components/ui/Button";
+import ProjectCard from "@/components/cards/ProjectCard";
+
 import heroImage1 from "@/assets/images/home/heroImage1.webp";
 import heroImage2 from "@/assets/images/home/heroImage2.webp";
 import heroImage3 from "@/assets/images/home/heroImage3.webp";
-import Button from "@/components/ui/Button";
-import ProjectCard from "@/components/cards/ProjectCard";
+import codeReason from "@/assets/overview/code-reason.webp";
+import connectivityReason from "@/assets/overview/connectivity-reason.webp";
+import commerceReason from "@/assets/overview/commerce-reason.webp";
 const Home = () => {
   const people = [
     { id: 1, name: "John Doe", role: "Developer" },
@@ -50,7 +54,7 @@ const Home = () => {
           <div className="flex flex-col gap-5 md:flex-row md:items-center justify-between md:gap-20">
             <div className="w-fit h-fit">
               <EdgeContainer edges={["top-right"]} edgesSize="60px">
-                <img src="https://placehold.co/600x400/png" alt="" className="w-full h-full object-cover"/>
+                <img src={codeReason} alt="Code Reason" className="w-full h-full object-cover"/>
               </EdgeContainer>
             </div>
             <div className="flex gap-12">
@@ -136,14 +140,14 @@ const Home = () => {
             </div>
             <div className="w-fit h-fit">
               <EdgeContainer edges={["top-right"]} edgesSize="60px">
-                <img src="https://placehold.co/600x400/png" alt="" className="w-full h-full object-cover"/>
+                <img src={connectivityReason} alt="Connectivity Reason" className="w-full h-full object-cover"/>
               </EdgeContainer>
             </div>
           </div>
           <div className="flex flex-col gap-5 md:flex-row md:items-center justify-between md:gap-20">
             <div className="w-fit h-fit">
               <EdgeContainer edges={["top-right"]} edgesSize="60px">
-                <img src="https://placehold.co/600x400/png" alt="" className="w-full h-full object-cover"/>
+                <img src={commerceReason} alt="Commerce Reason" className="w-full h-full object-cover"/>
               </EdgeContainer>
             </div>
             <div className="flex gap-12">
