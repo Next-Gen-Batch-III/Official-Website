@@ -9,6 +9,9 @@ import Faq from './pages/Faq';
 import Footer from './components/layout/footer/Footer';
 import NewsDetail from './pages/NewsDetail';
 
+import Projects from './pages/Projects';
+import Project_Detail from './pages/Project_Detail';
+
 
 function App() {
 
@@ -22,11 +25,12 @@ function App() {
           <Route path="/faq" element={<Faq />} />
           <Route path='/news' element={<News />}/>
           <Route path="/news/:slug" element={<NewsDetail />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:slug" element={<Project_Detail />} />
         </Routes>
         <Footer />
       </BrowserRouter>
     </>
   )
 }
-
 export default App
