@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProjectCard from "../components/Projects/ProjectCard";
-import CoppsaryImg from "../assets/student_project_image/Coppsary.png";
+import PhsarDesignImg from "../assets/student_project_image/PhsarDesign.png";
 import KomplexImg from "../assets/student_project_image/Komplex.png";
 import DomraImg from "../assets/student_project_image/Domra.png";
 import CatagangImg from "../assets/student_project_image/Catagang.png";
@@ -20,7 +20,7 @@ const [search, setSearch] = useState("");
 const navigate = useNavigate();
 const [suggestions, setSuggestions] = useState([]);
 const projectList = [
-  { title: "PhsarDesign", slug: "coppsary" },
+  { title: "PhsarDesign", slug: "phsar-design" },
   { title: "KOMPLEX", slug: "komplex" },
   { title: "DOMRA", slug: "domra" },
   { title: "GATABLOC", slug: "gatabloc" },
@@ -35,7 +35,7 @@ const projectList = [
 ];
   return (
     <div className="px-4 sm:px-6 lg:px-8 max-w-full mx-auto">
-      <div className="flex flex-wrap">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-14 md:gap-28 py-10 sm:py-14 md:py-16">
           <div className="flex-1 min-w-[300px] content-center">
               <h1 className="text-left text-[40px] font-bold ml-[30px] mt-[30px]">
                 Student Project <span style={{ color: "#dd5c0b" }}>Showcase</span>
@@ -92,13 +92,13 @@ const projectList = [
 
       <div>
 
-      <div className="flex gap-10 flex-wrap justify-center mb-[40px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center mb-[40px]">
         {"PhsarDesign".toLowerCase().includes(search.toLowerCase()) && (
           <ProjectCard
-            image={CoppsaryImg}
+            image={PhsarDesignImg}
             title="PhsarDesign"
             description="A platform that connects Cambodian artists and designers with clients through professional profiles, service listings, and a rating-based credibility system."
-            slug="coppsary"
+            slug="phsar-design"
           />
         )}
         

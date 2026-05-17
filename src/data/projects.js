@@ -1,5 +1,5 @@
 import KomplexImg from "../assets/student_project_image/Komplex.png";
-import CoppsaryImg from "../assets/student_project_image/Coppsary.png";
+import PhsarDesignImg from "../assets/student_project_image/PhsarDesign.png";
 import DomraImg from "../assets/student_project_image/Domra.png";
 import Y5Img from "../assets/student_project_image/Y-5.png";
 import ContractwiseImg from "../assets/student_project_image/Contractwise.png";
@@ -53,18 +53,18 @@ export const projects = [
 
   {
     id: 2,
-    title: "COPPSARY",
-    slug: "coppsary",
+    title: "PhsarDesign",
+    slug: "phsar-design",
     projectImages: [ Phsar1Img, Phsar2Img, Phsar3Img],
     problem:
       "Cambodian students face challenges in accessing quality STEM education due to limited resources, lack of interactive learning tools, and insufficient support for diverse learning styles.",
     impact:
-      "COPPSARY aims to create a supportive learning community for Cambodian students by providing a platform for collaboration, discussion, and resource sharing.",
+      "PhsarDesign aims to create a supportive learning community for Cambodian students by providing a platform for collaboration, discussion, and resource sharing.",
     achievement:
-      "COPPSARY successfully launched a beta version of the platform, receiving positive feedback from students and educators for its user-friendly interface and collaborative features.",
+      "PhsarDesign successfully launched a beta version of the platform, receiving positive feedback from students and educators for its user-friendly interface and collaborative features.",
     description:
       "A community learning platform for students and teachers.",
-    image: CoppsaryImg,
+    image: PhsarDesignImg,
     article:
       "PhsarDesign is an all-in-one creative marketplace built for Cambodia's growing digital economy. It connects local artists, designers, and fresh graduates with SMBs, startups, and clients who need branding, illustration, and social media design services.\n\nThe platform features artist profile pages, a client application and project posting system, a rating-based credibility system to help artists build reputation, and a smart pricing tool that recommends fair rates, ensuring both artists and clients are treated with consistency and transparency."
   },

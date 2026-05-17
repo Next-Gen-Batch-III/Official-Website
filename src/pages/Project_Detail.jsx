@@ -14,14 +14,14 @@ const Project_Detail = () => {
 
   if (!project) {
     return (
-      <div className="px-4 sm:px-6 lg:px-8 max-w-full mx-auto py-20 text-center text-gray-600">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center text-gray-600">
         Project not found
       </div>
     );
   }
 
   return (
-    <div className="px-4 sm:px-6 lg:px-8 max-w-full mx-auto">
+    <div className="w-full overflow-x-hidden">
 
       {/* HERO */}
       <ProjectDetailHero
@@ -29,110 +29,114 @@ const Project_Detail = () => {
         description={project.description}
         image={project.image}
       />
+      <div className="w-full">
+        {/* PROJECT OVERVIEW + QR */}
+        <section className="grid grid-cols-1 md:grid-cols-[70%_30%] sm:grid-cols-1 gap-10 sm:gap-14 md:gap-20 py-10 sm:py-14 md:py-16 px-2 sm:px-4 md:px-8">
 
-      {/* PROJECT OVERVIEW + QR */}
-      <div className="grid grid-cols-1 md:grid-cols-[70%_30%] gap-10 sm:gap-14 md:gap-28 py-10 sm:py-14 md:py-16 px-4 sm:px-8 md:px-16">
+          {/* Overview */}
+          <div>
+            <h1 className="text-3xl sm:text-4xl font-bold text-[#f18f2d] mb-4">
+              Project Overview
+            </h1>
 
-        <div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-[#f18f2d] mb-4">
-            Project Overview
-          </h1>
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed whitespace-pre-line text-gray-700">
+              {project.article}
+            </p>
+          </div>
 
-          <p className="text-base sm:text-lg md:text-xl leading-relaxed whitespace-pre-line text-gray-700">
-            {project.article}
-          </p>
-        </div>
+          {/* QR */}
+          <div className="flex justify-center md:justify-center ">
 
-        <div className="flex flex-col items-center">
+            <div className="bg-white p-5 sm:p-6 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center w-full max-w-[280px] h-fit mt-2 md:mt-10">
 
-          <div className="bg-white p-5 sm:p-6 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center w-full max-w-[280px] mt-[50px]">
+              <img
+                src={project.qrCode || QRImg}
+                alt="QR Code"
+                className="w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] object-contain"
+              />
 
-            <img
-              src={project.qrCode || QRImg}
-              alt="QR Code"
-              className="w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] object-contain"
-            />
+              <button
+                onClick={() => project.link && window.open(project.link, "_blank")}
+                className="mt-5 w-full bg-[#F88D2A] text-white py-3 rounded-xl font-semibold hover:bg-[#0a3a85] transition duration-300"
+              >
+                Open URL
+              </button>
 
-            <button
-              onClick={() => project.link && window.open(project.link, "_blank")}
-              className="mt-5 w-full bg-[#F88D2A] text-white py-3 rounded-xl font-semibold hover:bg-[#0a3a85] transition"
-            >
-              Open URL
-            </button>
+            </div>
 
           </div>
-        </div>
 
-      </div>
+        </section>
 
-      {/* HIGHLIGHTS */}
-      <section className="bg-[#0B2341] text-white py-12 md:py-16 px-4 sm:px-8 md:px-16">
+        {/* HIGHLIGHTS */}
+        <section className="bg-[#0B2341] text-white py-12 md:py-16 px-4 sm:px-8 md:px-16 rounded-2xl">
 
-        <h1 className="text-3xl sm:text-4xl font-bold text-[#f18f2d] text-left mb-10">
-          Project Highlights
-        </h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-[#f18f2d] text-left mb-10">
+            Project Highlights
+          </h1>
 
-        <div className="flex flex-col md:flex-row gap-8 md:gap-22 justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-          <HighlightCard
-            title="Problem"
-            color="bg-red-500"
-            icon={ProblemImg}
-            description="Description of the problem addressed by the project."
-          />
+            <HighlightCard
+              title="Problem"
+              color="bg-red-500"
+              icon={ProblemImg}
+              description="Description of the problem addressed by the project."
+            />
 
-          <HighlightCard
-            title="Impact"
-            color="bg-blue-500"
-            icon={ImpactImg}
-            description="Description of the impact of the project."
-          />
+            <HighlightCard
+              title="Impact"
+              color="bg-blue-500"
+              icon={ImpactImg}
+              description="Description of the impact of the project."
+            />
 
-          <HighlightCard
-            title="Achievement"
-            color="bg-green-500"
-            icon={AchievementImg}
-            description="Description of the achievements of the project."
-          />
+            <HighlightCard
+              title="Achievement"
+              color="bg-green-500"
+              icon={AchievementImg}
+              description="Description of the achievements of the project."
+            />
 
-        </div>
-      </section>
+          </div>
 
-      {/* GALLERY */}
-      <section className="space-y-10 mb-28 px-4 sm:px-6 md:px-16 mt-[30px]">
+        </section>
 
-        <h1 className="text-3xl sm:text-4xl font-bold text-[#f18f2d] text-left">
-          Gallery
-        </h1>
+        {/* GALLERY */}
+        <section className="space-y-10 mb-28 px-2 sm:px-4 md:px-8 mt-10">
 
-            <div className="flex flex-col md:flex-row gap-2 md:gap-4">
+          <h1 className="text-3xl sm:text-4xl font-bold text-[#f18f2d] text-left">
+            Gallery
+          </h1>
+
+          <div className="grid grid-cols-1 md:grid-cols-[70%_30%] gap-3 md:gap-4">
 
             {/* Main Image */}
-            <div className="w-full md:w-[70%]">
+            <div>
               {project.projectImages?.[0] ? (
                 <img
                   src={project.projectImages[0]}
                   alt="Project"
-                  className="w-full aspect-[16/9] md:aspect-auto md:h-[531px] object-cover rounded-xl"
+                  className="w-full h-full min-h-[250px] md:h-[531px] object-cover rounded-2xl"
                 />
               ) : (
-                <div className="w-full aspect-[16/9] md:h-[531px] border-2 border-dashed border-gray-400 rounded-xl flex items-center justify-center text-gray-500 bg-gray-100">
+                <div className="w-full min-h-[250px] md:h-[531px] border-2 border-dashed border-gray-400 rounded-2xl flex items-center justify-center text-gray-500 bg-gray-100">
                   Image
                 </div>
               )}
             </div>
 
             {/* Side Images */}
-            <div className="w-full md:w-[30%] flex flex-col gap-2 md:gap-4">
+            <div className="grid grid-rows-2 gap-3 md:gap-4">
 
               {project.projectImages?.[1] ? (
                 <img
                   src={project.projectImages[1]}
                   alt="Project"
-                  className="w-full aspect-[16/9] md:h-[255px] object-cover rounded-xl"
+                  className="w-full h-full min-h-[180px] md:h-[255px] object-cover rounded-2xl"
                 />
               ) : (
-                <div className="w-full aspect-[16/9] md:h-[255px] border-2 border-dashed border-gray-400 rounded-xl flex items-center justify-center text-gray-500 bg-gray-100">
+                <div className="w-full min-h-[180px] md:h-[255px] border-2 border-dashed border-gray-400 rounded-2xl flex items-center justify-center text-gray-500 bg-gray-100">
                   Image
                 </div>
               )}
@@ -141,10 +145,10 @@ const Project_Detail = () => {
                 <img
                   src={project.projectImages[2]}
                   alt="Project"
-                  className="w-full aspect-[16/9] md:h-[255px] object-cover rounded-xl"
+                  className="w-full h-full min-h-[180px] md:h-[255px] object-cover rounded-2xl"
                 />
               ) : (
-                <div className="w-full aspect-[16/9] md:h-[255px] border-2 border-dashed border-gray-400 rounded-xl flex items-center justify-center text-gray-500 bg-gray-100">
+                <div className="w-full min-h-[180px] md:h-[255px] border-2 border-dashed border-gray-400 rounded-2xl flex items-center justify-center text-gray-500 bg-gray-100">
                   Image
                 </div>
               )}
@@ -152,8 +156,11 @@ const Project_Detail = () => {
             </div>
 
           </div>
-      </section>
-   </div>
+
+        </section>
+
+      </div>
+    </div>
   );
 };
 
