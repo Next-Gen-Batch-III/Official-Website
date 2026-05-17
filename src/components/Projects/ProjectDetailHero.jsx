@@ -3,7 +3,7 @@ const ProjectDetailHero = ({ title, subtitle, description, image }) => {
     <div className="relative w-full overflow-hidden">
 
       {/* IMAGE */}
-      <div className="w-full h-[25vh] sm:h-[60vh] md:h-[80vh] lg:h-screen overflow-hidden">
+      <div className="w-full h-[25vh] sm:h-[50vh] md:h-[50vh] lg:h-screen overflow-hidden">
         <img
           src={image}
           alt={title}
@@ -50,3 +50,4 @@ const ProjectDetailHero = ({ title, subtitle, description, image }) => {
     </div>
   );
 };
+export default ProjectDetailHero;

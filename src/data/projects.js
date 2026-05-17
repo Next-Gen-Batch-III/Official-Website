@@ -90,6 +90,13 @@ export const projects = [
     id: 4,
     title: "ACET",
     slug: "acet",
+    projectImages: ["", "", ""],
+    problem:
+      "Academic conference organizers face challenges in managing paper submissions, peer reviews, and event coordination efficiently.",
+    impact:
+      "ACET aims to streamline the management of academic conferences by providing a centralized platform for paper submissions, peer reviews, and event coordination.",
+    achievement:
+      "ACET successfully launched a beta version of the platform, receiving positive feedback from users for its efficient workflow and user-friendly interface.",
     description:
       "A digital conference management system connecting researchers, reviewers, and organizers to streamline paper submissions, peer reviews, and event management.",
     image: Y5Img,
@@ -100,6 +107,7 @@ export const projects = [
     id: 5,
     title: "Contract-Generation",
     slug: "contract-generation",
+    projectImages: ["", "", ""],
     problem:
       "Educational institutions face challenges in managing lecturer course assignments, workload tracking, and contract generation with e-signature across role-based dashboards.",
     impact:
@@ -116,6 +124,7 @@ export const projects = [
     id: 6,
     title: "FINEWISE",
     slug: "finewise",
+    projectImages:["", "", ""],
     problem:
       "Cambodians face challenges in managing their personal finances, including tracking expenses, planning budgets, and importing bank transactions.",
     impact:
@@ -149,6 +158,7 @@ export const projects = [
     id: 8,
     title: "Khmer Data Annotation Tool",
     slug: "khmer-data-annotation-tool",
+    projectImages: ["", "", ""],
     problem: 
       "Researchers face challenges in annotating Khmer datasets for training high-quality machine learning models, including time-consuming manual labeling and lack of semi-automated tools.",
     impact:
@@ -182,6 +192,7 @@ export const projects = [
     id: 10,
     title: "QuizKH",
     slug: "quizkh",
+    projectImages: ["", "", ""],
     problem:
       "Educators face challenges in creating engaging assessments for students, including time-consuming question creation and lack of interactive tools.",
     impact:
