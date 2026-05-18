@@ -16,7 +16,7 @@ const PeopleSection = ({ title, link ,people }) => {
                     <Button onClick={() => navigate(link)} variant="brand" shadowColor="#666666">View All</Button>
                 </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-15">
                 {people.map((person, index) => (
                     <PeopleCard key={index} name={person.name} role={person.role} image={person.image} />
                 ))}

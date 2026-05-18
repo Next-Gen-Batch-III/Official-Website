@@ -10,7 +10,7 @@ const Team = () => {
         return <div>Team not found</div>
     }
     return (
-        <section className="min-h-screen px-5 py-10 lg:px-20 flex flex-col gap-10">
+        <section className="px-5 py-10 lg:px-20 flex flex-col gap-10">
             <div>
                 <h1 className="text-[2.5rem] font-bold">{teams.title}</h1>
             </div>
