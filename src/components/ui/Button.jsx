@@ -2,9 +2,8 @@ import EdgeContainer from "@/components/ui/EdgeContainer";
 
 const Button = ({ children, onClick, variant, shadowColor, type = "button", className }) => {
     const isPrimary = variant === "primary";
-    
-    const buttonBg = isPrimary ? "bg-brand-secondary-orange" : "bg-white";
-    const textColor = isPrimary ? "text-white" : "text-brand-secondary-orange";
+    const buttonBg = variant === "primary" ? "bg-brand-secondary-orange" : variant === "brand" ? "bg-brand-primary" : "bg-white";
+    const textColor = variant === "primary" ? "text-white" : variant === "brand" ? "text-white" : "text-brand-secondary-orange";
     
     const shadowCol = shadowColor || (isPrimary ? "white" : "#f88d2a");
 
@@ -27,7 +26,7 @@ const Button = ({ children, onClick, variant, shadowColor, type = "button", clas
                 <EdgeContainer edges={["bottom-right"]} edgesSize="10px">
                     <button 
                         type={type}
-                        className={`px-3 py-2 lg:px-10 lg:py-2 font-bold uppercase transition-colors ${buttonBg} ${textColor} ${className}`}
+                        className={`px-6 py-2 lg:px-10 lg:py-2 font-bold uppercase transition-colors ${buttonBg} ${textColor} ${className}`}
                     >
                         {children}
                     </button>

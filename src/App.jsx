@@ -6,6 +6,8 @@ import Navbar from './components/layout/Navbar';
 import Home from './pages/Home';
 import Overview from './pages/Overview';
 import Faq from './pages/Faq';
+import People from './pages/People';
+import Team from './pages/Team';
 import Footer from './components/layout/footer/Footer';
 import NewsDetail from './pages/NewsDetail';
 
@@ -23,6 +25,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/overview" element={<Overview />} />
           <Route path="/faq" element={<Faq />} />
+          <Route path="/people" element={<People />} />
+          <Route path="/people/organizers/:teamId" element={<Team />} />
           <Route path='/news' element={<News />}/>
           <Route path="/news/:slug" element={<NewsDetail />} />
           <Route path="/projects" element={<Projects />} />

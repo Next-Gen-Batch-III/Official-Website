@@ -207,6 +207,8 @@ const Home = () => {
           </Button>
         </div>
       </section>
+
+
       <section className="our-people flex flex-col gap-5 px-5 py-10 lg:px-20">
         <Title>Our People</Title>
           <div className="flex flex-col gap-10">
@@ -220,10 +222,14 @@ const Home = () => {
               ))}
             </div>    
             <div className="flex justify-end">
-              <Button variant="primary" shadowColor="#666666">All People</Button>
+              <Button variant="primary" shadowColor="#666666" onClick={() => navigate("/people")}>
+                All People
+              </Button>
             </div>      
           </div>
       </section>
+
+
       <section className="news flex flex-col gap-5 px-5 py-10 lg:px-20">
         <Title>News & Updates</Title>
         <div className="grid md:grid-cols-2 gap-10 items-start">

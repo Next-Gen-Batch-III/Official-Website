@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 
 const ProjectCard = ({project}) => {
     const navigate = useNavigate();
-
     return (
         <div className="flex flex-col bg-white rounded-lg shadow-md overflow-hidden">
             <div className="img-container">
