@@ -1,6 +1,8 @@
-
+import { useNavigate } from "react-router-dom";
 
 const ProjectCard = ({project}) => {
+    const navigate = useNavigate();
+
     return (
         <div className="flex flex-col bg-white rounded-lg shadow-md overflow-hidden">
             <div className="img-container">
@@ -12,7 +14,7 @@ const ProjectCard = ({project}) => {
                     <p>{project.description}</p>
                 </div>
                 <div className="button-container group">
-                    <button className="bg-brand-primary rounded-2xl text-white w-full p-4 flex items-center justify-center gap-0 group-hover:gap-2 transition-all duration-300 overflow-hidden">
+                    <button className="bg-brand-primary rounded-2xl text-white w-full p-4 flex items-center justify-center gap-0 group-hover:gap-2 transition-all duration-300 overflow-hidden" onClick={() => navigate(`/projects/${project.slug}`)}>
                         View Project 
                         <span className="max-w-0 opacity-0 group-hover:max-w-10 group-hover:opacity-100 group-hover:translate-x-0 -translate-x-2 transition-all duration-300 ease-out flex items-center">
                             <svg className="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
