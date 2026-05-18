@@ -1,49 +1,73 @@
-import { useNavigate } from "react-router-dom";
-
-import EdgeContainer from "@/components/ui/EdgeContainer";
-import Button from "@/components/ui/Button";
-import ProjectCard from "@/components/cards/ProjectCard";
-
-import heroImage1 from "@/assets/images/home/heroImage1.webp";
-import heroImage2 from "@/assets/images/home/heroImage2.webp";
-import heroImage3 from "@/assets/images/home/heroImage3.webp";
-import codeReason from "@/assets/overview/code-reason.webp";
-import connectivityReason from "@/assets/overview/connectivity-reason.webp";
-import commerceReason from "@/assets/overview/commerce-reason.webp";
+import EdgeContainer from "../components/ui/EdgeContainer";
+import Button from "../components/ui/Button";
 
 
-import { projects } from "@/data/projects";
-import { news } from "@/data/news";
-import { people } from "@/data/home";
 
-const Home = () => {
-  const navigate = useNavigate();
-  const projectList = projects.sort(() => 0.5 - Math.random()).slice(0, 3);
+import heroBg from "../assets/overview/hero-img.png";
+import Logo from "../assets/logo/logoBlueNobg2.png";
+import codeImg from "../assets/overview/code-reason.webp";
+import connectivityImg from "../assets/overview/connectivity-reason.webp";
+import commerceImg from "../assets/overview/commerce-reason.webp";
+import missionIcon from "../assets/overview/mission.png";
+import visionIcon from "../assets/overview/vision.png";
+
+const Overview = () => {
   return (
-    <div className="home flex flex-col">
-      <section id="hero" className="flex flex-col gap-10 bg-brand-primary text-white px-5 py-10 lg:px-20">
-        <div className="grid grid-col-2 lg:grid-cols-3 gap-10 items-end">
-          <div className="col-span-2">
-            <h1 className="font-bold text-2xl lg:text-[2.5rem]">Next-Gen engagement Program <br/> 
-            Batch 3 - 3 Departments</h1>
+    <div className="font-family text-brand-primary bg-white">
+
+      {/* HERO */}
+      <section
+        className="relative min-h-100 lg:min-h-162.5 flex items-center bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      >
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="relative z-10 px-5 lg:px-20 py-10 lg:py-28">
+          <h1 className="text-white font-bold text-xl lg:text-4xl leading-tight mb-3">
+            Next-Gen Engagement Program<br />Batch 3 - 3 Departments
+          </h1>
+          <p className="text-white/80 text-sm max-w-md mb-6">
+            Empowering students through innovation, collaboration, and real-world project experience.
+          </p>
+          <div className="flex flex-row gap-3">
+            <Button>Join the Program</Button>
+
+            <Button variant="primary">Register for Events</Button>
           </div>
-          <div className="hidden lg:block row-span-2">
-            <img src={heroImage3} alt="hero image 3" className="w-full h-auto" />
-          </div>
-          <div>
-            <img src={heroImage1} alt="hero image 1" className="w-full aspect-video object-cover" />
-          </div>
-          <div>
-            <img src={heroImage2} alt="hero image 2" className="w-full aspect-video object-cover" />
-          </div>
-        </div>
-        <div className="button-container flex gap-5 justify-end">
-          <Button>JOIN THE PROGRAM</Button>
-          <Button variant="primary">REGISTER FOR EVENTS</Button>
         </div>
       </section>
 
+      {/* WHAT IS NEXT-GEN-3? */}
+      <section className="px-6 lg:px-20 py-16 lg:py-40 bg-white">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12 w-full">
+          <div className="shrink-0 leading-none lg:text-left">
+            <p className="text-brand-primary text-[2.5rem] font-bold">What is</p>
+            <div className="flex items-end gap-5">
+              <img src={Logo} alt="Next Gen Logo" className="w-80"/>
+              <p className="text-brand-primary text-[4.75rem] font-bold font-cadt">?</p>
+            </div>
+          </div>
+          <div className="max-w-200">
+            <EdgeContainer
+              edges={["top-right", "bottom-left"]}
+              edgesSize="80px"
+            >
+              <div className="bg-brand-secondary-orange font-semibold px-6 lg:px-8 py-8 leading-relaxed flex flex-col gap-0">
+                <div className="px-[40px]">
+                  <p className="justify-content text-lg lg:text-2xl border-t-3 border-b-3 border-white py-5">
+                    A semester-break engagement program for aspired digital students aims to promote
+                    knowledge sharing between senior and junior cohorts, support academic readiness
+                    through mentoring and coaching, and provides a platform for students to develop
+                    innovative ideas that address real-world challenges.
+                  </p>
+                </div>
+              </div>
+            </EdgeContainer>
+          </div>
 
+        </div>
+      </section>
+
+      {/* WHY JOIN */}
       <section className="flex flex-col gap-5 px-5 py-10 lg:px-20">
         <div>
           <h2 className="text-[2.5rem] font-bold text-brand-secondary-orange border-b border-black pb-4">Why join Next-Gen engagement?</h2>
@@ -53,7 +77,7 @@ const Home = () => {
           <div className="flex flex-col gap-5 md:flex-row md:items-center justify-between md:gap-20">
             <div className="w-fit h-fit">
               <EdgeContainer edges={["top-right"]} edgesSize="60px">
-                <img src={codeReason} alt="Code Reason" className="w-full h-full object-cover"/>
+                <img src={codeImg} alt="Code" className="w-full h-full object-cover"/>
               </EdgeContainer>
             </div>
             <div className="flex gap-12">
@@ -139,14 +163,14 @@ const Home = () => {
             </div>
             <div className="w-fit h-fit">
               <EdgeContainer edges={["top-right"]} edgesSize="60px">
-                <img src={connectivityReason} alt="Connectivity Reason" className="w-full h-full object-cover"/>
+                <img src={connectivityImg} alt="Connectivity" className="w-full h-full object-cover"/>
               </EdgeContainer>
             </div>
           </div>
           <div className="flex flex-col gap-5 md:flex-row md:items-center justify-between md:gap-20">
             <div className="w-fit h-fit">
               <EdgeContainer edges={["top-right"]} edgesSize="60px">
-                <img src={commerceReason} alt="Commerce Reason" className="w-full h-full object-cover"/>
+                <img src={commerceImg} alt="Commerce" className="w-full h-full object-cover"/>
               </EdgeContainer>
             </div>
             <div className="flex gap-12">
@@ -191,76 +215,43 @@ const Home = () => {
         </div>
       </section>
 
-
-      <section className="student-projects bg-brand-primary flex flex-col gap-5 px-5 py-10 lg:px-20">
-        <div>
-          <h2 className="text-[2.5rem] font-bold text-brand-secondary-orange border-b border-brand-secondary-orange pb-4">Student Projects</h2>
+      {/* MISSION & VISION */}
+      <section className="px-6 lg:px-20 py-12 bg-white">
+        <div className="border-b-2 border-gray-300 pb-2 mb-8">
+          <h2 className="font-bold text-2xl lg:text-4xl text-brand-secondary-orange uppercase">
+            Mission & Vision
+          </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {projectList.map((project, index) => (
-            <ProjectCard key={index} project={project} />
-          ))}
-        </div>
-        <div className="flex justify-end">
-          <Button variant="primary" shadowColor="#666666" onClick={() => navigate('/projects')}>
-            View All Projects
-          </Button>
-        </div>
-      </section>
 
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-2xl mx-auto">
 
-      <section className="our-people flex flex-col gap-5 px-5 py-10 lg:px-20">
-        <Title>Our People</Title>
-          <div className="flex flex-col gap-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10">
-              {people.map((person, index) => (
-                <div key={index} className="flex">
-                  <EdgeContainer edges={["bottom-right"]} edgesSize="40px">
-                    <img src={person.image} alt={person.name} className="w-full h-full object-cover"/>
-                  </EdgeContainer>
-                </div>
-              ))}
-            </div>    
-            <div className="flex justify-end">
-              <Button variant="primary" shadowColor="#666666" onClick={() => navigate("/people")}>
-                All People
-              </Button>
-            </div>      
+          <div className="bg-brand-primary text-white flex flex-col items-center py-14 lg:py-20 px-8 gap-6 text-center w-full">
+            <p className="font-bold text-xl lg:text-2xl tracking-widest uppercase">Our Mission</p>
+            <div className="bg-brand-secondary-orange p-6 lg:p-8">
+              <img src={missionIcon} alt="Mission" className="w-12 h-12 lg:w-16 lg:h-16 object-contain" />
+            </div>
+            <p className="text-sm lg:text-base text-white/85 leading-relaxed max-w-xs">
+              To connect scholars and foster collaboration on real-world projects,
+              enabling them to create and showcase impactful innovations.
+            </p>
           </div>
-      </section>
 
+          <div className="bg-brand-primary text-white flex flex-col items-center py-14 lg:py-20 px-8 gap-6 text-center w-full">
+            <p className="font-bold text-xl lg:text-2xl tracking-widest uppercase">Our Vision</p>
+            <div className="bg-brand-secondary-orange p-6 lg:p-8">
+              <img src={visionIcon} alt="Vision" className="w-12 h-12 lg:w-16 lg:h-16 object-contain" />
+            </div>
+            <p className="text-sm lg:text-base text-white/85 leading-relaxed max-w-xs">
+              To empower future technology leaders through collaborative learning,
+              innovation, leadership, and advanced ICT skills.
+            </p>
+          </div>
 
-      <section className="news flex flex-col gap-5 px-5 py-10 lg:px-20">
-        <Title>News & Updates</Title>
-        <div className="grid md:grid-cols-2 gap-10 items-start">
-              <div className="w-fit h-fit">
-                <EdgeContainer edges={["bottom-right"]} edgesSize="40px" borders={["bottom", "right"]} bordersWidth="4">
-                  <img src={news[0].thumbnail} alt="" className="w-full h-full object-cover"/>
-                </EdgeContainer>
-              </div>
-              <div className="flex flex-col justify-between gap-5 h-full">
-                <div>
-                  <h3 className="text-2xl font-bold">{news[0].headline}</h3>
-                  <p>{news[0].subtitle}</p>                 
-                </div>
-                <div className="flex justify-end">
-                  <Button variant="primary" shadowColor="#666666" onClick={() => navigate(`/news/${news[0].slug}`)}>
-                    Read More
-                  </Button>
-                </div>
-              </div>
         </div>
       </section>
-    </div>
-    );
-}
 
-const Title = ({children}) => {
-  return (
-    <div>
-        <h2 className="text-[2.5rem] font-bold text-brand-secondary-orange border-b border-black pb-4">{children}</h2>      
     </div>
   );
-}
+};
 
-export default Home;
+export default Overview;
