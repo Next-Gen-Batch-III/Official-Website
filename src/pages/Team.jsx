@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom"
-import { team } from "@/data/team";
+import { organizers } from "@/data/team";
 
 import PeopleCard from "@/components/cards/PeopleCard"
 
 const Team = () => {
     const { teamId } = useParams();
-    const teams = team.find(t => t.name === teamId);
+    const teams = organizers.find(t => t.name === teamId);
     if (!teams) {
         return <div>Team not found</div>
     }
