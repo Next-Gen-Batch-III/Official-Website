@@ -239,7 +239,7 @@ const Home = () => {
                 </EdgeContainer>
               </div>
               <div className="flex flex-col justify-between gap-5 h-full">
-                <div>
+                <div className="mt-5 lg:mt-18 flex flex-col gap-8">
                   <h3 className="text-2xl font-bold">{news[0].headline}</h3>
                   <p>{news[0].subtitle}</p>                 
                 </div>

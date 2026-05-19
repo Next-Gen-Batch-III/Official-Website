@@ -1,0 +1,117 @@
+import { useNavigate } from "react-router-dom";
+
+import Button from "@/components/ui/Button";
+import Sreylenn from "@/assets/participants/Sreylenn.webp";
+import Sindy from "@/assets/participants/Sindy.webp";
+import Ponharoth from "@/assets/participants/Ponharoth.webp";
+import Chanchessika from "@/assets/participants/Chanchessika.webp";
+import PeopleCard from "@/components/cards/PeopleCard";
+
+const organizerColumns = [
+  {
+    name: "Hong Sindy",
+    title: "DB Program lead",
+    image: Sindy,
+    links: [
+      { label: "Web Developer", slug: "developers" },
+      { label: "UX/UI Design", slug: "designers" },
+      { label: "Proposal Writer", slug: "proposal" },
+      { label: "Media", slug: "media" },
+      { label: "Logistic", slug: "logistics" },
+    ],
+  },
+  {
+    name: "Nin Ponharoth",
+    title: "CS Program lead",
+    image: Ponharoth,
+    links: [
+      { label: "DB Project lead", slug: "db-project" },
+      { label: "CS Project lead", slug: "cs-project" },
+      { label: "TN Project lead", slug: "tn-project" },
+    ],
+  },
+  {
+    name: "Kue Chanchessika",
+    title: "TN Program lead",
+    image: Chanchessika,
+    links: [
+      { label: "DB Trainer lead", slug: "db-trainer" },
+      { label: "CS Trainer lead", slug: "cs-trainer" },
+      { label: "TN Trainer lead", slug: "tn-trainer" },
+    ],
+  },
+];
+
+const Organizer = () => {
+  const navigate = useNavigate();
+
+  const goToOrganizer = (slug) => {
+    navigate(`/people/organizers/${slug}`);
+  };
+
+  return (
+    <div className="px-5 py-10 lg:px-20">
+      <div className="flex flex-col text-wrap md:w-1/2">
+        <h1 className="text-[2.5rem] font-bold">
+          Meet Our <span className="text-brand-secondary-orange">People</span>
+        </h1>
+        <p>
+          The Organizer Team is responsible for planning and coordinating events
+          ensuring everything runs smoothly and on time.
+        </p>
+      </div>
+
+      <div className="mt-14 flex flex-col items-center">
+        <div className="relative flex flex-col items-center ">
+          <PeopleCard
+            className="h-[400px] w-[250px]"
+            name="Seat Sreylenn"
+            role="Program Head"
+            image={Sreylenn}
+          ></PeopleCard>
+          <div className="h-10 mb-6 w-px bg-black md:block md:mb-0" />
+        </div>
+
+        <div className="relative hidden h-12 w-full max-w-5xl md:block">
+          <div className="absolute left-[8%] right-[8%] top-0 h-6 rounded-t-3xl border-x-3 border-t-3 border-black" />
+          <div className="absolute left-1/2 top-0 h-6 w-px -translate-x-1/2 bg-black" />
+        </div>
+
+        <div className="grid w-full grid-cols-1 gap-14 md:grid-cols-3 md:gap-20">
+          {organizerColumns.map((column) => (
+            <div key={column.title} className="flex flex-col items-center">
+              <h2 className="mb-5 text-center text-lg font-bold">
+                {column.title}
+              </h2>
+
+              <PeopleCard
+                className="h-[400px] w-[250px]"
+                name={column.name}
+                role={column.title}
+                image={column.image}
+              ></PeopleCard>
+
+              <div className="h-8 w-px bg-black" />
+
+              <div className="flex w-full max-w-[220px] flex-col gap-3 items-center">
+                {column.links.map((link) => (
+                  <Button
+                    key={link.slug}
+                    type="button"
+                    onClick={() => goToOrganizer(link.slug)}
+                    variant="brand"
+                    className="text-[13px] font-medium w-50"
+                  >
+                    {link.label}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Organizer;
