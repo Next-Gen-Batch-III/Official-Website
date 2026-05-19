@@ -13,6 +13,7 @@ import NewsDetail from './pages/NewsDetail';
 
 import Projects from './pages/Projects';
 import Project_Detail from './pages/Project_Detail';
+import Organizer from './pages/Organizer';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path="/overview" element={<Overview />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/people" element={<People />} />
+          <Route path="/people/organizers" element={<Organizer />} />
           <Route path="/people/organizers/:teamId" element={<Team />} />
           <Route path='/news' element={<News />}/>
           <Route path="/news/:slug" element={<NewsDetail />} />

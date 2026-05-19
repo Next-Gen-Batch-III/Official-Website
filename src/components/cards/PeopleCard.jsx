@@ -3,9 +3,9 @@
 import EdgeContainer from "../ui/EdgeContainer";
 
 
-const PeopleCard = ({ name, role, image }) => {
+const PeopleCard = ({ name, role, image, className = "" }) => {
     return (
-        <div className="flex flex-col items-center gap-4 group relative">
+        <div className={`flex flex-col items-center gap-4 group relative ${className}`}>
             <EdgeContainer  edges={["bottom-right"]} edgesSize="40px">
                 <img src={image} alt={name} className="w-full h-full object-cover" />
             </EdgeContainer>
