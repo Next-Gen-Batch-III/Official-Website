@@ -11,7 +11,7 @@ import People from './pages/People';
 import Team from './pages/Team';
 import Footer from './components/layout/footer/Footer';
 import NewsDetail from './pages/NewsDetail';
-
+import Journey from './pages/Journey';
 import Projects from './pages/Projects';
 import Project_Detail from './pages/Project_Detail';
 import Organizer from './pages/Organizer';
@@ -27,6 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/overview" element={<Overview />} />
+          <Route path="/journey" element={<Journey />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/people" element={<People />} />
           <Route path="/people/organizers" element={<Organizer />} />
