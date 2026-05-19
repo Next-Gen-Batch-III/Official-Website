@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import nextGenLogo from "@/assets/logo/logoWhiteNobg.png";
 import FooterColumn from "@/components/layout/footer/FooterColumn";
 import PartnerIMG from "@/components/layout/footer/PartnerIMG";
@@ -54,16 +55,16 @@ const Footer = () => {
           <FooterColumn title="QUICK LINKS">
             <ul>
               <li>
-                <a href="#">Project Overview</a>
+                <Link to="/overview">Project Overview</Link>
               </li>
               <li>
-                <a href="#">Project Journey</a>
+                <Link to="/journey">Project Journey</Link>
               </li>
               <li>
-                <a href="#">Student's Project</a>
+                <Link to="/projects">Student's Project</Link>
               </li>
               <li>
-                <a href="#">News/Updates</a>
+                <Link to="/news">News/Updates</Link>
               </li>
             </ul>
           </FooterColumn>

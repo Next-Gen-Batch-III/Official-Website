@@ -53,7 +53,7 @@ const People = () => {
                         <h2 className="text-[2rem] font-bold">Search Results</h2>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-15'>
                         {peopleList.map((person, index) => (
-                            (index < 15) && <PeopleCard key={index} name={person.name} role={person.role} image={person.image} />
+                            (index < 8) && <PeopleCard key={index} name={person.name} role={person.role} image={person.image} />
                         ))}
                         </div>
                     </div>

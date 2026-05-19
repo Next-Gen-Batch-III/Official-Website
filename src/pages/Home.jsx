@@ -232,7 +232,7 @@ const Home = () => {
 
       <section className="news flex flex-col gap-5 px-5 py-10 lg:px-20">
         <Title>News & Updates</Title>
-        <div className="grid md:grid-cols-2 gap-10 items-start">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-20 lg:gap-30 items-start">
               <div className="w-fit h-fit">
                 <EdgeContainer edges={["bottom-right"]} edgesSize="40px" borders={["bottom", "right"]} bordersWidth="4">
                   <img src={news[0].thumbnail} alt="" className="w-full h-full object-cover"/>
