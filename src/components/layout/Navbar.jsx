@@ -55,7 +55,7 @@ const Navbar = () => {
                     </svg>
                 )}
 
-                <ul className={`flex flex-col fixed border-t border-b border-t-brand-secondary-orange border-b-brand-secondary-orange top-22 bg-white w-9/10 left-1/20 font-cadt px-10 py-3 pb-6 z-50 ${isMenuOpen === true ? "animate-unroll" : isMenuOpen === false ? "animate-roll-up" : "hidden"} lg:hidden`}>
+                <ul className={`flex flex-col absolute border-t border-b border-t-brand-secondary-orange border-b-brand-secondary-orange top-22 bg-white w-9/10 left-1/20 font-cadt px-10 py-3 pb-6 z-50 ${isMenuOpen === true ? "animate-unroll" : isMenuOpen === false ? "animate-roll-up" : "hidden"} lg:hidden`}>
                     {navItems.map((item, index) => (
                         <li key={index} className={`flex items-center py-2 border-b border-neutral-400 cursor-pointer transition-colors hover:text-brand-secondary-orange opacity-0 animate-chain-drop`}
                             style={{ '--i': index }}
