@@ -8,7 +8,7 @@ import Overview from './pages/Overview';
 import Faq from './pages/Faq';
 import Footer from './components/layout/footer/Footer';
 import NewsDetail from './pages/NewsDetail';
-
+import Journey from './pages/Journey';
 
 function App() {
 
@@ -19,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/overview" element={<Overview />} />
+          <Route path="/journey" element={<Journey />} />
           <Route path="/faq" element={<Faq />} />
           <Route path='/news' element={<News />}/>
           <Route path="/news/:slug" element={<NewsDetail />} />
