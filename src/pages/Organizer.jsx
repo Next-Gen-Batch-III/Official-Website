@@ -64,7 +64,7 @@ const Organizer = () => {
       <div className="mt-14 flex flex-col items-center">
         <div className="relative flex flex-col items-center ">
           <PeopleCard
-            className="h-[400px] w-[250px]"
+            className="max-w-[min(78vw,18rem)] md:max-w-[clamp(13rem,20vw,17rem)]"
             name="Seat Sreylenn"
             role="Program Head"
             image={Sreylenn}
@@ -85,7 +85,7 @@ const Organizer = () => {
               </h2>
 
               <PeopleCard
-                className="h-[400px] w-[250px]"
+                className="max-w-[min(78vw,18rem)] md:max-w-[clamp(13rem,20vw,17rem)]"
                 name={column.name}
                 role={column.title}
                 image={column.image}
