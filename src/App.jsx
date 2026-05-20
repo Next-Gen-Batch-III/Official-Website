@@ -15,6 +15,7 @@ import Journey from './pages/Journey';
 import Projects from './pages/Projects';
 import Project_Detail from './pages/Project_Detail';
 import Organizer from './pages/Organizer';
+import Search from './pages/Search';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/news/:slug" element={<NewsDetail />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:slug" element={<Project_Detail />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import EdgeContainer from "@/components/ui/EdgeContainer";
 import Button from "@/components/ui/Button";
 import ProjectCard from "@/components/cards/ProjectCard";
+import PeopleCard from "@/components/cards/PeopleCard";
 
 import heroImage1 from "@/assets/images/home/heroImage1.webp";
 import heroImage2 from "@/assets/images/home/heroImage2.webp";
@@ -214,11 +215,7 @@ const Home = () => {
           <div className="flex flex-col gap-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10">
               {people.map((person, index) => (
-                <div key={index} className="flex">
-                  <EdgeContainer edges={["bottom-right"]} edgesSize="40px">
-                    <img src={person.image} alt={person.name} className="w-full h-full object-cover"/>
-                  </EdgeContainer>
-                </div>
+                <PeopleCard key={index} name={person.name} role={person.role} image={person.image} />
               ))}
             </div>    
             <div className="flex justify-end">
