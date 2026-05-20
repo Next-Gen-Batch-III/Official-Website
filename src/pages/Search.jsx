@@ -22,8 +22,9 @@ export default function Search() {
   const showAllNews = isCategorySearch(['news', 'article']);
   const showAllProjects = isCategorySearch(['projects']);
   const showAllPeople = isCategorySearch(['people', 'person', 'team', 'member']);
+  const showAllManagement = isCategorySearch(['management', 'manager', 'director']);
+  const showAllOrganizers = isCategorySearch(['organizer']);
 
-  // 1. Search News
   const matchedNews = showAllNews ? news : (news || []).filter(n => 
     n.headline?.toLowerCase().includes(lowercaseQuery) ||
     n.subtitle?.toLowerCase().includes(lowercaseQuery) ||
@@ -36,6 +37,11 @@ export default function Search() {
   );
 
   let allPeople = [];
+  const organizerPeople = [];
+  
+  organizers.forEach(group => {
+    if(group.people) organizerPeople.push(...group.people);
+  });
   
   (people || []).forEach(group => {
     if(group.people) allPeople.push(...group.people);
@@ -45,17 +51,16 @@ export default function Search() {
     allPeople.push(person);
   });
   
-  (organizers || []).forEach(group => {
-    if(group.people) allPeople.push(...group.people);
-  });
+  allPeople.push(...organizerPeople);
   
   allPeople = Array.from(new Map(allPeople.map(item => [item.name, item])).values());
   
-  const matchedPeople = showAllPeople ? allPeople : allPeople.filter(p => {
+  const matchedPeople = showAllPeople ? allPeople : showAllManagement ? (management || []) : showAllOrganizers ? (organizerPeople) : allPeople.filter(p => {
     const roleString = Array.isArray(p.role) ? p.role.join(' ') : (p.role || '');
     return p.name?.toLowerCase().includes(lowercaseQuery) ||
            roleString.toLowerCase().includes(lowercaseQuery);
   });
+
 
   return (
     <main className="min-h-screen lg:px-20 px-5 pt-30 pb-20 font-cadt">
