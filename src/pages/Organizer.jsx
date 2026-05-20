@@ -69,12 +69,12 @@ const Organizer = () => {
             role="Program Head"
             image={Sreylenn}
           ></PeopleCard>
-          <div className="h-10 mb-6 w-px bg-black md:block md:mb-0" />
+          <div className="h-10 mb-6 w-0.75 bg-black md:block md:mb-0" />
         </div>
 
-        <div className="relative hidden h-12 w-full max-w-5xl md:block">
-          <div className="absolute left-[8%] right-[8%] top-0 h-6 rounded-t-3xl border-x-3 border-t-3 border-black" />
-          <div className="absolute left-1/2 top-0 h-6 w-px -translate-x-1/2 bg-black" />
+        <div className="relative hidden h-12 w-[calc(100%-(100%-160px)/3)] md:block">
+          <div className="absolute w-full top-0 h-6 rounded-t-3xl border-x-3 border-t-3 border-black" />
+          <div className="absolute left-1/2 top-0 h-6 w-0.75 -translate-x-px bg-black" />
         </div>
 
         <div className="grid w-full grid-cols-1 gap-14 md:grid-cols-3 md:gap-20">
@@ -91,7 +91,7 @@ const Organizer = () => {
                 image={column.image}
               ></PeopleCard>
 
-              <div className="h-8 w-px bg-black" />
+              <div className="h-8 w-px bg-black tran" />
 
               <div className="flex w-full max-w-[220px] flex-col gap-3 items-center">
                 {column.links.map((link) => (
