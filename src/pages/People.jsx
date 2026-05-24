@@ -12,10 +12,9 @@ const People = () => {
     const organizersList = organizers.filter(organizer => organizer.people.some(person => person.name.toLowerCase().includes(searchTerm.toLowerCase()))).map(organizer => organizer.people.filter(person => person.name.toLowerCase().includes(searchTerm.toLowerCase()))).flat();
     const ManagerList = management.filter(manager => manager.name.toLowerCase().includes(searchTerm.toLowerCase()));
     const peopleList = [...ManagerList, ...organizersList];
-    console.log(peopleList);
     return (
         <div className="min-h-screen">
-            <div className="flex justify-between flex-col lg:flex-row px-5 py-10 lg:px-20 gap-10">
+            <div className="flex justify-between flex-col lg:flex-row section-padding gap-10">
                 <div className="flex flex-col text-wrap md:w-1/2">
                     <h1 className="text-[2.5rem] font-bold">Meet Our <span className="text-brand-secondary-orange">People</span></h1>
                     <p>Behind every project is a great team. Our people are creative, motivated and always ready to learn. From designers to developers, we collaborate and support each other and turn idea into real impact.</p>
@@ -49,7 +48,7 @@ const People = () => {
                 )
             }
             { (searchTerm !== "" && peopleList.length > 0) &&
-                    <div className="flex flex-col gap-10 px-5 py-10 lg:px-20">
+                    <div className="flex flex-col gap-10 section-padding">
                         <h2 className="text-[2rem] font-bold">Search Results</h2>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-15'>
                         {peopleList.map((person, index) => (

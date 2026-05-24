@@ -9,7 +9,7 @@ const PeopleSection = ({ title, link ,people }) => {
 
 
     return (
-        <section className="flex flex-col gap-10 px-5 py-10 lg:px-20">
+        <section className="flex flex-col gap-10 section-padding">
             <div className="flex justify-between">
                 <h2 className="text-[2rem] font-bold">{title}</h2>
                 <div className="hidden md:block">

@@ -13,15 +13,15 @@ import visionIcon from "../assets/overview/vision.png";
 
 const Overview = () => {
   return (
-    <div className="font-family text-brand-primary bg-white">
+    <div className="font-family text-brand-primary bg-white flex flex-col gap-20 w-full">
 
       {/* HERO */}
       <section
-        className="relative min-h-100 lg:min-h-162.5 flex items-center bg-cover bg-center"
+        className="relative min-h-100 lg:min-h-162.5 flex items-center bg-cover bg-center section-padding"
         style={{ backgroundImage: `url(${heroBg})` }}
       >
         <div className="absolute inset-0 bg-black/55" />
-        <div className="relative z-10 px-5 lg:px-20 py-10 lg:py-28">
+        <div className="relative z-10">
           <h1 className="text-white font-bold text-xl lg:text-4xl leading-tight mb-3">
             Next-Gen Engagement Program<br />Batch 3 - 3 Departments
           </h1>
@@ -37,7 +37,7 @@ const Overview = () => {
       </section>
 
       {/* WHAT IS NEXT-GEN-3? */}
-      <section className="px-6 lg:px-20 py-16 lg:py-40 bg-white">
+      <section className="section-padding bg-white">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12 w-full">
           <div className="shrink-0 leading-none lg:text-left">
             <p className="text-brand-primary text-[2.5rem] font-bold">What is</p>
@@ -68,7 +68,7 @@ const Overview = () => {
       </section>
 
       {/* WHY JOIN */}
-      <section className="flex flex-col gap-5 px-5 py-10 lg:px-20">
+      <section className="flex flex-col gap-5 section-padding">
         <div>
           <h2 className="text-[2.5rem] font-bold text-brand-secondary-orange border-b border-black pb-4">Why join Next-Gen engagement?</h2>
           <p className="text-lg pt-4">Step into a next-generation ecosystem that redefines learning through collaboration, innovation, and real-world experience.</p>
@@ -83,8 +83,8 @@ const Overview = () => {
             <div className="flex gap-12">
               <div className="hidden md:flex items-center">
                 <svg 
-                    width="full"
-                    height="full" 
+                    width="100%"
+                    height="100%" 
                     viewBox="0 0 100 100" 
                     fill="none" 
                     className="min-w-20 max-w-25 md:block"
@@ -107,8 +107,8 @@ const Overview = () => {
             <div className="flex gap-12">
               <div className="hidden md:flex items-center">
                 <svg 
-                  width="full" 
-                  height="full" 
+                  width="100%" 
+                  height="100%" 
                   viewBox="0 0 200 200" 
                   fill="none" 
                   className="min-w-20 max-w-25 md:block"
@@ -176,8 +176,8 @@ const Overview = () => {
             <div className="flex gap-12">
               <div className="hidden md:flex items-center">
                 <svg 
-                  width="full" 
-                  height="full"
+                  width="100%" 
+                  height="100%"
                   viewBox="0 0 200 200" 
                   fill="none" 
                   className="min-w-20 max-w-25 md:block"
@@ -216,14 +216,14 @@ const Overview = () => {
       </section>
 
       {/* MISSION & VISION */}
-      <section className="px-6 lg:px-20 py-12 bg-white">
+      <section className="section-padding bg-white">
         <div className="border-b-2 border-gray-300 pb-2 mb-8">
           <h2 className="font-bold text-2xl lg:text-4xl text-brand-secondary-orange uppercase">
             Mission & Vision
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-2xl mx-auto">
 
           <div className="bg-brand-primary text-white flex flex-col items-center py-14 lg:py-20 px-8 gap-6 text-center w-full">
             <p className="font-bold text-xl lg:text-2xl tracking-widest uppercase">Our Mission</p>
