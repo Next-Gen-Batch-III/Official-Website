@@ -50,7 +50,7 @@ const Organizer = () => {
   };
 
   return (
-    <div className="px-5 py-10 lg:px-20">
+    <div className="section-padding">
       <div className="flex flex-col text-wrap md:w-1/2">
         <h1 className="text-[2.5rem] font-bold">
           Meet Our <span className="text-brand-secondary-orange">People</span>

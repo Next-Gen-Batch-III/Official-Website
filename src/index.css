@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @font-face {
   font-family: "CADTMono";
   src: url("/src/assets/fonts/CADTMonoDisplay-Regular.ttf") format("truetype");
@@ -29,6 +28,8 @@
   --color-brand-secondary-purple: #b980d0;
   --color-brand-secondary-gray: #666666;
 
+  --font-sans: "Kantumruy Pro", system-ui, sans-serif;
+  --font-kantumruy: "Kantumruy Pro", sans-serif;
   --font-cadt: "CADTMono", monospace;
 }
 
@@ -36,7 +37,7 @@
 
 @layer base {
   :root {
-    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: "Kantumruy Pro", system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
     color-scheme: light;
@@ -52,6 +53,7 @@
     min-width: 320px;
     min-height: 100vh;
     background-color: white;
+    font-family: inherit;
   }
 
   #root {
@@ -61,6 +63,10 @@
   }
 }
 @layer utilities {
+  .section-padding {
+    @apply px-5 py-10 lg:px-20 xl:px-40;
+  }
+
   .animate-chain-drop {
     animation: chainDrop 0.4s ease forwards;
     animation-delay: calc(var(--i) * 0.1s);

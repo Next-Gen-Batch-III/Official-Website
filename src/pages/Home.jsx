@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import EdgeContainer from "@/components/ui/EdgeContainer";
 import Button from "@/components/ui/Button";
 import ProjectCard from "@/components/cards/ProjectCard";
+import PeopleCard from "@/components/cards/PeopleCard";
 
 import heroImage1 from "@/assets/images/home/heroImage1.webp";
 import heroImage2 from "@/assets/images/home/heroImage2.webp";
@@ -21,7 +22,7 @@ const Home = () => {
   const projectList = projects.sort(() => 0.5 - Math.random()).slice(0, 3);
   return (
     <div className="home flex flex-col">
-      <section id="hero" className="flex flex-col gap-10 bg-brand-primary text-white px-5 py-10 lg:px-20">
+      <section id="hero" className="flex flex-col gap-10 bg-brand-primary text-white section-padding">
         <div className="grid grid-col-2 lg:grid-cols-3 gap-10 items-end">
           <div className="col-span-2">
             <h1 className="font-bold text-2xl lg:text-[2.5rem]">Next-Gen engagement Program <br/> 
@@ -44,7 +45,7 @@ const Home = () => {
       </section>
 
 
-      <section className="flex flex-col gap-5 px-5 py-10 lg:px-20">
+      <section className="flex flex-col gap-5 section-padding">
         <div>
           <h2 className="text-[2.5rem] font-bold text-brand-secondary-orange border-b border-black pb-4">Why join Next-Gen engagement?</h2>
           <p className="text-lg pt-4">Step into a next-generation ecosystem that redefines learning through collaboration, innovation, and real-world experience.</p>
@@ -59,8 +60,8 @@ const Home = () => {
             <div className="flex gap-12">
               <div className="hidden md:flex items-center">
                 <svg 
-                    width="full"
-                    height="full" 
+                    width="100%"
+                    height="100%" 
                     viewBox="0 0 100 100" 
                     fill="none" 
                     className="min-w-20 max-w-25 md:block"
@@ -83,8 +84,8 @@ const Home = () => {
             <div className="flex gap-12">
               <div className="hidden md:flex items-center">
                 <svg 
-                  width="full" 
-                  height="full" 
+                  width="100%" 
+                  height="100%" 
                   viewBox="0 0 200 200" 
                   fill="none" 
                   className="min-w-20 max-w-25 md:block"
@@ -152,8 +153,8 @@ const Home = () => {
             <div className="flex gap-12">
               <div className="hidden md:flex items-center">
                 <svg 
-                  width="full" 
-                  height="full"
+                  width="100%" 
+                  height="100%"
                   viewBox="0 0 200 200" 
                   fill="none" 
                   className="min-w-20 max-w-25 md:block"
@@ -192,7 +193,7 @@ const Home = () => {
       </section>
 
 
-      <section className="student-projects bg-brand-primary flex flex-col gap-5 px-5 py-10 lg:px-20">
+      <section className="student-projects bg-brand-primary flex flex-col gap-5 section-padding">
         <div>
           <h2 className="text-[2.5rem] font-bold text-brand-secondary-orange border-b border-brand-secondary-orange pb-4">Student Projects</h2>
         </div>
@@ -209,16 +210,12 @@ const Home = () => {
       </section>
 
 
-      <section className="our-people flex flex-col gap-5 px-5 py-10 lg:px-20">
+      <section className="our-people flex flex-col gap-5 section-padding">
         <Title>Our People</Title>
           <div className="flex flex-col gap-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10">
               {people.map((person, index) => (
-                <div key={index} className="flex">
-                  <EdgeContainer edges={["bottom-right"]} edgesSize="40px">
-                    <img src={person.image} alt={person.name} className="w-full h-full object-cover"/>
-                  </EdgeContainer>
-                </div>
+                  <PeopleCard key={index} name={person.name} role={person.role} image={person.image} />
               ))}
             </div>    
             <div className="flex justify-end">
@@ -230,7 +227,7 @@ const Home = () => {
       </section>
 
 
-      <section className="news flex flex-col gap-5 px-5 py-10 lg:px-20">
+      <section className="news flex flex-col gap-5 section-padding">
         <Title>News & Updates</Title>
         <div className="grid md:grid-cols-2 gap-10 md:gap-20 lg:gap-30 items-start">
               <div className="w-fit h-fit">
