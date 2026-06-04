@@ -2,10 +2,10 @@ import Leangsiv from "@/assets/participants/HanLeangsiv.webp";
 import Mengchhuong from "@/assets/participants/AngMengchhuong.webp";
 import Sovanmonynuth from "@/assets/participants/HengSovanmonynuth.webp";
 import Solita from "@/assets/participants/PunSolita.webp";
-import Sreylenn from "@/assets/participants/sreylenn.webp";
-import Sindy from "@/assets/participants/sindy.webp";
-import Ponharoth from "@/assets/participants/ponharoth.webp";
-import Chanchessika from "@/assets/participants/chanchessika.webp";
+import Sreylenn from "@/assets/participants/Sreylenn.webp";
+import Sindy from "@/assets/participants/Sindy.webp";
+import Ponharoth from "@/assets/participants/Ponharoth.webp";
+import Chanchessika from "@/assets/participants/Chanchessika.webp";
 
 const people = [
     {
