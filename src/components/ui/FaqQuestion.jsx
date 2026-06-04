@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-const FaqQuestion = ({ question, answer , key}) => {
+const FaqQuestion = ({ question, answer}) => {
     if (!question || !answer) throw new Error("Question and answer props are required for FaqQuestion component.");
     
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="w-full flex flex-col gap-0" key={key}>
+        <div className="w-full flex flex-col gap-0">
             <div 
                 onClick={() => setIsOpen(!isOpen)}
                 className={`text-black px-12.5 py-6 flex items-center justify-between rounded-lg cursor-pointer select-none transition-colors duration-300 ${isOpen ? "bg-neutral-200" : "bg-white"}`}
