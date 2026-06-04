@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import logo from "../../assets/logo/logoBlueNobg.png";
 const Navbar = () => {
@@ -6,6 +6,7 @@ const Navbar = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const [isSearching, setIsSearching] = useState(false);
     const [ isMenuOpen, setIsMenuOpen] = useState(null);
+    const navigate = useNavigate();
     useEffect(() => {
         const mediaQuery = window.matchMedia('(min-width: 1024px)');
         const handleBreakpointChange = (event) => {
@@ -67,6 +68,7 @@ const Navbar = () => {
                                         isActive ? "text-brand-secondary-orange" : "text-black"
                                     }`
                                 }
+                                onClick={() => setIsMenuOpen(false)}
                             >
                                 {item}
                             </NavLink>
@@ -81,6 +83,11 @@ const Navbar = () => {
                         placeholder="Search"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter' && searchQuery.trim() !== '') {
+                                navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
+                            }
+                        }}
                     />
                 )}
                 { !isSearching && (
@@ -89,7 +96,14 @@ const Navbar = () => {
                     </svg>
                 )}
                 {isSearching && (
-                    <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" onClick={() => { setIsSearching(false); setSearchQuery(""); }}>
+                    <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" 
+                        onClick={() => { 
+                            setIsSearching(false); 
+                            setSearchQuery("");
+                            if(window.location.pathname === "/search") {
+                                navigate("/");
+                            }
+                             }}>
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18 17.94 6M18 18 6.06 6"/>
                     </svg>
                 )}
