@@ -34,8 +34,13 @@
 }
 
 
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
+  html {
+    color-scheme: light;
+  }
+  
   :root {
     font-family: "Kantumruy Pro", system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -53,6 +58,7 @@
     min-width: 320px;
     min-height: 100vh;
     background-color: white;
+    color: #111827;
     font-family: inherit;
   }
 
