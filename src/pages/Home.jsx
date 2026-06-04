@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <div className="home flex flex-col">
       <section id="hero" className="flex flex-col gap-10 bg-brand-primary text-white section-padding">
-        <div className="grid grid-col-2 lg:grid-cols-3 gap-10 items-end">
+        <div className="grid grid-col-2 lg:grid-cols-3 gap-5 lg:gap-10 items-end">
           <div className="col-span-2">
             <h1 className="font-bold text-2xl lg:text-[2.5rem]">Next-Gen engagement Program <br/> 
             Batch 3 - 3 Departments</h1>
