@@ -65,7 +65,7 @@ const people = [
         people: [
             {
                 name: "Seat Sreylenn",
-                role: "Program Head",
+                role: "Next-Gen Program Head",
                 image: Sreylenn
             },
             {

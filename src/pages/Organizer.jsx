@@ -10,7 +10,7 @@ import PeopleCard from "@/components/cards/PeopleCard";
 const organizerColumns = [
   {
     name: "Hong Sindy",
-    title: "DB Program lead",
+    title: "Event Program lead",
     image: Sindy,
     links: [
       { label: "Web Developer", slug: "developers" },
@@ -22,7 +22,7 @@ const organizerColumns = [
   },
   {
     name: "Nin Ponharoth",
-    title: "CS Program lead",
+    title: "Project Program lead",
     image: Ponharoth,
     links: [
       { label: "DB Project lead", slug: "db-project" },
@@ -32,7 +32,7 @@ const organizerColumns = [
   },
   {
     name: "Kue Chanchessika",
-    title: "TN Program lead",
+    title: "Trainer Program lead",
     image: Chanchessika,
     links: [
       { label: "DB Trainer lead", slug: "db-trainer" },
@@ -66,7 +66,7 @@ const Organizer = () => {
           <PeopleCard
             className="max-w-[min(78vw,18rem)] md:max-w-[clamp(13rem,20vw,17rem)]"
             name="Seat Sreylenn"
-            role="Program Head"
+            role="Next-Gen Program Head"
             image={Sreylenn}
           ></PeopleCard>
           <div className="h-10 mb-6 w-0.75 bg-black md:block md:mb-0" />
