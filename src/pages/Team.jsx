@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import PeopleCard from "@/components/cards/PeopleCard";
-import Spinner from "@/components/ui/Spinner";
+import PeopleCardSkeleton from "@/components/cards/PeopleCardSkeleton";
 
 const Team = () => {
     const { teamId } = useParams();
@@ -26,9 +26,16 @@ const Team = () => {
     }
     if (!team) {
         return (
-            <div className="flex justify-center pt-30">
-                <Spinner />
-            </div>
+            <section className="section-padding flex flex-col gap-10">
+                <div>
+                    <div className="h-10 w-80 animate-pulse rounded bg-gray-200" />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-15">
+                    {Array.from({ length: 4 }).map((_, i) => (
+                        <PeopleCardSkeleton key={i} />
+                    ))}
+                </div>
+            </section>
         );
     }
 
