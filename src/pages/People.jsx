@@ -4,7 +4,8 @@ import PeopleCard from '@/components/cards/PeopleCard';
 import PeopleSection from '@/components/layout/PeopleSection';
 
 import { people } from '@/data/people';
-import { organizers, management } from '@/data/team';
+import { organizers } from '@/data/organizers';
+import { management } from '@/data/management';
 
 
 const People = () => {
