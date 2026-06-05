@@ -12,8 +12,8 @@ const ProjectDetailHero = ({ title, subtitle, description, image }) => {
       </div>
 
       {/* MOBILE CONTENT */}
-      <div className="block md:hidden bg-[#12284C]/30 px-4 py-4">
-        <h1 className="text-2xl font-bold text-white">{title}</h1>
+      <div className="block md:hidden bg-[#12284C]/40 px-4 py-4">
+        <h1 className="text-3xl font-bold text-white">{title}</h1>
 
         {subtitle && (
           <p className="text-sm text-white mt-1">{subtitle}</p>
@@ -30,7 +30,7 @@ const ProjectDetailHero = ({ title, subtitle, description, image }) => {
       <div className="hidden md:block absolute bottom-0 left-0 w-full bg-blue-500/10 backdrop-blur-md">
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-5 text-white">
 
-          <h1 className="text-3xl font-bold">{title}</h1>
+          <h1 className="text-4xl font-bold">{title}</h1>
 
           {subtitle && (
             <p className="text-sm md:text-base text-white/80 mt-1">

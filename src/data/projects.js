@@ -31,6 +31,13 @@ import Phsar3Img from "../assets/student_project_image/Phsar3.png";
 import Sastra1Img from "../assets/student_project_image/Sastra1.png";
 import Sastra2Img from "../assets/student_project_image/Sastra2.png";
 import Sastra3Img from "../assets/student_project_image/Sastra3.png";
+import bayCanteenQR from "../assets/Qr_code_project/baycanteen.png";
+import bitCampusQR from "../assets/Qr_code_project/bitCampus.png";
+import domraQR from "../assets/Qr_code_project/domra.png";
+import gataQR from "../assets/Qr_code_project/gata.png";
+import komPlexQR from "../assets/Qr_code_project/komplex.png";
+import phsarDesignQR from "../assets/Qr_code_project/phsarDesign.png";
+import sastraQR from "../assets/Qr_code_project/sastra.png";
 
 export const projects = [
   {
@@ -38,7 +45,8 @@ export const projects = [
     title: "KOMPLEX",
     slug: "komplex",
     projectImages: [Komplex1Img, Komplex2Img, Komplex3Img],
-    qrCode: "",
+    qrCode: komPlexQR,
+    link: "https://komplex.app/",
     problem:
       "90% of Cambodian digital artists struggle to find work due to no dedicated platform, no pricing standards, and no way to build credibility.",
     impact:
@@ -54,10 +62,11 @@ export const projects = [
 
   {
     id: 2,
-    title: "PhsarDesign",
+    title: "PHSARDESIGN",
     slug: "phsar-design",
     projectImages: [ Phsar1Img, Phsar2Img, Phsar3Img],
-    qrCode: "",
+    qrCode: phsarDesignQR,
+    link: "https://qrco.de/bgmk09",
     problem:
       " STEM resources are costly, inaccessible in rural areas, and no Khmer-language platform exists for students to learn, practice, or collaborate together.",
     impact:
@@ -76,7 +85,8 @@ export const projects = [
     title: "DOMRA",
     slug: "domra",
     projectImages: [Domra1Img, Domra2Img, Domra3Img],
-    qrCode: "",
+    qrCode: domraQR,
+    link: "https://domra-tech.vercel.app/",
     problem:
       "No reliable, standardized Khmer translations exist for technical terms, causing inconsistency in academic writing and research.",
     impact:
@@ -95,13 +105,14 @@ export const projects = [
     slug: "acet",
     projectImages: ["", "", ""],
     qrCode: "",
+    link: "",
     problem:
       "Students can't find conferences to join, and paper submissions get lost in email chains with no transparency or updates.",
     impact:
       "Streamlines the full research lifecycle, connecting researchers, reviewers, and organizers on one transparent platform.",
     achievement:
       "Delivered conference creation, paper submission, peer review workflow, and real-time status tracking.",
-     description:
+    description:
        "ACET Conference Management System",
     image: Y5Img,
     article:
@@ -113,6 +124,7 @@ export const projects = [
     slug: "contract-generation",
     projectImages: ["", "", ""],
     qrCode: "",
+    link: "",
     problem:
       "Schools manage lecturers through scattered Excel files, Word templates, and emails, causing errors, duplication, and poor visibility.",
     impact:
@@ -128,9 +140,10 @@ export const projects = [
   },
   {
     id: 6,
-    title: "FINEWISE",
+    title: "FinWise",
     slug: "finewise",
     qrCode: "",
+    link: "",
     projectImages:["", "", ""],
     problem:
       "Only 18% of Cambodian adults are financially literate, and most people have no practical tool to track spending or stick to budgets.",
@@ -146,10 +159,11 @@ export const projects = [
     },
   {
     id: 7,
-    title: "BITCAMPUS",
+    title: "BitCampus",
     slug: "bitcampus",
     projectImages: [BitCamoous1Img, BitCamoous2Img, BitCamoous3Img],
-    qrCode: "",
+    qrCode: bitCampusQR,
+    link: "https://bitcampkh.vercel.app/",
     problem:
       "Beginners have no structured, approachable starting point for learning programming, existing platforms are too complex and skip the basics.",
     impact:
@@ -164,10 +178,11 @@ export const projects = [
   },
   {
     id: 8,
-    title: "Khmer Data Annotation Tool",
+    title: "KHMER DATA ANNOTATION TOOL",
     slug: "khmer-data-annotation-tool",
     projectImages: ["", "", ""],
     qrCode: "",
+    link: "",
     problem: 
       "High-quality annotated Khmer datasets are critically lacking, and manual annotation is too slow and error-prone for researchers.",
     impact:
@@ -185,7 +200,8 @@ export const projects = [
     title: "Sastra",
     slug: "sastra",
     projectImages: [Sastra1Img, Sastra2Img, Sastra3Img],
-    qrCode: "",
+    qrCode: sastraQR,
+    link: "https://sastra-online-learning-platform.vercel.app/",
     problem:
       "Most quality online learning is in English only, excluding Khmer-speaking adults, and there is no recognized proof of self-learning in Cambodia.",
     impact:
@@ -204,6 +220,7 @@ export const projects = [
     slug: "quizkh",
     projectImages: ["", "", ""],
     qrCode: "",
+    link: "",
     problem:
       "70% of Cambodian teachers need better free quiz tools, but quality platforms like Kahoot lock key features behind expensive subscriptions.",
     impact:
@@ -220,7 +237,8 @@ export const projects = [
       id: 11,
       title: "GATABLOC",
       slug: "gatabloc",
-      qrCode: "",
+      qrCode: gataQR,
+      link: "https://www.figma.com/proto/lakxCpIoj6x2ztubrPZqTE/CATABLOC-V2?page-id=697%3A7227&node-id=697-7668&p=f&viewport=1420%2C-555%2C0.05&t=CJ12fZ2Lw6kwzFnC-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=697%3A7668",
       projectImages: [Catabloc1Img, Catabloc2Img, Catabloc3Img],
       problem:
           "Learning algorithms on paper is abstract and frustrating for beginners, with no visual feedback to help them understand where their logic fails.",
@@ -238,7 +256,8 @@ export const projects = [
       id: 12,
       title: "BAY-CANTEEN",
       slug: "bay-canteen", 
-      qrCode: "",
+      qrCode: bayCanteenQR,
+      link: "https://baycanteen.vercel.app/",
       projectImages: [BayCanteen1Img, BayCanteen2Img, BayCanteen3Img],   
       problem:
         "Students avoid the canteen due to repetitive, overpriced meals that don't match their preferences, with no way for the kitchen to know what students actually want.",

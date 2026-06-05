@@ -35,7 +35,7 @@ const projectList = [
 ];
   return (
     <div className="px-4 sm:px-6 lg:px-8 max-w-full mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-14 md:gap-28 py-10 sm:py-14 md:py-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-14 md:gap-28 py-2 sm:py-14 md:py-16">
           <div className="flex-1 min-w-[300px] content-center">
               <h1 className="text-left text-[40px] font-bold ml-[30px] mt-[30px]">
                 Student Project <span style={{ color: "#dd5c0b" }}>Showcase</span>

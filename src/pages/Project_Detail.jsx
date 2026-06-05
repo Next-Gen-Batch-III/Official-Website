@@ -6,6 +6,7 @@ import ImpactImg from "../assets/icon_image/impact-icon.png";
 import AchievementImg from "../assets/icon_image/achievement-icon.png";
 import ProjectDetailHero from "../components/Projects/ProjectDetailHero";
 
+
 const Project_Detail = () => {
   const { slug } = useParams();
 
@@ -34,7 +35,7 @@ const Project_Detail = () => {
 
         {/* Overview */}
         <div className="lg:col-span-2">
-          <h1 className="text-3xl sm:text-4xl font-bold text-[#f18f2d] mb-4">
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#f18f2d] mb-4">
             Project Overview
           </h1>
 
@@ -48,7 +49,7 @@ const Project_Detail = () => {
           <div className="bg-white p-5 sm:p-6 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center w-full max-w-[280px] h-fit">
 
             <img
-              src={project.qrCode}
+              src={project.qrCode?.src || project.qrCode}
               alt="QR Code"
               className="w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] object-contain"
             />
@@ -68,7 +69,7 @@ const Project_Detail = () => {
       {/* HIGHLIGHTS */}
       <section className="bg-[#0B2341] text-white py-12 md:py-16 px-4 sm:px-8 md:px-16">
 
-        <h1 className="text-3xl sm:text-4xl font-bold text-[#f18f2d] mb-10">
+        <h1 className="text-2xl sm:text-3xl font-bold text-[#f18f2d] mb-20">
           Project Highlights
         </h1>
 
@@ -102,7 +103,7 @@ const Project_Detail = () => {
       {/* GALLERY */}
       <section className="space-y-10 mb-28 px-4 md:px-8 mt-10">
 
-        <h1 className="text-3xl sm:text-4xl font-bold text-[#f18f2d]">
+        <h1 className="text-2xl sm:text-3xl font-bold text-[#f18f2d]">
           Gallery
         </h1>
 
