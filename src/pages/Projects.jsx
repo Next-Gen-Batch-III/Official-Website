@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProjectCard from "../components/Projects/ProjectCard";
-import PhsarDesignImg from "../assets/student_project_image/PhsarDesign.png";
-import KomplexImg from "../assets/student_project_image/Komplex.png";
-import DomraImg from "../assets/student_project_image/Domra.png";
-import CatagangImg from "../assets/student_project_image/Catagang.png";
-import BayCanteenImg from "../assets/student_project_image/Bay-Canteen.png";
-import Y5Img from "../assets/student_project_image/Y-5.png";
-import ContractwiseImg from "../assets/student_project_image/Contractwise.png";
-import LifverseImg from "../assets/student_project_image/Lifverse.png";
-import Bithero6Img from "../assets/student_project_image/Bithero6.png";
-import AkharaImg from "../assets/student_project_image/Akhara.png";
-import SastraImg from "../assets/student_project_image/Sastra.png";
-import EduquestImg from "../assets/student_project_image/Eduquest.png";
+import PhsarDesignImg from "../assets/student_project_image/PhsarDesign.webp";
+import KomplexImg from "../assets/student_project_image/Komplex.webp";
+import DomraImg from "../assets/student_project_image/Domra.webp";
+import CatagangImg from "../assets/student_project_image/Catagang.webp";
+import BayCanteenImg from "../assets/student_project_image/Bay-Canteen.webp";
+import Y5Img from "../assets/student_project_image/Y-5.webp";
+import ContractwiseImg from "../assets/student_project_image/Contractwise.webp";
+import LifverseImg from "../assets/student_project_image/Lifverse.webp";
+import Bithero6Img from "../assets/student_project_image/Bithero6.webp";
+import AkharaImg from "../assets/student_project_image/Akhara.webp";
+import SastraImg from "../assets/student_project_image/Sastra.webp";
+import EduquestImg from "../assets/student_project_image/Eduquest.webp";
 
 
 const Projects = () => {
