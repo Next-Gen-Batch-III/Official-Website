@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import PeopleCard from "@/components/cards/PeopleCard";
+import Spinner from "@/components/ui/Spinner";
 
 const Team = () => {
     const { teamId } = useParams();
@@ -17,10 +18,18 @@ const Team = () => {
     }, [teamId]);
 
     if (error) {
-        return <div>Team not found</div>;
+        return (
+            <div className="flex justify-center pt-30 text-lg text-gray-500">
+                Team not found
+            </div>
+        );
     }
     if (!team) {
-        return null;
+        return (
+            <div className="flex justify-center pt-30">
+                <Spinner />
+            </div>
+        );
     }
 
     return (

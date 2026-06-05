@@ -6,18 +6,19 @@ import ScrollToTop from './components/layout/ScrollToTop';
 import Navbar from './components/layout/Navbar';
 import Home from './pages/Home';
 import Footer from './components/layout/footer/Footer';
+import Spinner from './components/ui/Spinner';
 
-const Overview = lazy(() => import('./pages/Overview'));
-const Faq = lazy(() => import('./pages/Faq'));
-const People = lazy(() => import('./pages/People'));
-const Team = lazy(() => import('./pages/Team'));
-const News = lazy(() => import('./pages/News'));
-const NewsDetail = lazy(() => import('./pages/NewsDetail'));
-const Journey = lazy(() => import('./pages/Journey'));
-const Projects = lazy(() => import('./pages/Projects'));
-const Project_Detail = lazy(() => import('./pages/Project_Detail'));
-const Organizer = lazy(() => import('./pages/Organizer'));
-const Search = lazy(() => import('./pages/Search'));
+import Overview from './pages/Overview';
+import Faq from './pages/Faq';
+import People from './pages/People';
+import Team from './pages/Team';
+import News from './pages/News';
+import NewsDetail from './pages/NewsDetail';
+import Journey from './pages/Journey';
+import Projects from './pages/Projects';
+import Project_Detail from './pages/Project_Detail';
+import Organizer from './pages/Organizer';
+import Search from './pages/Search';
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Navbar />
-        <Suspense fallback={null}>
+        <Suspense fallback={<div className="flex justify-center pt-30"><Spinner /></div>}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/overview" element={<Overview />} />

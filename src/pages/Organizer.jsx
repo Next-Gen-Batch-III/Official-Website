@@ -1,3 +1,4 @@
+import { useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Button from "@/components/ui/Button";
@@ -6,6 +7,12 @@ import Sindy from "@/assets/participants/Sindy.webp";
 import Ponharoth from "@/assets/participants/Ponharoth.webp";
 import Chanchessika from "@/assets/participants/Chanchessika.webp";
 import PeopleCard from "@/components/cards/PeopleCard";
+
+const PRELOAD_SLUGS = [
+    "developers", "designers", "proposal", "media", "logistics",
+    "db-project", "cs-project", "tn-project",
+    "db-trainer", "cs-trainer", "tn-trainer",
+];
 
 const organizerColumns = [
   {
@@ -44,6 +51,21 @@ const organizerColumns = [
 
 const Organizer = () => {
   const navigate = useNavigate();
+
+  const preloadTeamImages = useCallback((slug) => {
+    import(`@/data/teams/${slug}.js`).then((mod) => {
+      mod.default.people.forEach((p) => {
+        const img = new Image();
+        img.src = p.image;
+      });
+    });
+  }, []);
+
+  useEffect(() => {
+    PRELOAD_SLUGS.forEach((slug) => {
+      import(`@/data/teams/${slug}.js`);
+    });
+  }, []);
 
   const goToOrganizer = (slug) => {
     navigate(`/people/organizers/${slug}`);
@@ -99,6 +121,7 @@ const Organizer = () => {
                     key={link.slug}
                     type="button"
                     onClick={() => goToOrganizer(link.slug)}
+                    onMouseEnter={() => preloadTeamImages(link.slug)}
                     variant="brand"
                     className="text-[13px] font-medium w-50"
                   >
