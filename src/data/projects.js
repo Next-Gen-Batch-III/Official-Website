@@ -31,13 +31,13 @@ import Phsar3Img from "../assets/student_project_image/Phsar3.webp";
 import Sastra1Img from "../assets/student_project_image/Sastra1.webp";
 import Sastra2Img from "../assets/student_project_image/Sastra2.webp";
 import Sastra3Img from "../assets/student_project_image/Sastra3.webp";
-import bayCanteenQR from "../assets/Qr_code_project/baycanteen.webp";
-import bitCampusQR from "../assets/Qr_code_project/bitCampus.webp";
-import domraQR from "../assets/Qr_code_project/domra.webp";
-import gataQR from "../assets/Qr_code_project/gata.webp";
-import komPlexQR from "../assets/Qr_code_project/komplex.webp";
-import phsarDesignQR from "../assets/Qr_code_project/phsarDesign.webp";
-import sastraQR from "../assets/Qr_code_project/sastra.webp";
+import bayCanteenQR from "../assets/Qr_code_project/baycanteen.png";
+import bitCampusQR from "../assets/Qr_code_project/bitCampus.png";
+import domraQR from "../assets/Qr_code_project/domra.png";
+import gataQR from "../assets/Qr_code_project/gata.png";
+import komPlexQR from "../assets/Qr_code_project/komplex.png";
+import phsarDesignQR from "../assets/Qr_code_project/phsarDesign.png";
+import sastraQR from "../assets/Qr_code_project/sastra.png";
 
 export const projects = [
   {
