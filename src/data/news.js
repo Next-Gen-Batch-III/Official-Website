@@ -1,7 +1,7 @@
 import MIDAS from '../assets/newsIMG/thumbnails/MIDAS_POST.webp'
-import midasIMG1 from '../assets/newsIMG/img1.png'
-import midasIMG2 from '../assets/newsIMG/img2.png'
-import midasIMG3 from '../assets/newsIMG/img3.png'
+import midasIMG1 from '../assets/newsIMG/img1.webp'
+import midasIMG2 from '../assets/newsIMG/img2.webp'
+import midasIMG3 from '../assets/newsIMG/img3.webp'
 
 const formatDate = (dateString) => {
     const date = new Date(dateString);

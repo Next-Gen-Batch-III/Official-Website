@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
+import LazyImage from "@/components/ui/LazyImage";
 
 const ProjectCard = ({project}) => {
     const navigate = useNavigate();
     return (
         <div className="flex flex-col bg-white rounded-lg shadow-md font-sans overflow-hidden">
             <div className="img-container">
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover"/>
+                <LazyImage src={project.image} alt={project.title} className="w-full h-full object-cover" />
             </div>
             <div className=" px-4.5 py-2.5 flex flex-col h-full justify-between gap-3">
                 <div className="project-info">

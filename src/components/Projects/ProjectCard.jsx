@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Project.css";
 import React from "react";
+import LazyImage from "@/components/ui/LazyImage";
 
 const ProjectCard = ({
   title,
@@ -10,7 +11,7 @@ const ProjectCard = ({
 }) => {
   return (
     <div className="project-card ">
-      <img src={image} alt={title} />
+      <LazyImage src={image} alt={title} />
 
       <div className="card-content">
         <h2>{title}</h2>

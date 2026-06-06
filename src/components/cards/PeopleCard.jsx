@@ -1,13 +1,14 @@
 
 
 import EdgeContainer from "../ui/EdgeContainer";
+import LazyImage from "@/components/ui/LazyImage";
 
 
 const PeopleCard = ({ name, role, image, className = "" }) => {
     return (
         <div className={`group relative mx-auto flex aspect-[5/8] w-full max-w-[18rem] flex-col items-center gap-4 ${className}`}>
-            <EdgeContainer  edges={["bottom-right"]} edgesSize="40px">
-                <img src={image} alt={name} className="w-full h-full object-cover" />
+            <EdgeContainer edges={["bottom-right"]} edgesSize="40px">
+                <LazyImage src={image} alt={name} className="w-full h-full object-cover" />
             </EdgeContainer>
             <div className="w-full h-full opacity-0 group-hover:opacity-100 absolute transition-opacity duration-300 bg-transparent">
                 <EdgeContainer edges={["bottom-right"]} edgesSize="40px" className="bg-transparent" borderColor="transparent" borders={[]} bordersWidth={0}>

@@ -1,10 +1,12 @@
+import LazyImage from "@/components/ui/LazyImage";
+
 const ProjectDetailHero = ({ title, subtitle, description, image }) => {
   return (
     <div className="relative w-full overflow-hidden">
 
       {/* IMAGE */}
       <div className="w-full h-[25vh] sm:h-[50vh] md:h-[50vh] lg:h-[120vh] overflow-hidden">
-        <img
+        <LazyImage
           src={image}
           alt={title}
           className="w-full h-full object-cover object-[50%_10%]"

@@ -13,7 +13,6 @@ import NewsDetail from './pages/NewsDetail';
 import Projects from './pages/Projects';
 import Project_Detail from './pages/Project_Detail';
 import Footer from './components/layout/footer/Footer';
-import Spinner from './components/ui/Spinner';
 
 const People = lazy(() => import('./pages/People'));
 const Team = lazy(() => import('./pages/Team'));
@@ -28,7 +27,7 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Navbar />
-        <Suspense fallback={<div className="flex justify-center pt-30"><Spinner /></div>}>
+        <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/overview" element={<Overview />} />

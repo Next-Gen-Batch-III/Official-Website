@@ -3,7 +3,7 @@ import Button from "../components/ui/Button";
 
 
 
-import heroBg from "../assets/overview/hero-img.png";
+import heroBg from "../assets/overview/hero-img.webp";
 import Logo from "../assets/logo/logoBlueNobg2.png";
 import codeImg from "../assets/overview/code-reason.webp";
 import connectivityImg from "../assets/overview/connectivity-reason.webp";

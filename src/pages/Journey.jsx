@@ -1,5 +1,5 @@
 import EdgeContainer from "../components/ui/EdgeContainer";
-import heroImg from "../assets/journey/heroImg.png";
+import heroImg from "../assets/journey/heroImg.webp";
 import phase1 from "../assets/journey/phase1.png";
 import phase2 from "../assets/journey/phase2.jpg";
 import phase3 from "../assets/journey/phase3.jpg";
