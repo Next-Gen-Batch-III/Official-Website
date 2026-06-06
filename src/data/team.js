@@ -1,3 +1,5 @@
+import { management } from "./management";
+
 import headOrganizer from "./organizerTeams/head-organizer";
 import developers from "./organizerTeams/developers";
 import designers from "./organizerTeams/designers";
@@ -25,5 +27,6 @@ const organizers = [
     csTrainer,
     tnTrainer,
 ];
+const managementTeam = management.people;
 
-export { organizers };
+export { organizers ,managementTeam as management};

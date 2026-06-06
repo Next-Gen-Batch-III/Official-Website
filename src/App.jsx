@@ -17,6 +17,7 @@ import Footer from './components/layout/footer/Footer';
 
 const People = lazy(() => import('./pages/People'));
 const Team = lazy(() => import('./pages/Team'));
+const OrganizerTeam = lazy(() => import('./pages/OrganizerTeam'));
 const Organizer = lazy(() => import('./pages/Organizer'));
 const Search = lazy(() => import('./pages/Search'));
 
@@ -36,7 +37,8 @@ function App() {
             <Route path="/faq" element={<Faq />} />
             <Route path="/people" element={<People />} />
             <Route path="/people/organizers" element={<Organizer />} />
-            <Route path="/people/organizers/:teamId" element={<Team />} />
+            <Route path="/people/organizers/:teamId" element={<OrganizerTeam />} />
+            <Route path="people/:teamId" element={<Team />} />
             <Route path='/news' element={<News />}/>
             <Route path="/news/:slug" element={<NewsDetail />} />
             <Route path="/projects" element={<Projects />} />
