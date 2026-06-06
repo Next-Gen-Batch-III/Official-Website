@@ -5,19 +5,19 @@ const socials = [
         id: 0,
         title: "NextGenFacebook",
         name: "facebook",
-        url: ""
+        url: "https://www.facebook.com/NextGenEngagementProgram/"
     },
     {
         id: 1,
         title: "NextGenTikTok",
         name: "tiktok",
-        url: ""
+        url: "https://www.tiktok.com/@nextgenengagementprogram"
     },
     {
         id: 2,
         title: "NextGentelegram",
         name: "telegram",
-        url: ""
+        url: "t.me/nextgenengagementprogram"
     },
 ];
 

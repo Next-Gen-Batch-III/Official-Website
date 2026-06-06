@@ -43,7 +43,7 @@ const Footer = () => {
               <p>
                 Email: <a href="mailto:nextgen@gmail.com">nextgen@gmail.com</a>
               </p>
-              <p>Phone number: +855 123 456</p>
+              <p>Phone number: +855 822 2226</p>
             </div>
             {/*Socials*/}
             <div className="flex">
