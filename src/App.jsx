@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
 
 import ScrollToTop from './components/layout/ScrollToTop';
+import ScrollToTopButton from './components/ui/ScrollToTopButton';
 import Navbar from './components/layout/Navbar';
 import Home from './pages/Home';
 import Overview from './pages/Overview';
@@ -43,6 +44,7 @@ function App() {
             <Route path="/search" element={<Search />} />
           </Routes>
         </Suspense>
+        <ScrollToTopButton />
         <Footer />
       </BrowserRouter>
     </>
