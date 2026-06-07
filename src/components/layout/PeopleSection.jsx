@@ -22,7 +22,7 @@ const PeopleSection = ({ title, link ,people }) => {
                 ))}
             </div>
             <div className="md:hidden flex justify-end w-full">
-                <Button onClick={() => navigate(`/people/${link}`)} variant="brand" shadowColor="#666666">View All</Button>
+                <Button onClick={() => navigate(`${link}`)} variant="brand" shadowColor="#666666">View All</Button>
             </div>
         </section>
     );
