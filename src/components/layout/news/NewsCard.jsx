@@ -13,7 +13,7 @@ const NewsCard = ({ slug, thumbnail, headline, date }) => {
             alt={headline}
           />
           <div className="flex flex-col flex-1 justify-between px-4 py-4">
-            <h4 className="text-[16px] text-brand-primary font-bold">
+            <h4 className="line-clamp-4 overflow-hidden text-[16px] text-brand-primary font-bold">
               {headline}
             </h4>
             <p className="text-brand-secondary-gray">{date}</p>
