@@ -1,8 +1,5 @@
 import EdgeContainer from "../components/ui/EdgeContainer";
 import Button from "../components/ui/Button";
-
-
-
 import heroBg from "../assets/overview/hero-img.png";
 import Logo from "../assets/logo/logoBlueNobg2.png";
 import codeImg from "../assets/overview/code-reason.webp";
@@ -10,8 +7,12 @@ import connectivityImg from "../assets/overview/connectivity-reason.webp";
 import commerceImg from "../assets/overview/commerce-reason.webp";
 import missionIcon from "../assets/overview/mission.png";
 import visionIcon from "../assets/overview/vision.png";
+import { useState } from "react";
+import JoinProgram from "../components/cards/joinProgramCard.jsx";
 
 const Overview = () => {
+  const [isJoinProgramOpen, setIsJoinProgramOpen] = useState(false);
+
   return (
     <div className="font-family text-brand-primary bg-white flex flex-col gap-20 w-full">
 
@@ -29,10 +30,19 @@ const Overview = () => {
             Empowering students through innovation, collaboration, and real-world project experience.
           </p>
           <div className="flex flex-row gap-3">
-            <Button>Join the Program</Button>
+            <Button onClick={() => setIsJoinProgramOpen(true)}>
+              Join the Program
+            </Button>
 
-            <Button variant="primary">Register for Events</Button>
+            <Button variant="primary">
+              Register for Events
+            </Button>
           </div>
+
+          <JoinProgram
+            isOpen={isJoinProgramOpen}
+            onClose={() => setIsJoinProgramOpen(false)}
+          />
         </div>
       </section>
 

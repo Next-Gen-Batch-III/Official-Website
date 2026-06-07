@@ -1,0 +1,140 @@
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  background: white;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+}
+
+.role-container {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.role-card-std,
+.role-card-trainer {
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  transition: all 0.3s ease;
+}
+ .role-card-trainer button {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75%,
+    90% 100%,
+    0 100%
+  );
+
+  transition: all 0.3s ease;
+}
+
+.role-card-trainer button:hover {
+  background: #e67e22;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(20, 19, 16, 0.813);
+}
+ .role-card-std button {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75%,
+    90% 100%,
+    0 100%
+  );
+
+  transition: all 0.3s ease;
+}
+
+.role-card-std button:hover {
+  background: #12284C;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(23, 25, 37, 0.813);
+}
+.role-card-std img,
+.role-card-trainer img {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.role-card-std button {
+  margin-top: 15px;
+  padding: 10px 10px;
+  border: none;
+  background: #12284C;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.463);
+
+  clip-path: polygon(
+     0 0,
+     100% 0,
+     100% 75%,
+     90% 100%,
+     0 100%
+      );
+}
+.role-card-trainer button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background: #f8911b;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.463);
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75%,
+    90% 100%,
+    0 100%
+  );
+}
+@media (max-width: 768px) {
+  .modal {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .role-card-std,
+  .role-card-trainer {
+    padding: 1.5rem 1rem;
+  }
+
+  .role-card-std h2,
+  .role-card-trainer h2 {
+    font-size: 1.5rem;
+  }
+}

@@ -16,6 +16,7 @@ import Projects from './pages/Projects';
 import Project_Detail from './pages/Project_Detail';
 import Organizer from './pages/Organizer';
 import Search from './pages/Search';
+import TrainerJourney from './pages/trainer_journey';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:slug" element={<Project_Detail />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/trainer-journey" element={<TrainerJourney/>} />
         </Routes>
         <Footer />
       </BrowserRouter>
