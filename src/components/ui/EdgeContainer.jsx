@@ -22,8 +22,8 @@ const EdgeContainer = ({ borders, bordersWidth, borderColor = "black", edges, ed
     const clipPathValue = `polygon(${buildPolygonPoints(edges, edgesSize)})`;
     const backgroundColor = { backgroundColor: borderColor || "black" };
     return (
-        <div className={`inline-block w-full h-full bg-amber-900`} style={{ clipPath: clipPathValue, ...buildBorderStyles(borders, bordersWidth), ...backgroundColor }}>
-            <div className={`w-full h-full bg-white ${className}`} style={{ clipPath: clipPathValue }}>
+        <div className={`inline-block w-full h-full`} style={{ clipPath: clipPathValue, ...buildBorderStyles(borders, bordersWidth), ...backgroundColor }}>
+            <div className={`w-full h-full ${className}`} style={{ clipPath: clipPathValue }}>
                 {children}
             </div>
         </div>

@@ -1,12 +1,12 @@
-import MIDAS from '../assets/newsIMG/midas2025/imgs/thumbnail/MIDAS_POST.webp'
-import midasIMG1 from '../assets/newsIMG/midas2025/imgs/img1.png'
-import midasIMG2 from '../assets/newsIMG/midas2025/imgs/img2.png'
-import midasIMG3 from '../assets/newsIMG/midas2025/imgs/img3.png'
+import MIDAS from "../assets/newsIMG/midas2025/imgs/thumbnail/MIDAS_POST.webp"
+import midasIMG1 from '../assets/newsIMG/midas2025/imgs/img1.webp'
+import midasIMG2 from '../assets/newsIMG/midas2025/imgs/img2.webp'
+import midasIMG3 from '../assets/newsIMG/midas2025/imgs/img3.webp'
 
-import CCT from '../assets/newsIMG/midas2025/imgs'
-import cctIMG1 from '../assets/newsIMG/cct2025/imgs/cct2025(1).jpg'
-import cctIMG2 from '../assets/newsIMG/cct2025/imgs/cct2025(2).jpg'
-import cctIMG3 from '../assets/newsIMG/cct2025/imgs/cct2025(3).jpg'
+import CCT from '../assets/newsIMG/midas2025/imgs/thumbnail/MIDAS_POST.webp'
+import cctIMG1 from '../assets/newsIMG/cct2025/imgs/cct2025(1).webp'
+import cctIMG2 from '../assets/newsIMG/cct2025/imgs/cct2025(2).webp'
+import cctIMG3 from '../assets/newsIMG/cct2025/imgs/cct2025(3).webp'
 
 const formatDate = (dateString) => {
     const date = new Date(dateString);

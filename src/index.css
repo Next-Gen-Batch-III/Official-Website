@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @font-face {
   font-family: "CADTMono";
   src: url("/src/assets/fonts/CADTMonoDisplay-Regular.ttf") format("truetype");
@@ -27,18 +26,26 @@
   --color-brand-secondary-red: #ff4438;
   --color-brand-secondary-pink: #f97fb5;
   --color-brand-secondary-purple: #b980d0;
+  --color-brand-secondary-gray: #666666;
 
+  --font-sans: "Kantumruy Pro", system-ui, sans-serif;
+  --font-kantumruy: "Kantumruy Pro", sans-serif;
   --font-cadt: "CADTMono", monospace;
 }
 
 
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
+  html {
+    color-scheme: light;
+  }
+  
   :root {
-    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: "Kantumruy Pro", system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
-    color-scheme: light dark;
+    color-scheme: light;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -51,6 +58,8 @@
     min-width: 320px;
     min-height: 100vh;
     background-color: white;
+    color: #111827;
+    font-family: inherit;
   }
 
   #root {
@@ -60,6 +69,10 @@
   }
 }
 @layer utilities {
+  .section-padding {
+    @apply px-5 py-10 lg:px-20 xl:px-40;
+  }
+
   .animate-chain-drop {
     animation: chainDrop 0.4s ease forwards;
     animation-delay: calc(var(--i) * 0.1s);
@@ -78,6 +91,7 @@
     0% {
       opacity: 0;
       transform: translateY(-20px);
+      
     }
     100% {
       opacity: 1;
@@ -138,6 +152,16 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
 }
 
 .footer_col {

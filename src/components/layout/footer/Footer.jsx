@@ -35,27 +35,26 @@ const Footer = () => {
             </div>
             {/*Address*/}
             <FooterColumn title="ADDRESS">
-              <p>
-                Bridge 2, National Road 6A, Sangkat Prek Leap, Khan Chroy
-                Changva, Phnom Penh
-              </p>
-            </FooterColumn>
-            {/*Contact*/}
-            <FooterColumn title="CONTACT">
               <div>
                 <p>
-                  Email:{" "}
-                  <a
-                    href="mailto:nextgen@cadt.edu.kh"
-                    className="hover:underline"
-                  >
-                    nextgen@cadt.edu.kh
-                  </a>
+                  Bridge 2, National Road 6A, Sangkat Prek Leap, Khan Chroy
+                  Changva, Phnom Penh
                 </p>
-                <p>Phone number: +855 88 882 2226</p>
               </div>
+            </FooterColumn>
+            <FooterColumn title="CONTACT">
               {/*Socials*/}
-              <div className="mt-2 flex flex-wrap">
+              <div>
+                Email:
+                <a
+                  href="mailto:nextgen@cadt.edu.kh"
+                  className="hover:underline"
+                >
+                  nextgen@cadt.edu.kh
+                </a>
+                <p>Phone number: +855 822 2226</p>
+              </div>
+              <div className="flex">
                 <FooterSocials />
               </div>
             </FooterColumn>
@@ -63,40 +62,24 @@ const Footer = () => {
             <FooterColumn title="QUICK LINKS">
               <ul>
                 <li>
-                  <Link to="/" className="hover:underline">
-                    Home
-                  </Link>
+                  <Link to="/overview" className="hover:underline">Project Overview</Link>
                 </li>
                 <li>
-                  <Link to="/overview" className="hover:underline">
-                    Overview
-                  </Link>
+                  <Link to="/journey" className="hover:underline">Project Journey</Link>
                 </li>
                 <li>
-                  <Link to="/journey" className="hover:underline">
-                    Journey
-                  </Link>
+                  <Link to="/projects" className="hover:underline">Student's Project</Link>
                 </li>
                 <li>
-                  <Link to="/projects" className="hover:underline">
-                    Projects
-                  </Link>
+                  <Link to="/news" className="hover:underline">News/Updates</Link>
                 </li>
                 <li>
-                  <Link to="/news" className="hover:underline">
-                    News / Updates
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/faq" className="hover:underline">
-                    FAQS
-                  </Link>
+                  <Link to="/faq" className="hover:underline">FAQs</Link>
                 </li>
               </ul>
             </FooterColumn>
           </div>
         </div>
-
         {/*Credits*/}
         <div className="px-6 pb-5 pt-8 text-sm sm:px-8 lg:px-33">
           <p>&copy; 2026 Next-Gen Engagement Program. All rights reserved.</p>
