@@ -1,18 +1,11 @@
-<<<<<<< HEAD
-import MIDAS from '../assets/newsIMG/thumbnails/MIDAS_POST.webp'
-import midasIMG1 from '../assets/newsIMG/img1.webp'
-import midasIMG2 from '../assets/newsIMG/img2.webp'
-import midasIMG3 from '../assets/newsIMG/img3.webp'
-=======
 import MIDAS from "../assets/newsIMG/midas2025/imgs/thumbnail/MIDAS_POST.webp";
-import midasIMG1 from "../assets/newsIMG/midas2025/imgs/img1.png";
-import midasIMG2 from "../assets/newsIMG/midas2025/imgs/img2.png";
-import midasIMG3 from "../assets/newsIMG/midas2025/imgs/img3.png";
-import CCT from "../assets/newsIMG/cct2025/imgs/thumbnail/cctThumnail2025.jpg";
-import cctIMG1 from "../assets/newsIMG/cct2025/imgs/cct2025(1).jpg";
-import cctIMG2 from "../assets/newsIMG/cct2025/imgs/cct2025(2).jpg";
-import cctIMG3 from "../assets/newsIMG/cct2025/imgs/cct2025(3).jpg";
->>>>>>> 1760e2caf408c212e04f0032d451bc92bdd279d9
+import midasIMG1 from "../assets/newsIMG/midas2025/imgs/img1.webp";
+import midasIMG2 from "../assets/newsIMG/midas2025/imgs/img2.webp";
+import midasIMG3 from "../assets/newsIMG/midas2025/imgs/img3.webp";
+import CCT from "../assets/newsIMG/cct2025/imgs/thumbnail/cctThumnail2025.webp";
+import cctIMG1 from "../assets/newsIMG/cct2025/imgs/cct2025(1).webp";
+import cctIMG2 from "../assets/newsIMG/cct2025/imgs/cct2025(2).webp";
+import cctIMG3 from "../assets/newsIMG/cct2025/imgs/cct2025(3).webp";
 
 const formatDate = (dateString) => {
     const date = new Date(dateString);
