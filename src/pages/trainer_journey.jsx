@@ -13,7 +13,7 @@ import phoneIcon from '../assets/icon_image/phone.png';
 const TrainerJourney = () => {
   return (
     <div>
-        <section className="bg-brand-primary grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 px-4 md:px-10 py-10 md:py-24 items-center">
+        <section className="bg-brand-primary grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 section-padding items-center">
             {/* Text Section */}
             <div className="flex flex-col gap-2 items-start items-left">
                 <h1 className="font-bold text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] text-white">
@@ -47,7 +47,7 @@ const TrainerJourney = () => {
             </div>
         </section>
  
-        <section className="bg-white gap-4 px-4 md:px-10 py-10 items-center">
+        <section className="bg-white gap-4 section-padding items-center">
 
             <h1 className="text-[2rem] font-bold mb-12 mt-8 text-center"><span className="text-brand-secondary-orange">Why Become</span> <span className="text-brand-primary">a Trainer?</span></h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -88,20 +88,21 @@ const TrainerJourney = () => {
         </section>
         
         {/* form registration */}
-        <section className="bg-white gap-4 px-4 md:px-10 py-10 items-center">
+        <section className="bg-white gap-4 section-padding items-center">
 
             {/* CARD */}
-            <div className="p-12 bg-white rounded-xl shadow-md border-gray-300 border grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+            <div className="p-12 bg-white rounded-xl shadow-md border-gray-300 border grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
                     
                 {/* LEFT SIDE */}
-                <div className=" gap-4 items-start grid-cols-1 md:grid-cols-2 flex flex-col md:flex-row mt-10 md:mt-0 mb-10">
-                    <div className="flex items-center gap-3">
+                
+                <div className=" gap-4 items-center grid-cols-1 md:grid-cols-2 flex flex-col md:flex-row mt-10 md:mt-0 mb-10 h-full py-10 border-b lg:border-b-0 lg:border-r lg:pr-20">
+                    <div className="flex h-full ">
                         <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center">
-                        <img src={addIcon} alt="Add Icon" className="w-12 h-12" />
+                            <img src={addIcon} alt="Add Icon" className="w-12 h-12" />
                         </div>
                     </div>
 
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-4 h-full">
                         <h1 className="text-2xl md:text-4xl font-bold text-brand-primary">
                         Ready To Join ?
                         </h1>
@@ -146,11 +147,9 @@ const TrainerJourney = () => {
                     </div>
 
                 </div>
-                {/* DIVIDER */}
-                <div className="hidden md:block justify-self-center w-px bg-gray-500 h-full"></div> 
 
                 {/* RIGHT SIDE */}
-                <div className="text-center mb-10 mt-10 md:mt-0">
+                <div className="text-center mb-10 mt-10 md:mt-0 flex items-center justify-center flex-col">
                     
                     <h1 className="text-2xl md:text-3xl font-bold text-orange-400">
                     Register as a Trainer
