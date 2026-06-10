@@ -12,8 +12,12 @@ import connectivityImg from "../assets/overview/connectivity-reason.webp";
 import commerceImg from "../assets/overview/commerce-reason.webp";
 import missionIcon from "../assets/overview/mission.png";
 import visionIcon from "../assets/overview/vision.png";
+import { useState } from "react";
+import JoinProgram from "../components/cards/joinProgramCard.jsx";
 
 const Overview = () => {
+  const [isJoinProgramOpen, setIsJoinProgramOpen] = useState(false);
+
   const navigation = useNavigate();
   return (
     <div className="font-family text-brand-primary bg-white flex flex-col gap-20 w-full">
@@ -34,8 +38,15 @@ const Overview = () => {
           <div className="flex flex-row gap-3">
             <Button onClick={() => navigation()}>Join the Program</Button>
 
-            <Button variant="primary">Register for Events</Button>
+            <Button variant="primary">
+              Register for Events
+            </Button>
           </div>
+
+          <JoinProgram
+            isOpen={isJoinProgramOpen}
+            onClose={() => setIsJoinProgramOpen(false)}
+          />
         </div>
       </section>
 
