@@ -43,7 +43,7 @@ const splitStory = (story, fallbackText) => {
 const NewsDetail = () => {
   const { slug } = useParams();
   const article = news.find(
-    (item) => item.slug === slug || item.aliases?.includes(slug)
+    (item) => item.slug === slug || item.aliases?.includes(slug),
   );
 
   if (!article) {
@@ -67,13 +67,15 @@ const NewsDetail = () => {
         By {article.publisher} | {article.date} | News
       </p>
 
-      <p className="text-justify text-[15px] leading-relaxed text-gray-800 mb-6">{article.subtitle}</p>
+      <p className="text-justify text-[15px] leading-relaxed text-gray-800 mb-6">
+        {article.subtitle}
+      </p>
 
       <div className="flex flex-col items-center lg:flex-row gap-6 mb-6">
         <img
           src={article.thumbnail || "/fallback.jpg"}
           alt={article.headline}
-          className="w-full lg:w-[55%] h-100 object-cover"
+          className="w-full lg:w-[55%] aspect-[14/9] object-cover rounded"
         />
 
         {lead.length > 0 && (
@@ -98,7 +100,7 @@ const NewsDetail = () => {
               key={image}
               src={image}
               alt={`${article.headline} ${index + 1}`}
-              className="w-full h-70 object-cover"
+              className="w-full aspect-[4/3] object-cover rounded"
             />
           ))}
         </div>

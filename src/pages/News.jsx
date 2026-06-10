@@ -4,9 +4,13 @@ import NewsSection from "../components/layout/news/NewsSection";
 import { news } from "@/data/news";
 
 const News = () => {
-  const recentNews = news[0];
-  const allNews = news;
-  const showRecentNews = news.length > 1;
+  const sortedNews = [...news].sort(
+    (a, b) => new Date(b.date) - new Date(a.date),
+  );
+
+  const recentNews = sortedNews[0];
+  const allNews = sortedNews.slice(1);
+  const showRecentNews = sortedNews.length > 0;
 
   return (
     <>
@@ -16,7 +20,7 @@ const News = () => {
             <RecentNews
               thumbnail={recentNews.thumbnail}
               headline={recentNews.headline}
-              subtitle={recentNews.subtitle}
+              article={recentNews.article}
               slug={recentNews.slug}
               date={recentNews.date}
             />
