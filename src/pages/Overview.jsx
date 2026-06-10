@@ -59,17 +59,17 @@ const Overview = () => {
       </section>
 
       {/* WHAT IS NEXT-GEN-3? */}
-      <section className="px-6 lg:px-20 py-16 lg:py-40 bg-white">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 w-full max-w-4xl mx-auto">
+      <section className="bg-white min-h-screen flex items-center justify-center px-20  pt-20 pb-5">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mx-auto">
 
-          <div className="shrink-0 leading-none text-center lg:text-left">
-            <p className="text-brand-primary text-2xl font-bold mb-1">What is</p>
+          <div className="shrink-0 leading-none text-center lg:text-left ">
+            <p className="text-brand-primary text-3xl font-bold mb-1">What is</p>
             <div className="flex flex-col items-center lg:items-start">
-              <span className="text-brand-secondary-orange font-extrabold text-5xl">NEXT</span>
+              <span className="text-brand-secondary-orange font-extrabold text-7xl">NEXT</span>
               <div className="flex items-center gap-2 mt-1.5">
-                <span className="text-brand-primary font-extrabold text-5xl">GEN</span>
-                <span className="text-brand-secondary-orange font-extrabold text-3xl">-3</span>
-                <span className="text-gray-700 font-extrabold text-4xl">?</span>
+                <span className="text-brand-primary font-extrabold text-7xl">GEN</span>
+                <span className="text-brand-secondary-orange font-extrabold text-5xl">-3</span>
+                <span className="text-gray-700 font-extrabold text-6xl">?</span>
               </div>
             </div>
           </div>
@@ -83,7 +83,7 @@ const Overview = () => {
           >
             <div className="bg-brand-secondary-orange font-semibold px-6 lg:px-8 py-5 leading-relaxed flex flex-col gap-0 w-[90vw] lg:w-[600px]">
               <div className="w-full h-px bg-white/60 mb-4" />
-              <p className="text-justify text-base lg:text-xl">
+              <p className="text-justify text-base lg:text-2xl">
                 A semester-break engagement program for aspired digital students aims to promote
                 knowledge sharing between senior and junior cohorts, support academic readiness
                 through mentoring and coaching, and provides a platform for students to develop
@@ -170,14 +170,14 @@ const Overview = () => {
       </section>
 
       {/* MISSION & VISION */}
-      <section className="px-6 lg:px-20 py-12 bg-white">
-        <div className="border-b-2 border-gray-300 pb-2 mb-8">
+      <section className="px-6 lg:px-20 pt-6 pb-24 lg:pt-6 lg:pb-24 bg-white">
+        <div className="border-b-2 border-gray-300 pb-2 mb-24">
           <h2 className="font-bold text-2xl lg:text-4xl text-brand-secondary-orange uppercase">
             Mission & Vision
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <div className="flex flex-col lg:flex-row justify-between gap-25">
 
           <div className="bg-brand-primary text-white flex flex-col items-center py-14 lg:py-20 px-8 gap-6 text-center w-full">
             <p className="font-bold text-xl lg:text-2xl tracking-widest uppercase">Our Mission</p>
