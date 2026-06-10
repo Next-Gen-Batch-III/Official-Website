@@ -103,9 +103,9 @@ export const projects = [
     id: 4,
     title: "ACET",
     slug: "acet",
-    projectImages: ["", "", ""],
-    qrCode: "",
-    link: "",
+    projectImages: null,
+    qrCode: null,
+    link: null,
     problem:
       "Students can't find conferences to join, and paper submissions get lost in email chains with no transparency or updates.",
     impact:
@@ -122,9 +122,9 @@ export const projects = [
     id: 5,
     title: "Contract-Generation",
     slug: "contract-generation",
-    projectImages: ["", "", ""],
-    qrCode: "",
-    link: "",
+    projectImages: null,
+    qrCode: null,
+    link: null,
     problem:
       "Schools manage lecturers through scattered Excel files, Word templates, and emails, causing errors, duplication, and poor visibility.",
     impact:
@@ -142,9 +142,9 @@ export const projects = [
     id: 6,
     title: "FinWise",
     slug: "finewise",
-    qrCode: "",
-    link: "",
-    projectImages:["", "", ""],
+    projectImages:null,
+    qrCode: null,
+    link: null,
     problem:
       "Only 18% of Cambodian adults are financially literate, and most people have no practical tool to track spending or stick to budgets.",
     impact:
@@ -180,9 +180,9 @@ export const projects = [
     id: 8,
     title: "KHMER DATA ANNOTATION TOOL",
     slug: "khmer-data-annotation-tool",
-    projectImages: ["", "", ""],
-    qrCode: "",
-    link: "",
+    projectImages:null,
+    qrCode: null,
+    link: null,
     problem: 
       "High-quality annotated Khmer datasets are critically lacking, and manual annotation is too slow and error-prone for researchers.",
     impact:
@@ -218,9 +218,9 @@ export const projects = [
     id: 10,
     title: "QuizKH",
     slug: "quizkh",
-    projectImages: ["", "", ""],
-    qrCode: "",
-    link: "",
+    projectImages: null,
+    qrCode: null,
+    link: null,
     problem:
       "70% of Cambodian teachers need better free quiz tools, but quality platforms like Kahoot lock key features behind expensive subscriptions.",
     impact:
