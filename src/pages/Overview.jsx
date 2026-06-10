@@ -1,11 +1,13 @@
 import EdgeContainer from "../components/ui/EdgeContainer";
+import Button from "../components/ui/Button";
+
+
+
 import heroBg from "../assets/overview/hero-img.png";
-import codeImg from "../assets/overview/code-reason.png";
-import connectivityImg from "../assets/overview/connectivity-reason.png";
-import commerceImg from "../assets/overview/commerce-reason.png";
-import codeIcon from "../assets/overview/code.png";
-import connectivityIcon from "../assets/overview/connectivity.png";
-import commerceIcon from "../assets/overview/commerce.png";
+import Logo from "../assets/logo/logoBlueNobg2.png";
+import codeImg from "../assets/overview/code-reason.webp";
+import connectivityImg from "../assets/overview/connectivity-reason.webp";
+import commerceImg from "../assets/overview/commerce-reason.webp";
 import missionIcon from "../assets/overview/mission.png";
 import visionIcon from "../assets/overview/vision.png";
 
@@ -19,7 +21,7 @@ const Overview = () => {
         style={{ backgroundImage: `url(${heroBg})` }}
       >
         <div className="absolute inset-0 bg-black/55" />
-        <div className="relative z-10 px-6 lg:px-20 py-14 lg:py-28">
+        <div className="relative z-10 px-5 lg:px-20 py-10 lg:py-28">
           <h1 className="text-white font-bold text-xl lg:text-4xl leading-tight mb-3">
             Next-Gen Engagement Program<br />Batch 3 - 3 Departments
           </h1>
@@ -27,33 +29,9 @@ const Overview = () => {
             Empowering students through innovation, collaboration, and real-world project experience.
           </p>
           <div className="flex flex-row gap-3">
-            <div className="w-fit">
-              <EdgeContainer
-                edges={["bottom-right"]}
-                edgesSize="10px"
-                borders={[]}
-                bordersWidth={0}
-                borderColor="transparent"
-              >
-                <button className="text-brand-secondary-orange text-xs font-bold px-5 py-2 uppercase tracking-wider bg-white hover:bg-gray-200 transition-all duration-300 cursor-pointer">
-                  Join the Program
-                </button>
-              </EdgeContainer>
-            </div>
+            <Button>Join the Program</Button>
 
-            <div className="w-fit">
-              <EdgeContainer
-                edges={["bottom-right"]}
-                edgesSize="10px"
-                borders={[]}
-                bordersWidth={0}
-                borderColor="transparent"
-              >
-                <button className="bg-brand-secondary-orange text-white text-xs font-bold px-5 py-2 uppercase tracking-wider hover:opacity-90 transition-opacity cursor-pointer">
-                  Register for Events
-                </button>
-              </EdgeContainer>
-            </div>
+            <Button variant="primary">Register for Events</Button>
           </div>
         </div>
       </section>
@@ -97,75 +75,150 @@ const Overview = () => {
       </section>
 
       {/* WHY JOIN */}
-      <section className="px-6 lg:px-20 py-10 bg-white">
-        <div className="border-b-2 border-gray-300 pb-2 mb-4">
-          <h2 className="font-bold text-2xl lg:text-4xl text-brand-secondary-orange uppercase">
-            Why Join Next-Gen Engagement?
-          </h2>
+      <section className="flex flex-col gap-5 px-5 py-10 lg:px-20">
+        <div>
+          <h2 className="text-[2.5rem] font-bold text-brand-secondary-orange border-b border-black pb-4">Why join Next-Gen engagement?</h2>
+          <p className="text-lg pt-4">Step into a next-generation ecosystem that redefines learning through collaboration, innovation, and real-world experience.</p>
         </div>
-        <p className="text-base lg:text-lg mb-10">
-          Step into a next-generation ecosystem that combines learning through collaboration, innovation, and real-world experience.
-        </p>
-
-        <div className="flex flex-col gap-10">
-
-          <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2 lg:gap-x-10 lg:items-center">
-            <div className="h-52 lg:h-72 w-full">
-              <EdgeContainer edges={["top-right"]} edgesSize="40px" borders={[]} bordersWidth={0} borderColor="transparent" className="h-full">
-                <img src={codeImg} alt="Coding session" className="w-full h-52 lg:h-72 object-cover" />
+        <div className="flex flex-col gap-20 mt-10">
+          <div className="flex flex-col gap-5 md:flex-row md:items-center justify-between md:gap-20">
+            <div className="w-fit h-fit">
+              <EdgeContainer edges={["top-right"]} edgesSize="60px">
+                <img src={codeImg} alt="Code" className="w-full h-full object-cover"/>
               </EdgeContainer>
             </div>
-            <div className="flex flex-col items-center text-center lg:flex-row lg:items-start lg:text-left gap-4">
-              <div className="bg-brand-secondary-orange text-white p-3 mt-0.5 shrink-0 rounded-full">
-                <img src={codeIcon} alt="Code" className="w-5 h-5 object-contain" />
+            <div className="flex gap-12">
+              <div className="hidden md:flex items-center">
+                <svg 
+                    width="full"
+                    height="full" 
+                    viewBox="0 0 100 100" 
+                    fill="none" 
+                    className="min-w-20 max-w-25 md:block"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="50" cy="50" r="48" fill="currentColor" className="text-brand-secondary-orange" />
+                    <path d="M38 35L23 50L38 65" stroke="white" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M62 35L77 50L62 65" stroke="white" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M55 30L45 70" stroke="white" strokeWidth="6" strokeLinecap="round"/>
+                  </svg>
               </div>
-              <div>
-                <h3 className="font-bold text-2xl lg:text-3xl mb-1 text-brand-secondary-orange">Code</h3>
-                <p className="text-base lg:text-lg leading-relaxed">
-                  Developing technical expertise and problem-solving skills.
-                </p>
+              <div className="flex flex-col gap-5">
+                <h2 className="text-4xl font-bold text-brand-secondary-orange">Code</h2>
+                <p className="text-[1.25rem] ">Developing technical expertise and problem-solving skills</p>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2 lg:gap-x-10 lg:items-center">
-            <div className="h-52 lg:h-72 w-full lg:order-2">
-              <EdgeContainer edges={["bottom-left"]} edgesSize="40px" borders={[]} bordersWidth={0} borderColor="transparent" className="h-full">
-                <img src={connectivityImg} alt="Connectivity" className="w-full h-52 lg:h-72 object-cover" />
+          <div className="flex flex-col-reverse gap-5 md:flex-row md:items-center justify-between md:gap-20">
+            <div className="flex gap-12">
+              <div className="hidden md:flex items-center">
+                <svg 
+                  width="full" 
+                  height="full" 
+                  viewBox="0 0 200 200" 
+                  fill="none" 
+                  className="min-w-20 max-w-25 md:block"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="100" cy="100" r="90" fill="#F58A27"/>
+
+                  <circle 
+                    cx="100" 
+                    cy="100" 
+                    r="55" 
+                    stroke="white" 
+                    strokeWidth="6" 
+                    strokeDasharray="0 15" 
+                    strokeLinecap="round" 
+                    opacity="0.8"
+                  />
+
+                  <circle cx="100" cy="100" r="8" stroke="white" strokeWidth="3" className="text-brand-secondary-orange"/>
+
+                  <path 
+                    d="M100 92V72M94 104L80 115M106 104L120 115" 
+                    stroke="white" 
+                    strokeWidth="3" 
+                    strokeLinecap="round"
+                  />
+
+                  <g transform="translate(100, 52)">
+                    <circle cx="0" cy="0" r="20" stroke="white" strokeWidth="3" fill="#f88d2a" className="text-brand-secondary-orange"/>
+                    <circle cx="0" cy="-4" r="6" stroke="white" strokeWidth="3"/>
+                    <path d="M-10 10C-10 5 -5 3 0 3C5 3 10 5 10 10" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                  </g>
+
+                  <g transform="translate(62, 118)">
+                    <circle cx="0" cy="0" r="20" stroke="white" strokeWidth="3" fill="#f88d2a" className="text-brand-secondary-orange"/>
+                    <circle cx="0" cy="-4" r="6" stroke="white" strokeWidth="3"/>
+                    <path d="M-10 10C-10 5 -5 3 0 3C5 3 10 5 10 10" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                  </g>
+
+                  <g transform="translate(138, 118)">
+                    <circle cx="0" cy="0" r="20" stroke="white" strokeWidth="3" fill="#f88d2a" className="text-brand-secondary-orange"/>
+                    <circle cx="0" cy="-4" r="6" stroke="white" strokeWidth="3"/>
+                    <path d="M-10 10C-10 5 -5 3 0 3C5 3 10 5 10 10" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                  </g>
+                </svg>
+
+              </div>
+              <div className="flex flex-col gap-5">
+                <h2 className="text-4xl font-bold text-brand-secondary-orange">Connectivity</h2>
+                <p className="text-[1.25rem]">Building networks, collaboration and knowledge sharing</p>
+              </div>
+            </div>
+            <div className="w-fit h-fit">
+              <EdgeContainer edges={["top-right"]} edgesSize="60px">
+                <img src={connectivityImg} alt="Connectivity" className="w-full h-full object-cover"/>
               </EdgeContainer>
             </div>
-            <div className="flex flex-col items-center text-center lg:flex-row lg:items-start lg:text-left gap-4 lg:order-1">
-              <div className="bg-brand-secondary-orange text-white p-3 mt-0.5 shrink-0 rounded-full">
-                <img src={connectivityIcon} alt="Connectivity" className="w-5 h-5 object-contain" />
+          </div>
+          <div className="flex flex-col gap-5 md:flex-row md:items-center justify-between md:gap-20">
+            <div className="w-fit h-fit">
+              <EdgeContainer edges={["top-right"]} edgesSize="60px">
+                <img src={commerceImg} alt="Commerce" className="w-full h-full object-cover"/>
+              </EdgeContainer>
+            </div>
+            <div className="flex gap-12">
+              <div className="hidden md:flex items-center">
+                <svg 
+                  width="full" 
+                  height="full"
+                  viewBox="0 0 200 200" 
+                  fill="none" 
+                  className="min-w-20 max-w-25 md:block"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="100" cy="100" r="90" fill="#f88d2a"/>
+
+                  <rect x="55" y="150" width="90" height="4" rx="2" fill="white"/>             
+                  <rect x="65" y="130" width="12" height="20" rx="2" fill="white"/>
+                  <rect x="83" y="115" width="12" height="35" rx="2" fill="white"/>
+                  <rect x="101" y="105" width="12" height="45" rx="2" fill="white"/>
+                  <rect x="119" y="90" width="12" height="60" rx="2" fill="white"/>
+
+                  <path 
+                    d="M55 125C75 125 95 110 135 65" 
+                    stroke="white" 
+                    strokeWidth="6" 
+                    strokeLinecap="round"
+                  />
+                  <path 
+                    d="M115 68L138 62L135 85" 
+                    stroke="white" 
+                    strokeWidth="6" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  />
+                </svg>
               </div>
-              <div>
-                <h3 className="font-bold text-2xl lg:text-3xl mb-1 text-brand-secondary-orange">Connectivity</h3>
-                <p className="text-base lg:text-lg leading-relaxed">
-                  Building networks, collaboration, and knowledge sharing.
-                </p>
+              <div className="flex flex-col gap-5 grow-0">
+                <h2 className="text-4xl font-bold text-brand-secondary-orange">Commerce</h2>
+                <p className="text-[1.25rem]">Encourage innovation, entrepreneurship and real-world application</p>
               </div>
             </div>
           </div>
-
-          <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2 lg:gap-x-10 lg:items-center">
-            <div className="h-52 lg:h-72 overflow-hidden w-full">
-              <EdgeContainer edges={["top-right"]} edgesSize="110px" borders={[]} bordersWidth={0} borderColor="transparent" className="h-full">
-                <img src={commerceImg} alt="Commerce activity" className="w-full h-52 lg:h-72 object-cover" />
-              </EdgeContainer>
-            </div>
-            <div className="flex flex-col items-center text-center lg:flex-row lg:items-start lg:text-left gap-4">
-              <div className="bg-brand-secondary-orange text-white p-3 mt-0.5 shrink-0 rounded-full">
-                <img src={commerceIcon} alt="Commerce" className="w-5 h-5 object-contain" />
-              </div>
-              <div>
-                <h3 className="font-bold text-2xl lg:text-3xl mb-1 text-brand-secondary-orange">Commerce</h3>
-                <p className="text-base lg:text-lg leading-relaxed">
-                  Encouraging innovation, entrepreneurship, and real-world application.
-                </p>
-              </div>
-            </div>
-          </div>
-
         </div>
       </section>
 
