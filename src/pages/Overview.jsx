@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import EdgeContainer from "../components/ui/EdgeContainer";
 import Button from "../components/ui/Button";
 
@@ -12,6 +14,7 @@ import missionIcon from "../assets/overview/mission.png";
 import visionIcon from "../assets/overview/vision.png";
 
 const Overview = () => {
+  const navigation = useNavigate();
   return (
     <div className="font-family text-brand-primary bg-white flex flex-col gap-20 w-full">
 
@@ -29,7 +32,7 @@ const Overview = () => {
             Empowering students through innovation, collaboration, and real-world project experience.
           </p>
           <div className="flex flex-row gap-3">
-            <Button>Join the Program</Button>
+            <Button onClick={() => navigation()}>Join the Program</Button>
 
             <Button variant="primary">Register for Events</Button>
           </div>
@@ -37,39 +40,32 @@ const Overview = () => {
       </section>
 
       {/* WHAT IS NEXT-GEN-3? */}
-      <section className="bg-white min-h-screen flex items-center justify-center px-20  pt-20 pb-5">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mx-auto">
-
-          <div className="shrink-0 leading-none text-center lg:text-left ">
-            <p className="text-brand-primary text-3xl font-bold mb-1">What is</p>
-            <div className="flex flex-col items-center lg:items-start">
-              <span className="text-brand-secondary-orange font-extrabold text-7xl">NEXT</span>
-              <div className="flex items-center gap-2 mt-1.5">
-                <span className="text-brand-primary font-extrabold text-7xl">GEN</span>
-                <span className="text-brand-secondary-orange font-extrabold text-5xl">-3</span>
-                <span className="text-gray-700 font-extrabold text-6xl">?</span>
-              </div>
+      <section className="section-padding bg-white">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12 w-full">
+          <div className="shrink-0 leading-none lg:text-left">
+            <p className="text-brand-primary text-[2.5rem] font-bold">What is</p>
+            <div className="flex items-end gap-5">
+              <img src={Logo} alt="Next Gen Logo" className="w-80"/>
+              <p className="text-brand-primary text-[4.75rem] font-bold font-cadt">?</p>
             </div>
           </div>
-
-          <EdgeContainer
-            edges={["top-right", "bottom-left"]}
-            edgesSize="43px"
-            borders={[]}
-            bordersWidth={0}
-            borderColor="transparent"
-          >
-            <div className="bg-brand-secondary-orange font-semibold px-6 lg:px-8 py-5 leading-relaxed flex flex-col gap-0 w-[90vw] lg:w-[600px]">
-              <div className="w-full h-px bg-white/60 mb-4" />
-              <p className="text-justify text-base lg:text-2xl">
-                A semester-break engagement program for aspired digital students aims to promote
-                knowledge sharing between senior and junior cohorts, support academic readiness
-                through mentoring and coaching, and provides a platform for students to develop
-                innovative ideas that address real-world challenges.
-              </p>
-              <div className="w-full h-px bg-white/60 mt-4" />
-            </div>
-          </EdgeContainer>
+          <div className="max-w-200">
+            <EdgeContainer
+              edges={["top-right", "bottom-left"]}
+              edgesSize="80px"
+            >
+              <div className="bg-brand-secondary-orange font-semibold px-6 lg:px-8 py-8 leading-relaxed flex flex-col gap-0">
+                <div className="px-[40px]">
+                  <p className="justify-content text-lg lg:text-2xl border-t-3 border-b-3 border-white py-5">
+                    A semester-break engagement program for aspired digital students aims to promote
+                    knowledge sharing between senior and junior cohorts, support academic readiness
+                    through mentoring and coaching, and provides a platform for students to develop
+                    innovative ideas that address real-world challenges.
+                  </p>
+                </div>
+              </div>
+            </EdgeContainer>
+          </div>
 
         </div>
       </section>
