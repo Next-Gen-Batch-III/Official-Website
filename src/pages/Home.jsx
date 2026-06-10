@@ -39,7 +39,7 @@ const Home = () => {
           </div>
         </div>
         <div className="button-container flex gap-5 justify-end">
-          <Button>JOIN THE PROGRAM</Button>
+          <Button onClick={() => {navigate("/trainer-journey")}} >JOIN THE PROGRAM</Button>
           <Button variant="primary">REGISTER FOR EVENTS</Button>
         </div>
       </section>

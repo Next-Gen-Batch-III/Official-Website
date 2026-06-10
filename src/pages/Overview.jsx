@@ -36,7 +36,7 @@ const Overview = () => {
             Empowering students through innovation, collaboration, and real-world project experience.
           </p>
           <div className="flex flex-row gap-3">
-            <Button onClick={() => navigation()}>Join the Program</Button>
+            <Button onClick={() => navigation("/trainer-journey")}>Join the Program</Button>
 
             <Button variant="primary">
               Register for Events
