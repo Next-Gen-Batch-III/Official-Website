@@ -26,7 +26,7 @@ const Button = ({ children, onClick, variant, shadowColor, type = "button", clas
                 <EdgeContainer edges={["bottom-right"]} edgesSize="10px">
                     <button 
                         type={type}
-                        className={`px-6 py-2 lg:px-10 lg:py-2 text-sm md:text-lg font-bold uppercase transition-colors ${buttonBg} ${textColor} ${className}`}
+                        className={`px-6 py-2 lg:px-10 lg:py-2 text-sm md:text-md font-bold uppercase transition-colors ${buttonBg} ${textColor} ${className}`}
                     >
                         {children}
                     </button>

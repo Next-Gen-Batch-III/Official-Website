@@ -4,7 +4,8 @@ import { useLocation } from 'react-router-dom';
 import { news } from '../data/news';
 import { projects } from '../data/projects';
 import { people } from '../data/people';
-import { organizers, management } from '../data/team';
+import { organizers } from '../data/organizers';
+import { management } from '../data/management';
 
 // Component imports
 import ProjectCard from '../components/cards/ProjectCard';

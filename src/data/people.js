@@ -35,32 +35,6 @@ const people = [
         link: "/people/management"
     },
     {
-        team: "Mentor Team",
-        people: [
-            {
-                name: "Placeholder Name",
-                role: "Mentor",
-                image: "https://placehold.co/400x600/png"
-            },
-            {
-                name: "Placeholder Name",
-                role: "Mentor",
-                image: "https://placehold.co/400x600/png"
-            },
-            {
-                name: "Placeholder Name",
-                role: "Mentor",
-                image: "https://placehold.co/400x600/png"
-            },
-            {
-                name: "Placeholder Name",
-                role: "Mentor",
-                image: "https://placehold.co/400x600/png"
-            }
-        ],
-        link: "/people/mentors"
-    },
-    {
         team: "Organizer Team",
         people: [
             {

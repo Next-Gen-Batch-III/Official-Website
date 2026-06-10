@@ -1,6 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 import EdgeContainer from "../components/ui/EdgeContainer";
 import Button from "../components/ui/Button";
-import heroBg from "../assets/overview/hero-img.png";
+
+
+
+import heroBg from "../assets/overview/hero-img.webp";
 import Logo from "../assets/logo/logoBlueNobg2.png";
 import codeImg from "../assets/overview/code-reason.webp";
 import connectivityImg from "../assets/overview/connectivity-reason.webp";
@@ -13,6 +18,7 @@ import JoinProgram from "../components/cards/joinProgramCard.jsx";
 const Overview = () => {
   const [isJoinProgramOpen, setIsJoinProgramOpen] = useState(false);
 
+  const navigation = useNavigate();
   return (
     <div className="font-family text-brand-primary bg-white flex flex-col gap-20 w-full">
 
@@ -30,9 +36,7 @@ const Overview = () => {
             Empowering students through innovation, collaboration, and real-world project experience.
           </p>
           <div className="flex flex-row gap-3">
-            <Button onClick={() => setIsJoinProgramOpen(true)}>
-              Join the Program
-            </Button>
+            <Button onClick={() => navigation()}>Join the Program</Button>
 
             <Button variant="primary">
               Register for Events
@@ -226,14 +230,15 @@ const Overview = () => {
       </section>
 
       {/* MISSION & VISION */}
-      <section className="section-padding bg-white">
-        <div className="border-b-2 border-gray-300 pb-2 mb-8">
+      <section className="px-6 lg:px-20 pt-6 pb-24 lg:pt-6 lg:pb-24 bg-white">
+        <div className="border-b-2 border-gray-300 pb-2 mb-24">
+     
           <h2 className="font-bold text-2xl lg:text-4xl text-brand-secondary-orange uppercase">
             Mission & Vision
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-2xl mx-auto">
+        <div className="flex flex-col lg:flex-row justify-between gap-25">
 
           <div className="bg-brand-primary text-white flex flex-col items-center py-14 lg:py-20 px-8 gap-6 text-center w-full">
             <p className="font-bold text-xl lg:text-2xl tracking-widest uppercase">Our Mission</p>

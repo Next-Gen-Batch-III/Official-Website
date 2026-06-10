@@ -1,22 +1,25 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
 
 import ScrollToTop from './components/layout/ScrollToTop';
-import News from './pages/News';
+import ScrollToTopButton from './components/ui/ScrollToTopButton';
 import Navbar from './components/layout/Navbar';
 import Home from './pages/Home';
 import Overview from './pages/Overview';
-import Faq from './pages/Faq';
-import People from './pages/People';
-import Team from './pages/Team';
-import Footer from './components/layout/footer/Footer';
-import NewsDetail from './pages/NewsDetail';
 import Journey from './pages/Journey';
+import Faq from './pages/Faq';
+import News from './pages/News';
+import NewsDetail from './pages/NewsDetail';
 import Projects from './pages/Projects';
 import Project_Detail from './pages/Project_Detail';
-import Organizer from './pages/Organizer';
-import Search from './pages/Search';
 import TrainerJourney from './pages/trainer_journey';
+import Footer from './components/layout/footer/Footer';
+
+const People = lazy(() => import('./pages/People'));
+const Team = lazy(() => import('./pages/Team'));
+const Organizer = lazy(() => import('./pages/Organizer'));
+const Search = lazy(() => import('./pages/Search'));
 
 
 function App() {
