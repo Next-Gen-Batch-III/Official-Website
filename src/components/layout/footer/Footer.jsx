@@ -10,7 +10,7 @@ const Footer = () => {
       <footer className="bg-brand-primary text-white">
         {/*Partners*/}
         <div className="flex-col-center min-h-[255px] px-4 pb-8 pt-8 text-center">
-          <h2 className="text-[28px] font-bold leading-tight sm:text-[30px]">
+          <h2 className="text-[25px] font-bold leading-tight sm:text-[30px]">
             Participated & Supported by
           </h2>
           <PartnerIMG />

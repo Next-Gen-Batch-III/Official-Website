@@ -9,34 +9,37 @@ const partnerRows = [
     {
       img: img1,
       name: "CADT-IDT",
-      frameClassName: "h-12 w-[250px] sm:h-[58px] sm:w-[270px]",
-      imageClassName: "object-contain",
+      frameClassName: "h-14 w-[190px] sm:h-10 sm:w-[180px] md:h-15 md:w-[250px]",
+      imageClassName: "object-contain p-1",
     },
     {
       img: img2,
       name: "Midas",
-      frameClassName: "h-14 w-[104px] sm:h-[64px] sm:w-[120px]",
-      imageClassName: "object-contain",
+      frameClassName: "h-14 w-[100px] sm:h-10 sm:w-[110px] md:h-15 md:w-[150px]",
+      imageClassName: "object-contain p-1",
     },
   ],
   [
     {
       img: img3,
       name: "Geology Club, CAMBODIA",
-      frameClassName: "size-[74px] rounded-full bg-white sm:size-[78px]",
-      imageClassName: "rounded-full object-contain",
+      frameClassName:
+        "w-15 h-15 sm:w-14 sm:h-14 md:w-18 md:h-18 rounded-full bg-white",
+      imageClassName: "rounded-full object-contain p-1",
     },
     {
       img: img4,
       name: "The Cambodia China Times",
-      frameClassName: "size-[74px] rounded-full bg-white sm:size-[78px]",
-      imageClassName: "rounded-full object-contain",
+      frameClassName:
+        "w-15 h-15 sm:w-14 sm:h-14 md:w-18 md:h-18 rounded-full bg-white",
+      imageClassName: "rounded-full object-contain p-1",
     },
     {
       img: img5,
       name: "Green Bakery & Coffee",
-      frameClassName: "size-[74px] rounded-full bg-white sm:size-[78px]",
-      imageClassName: "rounded-full object-contain",
+      frameClassName:
+        "w-15 h-15 sm:w-14 sm:h-14 md:w-18 md:h-18 rounded-full bg-white",
+      imageClassName: "rounded-full object-contain p-1",
     },
   ],
 ];
@@ -45,10 +48,14 @@ const PartnerIMG = () => {
   const renderPartnerLogo = (partner) => (
     <div
       key={partner.name}
-      className={`shrink-0 overflow-hidden ${partner.frameClassName}`}
+      className={`
+        flex items-center justify-center
+        overflow-hidden
+        ${partner.frameClassName}
+      `}
     >
       <img
-        className={`h-full w-full ${partner.imageClassName}`}
+        className={`w-full h-full ${partner.imageClassName}`}
         src={partner.img}
         alt={partner.name}
       />
@@ -56,15 +63,12 @@ const PartnerIMG = () => {
   );
 
   return (
-    <div className="mt-2 flex w-full max-w-[520px] flex-col items-center gap-6 px-4 sm:mt-3">
+    <div className="mt-4 w-full max-w-4xl mx-auto flex flex-col items-center gap-6 px-4">
       {partnerRows.map((partners, index) => (
-        <div
-          key={index}
-          className="flex w-full justify-center overflow-x-auto"
-        >
+        <div key={index} className="flex w-full justify-center">
           <div
-            className={`flex min-w-max items-center justify-center ${
-              index === 0 ? "gap-7 sm:gap-10" : "gap-4 sm:gap-6"
+            className={`flex flex-wrap items-center justify-center ${
+              index === 0 ? "gap-5 sm:gap-8" : "gap-3 sm:gap-5"
             }`}
           >
             {partners.map(renderPartnerLogo)}
