@@ -8,10 +8,10 @@ import ProjectDetailHero from "../components/Projects/ProjectDetailHero";
 
 
 const Project_Detail = () => {
+  const { slug } = useParams();
   const project = projects.find((p) => p.slug === slug);
   const showQR = Boolean(project.qrCode);
   const showImageProject = Boolean(project.projectImages);
-  const { slug } = useParams();
 
   if (!project) {
     return (
