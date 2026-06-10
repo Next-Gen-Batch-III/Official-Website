@@ -10,7 +10,7 @@ const ProjectCard = ({project}) => {
             </div>
             <div className=" px-4.5 py-2.5 flex flex-col h-full justify-between gap-3">
                 <div className="project-info">
-                    <h3 className="text-xl font-bold">{project.title}</h3>
+                    <h3 className="text-xl font-bold ">{project.title}</h3>
                     <p>{project.description}</p>
                 </div>
                 <div className="button-container group">
