@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { news } from "@/data/news";
 
 const splitStory = (story, fallbackText) => {
@@ -42,10 +42,16 @@ const splitStory = (story, fallbackText) => {
 
 const NewsDetail = () => {
   const { slug } = useParams();
-  const article = news.find((item) => item.slug === slug);
+  const article = news.find(
+    (item) => item.slug === slug || item.aliases?.includes(slug)
+  );
 
   if (!article) {
     return <div className="p-10 text-red-500">News not found</div>;
+  }
+
+  if (slug !== article.slug) {
+    return <Navigate to={`/news/${article.slug}`} replace />;
   }
 
   const { lead, body, closing } = splitStory(article.article, article.subtitle);
@@ -53,7 +59,7 @@ const NewsDetail = () => {
 
   return (
     <div className="px-6 lg:px-25 mt-10 mb-30">
-      <h1 className="text-[30px] lg:text-[38px] font-bold text-[#1B2A4E] leading-tight mb-4">
+      <h1 className="text-[30px] lg:text-[38px] font-bold text-brand-primary leading-tight mb-4">
         {article.headline}
       </h1>
 
@@ -61,7 +67,9 @@ const NewsDetail = () => {
         By {article.publisher} | {article.date} | News
       </p>
 
-      <div className="flex flex-col lg:flex-row gap-6 mb-6">
+      <p className="text-justify text-[15px] leading-relaxed text-gray-800 mb-6">{article.subtitle}</p>
+
+      <div className="flex flex-col items-center lg:flex-row gap-6 mb-6">
         <img
           src={article.thumbnail || "/fallback.jpg"}
           alt={article.headline}

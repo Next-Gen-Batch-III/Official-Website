@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
+
 import EdgeContainer from "@/components/ui/EdgeContainer";
 import Button from "@/components/ui/Button";
 import ProjectCard from "@/components/cards/ProjectCard";
+import PeopleCard from "@/components/cards/PeopleCard";
 
 import heroImage1 from "@/assets/images/home/heroImage1.webp";
 import heroImage2 from "@/assets/images/home/heroImage2.webp";
@@ -8,22 +11,19 @@ import heroImage3 from "@/assets/images/home/heroImage3.webp";
 import codeReason from "@/assets/overview/code-reason.webp";
 import connectivityReason from "@/assets/overview/connectivity-reason.webp";
 import commerceReason from "@/assets/overview/commerce-reason.webp";
+
+
+import { projects } from "@/data/projects";
+import { news } from "@/data/news";
+import { people } from "@/data/home";
+
 const Home = () => {
-  const people = [
-    { id: 1, name: "John Doe", role: "Developer" },
-    { id: 2, name: "Jane Smith", role: "Designer" },
-    { id: 3, name: "Bob Johnson", role: "Manager" },
-    { id: 4, name: "Alice Williams", role: "Developer" },
-  ];
-  const projects = [
-    { id: 1, title: "Project A", description: "Description of Project A", image: "https://placehold.co/600x400/png" },
-    { id: 2, title: "Project B", description: "Description of Project B", image: "https://placehold.co/600x400/png" },
-  ];
-  const news = {title: "Next-Gen Engagement Program Launches Batch 3 with Exciting Opportunities", description: "The Next-Gen Engagement Program is thrilled to announce the launch of Batch 3, featuring three dynamic departments: Code, Connectivity, and Commerce. This new batch promises to deliver unparalleled opportunities for learning, networking, and real-world application. Participants will have access to cutting-edge resources, mentorship from industry experts, and a vibrant community of like-minded individuals. Whether you're looking to enhance your coding skills, build meaningful connections, or explore innovative commerce strategies, Batch 3 of the Next-Gen Engagement Program has something for everyone. Don't miss out on this chance to be part of the next generation of innovators and leaders!"};
+  const navigate = useNavigate();
+  const projectList = projects.sort(() => 0.5 - Math.random()).slice(0, 3);
   return (
     <div className="home flex flex-col">
-      <section id="hero" className="flex flex-col gap-10 bg-brand-primary text-white px-5 py-10 lg:px-20">
-        <div className="grid grid-col-2 lg:grid-cols-3 gap-10 items-end">
+      <section id="hero" className="flex flex-col gap-10 bg-brand-primary text-white section-padding">
+        <div className="grid grid-col-2 lg:grid-cols-3 gap-5 lg:gap-10 items-end">
           <div className="col-span-2">
             <h1 className="font-bold text-2xl lg:text-[2.5rem]">Next-Gen engagement Program <br/> 
             Batch 3 - 3 Departments</h1>
@@ -45,7 +45,7 @@ const Home = () => {
       </section>
 
 
-      <section className="flex flex-col gap-5 px-5 py-10 lg:px-20">
+      <section className="flex flex-col gap-5 section-padding">
         <div>
           <h2 className="text-[2.5rem] font-bold text-brand-secondary-orange border-b border-black pb-4">Why join Next-Gen engagement?</h2>
           <p className="text-lg pt-4">Step into a next-generation ecosystem that redefines learning through collaboration, innovation, and real-world experience.</p>
@@ -60,8 +60,8 @@ const Home = () => {
             <div className="flex gap-12">
               <div className="hidden md:flex items-center">
                 <svg 
-                    width="full"
-                    height="full" 
+                    width="100%"
+                    height="100%" 
                     viewBox="0 0 100 100" 
                     fill="none" 
                     className="min-w-20 max-w-25 md:block"
@@ -84,8 +84,8 @@ const Home = () => {
             <div className="flex gap-12">
               <div className="hidden md:flex items-center">
                 <svg 
-                  width="full" 
-                  height="full" 
+                  width="100%" 
+                  height="100%" 
                   viewBox="0 0 200 200" 
                   fill="none" 
                   className="min-w-20 max-w-25 md:block"
@@ -153,8 +153,8 @@ const Home = () => {
             <div className="flex gap-12">
               <div className="hidden md:flex items-center">
                 <svg 
-                  width="full" 
-                  height="full"
+                  width="100%" 
+                  height="100%"
                   viewBox="0 0 200 200" 
                   fill="none" 
                   className="min-w-20 max-w-25 md:block"
@@ -193,48 +193,57 @@ const Home = () => {
       </section>
 
 
-      <section className="student-projects bg-brand-primary flex flex-col gap-5 px-5 py-10 lg:px-20">
+      <section className="student-projects bg-brand-primary flex flex-col gap-5 section-padding">
         <div>
           <h2 className="text-[2.5rem] font-bold text-brand-secondary-orange border-b border-brand-secondary-orange pb-4">Student Projects</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {projects.map((project, index) => (
+          {projectList.map((project, index) => (
             <ProjectCard key={index} project={project} />
           ))}
         </div>
+        <div className="flex justify-end">
+          <Button variant="primary" shadowColor="#666666" onClick={() => navigate('/projects')}>
+            View All Projects
+          </Button>
+        </div>
       </section>
-      <section className="our-people flex flex-col gap-5 px-5 py-10 lg:px-20">
+
+
+      <section className="our-people flex flex-col gap-5 section-padding">
         <Title>Our People</Title>
           <div className="flex flex-col gap-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10">
               {people.map((person, index) => (
-                <div key={index} className="flex">
-                  <EdgeContainer edges={["bottom-right"]} edgesSize="40px">
-                    <img src="https://placehold.co/400x600/png" alt="" className="w-full h-full object-cover"/>
-                  </EdgeContainer>
-                </div>
+                  <PeopleCard key={index} name={person.name} role={person.role} image={person.image} />
               ))}
             </div>    
             <div className="flex justify-end">
-              <Button variant="primary" shadowColor="#666666">All People</Button>
+              <Button variant="primary" shadowColor="#666666" onClick={() => navigate("/people")}>
+                All People
+              </Button>
             </div>      
           </div>
       </section>
-      <section className="news flex flex-col gap-5 px-5 py-10 lg:px-20">
+
+
+      <section className="news flex flex-col gap-5 section-padding">
         <Title>News & Updates</Title>
-        <div className="grid md:grid-cols-2 gap-10 items-start">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-20 lg:gap-30 items-start">
               <div className="w-fit h-fit">
                 <EdgeContainer edges={["bottom-right"]} edgesSize="40px" borders={["bottom", "right"]} bordersWidth="4">
-                  <img src="https://placehold.co/600x400/png" alt="" className="w-full h-full object-cover"/>
+                  <img src={news[0].thumbnail} alt="" className="w-full h-full object-cover"/>
                 </EdgeContainer>
               </div>
               <div className="flex flex-col justify-between gap-5 h-full">
-                <div>
-                  <h3 className="text-2xl font-bold">{news.title}</h3>
-                  <p>{news.description}</p>                 
+                <div className="mt-5 lg:mt-18 flex flex-col gap-8">
+                  <h3 className="text-2xl font-bold">{news[0].headline}</h3>
+                  <p>{news[0].subtitle}</p>                 
                 </div>
                 <div className="flex justify-end">
-                  <Button variant="primary" shadowColor="#666666">Read More</Button>
+                  <Button variant="primary" shadowColor="#666666" onClick={() => navigate(`/news/${news[0].slug}`)}>
+                    Read More
+                  </Button>
                 </div>
               </div>
         </div>

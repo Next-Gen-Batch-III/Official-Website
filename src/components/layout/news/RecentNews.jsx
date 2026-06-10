@@ -1,5 +1,6 @@
 import EdgeContainer from "./../../ui/EdgeContainer";
-import {  Link } from 'react-router-dom'
+import LazyImage from "@/components/ui/LazyImage";
+import { Link } from "react-router-dom";
 
 const RecentNews = ({ slug, thumbnail, headline, subtitle, date }) => {
   return (
@@ -15,7 +16,7 @@ const RecentNews = ({ slug, thumbnail, headline, subtitle, date }) => {
               edgesSize="60px"
               className="w-full"
             >
-              <img className="w-full md:h-150 lg:h-85 object-cover" src={thumbnail} alt={headline} />
+              <LazyImage className="w-full md:h-150 lg:h-85 object-cover" src={thumbnail} alt={headline} />
             </EdgeContainer>
           </div>
         </Link>
