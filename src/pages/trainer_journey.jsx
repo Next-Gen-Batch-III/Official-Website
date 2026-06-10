@@ -13,9 +13,9 @@ import phoneIcon from '../assets/icon_image/phone.png';
 const TrainerJourney = () => {
   return (
     <div>
-        <section className="bg-brand-primary grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 section-padding items-center">
+        <section className="bg-brand-primary grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 py-12 md:py-32 items-center">
             {/* Text Section */}
-            <div className="flex flex-col gap-2 items-start items-left">
+            <div className="flex flex-col gap-2 items-start items-center px-4 md:px-16">
                 <h1 className="font-bold text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] text-white">
                     Become a Trainer for the
                     <span className="text-brand-secondary-orange"><br />Next-Gen Engagement</span>
@@ -28,9 +28,9 @@ const TrainerJourney = () => {
             </div>
 
             {/* Image Section */}
-            <div className="relative flex justify-center items-center mt-10 lg:mt-0">
+            <div className="relative flex justify-center items-center mt-10 lg:mt-0 px-4 md:px-16">
   
-                    <div className="w-full lg:w-[80%] h-auto overflow-hidden">
+                    <div className="w-full lg:w-full h-auto overflow-hidden">
                         <img
                         src={trainerJourneyImage}
                         className="w-full h-full object-cover object-top"
@@ -39,15 +39,15 @@ const TrainerJourney = () => {
                     </div>
 
                 <div className="absolute bottom-0 right-0 
-                    border-l-[40px] md:border-l-[80px] lg:border-l-[120px] 
-                    border-b-[40px] md:border-b-[80px] lg:border-b-[120px] 
+                    border-l-[60px] md:border-l-[100px] lg:border-l-[120px] 
+                    border-b-[60px] md:border-b-[100px] lg:border-b-[120px] 
                     border-l-transparent 
                     border-b-[#14284C]">
                 </div>
             </div>
         </section>
  
-        <section className="bg-white gap-4 section-padding items-center">
+        <section className="bg-white gap-4 px-4 md:px-16 items-center">
 
             <h1 className="text-[2rem] font-bold mb-12 mt-8 text-center"><span className="text-brand-secondary-orange">Why Become</span> <span className="text-brand-primary">a Trainer?</span></h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -88,7 +88,7 @@ const TrainerJourney = () => {
         </section>
         
         {/* form registration */}
-        <section className="bg-white gap-4 section-padding items-center">
+        <section className="bg-white gap-4 items-center py-12 md:py-32 px-4 md:px-16">
 
             {/* CARD */}
             <div className="p-12 bg-white rounded-xl shadow-md border-gray-300 border grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
