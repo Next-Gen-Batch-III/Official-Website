@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 import EdgeContainer from "@/components/ui/EdgeContainer";
 import Button from "@/components/ui/Button";
 import ProjectCard from "@/components/cards/ProjectCard";
 import PeopleCard from "@/components/cards/PeopleCard";
+import RegisterModal from "@/components/ui/RegisterModal";
 
 import heroImage1 from "@/assets/images/home/heroImage1.webp";
 import heroImage2 from "@/assets/images/home/heroImage2.webp";
@@ -20,6 +22,8 @@ import { people } from "@/data/home";
 const Home = () => {
   const navigate = useNavigate();
   const projectList = projects.sort(() => 0.5 - Math.random()).slice(0, 3);
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+
   return (
     <div className="home flex flex-col">
       <section id="hero" className="flex flex-col gap-10 bg-brand-primary text-white section-padding">
@@ -39,9 +43,10 @@ const Home = () => {
           </div>
         </div>
         <div className="button-container flex gap-5 justify-end">
-          <Button onClick={() => {navigate("/trainer-journey")}} >JOIN THE PROGRAM</Button>
+          <Button onClick={() => {setIsRegisterModalOpen(true)}} >JOIN THE PROGRAM</Button>
           <Button variant="primary">REGISTER FOR EVENTS</Button>
         </div>
+        <RegisterModal isOpen={isRegisterModalOpen} onClose={() => setIsRegisterModalOpen(false)} />
       </section>
 
 

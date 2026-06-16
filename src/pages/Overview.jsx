@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 import EdgeContainer from "../components/ui/EdgeContainer";
 import Button from "../components/ui/Button";
+import RegisterModal from "../components/ui/RegisterModal";
 
 
 
@@ -13,12 +14,9 @@ import commerceImg from "../assets/overview/commerce-reason.webp";
 import missionIcon from "../assets/overview/mission.png";
 import visionIcon from "../assets/overview/vision.png";
 import { useState } from "react";
-import JoinProgram from "../components/cards/joinProgramCard.jsx";
 
 const Overview = () => {
-  const [isJoinProgramOpen, setIsJoinProgramOpen] = useState(false);
-
-  const navigation = useNavigate();
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
   return (
     <div className="font-family text-brand-primary bg-white flex flex-col gap-20 w-full">
 
@@ -36,17 +34,13 @@ const Overview = () => {
             Empowering students through innovation, collaboration, and real-world project experience.
           </p>
           <div className="flex flex-row gap-3">
-            <Button onClick={() => navigation("/trainer-journey")}>Join the Program</Button>
+            <Button onClick={() => setIsRegisterModalOpen(true)}>Join the Program</Button>
 
             <Button variant="primary">
               Register for Events
             </Button>
           </div>
-
-          <JoinProgram
-            isOpen={isJoinProgramOpen}
-            onClose={() => setIsJoinProgramOpen(false)}
-          />
+          <RegisterModal isOpen={isRegisterModalOpen} onClose={() => setIsRegisterModalOpen(false)} />
         </div>
       </section>
 
