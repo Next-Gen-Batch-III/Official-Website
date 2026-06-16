@@ -14,7 +14,6 @@ import AkharaImg from "../assets/student_project_image/Akhara.webp";
 import SastraImg from "../assets/student_project_image/Sastra.webp";
 import EduquestImg from "../assets/student_project_image/Eduquest.webp";
 
-
 const Projects = () => {
 const [search, setSearch] = useState("");
 const navigate = useNavigate();
@@ -45,6 +44,11 @@ const projectList = [
 
           <div className="flex-1 min-w-[300px] content-center">
             <div className="search-box">
+              <label className="search-icon" htmlFor="search">
+                <svg className="w-6 h-6 text-neutral-400 ml-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
+                </svg>
+              </label>
               <input
                 type="text"
                 placeholder=" Search Project"
