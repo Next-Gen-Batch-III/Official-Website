@@ -10,7 +10,7 @@ const Button = ({ children, onClick, variant, shadowColor, type = "button", clas
     return (
         <div className="relative group w-fit h-fit cursor-pointer" onClick={onClick}>
             
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 cursor-pointer">
                 <EdgeContainer 
                     edges={["bottom-right"]} 
                     edgesSize="10px" 
@@ -22,11 +22,11 @@ const Button = ({ children, onClick, variant, shadowColor, type = "button", clas
                 </EdgeContainer>
             </div>
 
-            <div className={`relative transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1`}>
+            <div className={`relative transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1 cursor-pointer`}>
                 <EdgeContainer edges={["bottom-right"]} edgesSize="10px">
                     <button 
                         type={type}
-                        className={`px-6 py-2 lg:px-10 lg:py-2 text-sm md:text-md font-bold uppercase transition-colors ${buttonBg} ${textColor} ${className}`}
+                        className={`px-6 py-2 lg:px-10 lg:py-2 text-sm md:text-md font-bold uppercase transition-colors cursor-pointer ${buttonBg} ${textColor} ${className}`}
                     >
                         {children}
                     </button>
