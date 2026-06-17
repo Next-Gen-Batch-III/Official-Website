@@ -45,7 +45,7 @@ const Footer = () => {
             <FooterColumn title="CONTACT">
               {/*Socials*/}
               <div>
-                Email:
+                Email: {" "}
                 <a
                   href="mailto:nextgen@cadt.edu.kh"
                   className="hover:underline"

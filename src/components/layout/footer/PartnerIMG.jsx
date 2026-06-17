@@ -3,19 +3,20 @@ import img2 from "../../../assets/logo/partner/Midas.webp";
 import img3 from "../../../assets/logo/partner/Geology Club, CAMBODIA.webp";
 import img4 from "../../../assets/logo/partner/The Cambodia China Times.webp";
 import img5 from "../../../assets/logo/partner/Green Bakery & Coffee.webp";
+import coderistic from "./../../../assets/logo/partner/Coderistic.webp"
 
 const partnerRows = [
   [
     {
       img: img1,
       name: "CADT-IDT",
-      frameClassName: "h-14 w-[190px] sm:h-10 sm:w-[180px] md:h-15 md:w-[250px]",
+      frameClassName: "",
       imageClassName: "object-contain p-1",
     },
     {
       img: img2,
       name: "Midas",
-      frameClassName: "h-14 w-[100px] sm:h-10 sm:w-[110px] md:h-15 md:w-[150px]",
+      frameClassName: "",
       imageClassName: "object-contain p-1",
     },
   ],
@@ -24,21 +25,28 @@ const partnerRows = [
       img: img3,
       name: "Geology Club, CAMBODIA",
       frameClassName:
-        "w-15 h-15 sm:w-14 sm:h-14 md:w-18 md:h-18 rounded-full bg-white",
+        "rounded-full bg-white",
       imageClassName: "rounded-full object-contain p-1",
     },
     {
       img: img4,
       name: "The Cambodia China Times",
       frameClassName:
-        "w-15 h-15 sm:w-14 sm:h-14 md:w-18 md:h-18 rounded-full bg-white",
+        "rounded-full bg-white",
       imageClassName: "rounded-full object-contain p-1",
     },
     {
       img: img5,
       name: "Green Bakery & Coffee",
       frameClassName:
-        "w-15 h-15 sm:w-14 sm:h-14 md:w-18 md:h-18 rounded-full bg-white",
+        "rounded-full bg-white",
+      imageClassName: "rounded-full object-contain p-1",
+    },
+    {
+      img: coderistic,
+      name: "Coderistic",
+      frameClassName:
+        "rounded-full bg-white",
       imageClassName: "rounded-full object-contain p-1",
     },
   ],
@@ -51,7 +59,7 @@ const PartnerIMG = () => {
       className={`
         flex items-center justify-center
         overflow-hidden
-        ${partner.frameClassName}
+        h-15 sm:h-14 md:h-18 ${partner.frameClassName}
       `}
     >
       <img

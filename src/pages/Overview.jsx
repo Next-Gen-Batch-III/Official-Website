@@ -36,7 +36,7 @@ const Overview = () => {
           <div className="flex flex-row gap-3">
             <Button onClick={() => setIsRegisterModalOpen(true)}>Join the Program</Button>
 
-            <Button variant="primary">
+            <Button variant="primary" onClick={() => open("https://next-gen-registration.vercel.app/")}>
               Register for Events
             </Button>
           </div>

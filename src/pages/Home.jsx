@@ -29,8 +29,8 @@ const Home = () => {
       <section id="hero" className="flex flex-col gap-10 bg-brand-primary text-white section-padding">
         <div className="grid grid-col-2 lg:grid-cols-3 gap-5 lg:gap-10 items-end">
           <div className="col-span-2">
-            <h1 className="font-bold text-2xl lg:text-[2.5rem]">Next-Gen engagement Program <br/> 
-            Batch 3 - 3 Departments</h1>
+            <h1 className="font-bold text-2xl lg:text-[2.5rem]">Next-Gen Engagement Program <br/> 
+            Batch III - 3 Departments</h1>
           </div>
           <div className="hidden lg:block row-span-2">
             <img src={heroImage3} alt="hero image 3" className="w-full h-auto" />
@@ -44,7 +44,7 @@ const Home = () => {
         </div>
         <div className="button-container flex gap-5 justify-end">
           <Button onClick={() => {setIsRegisterModalOpen(true)}} >JOIN THE PROGRAM</Button>
-          <Button variant="primary">REGISTER FOR EVENTS</Button>
+          <Button variant="primary" onClick={() => open("https://next-gen-registration.vercel.app/")}>REGISTER FOR EVENTS</Button>
         </div>
         <RegisterModal isOpen={isRegisterModalOpen} onClose={() => setIsRegisterModalOpen(false)} />
       </section>
