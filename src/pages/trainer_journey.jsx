@@ -23,7 +23,7 @@ const TrainerJourney = () => {
                 </h1>
 
                 <p className="text-[1.25rem] text-white">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Empower the next generation of technology learners by sharing your knowledge and expertise. As a trainer, you will develop valuable leadership, communication, and mentoring skills while contributing to a meaningful learning experience for students. Join a community dedicated to education, innovation, and professional growth.
                 </p>
             </div>
 
