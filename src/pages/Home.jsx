@@ -17,7 +17,7 @@ import commerceReason from "@/assets/overview/commerce-reason.webp";
 
 import { projects } from "@/data/projects";
 import { news } from "@/data/news";
-import { people } from "@/data/home";
+import { management } from "@/data/management";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -219,7 +219,7 @@ const Home = () => {
         <Title>Our People</Title>
           <div className="flex flex-col gap-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10">
-              {people.map((person, index) => (
+              {management.map((person, index) => (
                   <PeopleCard key={index} name={person.name} role={person.role} image={person.image} />
               ))}
             </div>    
