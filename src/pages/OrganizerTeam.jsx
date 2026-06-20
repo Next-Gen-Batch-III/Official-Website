@@ -12,14 +12,15 @@ const Team = () => {
     useEffect(() => {
         setTeam(null);
         setError(false);
-        import(`@/data/${teamId}.js`)
+        import(`@/data/organizerTeams/${teamId}.js`)
             .then((mod) => setTeam(mod.default))
-            .catch(() => setError(true));        
+            .catch(() => setError(true));
     }, [teamId]);
+
     if (error) {
         return (
-            <div className="flex justify-center p-30 text-lg grow text-brand-primary">
-                <span className="text-brand-secondary-red bold">404</span>Team not found
+            <div className="flex justify-center pt-30 text-lg text-gray-500">
+                Team not found
             </div>
         );
     }
@@ -39,10 +40,9 @@ const Team = () => {
     }
 
     return (
-        <section className="section-padding flex flex-col gap-10 min-h-[80vh]">
+        <section className="section-padding flex flex-col gap-10">
             <div>
                 <h1 className="text-[2.5rem] font-bold">{team.title}</h1>
-                <p className="mt-4 text-gray-600">{team.description}</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-15">
                 {team.people.map((person, index) => (

@@ -7,7 +7,10 @@ import Veasna from "@/assets/participants/HengVeasna.webp";
 import Chanvina from "@/assets/participants/LimChanvina.webp";
 import JohnLiza from "@/assets/participants/JohnLiza.webp";
 
-const management = [
+const management = {
+    title: "Meet Management Members",
+    description: "The Management Team oversees the program, ensuring effective collaboration, clear direction, and successful project execution",
+    people: [
     {
         name: "Han Leangsiv",
         role: ["Program Coordinator", "Lecturer-Researcher"],
@@ -48,6 +51,8 @@ const management = [
         role: "Assistant Lecturer-Researcher",
         image: JohnLiza
     }
-];
+    ]
+};
 
 export { management };
+export default management;

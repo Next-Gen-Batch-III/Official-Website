@@ -11,7 +11,7 @@ import { management } from '@/data/management';
 const People = () => {
     const [searchTerm, setSearchTerm] = React.useState("");
     const organizersList = organizers.filter(organizer => organizer.people.some(person => person.name.toLowerCase().includes(searchTerm.toLowerCase()))).map(organizer => organizer.people.filter(person => person.name.toLowerCase().includes(searchTerm.toLowerCase()))).flat();
-    const ManagerList = management.filter(manager => manager.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    const ManagerList = management.people.filter(manager => manager.name.toLowerCase().includes(searchTerm.toLowerCase()));
     const peopleList = [...ManagerList, ...organizersList];
     return (
         <div className="min-h-screen">

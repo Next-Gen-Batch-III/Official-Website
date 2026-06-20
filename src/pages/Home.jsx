@@ -219,7 +219,7 @@ const Home = () => {
         <Title>Our People</Title>
           <div className="flex flex-col gap-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10">
-              {management.map((person, index) => (
+              {management.people.map((person, index) => (
                   <PeopleCard key={index} name={person.name} role={person.role} image={person.image} />
               ))}
             </div>    
