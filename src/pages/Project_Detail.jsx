@@ -9,8 +9,9 @@ import ProjectDetailHero from "../components/Projects/ProjectDetailHero";
 
 const Project_Detail = () => {
   const { slug } = useParams();
-
   const project = projects.find((p) => p.slug === slug);
+  const showQR = Boolean(project.qrCode);
+  const showImageProject = Boolean(project.projectImages);
 
   if (!project) {
     return (
@@ -45,6 +46,7 @@ const Project_Detail = () => {
         </div>
 
         {/* QR */}
+        {showQR && (
         <div className="flex justify-center lg:justify-end">
           <div className="bg-white p-5 sm:p-6 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center w-full max-w-[280px] h-fit">
 
@@ -63,11 +65,12 @@ const Project_Detail = () => {
 
           </div>
         </div>
+        )}
 
       </section>
 
       {/* HIGHLIGHTS */}
-      <section className="bg-[#0B2341] text-white py-12 md:py-16 px-4 sm:px-8 md:px-16">
+      <section className="bg-[#0B2341] text-white py-12 md:py-16 px-4 sm:px-8 md:px-8">
 
         <h1 className="text-2xl sm:text-3xl font-bold text-[#f18f2d] mb-20">
           Project Highlights
@@ -101,6 +104,8 @@ const Project_Detail = () => {
       </section>
 
       {/* GALLERY */}
+
+      {showImageProject &&(
       <section className="space-y-10 mb-28 px-4 md:px-8 mt-10">
 
         <h1 className="text-2xl sm:text-3xl font-bold text-[#f18f2d]">
@@ -156,6 +161,7 @@ const Project_Detail = () => {
         </div>
 
       </section>
+      )}
 
     </div>
   );

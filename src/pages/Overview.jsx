@@ -1,5 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 import EdgeContainer from "../components/ui/EdgeContainer";
 import Button from "../components/ui/Button";
+import RegisterModal from "../components/ui/RegisterModal";
 
 
 
@@ -10,8 +13,10 @@ import connectivityImg from "../assets/overview/connectivity-reason.webp";
 import commerceImg from "../assets/overview/commerce-reason.webp";
 import missionIcon from "../assets/overview/mission.png";
 import visionIcon from "../assets/overview/vision.png";
+import { useState } from "react";
 
 const Overview = () => {
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
   return (
     <div className="font-family text-brand-primary bg-white flex flex-col gap-20 w-full">
 
@@ -29,10 +34,13 @@ const Overview = () => {
             Empowering students through innovation, collaboration, and real-world project experience.
           </p>
           <div className="flex flex-row gap-3">
-            <Button>Join the Program</Button>
+            <Button onClick={() => setIsRegisterModalOpen(true)}>Join the Program</Button>
 
-            <Button variant="primary">Register for Events</Button>
+            <Button variant="primary" onClick={() => open("https://next-gen-registration.vercel.app/")}>
+              Register for Events
+            </Button>
           </div>
+          <RegisterModal isOpen={isRegisterModalOpen} onClose={() => setIsRegisterModalOpen(false)} />
         </div>
       </section>
 
@@ -216,14 +224,15 @@ const Overview = () => {
       </section>
 
       {/* MISSION & VISION */}
-      <section className="section-padding bg-white">
-        <div className="border-b-2 border-gray-300 pb-2 mb-8">
+      <section className="px-6 lg:px-20 pt-6 pb-24 lg:pt-6 lg:pb-24 bg-white">
+        <div className="border-b-2 border-gray-300 pb-2 mb-24">
+     
           <h2 className="font-bold text-2xl lg:text-4xl text-brand-secondary-orange uppercase">
             Mission & Vision
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-2xl mx-auto">
+        <div className="flex flex-col lg:flex-row justify-between gap-25">
 
           <div className="bg-brand-primary text-white flex flex-col items-center py-14 lg:py-20 px-8 gap-6 text-center w-full">
             <p className="font-bold text-xl lg:text-2xl tracking-widest uppercase">Our Mission</p>

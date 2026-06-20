@@ -24,9 +24,9 @@ const Navbar = () => {
     }, []);
     return (
         <header className="w-full h-25 flex justify-between items-center gap-10 px-5 lg:px-20 border-b">
-            <div className="logo w-20 h-20 flex items-center">
+            <button className="logo w-20 h-20 flex items-center hover:cursor-pointer" onClick={() => navigate("/")}>
                 <img src={logo} alt="Logo" />
-            </div> 
+            </button> 
             <nav className="nav flex items-center gap-3 grow justify-end">
                 { !isSearching && (<ul className="hidden lg:flex items-center divide-x divide-neutral-300 font-cadt font-bold">
                     {navItems.map((item, index) => (

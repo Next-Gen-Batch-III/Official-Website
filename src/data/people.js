@@ -13,22 +13,22 @@ const people = [
         people: [
             {
                 name: "Han Leangsiv",
-                role: ["Advisor - helps provide guidance", "Communicator - works with top management and PR Team"],
+                role: ["Program Coordinator", "Lecturer-Researcher"],
                 image: Leangsiv
             },
             {
                 name: "Ang Mengchhuong",
-                role: ["Advisor - helps provide guidance", "Communicator - works with top management and PR Team"],
+                role: ["Program Coordinator", "Lecturer-Researcher"],
                 image: Mengchhuong
             },
             {
                 name: "Heng Sovanmonynuth",
-                role: "Project Advisor - oversees project requirements and theme untill the pitching day",
+                role: "Innovation Program Coordinator",
                 image: Sovanmonynuth
             },
             {
                 name: "Pun Solita",
-                role: "Project Co-Advisor - helps oversee project requirements and theme untill the pitching day",
+                role: "Assistant Lecturer-Researcher",
                 image: Solita
             }
         ],

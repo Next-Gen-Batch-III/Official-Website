@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 import EdgeContainer from "@/components/ui/EdgeContainer";
 import Button from "@/components/ui/Button";
 import ProjectCard from "@/components/cards/ProjectCard";
 import PeopleCard from "@/components/cards/PeopleCard";
+import RegisterModal from "@/components/ui/RegisterModal";
 
 import heroImage1 from "@/assets/images/home/heroImage1.webp";
 import heroImage2 from "@/assets/images/home/heroImage2.webp";
@@ -15,18 +17,20 @@ import commerceReason from "@/assets/overview/commerce-reason.webp";
 
 import { projects } from "@/data/projects";
 import { news } from "@/data/news";
-import { people } from "@/data/home";
+import { management } from "@/data/management";
 
 const Home = () => {
   const navigate = useNavigate();
   const projectList = projects.sort(() => 0.5 - Math.random()).slice(0, 3);
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+
   return (
     <div className="home flex flex-col">
       <section id="hero" className="flex flex-col gap-10 bg-brand-primary text-white section-padding">
         <div className="grid grid-col-2 lg:grid-cols-3 gap-5 lg:gap-10 items-end">
           <div className="col-span-2">
-            <h1 className="font-bold text-2xl lg:text-[2.5rem]">Next-Gen engagement Program <br/> 
-            Batch 3 - 3 Departments</h1>
+            <h1 className="font-bold text-2xl lg:text-[2.5rem]">Next-Gen Engagement Program <br/> 
+            Batch III - 3 Departments</h1>
           </div>
           <div className="hidden lg:block row-span-2">
             <img src={heroImage3} alt="hero image 3" className="w-full h-auto" />
@@ -39,9 +43,10 @@ const Home = () => {
           </div>
         </div>
         <div className="button-container flex gap-5 justify-end">
-          <Button>JOIN THE PROGRAM</Button>
-          <Button variant="primary">REGISTER FOR EVENTS</Button>
+          <Button onClick={() => {setIsRegisterModalOpen(true)}} >JOIN THE PROGRAM</Button>
+          <Button variant="primary" onClick={() => open("https://next-gen-registration.vercel.app/")}>REGISTER FOR EVENTS</Button>
         </div>
+        <RegisterModal isOpen={isRegisterModalOpen} onClose={() => setIsRegisterModalOpen(false)} />
       </section>
 
 
@@ -214,7 +219,7 @@ const Home = () => {
         <Title>Our People</Title>
           <div className="flex flex-col gap-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10">
-              {people.map((person, index) => (
+              {management.people.map((person, index) => (
                   <PeopleCard key={index} name={person.name} role={person.role} image={person.image} />
               ))}
             </div>    

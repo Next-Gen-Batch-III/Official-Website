@@ -16,7 +16,6 @@ const Team = () => {
             .then((mod) => setTeam(mod.default))
             .catch(() => setError(true));        
     }, [teamId]);
-
     if (error) {
         return (
             <div className="flex justify-center pt-30 text-lg grow text-gray-500">

@@ -2,7 +2,17 @@ import EdgeContainer from "./../../ui/EdgeContainer";
 import LazyImage from "@/components/ui/LazyImage";
 import { Link } from "react-router-dom";
 
-const RecentNews = ({ slug, thumbnail, headline, subtitle, date }) => {
+const RecentNews = ({ slug, thumbnail, headline, article, date }) => {
+  const getPreviewText = (article, maxLength = 180) => {
+    if (!article) return "";
+
+    // remove extra spaces
+    const cleanText = article.replace(/\s+/g, " ").trim();
+
+    if (cleanText.length <= maxLength) return cleanText;
+
+    return cleanText.slice(0, maxLength) + "...";
+  };
   return (
     <>
       <div className="w-full flex flex-col gap-8 mt-10 mb-10 lg:flex-row">
@@ -16,7 +26,11 @@ const RecentNews = ({ slug, thumbnail, headline, subtitle, date }) => {
               edgesSize="60px"
               className="w-full"
             >
-              <LazyImage className="w-full md:h-150 lg:h-85 object-cover" src={thumbnail} alt={headline} />
+              <LazyImage
+                className="w-full md:h-150 lg:h-85 object-cover"
+                src={thumbnail}
+                alt={headline}
+              />
             </EdgeContainer>
           </div>
         </Link>
@@ -26,7 +40,7 @@ const RecentNews = ({ slug, thumbnail, headline, subtitle, date }) => {
             {headline}
           </h4>
           <p className="text-brand-secondary-gray mb-5">{date} | News</p>
-          <p>{subtitle}</p>
+          <p>{getPreviewText(article)}</p>
         </div>
       </div>
     </>

@@ -3,48 +3,86 @@ import img2 from "../../../assets/logo/partner/Midas.webp";
 import img3 from "../../../assets/logo/partner/Geology Club, CAMBODIA.webp";
 import img4 from "../../../assets/logo/partner/The Cambodia China Times.webp";
 import img5 from "../../../assets/logo/partner/Green Bakery & Coffee.webp";
+import coderistic from "./../../../assets/logo/partner/Coderistic.webp"
 
-const PartnerIMG = () => {
-  const partnersRow1 = [
+const partnerRows = [
+  [
     {
       img: img1,
       name: "CADT-IDT",
+      frameClassName: "",
+      imageClassName: "object-contain p-1",
     },
     {
       img: img2,
       name: "Midas",
+      frameClassName: "",
+      imageClassName: "object-contain p-1",
     },
-  ];
-
-  const partnersRow2 = [
+  ],
+  [
     {
       img: img3,
       name: "Geology Club, CAMBODIA",
+      frameClassName:
+        "rounded-full bg-white",
+      imageClassName: "rounded-full object-contain p-1",
     },
     {
       img: img4,
       name: "The Cambodia China Times",
+      frameClassName:
+        "rounded-full bg-white",
+      imageClassName: "rounded-full object-contain p-1",
     },
     {
       img: img5,
       name: "Green Bakery & Coffee",
+      frameClassName:
+        "rounded-full bg-white",
+      imageClassName: "rounded-full object-contain p-1",
     },
-  ];
+    {
+      img: coderistic,
+      name: "Coderistic",
+      frameClassName:
+        "rounded-full bg-white",
+      imageClassName: "rounded-full object-contain p-1",
+    },
+  ],
+];
+
+const PartnerIMG = () => {
+  const renderPartnerLogo = (partner) => (
+    <div
+      key={partner.name}
+      className={`
+        flex items-center justify-center
+        overflow-hidden
+        h-15 sm:h-14 md:h-18 ${partner.frameClassName}
+      `}
+    >
+      <img
+        className={`w-full h-full ${partner.imageClassName}`}
+        src={partner.img}
+        alt={partner.name}
+      />
+    </div>
+  );
 
   return (
-    <div className="mt-5 flex flex-col gap-4">
-      {/* Row1 */}
-      <div className="w-auto h-12 flex gap-10 justify-center">
-        {partnersRow1.map((pr, i) => (
-          <img className="w-full h-full" key={i} src={pr.img} alt={pr.name} />
-        ))}
-      </div>
-      {/* Row2 */}
-      <div className="flex gap-10 justify-center">
-        {partnersRow2.map((pr, i) => (
-          <img className="h-15 rounded-[100%]" key={i} src={pr.img} alt={pr.name} />
-        ))}
-      </div>
+    <div className="mt-4 w-full max-w-4xl mx-auto flex flex-col items-center gap-6 px-4">
+      {partnerRows.map((partners, index) => (
+        <div key={index} className="flex w-full justify-center">
+          <div
+            className={`flex flex-wrap items-center justify-center ${
+              index === 0 ? "gap-5 sm:gap-8" : "gap-3 sm:gap-5"
+            }`}
+          >
+            {partners.map(renderPartnerLogo)}
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
