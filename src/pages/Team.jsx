@@ -18,8 +18,8 @@ const Team = () => {
     }, [teamId]);
     if (error) {
         return (
-            <div className="flex justify-center pt-30 text-lg grow text-gray-500">
-                Team not found
+            <div className="flex justify-center p-30 text-lg grow text-brand-primary">
+                <span className="text-brand-secondary-red bold">404</span>Team not found
             </div>
         );
     }
