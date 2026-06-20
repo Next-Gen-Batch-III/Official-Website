@@ -6,7 +6,7 @@ import LazyImage from "@/components/ui/LazyImage";
 
 const PeopleCard = ({ name, role, image, className = "" }) => {
     return (
-        <div className={`group relative mx-auto flex aspect-[5/8] w-full max-w-[18rem] flex-col items-center gap-4 ${className}`}>
+        <div className={`group relative mx-auto flex aspect-[5/8] w-full max-w-[18rem] flex-col items-center gap-4 ${className} font-sans`}>
             <EdgeContainer edges={["bottom-right"]} edgesSize="40px">
                 <LazyImage src={image} alt={name} className="w-full h-full object-cover" />
             </EdgeContainer>

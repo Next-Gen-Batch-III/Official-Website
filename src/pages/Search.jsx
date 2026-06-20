@@ -48,7 +48,7 @@ export default function Search() {
     if(group.people) allPeople.push(...group.people);
   });
   
-  (management || []).forEach(person => {
+  (management.people || []).forEach(person => {
     allPeople.push(person);
   });
   
@@ -56,7 +56,7 @@ export default function Search() {
   
   allPeople = Array.from(new Map(allPeople.map(item => [item.name, item])).values());
   
-  const matchedPeople = showAllPeople ? allPeople : showAllManagement ? (management || []) : showAllOrganizers ? (organizerPeople) : allPeople.filter(p => {
+  const matchedPeople = showAllPeople ? allPeople : showAllManagement ? (management.people || []) : showAllOrganizers ? (organizerPeople) : allPeople.filter(p => {
     const roleString = Array.isArray(p.role) ? p.role.join(' ') : (p.role || '');
     return p.name?.toLowerCase().includes(lowercaseQuery) ||
            roleString.toLowerCase().includes(lowercaseQuery);
@@ -64,7 +64,7 @@ export default function Search() {
 
 
   return (
-    <main className="min-h-screen lg:px-20 px-5 pt-30 pb-20 font-cadt">
+    <main className="min-h-screen lg:px-20 px-5 font-cadt">
       <h1 className="text-3xl font-bold mb-10 text-gray-800">
         Search Results for: <span className="text-brand-secondary-orange">"{q}"</span>
       </h1>
