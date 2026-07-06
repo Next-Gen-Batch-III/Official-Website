@@ -1,7 +1,11 @@
-const RegisterCard = ({ 
-    title, subtitle, features, 
-    qrImage, qrTitle, qrDesc,
-    icons,
+const RegisterCard = ({
+  title,
+  subtitle,
+  features,
+  qrImage,
+  qrTitle,
+  qrDesc,
+  icons,
 }) => {
   return (
     <section className="bg-white gap-4 items-center py-12 md:py-32 px-4 md:px-16">
@@ -38,7 +42,7 @@ const RegisterCard = ({
 
         {/* RIGHT SIDE */}
         <div className="text-center mb-10 mt-10 md:mt-0 flex items-center justify-center flex-col">
-          <h1 className="text-2xl md:text-3xl font-bold text-orange-400">
+          <h1 className="text-2xl md:text-3xl font-bold text-brand-secondary-orange">
             {qrTitle}
           </h1>
 
