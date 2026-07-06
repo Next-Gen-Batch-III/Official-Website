@@ -52,7 +52,7 @@ const Footer = () => {
                 >
                   nextgen@cadt.edu.kh
                 </a>
-                <p>Phone number: +855 822 2226</p>
+                <p>Phone number: +855 8888 22226</p>
               </div>
               <div className="flex">
                 <FooterSocials />

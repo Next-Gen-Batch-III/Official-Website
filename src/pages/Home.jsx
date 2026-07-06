@@ -52,7 +52,7 @@ const Home = () => {
 
       <section className="flex flex-col gap-5 section-padding">
         <div>
-          <h2 className="text-[2.5rem] font-bold text-brand-secondary-orange border-b border-black pb-4">Why join Next-Gen engagement?</h2>
+          <h2 className="text-[2.5rem] font-bold text-brand-secondary-orange border-b border-black pb-4">Why join Next-Gen Engagement?</h2>
           <p className="text-lg pt-4">Step into a next-generation ecosystem that redefines learning through collaboration, innovation, and real-world experience.</p>
         </div>
         <div className="flex flex-col gap-20 mt-10">

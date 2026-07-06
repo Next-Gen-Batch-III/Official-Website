@@ -4,6 +4,7 @@ import img3 from "../../../assets/logo/partner/Geology Club, CAMBODIA.webp";
 import img4 from "../../../assets/logo/partner/The Cambodia China Times.webp";
 import img5 from "../../../assets/logo/partner/Green Bakery & Coffee.webp";
 import coderistic from "./../../../assets/logo/partner/Coderistic.webp"
+import ams from "./../../../assets/logo/partner/AMS.webp"
 
 const partnerRows = [
   [
@@ -14,10 +15,10 @@ const partnerRows = [
       imageClassName: "object-contain p-1",
     },
     {
-      img: img2,
-      name: "Midas",
-      frameClassName: "",
-      imageClassName: "object-contain p-1",
+      img: ams,
+      name: "Apsara Media Services",
+      frameClassName: "rounded-full bg-white",
+      imageClassName: "object-fit rounded-full p-1",
     },
   ],
   [
@@ -29,26 +30,19 @@ const partnerRows = [
       imageClassName: "rounded-full object-contain p-1",
     },
     {
-      img: img4,
-      name: "The Cambodia China Times",
-      frameClassName:
-        "rounded-full bg-white",
-      imageClassName: "rounded-full object-contain p-1",
-    },
-    {
-      img: img5,
-      name: "Green Bakery & Coffee",
-      frameClassName:
-        "rounded-full bg-white",
-      imageClassName: "rounded-full object-contain p-1",
-    },
-    {
       img: coderistic,
       name: "Coderistic",
       frameClassName:
         "rounded-full bg-white",
       imageClassName: "rounded-full object-contain p-1",
     },
+    {
+      img: img4,
+      name: "The Cambodia China Times",
+      frameClassName:
+        "rounded-full bg-white",
+      imageClassName: "rounded-full object-contain p-1",
+    }
   ],
 ];
 
