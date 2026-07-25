@@ -1,5 +1,5 @@
-import nisay from "@/assets/participants/Nisay.webp";
-import linsophary from "@/assets/participants/Linsophary.webp";
+import nisay from "@/assets/participants/nisay.webp";
+import linsophary from "@/assets/participants/linsophary.webp";
 
 const dbTrainer = {
     name: "db-trainer",

@@ -6,11 +6,11 @@ import RegisterModal from "../components/ui/RegisterModal";
 
 
 
-import heroBg from "../assets/overview/hero-img.webp";
+import heroBg from "../assets/overview/heroImg.webp";
 import Logo from "../assets/logo/logoBlueNobg2.png";
-import codeImg from "../assets/overview/code-reason.webp";
-import connectivityImg from "../assets/overview/connectivity-reason.webp";
-import commerceImg from "../assets/overview/commerce-reason.webp";
+import codeImg from "../assets/overview/codeReason.webp";
+import connectivityImg from "../assets/overview/connectivityReason.webp";
+import commerceImg from "../assets/overview/commerceReason.webp";
 import missionIcon from "../assets/overview/mission.png";
 import visionIcon from "../assets/overview/vision.png";
 import { useState } from "react";

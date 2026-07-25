@@ -1,6 +1,6 @@
-import phavy from "@/assets/participants/Phavy.webp";
-import chansreybopha from "@/assets/participants/Chansreybopha.webp";
-import devit from "@/assets/participants/Devit.webp";
+import phavy from "@/assets/participants/phavy.webp";
+import chansreybopha from "@/assets/participants/chansreybopha.webp";
+import devit from "@/assets/participants/devit.webp";
 
 const csProject = {
     name: "cs-project",

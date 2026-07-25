@@ -1,6 +1,6 @@
-import soksambath from "@/assets/participants/Soksambath.webp";
-import kimheng from "@/assets/participants/Kimheng.webp";
-import monikesar from "@/assets/participants/Monikesar.webp";
+import soksambath from "@/assets/participants/soksambath.webp";
+import kimheng from "@/assets/participants/kimheng.webp";
+import monikesar from "@/assets/participants/monikesar.webp";
 
 const csTrainer = {
     name: "cs-trainer",

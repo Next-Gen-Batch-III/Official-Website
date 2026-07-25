@@ -1,6 +1,6 @@
-import chhoungech from "@/assets/participants/Chhoungech.webp";
-import sovanreach from "@/assets/participants/Sovanreach.webp";
-import omrin from "@/assets/participants/Omrin.webp";
+import chhoungech from "@/assets/participants/chhoungech.webp";
+import sovanreach from "@/assets/participants/sovanreach.webp";
+import omrin from "@/assets/participants/omrin.webp";
 
 const proposal = {
     name: "proposal",

@@ -1,8 +1,8 @@
-import sochealika from "@/assets/participants/Sochealika.webp";
-import kimleng from "@/assets/participants/Kimleng.webp";
-import sokheng from "@/assets/participants/Sokheng.webp";
-import vanmonireak from "@/assets/participants/Vanmonireak.webp";
-import chanun from "@/assets/participants/Chhanun.webp";
+import sochealika from "@/assets/participants/sochealika.webp";
+import kimleng from "@/assets/participants/kimleng.webp";
+import sokheng from "@/assets/participants/sokheng.webp";
+import vanmonireak from "@/assets/participants/vanmonireak.webp";
+import chanun from "@/assets/participants/chhanun.webp";
 
 const logistics = {
     name: "logistics",

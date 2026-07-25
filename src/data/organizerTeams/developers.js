@@ -1,7 +1,7 @@
-import lysovath from "@/assets/participants/Lysovath.webp";
-import sovanpisoth from "@/assets/participants/Sovanpisoth.webp";
-import sokunkanha from "@/assets/participants/Sokunkanha.webp";
-import nary from "@/assets/participants/Nary.webp";
+import lysovath from "@/assets/participants/lysovath.webp";
+import sovanpisoth from "@/assets/participants/sovanpisoth.webp";
+import sokunkanha from "@/assets/participants/sokunkanha.webp";
+import nary from "@/assets/participants/nary.webp";
 
 const developers = {
     name: "developers",

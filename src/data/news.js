@@ -1,17 +1,17 @@
-import MIDAS from "../assets/newsIMG/midas2025/imgs/thumbnail/MIDAS_POST.webp"
+import MIDAS from "../assets/newsIMG/midas2025/imgs/thumbnail/midasPost.webp"
 import midasIMG1 from '../assets/newsIMG/midas2025/imgs/img1.webp'
 import midasIMG2 from '../assets/newsIMG/midas2025/imgs/img2.webp'
 import midasIMG3 from '../assets/newsIMG/midas2025/imgs/img3.webp'
 
 import CCT from '../assets/newsIMG/cct2025/imgs/thumbnail/cctThumnail2025.webp'
-import cctIMG1 from '../assets/newsIMG/cct2025/imgs/cct2025(1).webp'
-import cctIMG2 from '../assets/newsIMG/cct2025/imgs/cct2025(2).webp'
-import cctIMG3 from '../assets/newsIMG/cct2025/imgs/cct2025(3).webp'
+import cctIMG1 from '../assets/newsIMG/cct2025/imgs/cct20251.webp'
+import cctIMG2 from '../assets/newsIMG/cct2025/imgs/cct20252.webp'
+import cctIMG3 from '../assets/newsIMG/cct2025/imgs/cct20253.webp'
 
 import cadtOH from '../assets/newsIMG/cadt2025/thumbnail/thumbnail.webp'
-import cadtOHIMG1 from '../assets/newsIMG/cadt2025/cadt-openhouse2025(1).webp'
-import cadtOHIMG2 from '../assets/newsIMG/cadt2025/cadt-openhouse2025(2).webp'
-import cadtOHIMG3 from '../assets/newsIMG/cadt2025/cadt-openhouse2025(3).webp'
+import cadtOHIMG1 from '../assets/newsIMG/cadt2025/cadtOpenhouse20251.webp'
+import cadtOHIMG2 from '../assets/newsIMG/cadt2025/cadtOpenhouse20252.webp'
+import cadtOHIMG3 from '../assets/newsIMG/cadt2025/cadtOpenhouse20253.webp'
 
 const formatDate = (dateString) => {
     const date = new Date(dateString);

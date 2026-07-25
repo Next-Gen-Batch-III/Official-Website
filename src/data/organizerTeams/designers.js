@@ -1,5 +1,5 @@
-import thavrak from "@/assets/participants/Thavrak.webp";
-import sreynith from "@/assets/participants/Sreynith.webp";
+import thavrak from "@/assets/participants/thavrak.webp";
+import sreynith from "@/assets/participants/sreynith.webp";
 
 const designers = {
     name: "designers",

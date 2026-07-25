@@ -1,10 +1,10 @@
-import img1 from "../../../assets/logo/partner/CADT-IDT.webp";
-import img2 from "../../../assets/logo/partner/Midas.webp";
-import img3 from "../../../assets/logo/partner/Geology Club, CAMBODIA.webp";
-import img4 from "../../../assets/logo/partner/The Cambodia China Times.webp";
-import img5 from "../../../assets/logo/partner/Green Bakery & Coffee.webp";
-import coderistic from "./../../../assets/logo/partner/Coderistic.webp"
-import ams from "./../../../assets/logo/partner/AMS.webp"
+import img1 from "../../../assets/logo/partner/cadtIdt.webp";
+import img2 from "../../../assets/logo/partner/midas.webp";
+import img3 from "../../../assets/logo/partner/geologyClubCambodia.webp";
+import img4 from "../../../assets/logo/partner/theCambodiaChinaTimes.webp";
+import img5 from "../../../assets/logo/partner/greenBakeryCoffee.webp";
+import coderistic from "./../../../assets/logo/partner/coderistic.webp"
+import ams from "./../../../assets/logo/partner/ams.webp"
 
 const partnerRows = [
   [

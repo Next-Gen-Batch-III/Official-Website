@@ -2,10 +2,10 @@ import { useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Button from "@/components/ui/Button";
-import Sreylenn from "@/assets/participants/Sreylenn.webp";
-import Sindy from "@/assets/participants/Sindy.webp";
-import Ponharoth from "@/assets/participants/Ponharoth.webp";
-import Chanchessika from "@/assets/participants/Chanchessika.webp";
+import Sreylenn from "@/assets/participants/sreylenn.webp";
+import Sindy from "@/assets/participants/sindy.webp";
+import Ponharoth from "@/assets/participants/ponharoth.webp";
+import Chanchessika from "@/assets/participants/chanchessika.webp";
 import PeopleCard from "@/components/cards/PeopleCard";
 
 const PRELOAD_SLUGS = [

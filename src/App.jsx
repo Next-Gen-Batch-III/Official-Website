@@ -12,8 +12,8 @@ import Faq from './pages/Faq';
 import News from './pages/News';
 import NewsDetail from './pages/NewsDetail';
 import Projects from './pages/Projects';
-import Project_Detail from './pages/Project_Detail';
-import TrainerJourney from './pages/trainer_journey';
+import ProjectDetail from './pages/ProjectDetail';
+import TrainerJourney from './pages/TrainerJourney';
 import Footer from './components/layout/footer/Footer';
 
 const People = lazy(() => import('./pages/People'));
@@ -29,6 +29,7 @@ function App() {
     <>
       <BrowserRouter>
         <ScrollToTop />
+        <ScrollToTopButton/>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -38,11 +39,11 @@ function App() {
           <Route path="/people" element={<People />} />
           <Route path="/people/organizers" element={<Organizer />} />
           <Route path="/people/organizers/:teamId" element={<OrganizerTeam />} />
-            <Route path="people/:teamId" element={<Team />} />
+          <Route path="people/:teamId" element={<Team />} />
           <Route path='/news' element={<News />}/>
           <Route path="/news/:slug" element={<NewsDetail />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/:slug" element={<Project_Detail />} />
+          <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/search" element={<Search />} />
           <Route path="/trainer-journey" element={<TrainerJourney/>} />
         </Routes>

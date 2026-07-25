@@ -1,6 +1,6 @@
-import soumey from "@/assets/participants/Soumey.webp";
-import sokpanha from "@/assets/participants/Sokpanha.webp";
-import devid from "@/assets/participants/Devid.webp";
+import soumey from "@/assets/participants/soumey.webp";
+import sokpanha from "@/assets/participants/sokpanha.webp";
+import devid from "@/assets/participants/devid.webp";
 
 const tnTrainer = {
     name: "tn-trainer",

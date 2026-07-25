@@ -1,6 +1,6 @@
-import hong from "@/assets/participants/Hong.webp";
-import kokann from "@/assets/participants/Kokann.webp";
-import sovisal from "@/assets/participants/Sovisal.webp";
+import hong from "@/assets/participants/hong.webp";
+import kokann from "@/assets/participants/kokann.webp";
+import sovisal from "@/assets/participants/sovisal.webp";
 
 const tnProject = {
     name: "tn-project",

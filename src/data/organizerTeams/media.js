@@ -1,6 +1,6 @@
-import somonea from "@/assets/participants/Somonea.webp";
-import pitou from "@/assets/participants/Pitou.webp";
-import marakat from "@/assets/participants/Marakat.webp";
+import somonea from "@/assets/participants/somonea.webp";
+import pitou from "@/assets/participants/pitou.webp";
+import marakat from "@/assets/participants/marakat.webp";
 
 const media = {
     name: "media",

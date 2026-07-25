@@ -10,9 +10,9 @@ import RegisterModal from "@/components/ui/RegisterModal";
 import heroImage1 from "@/assets/images/home/heroImage1.webp";
 import heroImage2 from "@/assets/images/home/heroImage2.webp";
 import heroImage3 from "@/assets/images/home/heroImage3.webp";
-import codeReason from "@/assets/overview/code-reason.webp";
-import connectivityReason from "@/assets/overview/connectivity-reason.webp";
-import commerceReason from "@/assets/overview/commerce-reason.webp";
+import codeReason from "@/assets/overview/codeReason.webp";
+import connectivityReason from "@/assets/overview/connectivityReason.webp";
+import commerceReason from "@/assets/overview/commerceReason.webp";
 
 
 import { projects } from "@/data/projects";
