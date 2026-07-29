@@ -13,7 +13,7 @@ const RegisterCard = ({
         {/* LEFT SIDE */}
         <div className="flex flex-col md:flex-row mt-10 md:mt-0 mb-10 h-full py-10 border-b lg:border-b-0 lg:border-r lg:pr-20 gap-6">
           {/* Main Icon */}
-          <div className="flex h-full">
+          <div className="hidden md:flex h-full">
             <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center">
               <img src={icons.main} alt="Main Icon" className="w-12 h-12" />
             </div>
