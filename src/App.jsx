@@ -14,7 +14,7 @@ import NewsDetail from './pages/NewsDetail';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import TrainerJourney from './pages/TrainerJourney';
-import Footer from './components/layout/footer/Footer';
+import Footer from './components/layout/Footer';
 
 const People = lazy(() => import('./pages/People'));
 const Team = lazy(() => import('./pages/Team'));
