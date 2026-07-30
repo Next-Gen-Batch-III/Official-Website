@@ -18,31 +18,28 @@ const partnerRows = [
       img: ams,
       name: "Apsara Media Services",
       frameClassName: "rounded-full bg-white",
-      imageClassName: "object-fit rounded-full p-1",
+      imageClassName: "object-contain p-1 rounded-full",
     },
   ],
   [
     {
       img: img3,
       name: "Geology Club, CAMBODIA",
-      frameClassName:
-        "rounded-full bg-white",
-      imageClassName: "rounded-full object-contain p-1",
+      frameClassName: "rounded-full bg-white aspect-square",
+      imageClassName: "object-contain p-1 rounded-full",
     },
     {
       img: coderistic,
       name: "Coderistic",
-      frameClassName:
-        "rounded-full bg-white",
-      imageClassName: "rounded-full object-contain p-1",
+      frameClassName: "rounded-full bg-white aspect-square",
+      imageClassName: "object-contain p-1 rounded-full",
     },
     {
       img: img4,
       name: "The Cambodia China Times",
-      frameClassName:
-        "rounded-full bg-white",
-      imageClassName: "rounded-full object-contain p-1",
-    }
+      frameClassName: "rounded-full bg-white",
+      imageClassName: "object-contain p-1 rounded-full",
+    },
   ],
 ];
 
@@ -52,12 +49,12 @@ const PartnerIMG = () => {
       key={partner.name}
       className={`
         flex items-center justify-center
-        overflow-hidden
-        h-15 sm:h-14 md:h-18 ${partner.frameClassName}
+        overflow-hidden shrink-0
+        h-14 sm:h-16 md:h-18 ${partner.frameClassName}
       `}
     >
       <img
-        className={`w-full h-full ${partner.imageClassName}`}
+        className={`h-full w-auto max-w-full ${partner.imageClassName}`}
         src={partner.img}
         alt={partner.name}
       />
