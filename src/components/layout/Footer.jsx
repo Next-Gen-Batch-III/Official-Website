@@ -1,66 +1,96 @@
-import nextGenLogo from "@/assets/logo/logoWhiteNobg.png";
 import { Link } from "react-router-dom";
-import img1 from "../../assets/logo/partner/cadtIdt.webp";
-import img3 from "../../assets/logo/partner/geologyClubCambodia.webp";
-import img4 from "../../assets/logo/partner/theCambodiaChinaTimes.webp";
-import coderistic from "../../assets/logo/partner/coderistic.webp";
-import ams from "../../assets/logo/partner/ams.webp";
 import { SocialIcon } from "react-social-icons";
 
-const partnerRows = [
-  [
-    {
-      img: img1,
-      name: "CADT-IDT",
-      frameClassName: "",
-      imageClassName: "object-contain p-1",
-    },
-    {
-      img: ams,
-      name: "Apsara Media Services",
-      frameClassName: "rounded-full bg-white",
-      imageClassName: "object-contain p-1 rounded-full",
-    },
-  ],
-  [
-    {
-      img: img3,
-      name: "Geology Club, CAMBODIA",
-      frameClassName: "rounded-full bg-white aspect-square",
-      imageClassName: "object-contain p-1 rounded-full",
-    },
-    {
-      img: coderistic,
-      name: "Coderistic",
-      frameClassName: "rounded-full bg-white aspect-square",
-      imageClassName: "object-contain p-1 rounded-full",
-    },
-    {
-      img: img4,
-      name: "The Cambodia China Times",
-      frameClassName: "rounded-full bg-white",
-      imageClassName: "object-contain p-1 rounded-full",
-    },
-  ],
-];
+import nextGenLogo from "@/assets/logo/logoWhiteNobg.png";
+import cadtIdt from "../../assets/logo/partner/cadtIdt.webp";
+import geologyClub from "../../assets/logo/partner/geologyClubCambodia.webp";
+import cambodiaChinaTimes from "../../assets/logo/partner/theCambodiaChinaTimes.webp";
+import coderistic from "../../assets/logo/partner/coderistic.webp";
+import ams from "../../assets/logo/partner/ams.webp";
 
+import dp from "../../assets/logo/partner/dp.webp"
+import bookme from "../../assets/logo/partner/bookme.webp"
+
+
+const partnerGroups = [
+  {
+    title: "Supported by",
+    partners: [
+      {
+        img: cadtIdt,
+        name: "CADT Institute of Digital Technology",
+        imageClassName: "h-16 sm:h-20",
+      },
+    ],
+  },
+  {
+    title: "Media Sponsor",
+    partners: [
+      {
+        img: ams,
+        name: "Apsara Media Services",
+        imageClassName: "h-10 sm:h-10",
+      },
+      {
+        img: cambodiaChinaTimes,
+        name: "The Cambodia China Times",
+        imageClassName: "h-10 sm:h-20",
+      },
+    ],
+  },
+  {
+    title: "Cloud Partner",
+    partners: [
+      {
+        img: dp,
+        name: "Daun Penh Cloud",
+        imageClassName: "h-14 sm:h-16",
+      },
+    ],
+  },
+  {
+    title: "Community Partner",
+    partners: [
+      {
+        img: coderistic,
+        name: "Coderistic",
+        imageClassName: "h-12 sm:h-14",
+      },
+      {
+        img: geologyClub,
+        name: "Geology Club Cambodia",
+        imageClassName: "h-12 sm:h-14",
+      },
+    ],
+  },
+  {
+    title: "Ticket Partner",
+    partners: [
+      {
+        img: bookme,
+        name: "BookMe+",
+        imageClassName: "h-10 sm:h-12",
+      },
+    ],
+  },
+];
 
 const socials = [
   {
     id: 0,
-    title: "NextGenFacebook",
+    title: "NextGen Facebook",
     name: "facebook",
     url: "https://www.facebook.com/share/1HxhfFEHC5/?mibextid=wwXIfr",
   },
   {
     id: 1,
-    title: "NextGenTikTok",
+    title: "NextGen TikTok",
     name: "tiktok",
     url: "https://www.tiktok.com/@nextgenengagementprogram?_r=1&_t=ZS-972l3PJm5jz",
   },
   {
     id: 2,
-    title: "NextGentelegram",
+    title: "NextGen Telegram",
     name: "telegram",
     url: "https://t.me/nextgenengagementprogram",
   },
@@ -68,152 +98,170 @@ const socials = [
 
 const Footer = () => {
   return (
-    <>
-      <footer className="bg-brand-primary text-white">
-        {/*Partners*/}
-        <div className="flex-col-center min-h-[255px] px-4 pb-8 pt-8 text-center">
-          <h2 className="text-[25px] font-bold leading-tight sm:text-[30px]">
-            Participated & Supported by
-          </h2>
-          <PartnerIMG />
-        </div>
+    <footer className="bg-brand-primary text-white">
+      {/* Partners */}
+      <section className="bg-white px-6 py-10 text-brand-primary sm:px-8 lg:px-12">
+        <PartnerIMG />
+      </section>
 
-        <div className="flex-center h-[82px] w-full bg-brand-secondary-orange px-4 text-center">
-          <h2 className="text-[28px] font-bold leading-none sm:text-[30px]">
-            STAY CONNECTED
-          </h2>
-        </div>
+      {/* Stay Connected */}
+      <section className="flex h-[82px] w-full items-center justify-center bg-brand-secondary-orange px-4 text-center">
+        <h2 className="text-[28px] font-bold leading-none sm:text-[30px]">
+          STAY CONNECTED
+        </h2>
+      </section>
 
-        {/*FooterLinks*/}
-        <div className="w-full px-6 pt-12 sm:px-8 lg:px-20">
-          <div className="grid grid-cols-1 items-start gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
-            {/*Logo*/}
-            <div className="w-32 sm:col-span-2 lg:col-span-1 lg:ml-15">
-              <img
-                className="h-auto w-full object-contain"
-                src={nextGenLogo}
-                alt="NextGenLogo"
-              />
-            </div>
-            {/*Address*/}
-            <FooterColumn title="ADDRESS">
-              <div>
-                <p>
-                  Bridge 2, National Road 6A, Sangkat Prek Leap, Khan Chroy
-                  Changva, Phnom Penh
-                </p>
-              </div>
-            </FooterColumn>
-            <FooterColumn title="CONTACT">
-              {/*Socials*/}
-              <div>
-                Email: {" "}
+      {/* Footer Content */}
+      <section className="w-full px-6 pt-12 sm:px-8 lg:px-20">
+        <div className="grid grid-cols-1 items-start gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          {/* Logo */}
+          <div className="w-32 sm:col-span-2 lg:col-span-1 lg:ml-15">
+            <img
+              src={nextGenLogo}
+              alt="Next-Gen Engagement Program"
+              className="h-auto w-full object-contain"
+            />
+          </div>
+
+          {/* Address */}
+          <FooterColumn title="ADDRESS">
+            <p>
+              Bridge 2, National Road 6A, Sangkat Prek Leap, Khan Chroy
+              Changva, Phnom Penh
+            </p>
+          </FooterColumn>
+
+          {/* Contact */}
+          <FooterColumn title="CONTACT">
+            <div className="space-y-1">
+              <p>
+                Email:{" "}
                 <a
                   href="mailto:nextgen@cadt.edu.kh"
                   className="hover:underline"
                 >
                   nextgen@cadt.edu.kh
                 </a>
-                <p>Phone number: +855 8888 22226</p>
-              </div>
-              <div className="flex">
-                <FooterSocials />
-              </div>
-            </FooterColumn>
-            {/*Quick Links*/}
-            <FooterColumn title="QUICK LINKS">
-              <ul>
-                <li>
-                  <Link to="/overview" className="hover:underline">Project Overview</Link>
-                </li>
-                <li>
-                  <Link to="/journey" className="hover:underline">Project Journey</Link>
-                </li>
-                <li>
-                  <Link to="/projects" className="hover:underline">Student's Project</Link>
-                </li>
-                <li>
-                  <Link to="/news" className="hover:underline">News/Updates</Link>
-                </li>
-                <li>
-                  <Link to="/faq" className="hover:underline">FAQs</Link>
-                </li>
-              </ul>
-            </FooterColumn>
-          </div>
+              </p>
+
+              <p>
+                Phone number:{" "}
+                <a href="tel:+855888822226" className="hover:underline">
+                  +855 8888 22226
+                </a>
+              </p>
+            </div>
+
+            <FooterSocials />
+          </FooterColumn>
+
+          {/* Quick Links */}
+          <FooterColumn title="QUICK LINKS">
+            <ul className="space-y-1">
+              <li>
+                <Link to="/overview" className="hover:underline">
+                  Project Overview
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/journey" className="hover:underline">
+                  Project Journey
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/projects" className="hover:underline">
+                  Student&apos;s Project
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/news" className="hover:underline">
+                  News/Updates
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/faq" className="hover:underline">
+                  FAQs
+                </Link>
+              </li>
+            </ul>
+          </FooterColumn>
         </div>
-        {/*Credits*/}
-        <div className="px-6 pb-5 pt-8 text-sm sm:px-8 lg:px-33">
-          <p>&copy; 2026 Next-Gen Engagement Program. All rights reserved.</p>
-        </div>
-      </footer>
-    </>
+      </section>
+
+      {/* Credits */}
+      <div className="px-6 pb-5 pt-8 text-sm sm:px-8 lg:px-33">
+        <p>
+          &copy; 2026 Next-Gen Engagement Program. All rights reserved.
+        </p>
+      </div>
+    </footer>
   );
 };
 
-export default Footer;
-
 const FooterColumn = ({ title, children }) => {
   return (
-    <div className="footer_col">
+    <div className="space-y-4 text-sm leading-relaxed">
       <h3 className="text-[20px] font-bold">{title}</h3>
       {children}
     </div>
   );
 };
 
-
-
 const FooterSocials = () => {
   return (
-    <div className="flex flex-wrap gap-1.5">
+    <div className="flex flex-wrap gap-2">
       {socials.map((social) => (
         <SocialIcon
           key={social.id}
-          bgColor="black"
+          bgColor="#000000"
           fallback={social.title}
           network={social.name}
           url={social.url}
-          style={{ width: "32px", height: "32px" }}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={social.title}
+          style={{
+            width: "32px",
+            height: "32px",
+          }}
         />
       ))}
     </div>
   );
 };
 
-
-
 const PartnerIMG = () => {
-  const renderPartnerLogo = (partner) => (
-    <div
-      key={partner.name}
-      className={`
-        flex items-center justify-center
-        overflow-hidden shrink-0
-        h-14 sm:h-16 md:h-18 ${partner.frameClassName}
-      `}
-    >
-      <img
-        className={`h-full w-auto max-w-full ${partner.imageClassName}`}
-        src={partner.img}
-        alt={partner.name}
-      />
-    </div>
-  );
-
   return (
-    <div className="mt-4 w-full max-w-4xl mx-auto flex flex-col items-center gap-6 px-4">
-      {partnerRows.map((partners, index) => (
-        <div key={index} className="flex w-full justify-center">
-          <div
-            className={`flex flex-wrap items-center justify-center ${
-              index === 0 ? "gap-5 sm:gap-8" : "gap-3 sm:gap-5"
-            }`}
-          >
-            {partners.map(renderPartnerLogo)}
+    <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8">
+      {partnerGroups.map((group) => (
+        <div
+          key={group.title}
+          className="flex flex-col items-center text-center lg:items-start lg:text-left"
+        >
+          <h3 className="mb-5 text-sm font-bold text-brand-primary">
+            {group.title}
+          </h3>
+
+          <div className="flex min-h-20 flex-wrap items-center justify-center gap-4 lg:justify-start">
+            {group.partners.map((partner) => (
+              <img
+                key={partner.name}
+                src={partner.img}
+                alt={partner.name}
+                title={partner.name}
+                loading="lazy"
+                className={`w-auto max-w-full object-contain ${partner.imageClassName}`}
+              />
+            ))}
           </div>
         </div>
       ))}
     </div>
   );
 };
+
+export default Footer;
