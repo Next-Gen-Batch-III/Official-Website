@@ -18,10 +18,6 @@ const Merchandise = () => {
   );
   const [activeOrder, setActiveOrder] = useState(resumedOrder || null);
 
-  const handleOrder = (order) => {
-    setActiveOrder(order);
-  };
-
   const closeOrder = () => setActiveOrder(null);
 
   return (
@@ -47,7 +43,7 @@ const Merchandise = () => {
               <OrderTypeCard
                 key={order.id}
                 order={order}
-                onOrder={handleOrder}
+                onOrder={setActiveOrder}
               />
             ))}
           </div>
@@ -76,7 +72,6 @@ const Merchandise = () => {
         />
       )}
       <GroupOrderModal
-        groupOrder={activeOrder?.groupOrder}
         isOpen={activeOrder?.id === "group"}
         onClose={closeOrder}
       />

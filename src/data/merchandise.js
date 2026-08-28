@@ -55,10 +55,6 @@ export const merchandiseOrderTypes = [
             { merchandiseId: "polo", label: "Polo-Shirt", price: "$6.69 (Each)" },
             { merchandiseId: "tshirt", label: "T-Shirt", price: "$3.69 (Each)" },
         ],
-        groupOrder: {
-            minimumQuantity: 4,
-            garmentTypes: ["Polo-Shirt", "T-Shirt"],
-        },
     },
 ];
 
