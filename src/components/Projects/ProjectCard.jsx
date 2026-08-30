@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import "./Project.css";
 import React from "react";
@@ -15,7 +14,7 @@ const ProjectCard = ({
 
       {/* Image */}
       <div
-        className="m-4 aspect-[1.6/1] sm:aspect-[1.7/1] md:aspect-[1.8/1] overflow-hidden"
+        className="m-6 aspect-[1.6/1] overflow-hidden"
         style={{
           clipPath:
             "polygon(0 0, 92% 0, 100% 8%, 100% 100%, 0 100%)",
@@ -39,21 +38,26 @@ const ProjectCard = ({
           {description}
         </p>
 
-        {/* Divider */}
-        <div className="mt-5 mb-4 h-px w-full bg-gray-400" />
+        {/* Push everything below this to the bottom */}
+        <div className="mt-auto">
 
-        {/* Button */}
-        <Link
-          to={`/projects/${slug}`}
-          className="group flex justify-center items-center w-full px-4 py-3 bg-[#12284C] text-white font-medium transition duration-300"
-        >
-          <span>View Project</span>
+          {/* Divider */}
+          <div className="mt-5 mb-4 h-px w-full bg-gray-400" />
 
-          {/* Arrow only shows on hover */}
-          <span className="text-xl opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
-            →
-          </span>
-        </Link>
+          {/* Button */}
+          <Link
+            to={`/projects/${slug}`}
+            className="group flex justify-center items-center w-full px-4 py-3 bg-[#12284C] text-white font-medium transition duration-300"
+          >
+            <span>View Project</span>
+
+            {/* Arrow only shows on hover */}
+            <span className="text-xl opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+              →
+            </span>
+          </Link>
+
+        </div>
 
       </div>
     </div>
@@ -61,4 +65,3 @@ const ProjectCard = ({
 };
 
 export default ProjectCard;
-

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProjectCard from "../components/Projects/ProjectCard";
+
 import PhsarDesignImg from "../assets/student_project_image/phsarDesign.webp";
 import KomplexImg from "../assets/student_project_image/komplex.webp";
 import DomraImg from "../assets/student_project_image/domra.webp";
@@ -15,44 +16,74 @@ import SastraImg from "../assets/student_project_image/sastra.webp";
 import EduquestImg from "../assets/student_project_image/eduquest.webp";
 
 const Projects = () => {
-const [search, setSearch] = useState("");
-const navigate = useNavigate();
-const [suggestions, setSuggestions] = useState([]);
-const projectList = [
-  { title: "PhsarDesign", slug: "phsar-design" },
-  { title: "KOMPLEX", slug: "komplex" },
-  { title: "DOMRA", slug: "domra" },
-  { title: "GATABLOC", slug: "gatabloc" },
-  { title: "BAY-CANTEEN", slug: "bay-canteen" },
-  { title: "ACET", slug: "acet" },
-  { title: "Contract-Generation", slug: "contract-generation" },
-  { title: "FINEWISE", slug: "finewise" },
-  { title: "BITCAMPUS", slug: "bitcampus" },
-  { title: "Khmer Data Annotation Tool", slug: "khmer-data-annotation-tool" },
-  { title: "SASTRA", slug: "sastra" },
-  { title: "QuizKH", slug: "quizkh" },
-];
-  return (
-    <div className="px-4 sm:px-6 lg:px-8 max-w-full mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-14 md:gap-28 py-2 sm:py-14 md:py-16">
-          <div className="flex-1 min-w-[300px] content-center">
-              <h1 className="text-left text-[40px] font-bold ml-[30px] mt-[30px]">
-                Student Project <span style={{ color: "#dd5c0b" }}>Showcase</span>
-              </h1>
-              <p className="text-left mb-[60px] ml-[30px]">Explore innovative projects created by students during the Next-Gen Engagement Program.</p>
-          </div>
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+  const [suggestions, setSuggestions] = useState([]);
 
-          <div className="flex-1 min-w-[300px] content-center">
-            <div className="search-box">
-              <label className="search-icon" htmlFor="search">
-                <svg className="w-6 h-6 text-neutral-400 ml-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                  <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
-                </svg>
-              </label>
-              <input
-                type="text"
-                placeholder=" Search Project"
-                value={search}
+  const projectList = [
+    { title: "PhsarDesign", slug: "phsar-design" },
+    { title: "KOMPLEX", slug: "komplex" },
+    { title: "DOMRA", slug: "domra" },
+    { title: "GATABLOC", slug: "gatabloc" },
+    { title: "BAY-CANTEEN", slug: "bay-canteen" },
+    { title: "ACET", slug: "acet" },
+    { title: "Contract-Generation", slug: "contract-generation" },
+    { title: "FINEWISE", slug: "finewise" },
+    { title: "BITCAMPUS", slug: "bitcampus" },
+    {
+      title: "Khmer Data Annotation Tool",
+      slug: "khmer-data-annotation-tool",
+    },
+    { title: "SASTRA", slug: "sastra" },
+    { title: "QuizKH", slug: "quizkh" },
+  ];
+
+  return (
+    <div className="px-8 sm:px-12 lg:px-16 max-w-full mx-auto">
+
+      {/* ================= HEADER ================= */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-2 sm:py-14 md:py-16">
+
+        {/* Title */}
+        <div className="flex-1 min-w-0 content-top">
+          <h1 className="text-left md:mt-0 mt-6 text-[24px] md:text-[36px] lg:text-[40px] font-bold whitespace-nowrap">
+            Student Project{" "}
+            <span style={{ color: "#dd5c0b" }}>Showcase</span>
+          </h1>
+
+          <p className="text-left text-[12px] md:text-[16px] md:whitespace-nowrap">
+            Explore innovative projects created by students during the Next-Gen Engagement Program.
+          </p>
+        </div>
+
+        {/* Search */}
+        <div className="flex-1 min-w-0 content-center">
+          <div className="search-box mb-10 md:mb-0">
+
+            <label className="search-icon" htmlFor="search">
+              <svg
+                className="w-6 h-6 text-neutral-400 ml-4"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeWidth="2"
+                  d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+                />
+              </svg>
+            </label>
+
+            <input
+              id="search"
+              type="text"
+              placeholder=" search projects..."
+              value={search}
               onChange={(e) => {
                 const value = e.target.value;
                 setSearch(value);
@@ -63,40 +94,47 @@ const projectList = [
                 }
 
                 const filtered = projectList.filter((project) =>
-                  project.title.toLowerCase().startsWith(value.toLowerCase())
+                  project.title
+                    .toLowerCase()
+                    .startsWith(value.toLowerCase())
                 );
 
                 setSuggestions(filtered);
               }}
-              />
-              {suggestions.length > 0 && (
-                <div className="suggestion-box">
-                  {suggestions.map((project, index) => (
-                    <div
-                      key={index}
-                      className="suggestion-item"
-                      onClick={() => navigate(`/projects/${project.slug}`)}
-                    >
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html: project.title.replace(
-                            new RegExp(search, "gi"),
-                            (match) => `<mark>${match}</mark>`
-                          ),
-                        }}
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
+            />
 
+            {/* Suggestions */}
+            {suggestions.length > 0 && (
+              <div className="suggestion-box">
+                {suggestions.map((project, index) => (
+                  <div
+                    key={index}
+                    className="suggestion-item"
+                    onClick={() =>
+                      navigate(`/projects/${project.slug}`)
+                    }
+                  >
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: project.title.replace(
+                          new RegExp(search, "gi"),
+                          (match) => `<mark>${match}</mark>`
+                        ),
+                      }}
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+
+          </div>
+        </div>
       </div>
 
-      <div>
+      {/* ================= PROJECT GRID ================= */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-[40px]">
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center mb-[40px]">
+        {/* PhsarDesign */}
         {"PhsarDesign".toLowerCase().includes(search.toLowerCase()) && (
           <ProjectCard
             image={PhsarDesignImg}
@@ -105,7 +143,8 @@ const projectList = [
             slug="phsar-design"
           />
         )}
-        
+
+        {/* KOMPLEX */}
         {"KOMPLEX".toLowerCase().includes(search.toLowerCase()) && (
           <ProjectCard
             image={KomplexImg}
@@ -114,6 +153,8 @@ const projectList = [
             slug="komplex"
           />
         )}
+
+        {/* DOMRA */}
         {"DOMRA".toLowerCase().includes(search.toLowerCase()) && (
           <ProjectCard
             image={DomraImg}
@@ -122,7 +163,8 @@ const projectList = [
             slug="domra"
           />
         )}
-        
+
+        {/* GATABLOC */}
         {"GATABLOC".toLowerCase().includes(search.toLowerCase()) && (
           <ProjectCard
             image={CatagangImg}
@@ -131,7 +173,8 @@ const projectList = [
             slug="gatabloc"
           />
         )}
-        
+
+        {/* BAY-CANTEEN */}
         {"BAY-CANTEEN".toLowerCase().includes(search.toLowerCase()) && (
           <ProjectCard
             image={BayCanteenImg}
@@ -140,6 +183,8 @@ const projectList = [
             slug="bay-canteen"
           />
         )}
+
+        {/* ACET */}
         {"ACET".toLowerCase().includes(search.toLowerCase()) && (
           <ProjectCard
             image={Y5Img}
@@ -148,6 +193,8 @@ const projectList = [
             slug="acet"
           />
         )}
+
+        {/* Contract Generation */}
         {"Contract-Generation".toLowerCase().includes(search.toLowerCase()) && (
           <ProjectCard
             image={ContractwiseImg}
@@ -156,47 +203,59 @@ const projectList = [
             slug="contract-generation"
           />
         )}
+
+        {/* FINEWISE */}
         {"FINEWISE".toLowerCase().includes(search.toLowerCase()) && (
           <ProjectCard
             image={LifverseImg}
             title="FINEWISE"
-            description=" A personal finance tracking system that helps Cambodians manage daily expenses, plan budgets, scan receipts, and import bank transactions all in one place."
+            description="A personal finance tracking system that helps Cambodians manage daily expenses, plan budgets, scan receipts, and import bank transactions all in one place."
             slug="finewise"
           />
         )}
+
+        {/* BITCAMPUS */}
         {"BITCAMPUS".toLowerCase().includes(search.toLowerCase()) && (
           <ProjectCard
             image={Bithero6Img}
             title="BITCAMPUS"
-            description=" An online learning system that offers structured coding lessons, a built-in IDE, and video tutorials to help first-time learners start programming with confidence."
+            description="An online learning system that offers structured coding lessons, a built-in IDE, and video tutorials to help first-time learners start programming with confidence."
             slug="bitcampus"
           />
-        )}  
-        {"Khmer Data Annotation Tool".toLowerCase().includes(search.toLowerCase()) && (
+        )}
+
+        {/* Khmer Data Annotation Tool */}
+        {"Khmer Data Annotation Tool"
+          .toLowerCase()
+          .includes(search.toLowerCase()) && (
           <ProjectCard
-            image={AkharaImg} 
+            image={AkharaImg}
             title="Khmer Data Annotation Tool"
-            description=" A data annotation system that lets researchers upload Khmer datasets, label text regions, and use semi-automated OCR suggestions to build high-quality training data faster."
+            description="A data annotation system that lets researchers upload Khmer datasets, label text regions, and use semi-automated OCR suggestions to build high-quality training data faster."
             slug="khmer-data-annotation-tool"
           />
         )}
+
+        {/* SASTRA */}
         {"SASTRA".toLowerCase().includes(search.toLowerCase()) && (
           <ProjectCard
             image={SastraImg}
             title="SASTRA"
-            description=" A Khmer-language e-learning system where users can browse, purchase, and complete courses entirely in Khmer and earn verifiable certificates upon completion."
+            description="A Khmer-language e-learning system where users can browse, purchase, and complete courses entirely in Khmer and earn verifiable certificates upon completion."
             slug="sastra"
           />
         )}
+
+        {/* QuizKH */}
         {"QuizKH".toLowerCase().includes(search.toLowerCase()) && (
           <ProjectCard
             image={EduquestImg}
             title="QuizKH"
             description="An interactive quiz hosting system where educators can create, host, and analyze quizzes in minutes, with PDF import, team play, and Excel performance reports."
             slug="quizkh"
-        />
+          />
         )}
-      </div>
+
       </div>
     </div>
   );
