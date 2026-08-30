@@ -16,7 +16,7 @@ const ProductCard = ({ product, onChooseSize }) => (
       <p className="mt-1 text-sm text-gray-500">Customized</p>
       <p className="mt-2 text-lg font-bold text-gray-800">{product.price}</p>
       <div
-        className="mt-0 flex max-h-0 justify-center gap-2 overflow-hidden bg-white py-0 transition-all duration-200 group-hover/product:mt-4 group-hover/product:max-h-16 group-hover/product:py-1 group-focus-within/product:mt-4 group-focus-within/product:max-h-16 group-focus-within/product:py-1"
+        className="mt-4 flex max-h-16 justify-center gap-2 overflow-hidden bg-white py-1 transition-all duration-200 md:mt-0 md:max-h-0 md:py-0 md:group-hover/product:mt-4 md:group-hover/product:max-h-16 md:group-hover/product:py-1 md:group-focus-within/product:mt-4 md:group-focus-within/product:max-h-16 md:group-focus-within/product:py-1"
       >
         {product.sizes.map((size) => (
           <button
@@ -33,13 +33,22 @@ const ProductCard = ({ product, onChooseSize }) => (
   </article>
 );
 
-const MerchandiseOrderModal = ({ order, products, onClose, bundleId }) => {
+const MerchandiseOrderModal = ({
+  order,
+  products,
+  onClose,
+  bundleId,
+  productItemIds,
+}) => {
   const navigate = useNavigate();
 
   const handleChooseSize = (product, size) => {
     const searchParams = new URLSearchParams({ size, order: order.id });
     if (bundleId) searchParams.set("bundle", bundleId);
     if (product.choiceId) searchParams.set("choice", product.choiceId);
+    if (Object.keys(productItemIds).length) {
+      searchParams.set("itemIds", JSON.stringify(productItemIds));
+    }
     navigate(`/merchandise/${product.slug}/customize?${searchParams}`);
   };
 

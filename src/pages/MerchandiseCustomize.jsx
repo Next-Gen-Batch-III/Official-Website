@@ -9,24 +9,32 @@ import { FaPen } from "react-icons/fa";
 import SizeChartModal from "@/components/merchandise/SizeChartModal";
 import SleeveCustomizationModal from "@/components/merchandise/SleeveCustomizationModal";
 import {
-  merchandiseItems,
   merchandiseOrderTypes,
   coupleChoices,
   merchandiseSleeveCustomization,
 } from "@/data/merchandise";
 import { useCart } from "@/context/CartContext";
-
-const findProductBySlug = (slug) =>
-  Object.values(merchandiseItems).find((product) => product.slug === slug);
+import {
+  findMerchandiseProduct,
+  getMerchandiseProduct,
+  getPriceAmount,
+  parseItemIds,
+} from "@/utils/merchandise";
 
 const MerchandiseCustomize = () => {
   const { productSlug } = useParams();
   const [searchParams] = useSearchParams();
-  const product = findProductBySlug(productSlug);
+  const baseProduct = findMerchandiseProduct(productSlug);
   const navigate = useNavigate();
   const { addItem, beginOrder, items, updateItem } = useCart();
   const cartItemId = searchParams.get("cartItem");
   const editingItem = items.find((item) => item.id === cartItemId);
+  const itemIds = parseItemIds(searchParams.get("itemIds"));
+  const databaseItemId =
+    editingItem?.product?.databaseItemId || Number(itemIds[baseProduct?.id]);
+  const product = baseProduct
+    ? { ...baseProduct, databaseItemId: databaseItemId || null }
+    : null;
   const isEditing = Boolean(editingItem);
   const selectedOrderType = merchandiseOrderTypes.find(
     (order) => order.id === searchParams.get("order"),
@@ -84,18 +92,24 @@ const MerchandiseCustomize = () => {
       orderType?.items.find((item) => item.merchandiseId === product.id)
         ?.price ||
       "$0.00";
-    const fixedPrice = Number.parseFloat(price.replace(/[^0-9.]/g, "")) || 0;
+    const fixedPrice = getPriceAmount(price);
     const orderLine = {
       product,
       quantity: Number(formData.quantity),
       size: formData.size,
       sleeveCustomization,
       orderType: orderType?.id || "standard",
-      bundleId,
-      price,
+      bundleId: editingItem?.bundleId || bundleId,
+      // Editing must retain the original package price. Recalculating from the
+      // product alone turns both shirts in a Couple bundle into paid bundles.
+      price: isEditing ? editingItem.price : price,
       // The selected package has one fixed price; a second Couple step only
       // customizes the other shirt and must not add another charge.
-      fixedPrice: orderType?.id === "couple" && bundleId ? 0 : fixedPrice,
+      fixedPrice: isEditing
+        ? editingItem.fixedPrice
+        : orderType?.id === "couple" && bundleId
+          ? 0
+          : fixedPrice,
     };
     if (isEditing) {
       updateItem(cartItemId, orderLine);
@@ -111,10 +125,12 @@ const MerchandiseCustomize = () => {
         beginOrder({ ...orderLine, bundleId: currentBundleId });
       }
       if (!bundleId) {
-        const nextProduct =
-          merchandiseItems[coupleChoice?.productIds[1] || "tshirt"];
+        const nextProduct = getMerchandiseProduct(
+          coupleChoice?.productIds[1] || "tshirt",
+        );
+        const itemIdsQuery = searchParams.get("itemIds");
         navigate(
-          `/merchandise/${nextProduct.slug}/customize?order=couple&choice=${coupleChoice?.id || "polo-tshirt"}&bundle=${currentBundleId}&step=2&size=${nextProduct.sizes[0]}`,
+          `/merchandise/${nextProduct.slug}/customize?order=couple&choice=${coupleChoice?.id || "polo-tshirt"}&bundle=${currentBundleId}&step=2&size=${nextProduct.sizes[0]}${itemIdsQuery ? `&itemIds=${encodeURIComponent(itemIdsQuery)}` : ""}`,
         );
       } else {
         navigate("/my-orders");

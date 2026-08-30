@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 
 import EdgeContainer from "../components/ui/EdgeContainer";
 import Button from "../components/ui/Button";

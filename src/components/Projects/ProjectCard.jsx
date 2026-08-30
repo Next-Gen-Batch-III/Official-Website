@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import "./Project.css";
-import React from "react";
 import LazyImage from "@/components/ui/LazyImage";
 
 const ProjectCard = ({

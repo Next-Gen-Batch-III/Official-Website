@@ -63,7 +63,7 @@ const buildPolygonPoints = (edges, edgesSize) => {
     return points.join(", ");
 }
 
-const buildBorderStyles = (borders, bordersWidth, borderColor) => {
+const buildBorderStyles = (borders, bordersWidth) => {
     if (borders === null || borders === undefined || borders.length === 0 || !(borders instanceof Array)) return {padding: 0};
     const style = {
         paddingTop: 0,

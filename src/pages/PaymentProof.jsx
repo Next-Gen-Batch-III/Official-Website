@@ -9,6 +9,8 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import Modal from "@/components/ui/Modal";
 import { useCart } from "@/context/CartContext";
+import { createOrder } from "@/services/orderService";
+import { uploadPaymentProof } from "@/services/uploadService";
 import standardPolo from "@/assets/merchandise/price/NGEP-Standard-PoloShirtt.webp";
 import standardTshirt from "@/assets/merchandise/price/NGEP-Standard-TShirt.webp";
 import couplePolo from "@/assets/merchandise/price/NGEP-Couple-2PoloShirts.webp";
@@ -24,13 +26,15 @@ const qrForOrder = (item) => {
 };
 
 const PaymentProof = () => {
-  const { items } = useCart();
+  const { items, checkoutDetails, clearCart } = useCart();
   const navigate = useNavigate();
   const [proof, setProof] = useState(null);
   const [proofPreview, setProofPreview] = useState("");
   const [uploadError, setUploadError] = useState("");
   const [isQrOpen, setIsQrOpen] = useState(false);
   const [isReviewed, setIsReviewed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionError, setSubmissionError] = useState("");
   const fileInputRef = useRef(null);
   const previewUrlRef = useRef("");
   const total = items.reduce((sum, item) => sum + item.fixedPrice, 0);
@@ -70,6 +74,57 @@ const PaymentProof = () => {
     setProofPreview("");
     setUploadError("");
     if (fileInputRef.current) fileInputRef.current.value = "";
+  };
+
+  const submitOrder = async () => {
+    if (!checkoutDetails) {
+      setSubmissionError("Please complete your customer information first.");
+      return;
+    }
+
+    const orderItems = items.map((item) => ({
+      itemId: item.product.databaseItemId,
+      size: item.size,
+      rightSleeveDesign:
+        item.sleeveCustomization?.right === "blank"
+          ? null
+          : item.sleeveCustomization?.right,
+      leftSleeveDesign:
+        item.sleeveCustomization?.left?.option === "name"
+          ? item.sleeveCustomization.left.text
+          : null,
+    }));
+
+    if (!items.length || orderItems.some((item) => !Number.isInteger(item.itemId))) {
+      setSubmissionError(
+        "A product is missing its backend item ID. Return to Merchandise and select the product again.",
+      );
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmissionError("");
+
+    try {
+      const uploadedFile = await uploadPaymentProof(proof);
+      await createOrder({
+        ...checkoutDetails,
+        total,
+        deliveryMethod: checkoutDetails.deliveryMethod.toUpperCase(),
+        fileId: uploadedFile.id,
+        items: orderItems,
+      });
+      setIsReviewed(true);
+    } catch (error) {
+      setSubmissionError(error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const finishOrder = () => {
+    clearCart();
+    navigate("/merchandise");
   };
 
   return (
@@ -172,11 +227,16 @@ const PaymentProof = () => {
       <button
         type="button"
         disabled={!proof}
-        onClick={() => setIsReviewed(true)}
+        onClick={submitOrder}
         className="mt-5 w-full cursor-pointer rounded-lg bg-[#142f55] py-4 text-xl font-bold text-white disabled:cursor-not-allowed disabled:opacity-50"
       >
-        Continue
+        {isSubmitting ? "Submitting…" : "Continue"}
       </button>
+      {submissionError && (
+        <p className="mt-3 text-sm text-red-600" role="alert">
+          {submissionError}
+        </p>
+      )}
       <Modal
         isOpen={isQrOpen}
         onClose={() => setIsQrOpen(false)}
@@ -207,7 +267,7 @@ const PaymentProof = () => {
       </Modal>
       <Modal
         isOpen={isReviewed}
-        onClose={() => navigate("/merchandise")}
+        onClose={finishOrder}
         contentClassName="w-full max-w-md rounded-2xl p-7 text-center"
       >
         <FaCheckCircle
@@ -237,7 +297,7 @@ const PaymentProof = () => {
         </p>
         <button
           type="button"
-          onClick={() => navigate("/merchandise")}
+          onClick={finishOrder}
           className="mt-6 cursor-pointer rounded-lg bg-[#142f55] px-6 py-3 font-bold text-white"
         >
           Back to Merchandise

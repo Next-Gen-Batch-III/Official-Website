@@ -1,4 +1,3 @@
-import React from "react";
 import RegisterCard from "@/components/cards/RegisterCard";
 import JourneyHero from "./../components/layout/JourneyHero";
 

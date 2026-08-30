@@ -3,9 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "@/context/CartContext";
 
 const Payment = () => {
-  const { items } = useCart();
+  const { items, checkoutDetails, setCheckoutDetails } = useCart();
   const navigate = useNavigate();
-  const [form, setForm] = useState({
+  const [form, setForm] = useState(checkoutDetails || {
     fullName: "",
     phoneNumber: "",
     telegramUsername: "",
@@ -58,6 +58,7 @@ const Payment = () => {
         className="mt-6"
         onSubmit={(event) => {
           event.preventDefault();
+          setCheckoutDetails(form);
           navigate("/payment/proof");
         }}
       >

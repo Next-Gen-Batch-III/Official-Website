@@ -4,6 +4,7 @@ const CartContext = createContext(null);
 
 export const CartProvider = ({ children }) => {
   const [items, setItems] = useState([]);
+  const [checkoutDetails, setCheckoutDetails] = useState(null);
   const value = useMemo(
     () => ({
       items,
@@ -23,8 +24,14 @@ export const CartProvider = ({ children }) => {
         ),
       removeItem: (itemId) =>
         setItems((current) => current.filter((item) => item.id !== itemId)),
+      checkoutDetails,
+      setCheckoutDetails,
+      clearCart: () => {
+        setItems([]);
+        setCheckoutDetails(null);
+      },
     }),
-    [items],
+    [checkoutDetails, items],
   );
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };

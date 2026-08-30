@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProjectCard from "../components/Projects/ProjectCard";
 import PhsarDesignImg from "../assets/student_project_image/phsarDesign.webp";

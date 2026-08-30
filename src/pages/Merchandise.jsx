@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import OrderTypeCard from "@/components/cards/OrderTypeCard";
 import MerchandiseOrderModal from "@/components/merchandise/MerchandiseOrderModal";
@@ -6,10 +6,11 @@ import GroupOrderModal from "@/components/merchandise/GroupOrderModal";
 import {
   merchandiseFeatures,
   merchandiseHero,
-  merchandiseItems,
   merchandiseOrderTypes,
   coupleChoices,
 } from "@/data/merchandise";
+import { getProducts } from "@/services/productService";
+import { createCatalogProducts, getProductItemIds } from "@/utils/merchandise";
 
 const Merchandise = () => {
   const [searchParams] = useSearchParams();
@@ -17,6 +18,62 @@ const Merchandise = () => {
     (order) => order.id === searchParams.get("order"),
   );
   const [activeOrder, setActiveOrder] = useState(resumedOrder || null);
+  const [products, setProducts] = useState({});
+  const [isLoadingProducts, setIsLoadingProducts] = useState(true);
+  const [productsError, setProductsError] = useState("");
+
+  useEffect(() => {
+    let isCurrent = true;
+
+    getProducts()
+      .then((items) => {
+        if (!isCurrent) return;
+
+        const catalogProducts = createCatalogProducts(items);
+        setProducts(catalogProducts);
+        setProductsError(
+          Object.keys(catalogProducts).length
+            ? ""
+            : "No supported merchandise items are available yet.",
+        );
+      })
+      .catch((error) => {
+        if (isCurrent) setProductsError(error.message);
+      })
+      .finally(() => {
+        if (isCurrent) setIsLoadingProducts(false);
+      });
+
+    return () => {
+      isCurrent = false;
+    };
+  }, []);
+
+  const modalProducts = useMemo(() => {
+    const orderProducts =
+      activeOrder?.id === "couple"
+        ? coupleChoices.map((choice) => ({
+            merchandiseId: choice.productIds[0],
+            label: choice.label,
+            price: choice.price,
+            choiceId: choice.id,
+          }))
+        : activeOrder?.items || [];
+
+    return orderProducts
+      .map((item, index) => {
+        const product = products[item.merchandiseId];
+        if (!product) return null;
+
+        return {
+          ...product,
+          ...item,
+          id: `${item.merchandiseId}-${index}`,
+          name: item.label,
+        };
+      })
+      .filter(Boolean);
+  }, [activeOrder, products]);
 
   const closeOrder = () => setActiveOrder(null);
 
@@ -36,6 +93,16 @@ const Merchandise = () => {
             >
               CHOSE YOUR ORDER TYPE
             </h2>
+            {isLoadingProducts && (
+              <p className="mt-3 text-sm text-gray-500">
+                Loading merchandise…
+              </p>
+            )}
+            {productsError && (
+              <p className="mt-3 text-sm text-red-600" role="alert">
+                {productsError}
+              </p>
+            )}
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -53,22 +120,10 @@ const Merchandise = () => {
       {activeOrder?.id !== "group" && (
         <MerchandiseOrderModal
           order={activeOrder}
-          products={(activeOrder?.id === "couple"
-            ? coupleChoices.map((choice) => ({
-                merchandiseId: choice.productIds[0],
-                label: choice.label,
-                price: choice.price,
-                choiceId: choice.id,
-              }))
-            : activeOrder?.items || []
-          ).map((item, index) => ({
-            ...merchandiseItems[item.merchandiseId],
-            ...item,
-            id: `${item.merchandiseId}-${index}`,
-            name: item.label,
-          }))}
+          products={modalProducts}
           onClose={closeOrder}
           bundleId={searchParams.get("bundle")}
+          productItemIds={getProductItemIds(products)}
         />
       )}
       <GroupOrderModal
