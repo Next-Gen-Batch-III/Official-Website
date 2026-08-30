@@ -14,7 +14,7 @@ const ProjectCard = ({
 
       {/* Image */}
       <div
-        className="m-6 aspect-[1.6/1] overflow-hidden"
+        className="m-6 aspect-[1.7/1] overflow-hidden"
         style={{
           clipPath:
             "polygon(0 0, 92% 0, 100% 8%, 100% 100%, 0 100%)",
