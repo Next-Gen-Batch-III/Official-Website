@@ -1,5 +1,6 @@
 import EdgeContainer from "../components/ui/EdgeContainer";
 import { Clock, Calendar, Tag, MapPin } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroImg from "../assets/journey/heroImg.webp";
 import phase1 from "../assets/journey/phase1.png";
 import phase2 from "../assets/journey/phase2.jpg";
@@ -159,7 +160,10 @@ const PhaseCard = ({ phase }) => (
   </div>
 );
 
-const BatchCard = ({ batch }) => (
+const BatchCard = ({ batch }) => {
+  const navigate = useNavigate();
+  
+  return (
   <div className="bg-[#0E2A57] shadow-lg overflow-hidden relative h-full flex flex-col">
     <PhaseBadge number={batch.number} />
 
@@ -249,6 +253,7 @@ const BatchCard = ({ batch }) => (
                       clipPath: clip,
                       margin: isActive ? 0 : "1px",
                     }}
+                    onClick={label === "Trainers" ? () => navigate("/trainers") : undefined}
                   >
                     {label}
                   </button>
@@ -297,7 +302,8 @@ const BatchCard = ({ batch }) => (
       </div>
     </div>
   </div>
-);
+  );
+};
 
 
 const Journey = () => {
