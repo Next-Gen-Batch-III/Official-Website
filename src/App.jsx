@@ -11,7 +11,7 @@ import Journey from './pages/Journey';
 import Faq from './pages/Faq';
 import News from './pages/News';
 import NewsDetail from './pages/NewsDetail';
-import Projects from './pages/Projects';
+import ProjectsBatchII from './pages/ProjectsBatchII';
 import ProjectDetail from './pages/ProjectDetail';
 import TrainerJourney from './pages/TrainerJourney';
 import Footer from './components/layout/Footer';
@@ -21,6 +21,7 @@ import MyOrders from './pages/MyOrders';
 import Payment from './pages/Payment';
 import PaymentProof from './pages/PaymentProof';
 import { CartProvider } from './context/CartContext';
+import ProjectsBatchIII from './pages/ProjectsBatchIII';
 
 const People = lazy(() => import('./pages/People'));
 const Team = lazy(() => import('./pages/Team'));
@@ -49,7 +50,8 @@ function App() {
           <Route path="people/:teamId" element={<Team />} />
           <Route path='/news' element={<News />}/>
           <Route path="/news/:slug" element={<NewsDetail />} />
-          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/batch-ii" element={<ProjectsBatchII />} />
+          <Route path="/projects/batch-iii" element={<ProjectsBatchIII />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/search" element={<Search />} />
           <Route path="/trainer-journey" element={<TrainerJourney/>} />
