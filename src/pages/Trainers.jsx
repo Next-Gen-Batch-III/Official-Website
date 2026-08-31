@@ -123,7 +123,7 @@ const RequirementItem = ({ item, isLast }) => {
       <h3 className="text-sm sm:text-base font-bold text-brand-primary mb-1.5">
         {item.title}
       </h3>
-      <p className="text-xs sm:text-sm text-neutral-500 leading-relaxed max-w-50">
+      <p className="text-xs sm:text-sm text-neutral-500 leading-relaxed max-w-50 ">
         {item.description}
       </p>
 
