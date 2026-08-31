@@ -35,7 +35,7 @@ const GroupOrderModal = ({ isOpen, onClose }) => (
       </ul>
 
       <a
-        href="#"
+        href="https://t.me/lchvn"
         target="_blank"
         rel="noreferrer"
         className="mt-9 flex w-full items-center justify-center gap-4 rounded-xl bg-[#142f55] px-5 py-5 text-2xl font-bold text-white transition hover:bg-[#0d2340]"
