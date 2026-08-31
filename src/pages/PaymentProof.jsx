@@ -11,19 +11,6 @@ import Modal from "@/components/ui/Modal";
 import { useCart } from "@/context/CartContext";
 import { createOrder } from "@/services/orderService";
 import { uploadPaymentProof } from "@/services/uploadService";
-import standardPolo from "@/assets/merchandise/price/NGEP-Standard-PoloShirtt.webp";
-import standardTshirt from "@/assets/merchandise/price/NGEP-Standard-TShirt.webp";
-import couplePolo from "@/assets/merchandise/price/NGEP-Couple-2PoloShirts.webp";
-import coupleTshirt from "@/assets/merchandise/price/NGEP-Couple-2TShirts.webp";
-import coupleMixed from "@/assets/merchandise/price/NGEP-Couple-1PoloShirtn1TShirt.webp";
-
-const qrForOrder = (item) => {
-  if (item?.orderType === "standard")
-    return item.product.id === "polo" ? standardPolo : standardTshirt;
-  if (item?.price === "$13.96") return couplePolo;
-  if (item?.price === "$7.96") return coupleTshirt;
-  return coupleMixed;
-};
 
 const PaymentProof = () => {
   const { items, checkoutDetails, clearCart } = useCart();
@@ -31,7 +18,6 @@ const PaymentProof = () => {
   const [proof, setProof] = useState(null);
   const [proofPreview, setProofPreview] = useState("");
   const [uploadError, setUploadError] = useState("");
-  const [isQrOpen, setIsQrOpen] = useState(false);
   const [isReviewed, setIsReviewed] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionError, setSubmissionError] = useState("");
@@ -53,8 +39,8 @@ const PaymentProof = () => {
     const file = event.target.files?.[0];
     if (!file) return;
 
-    if (file.size > 1024 * 1024) {
-      setUploadError("Please choose an image smaller than 1MB.");
+    if (file.size > 5 * 1024 * 1024) {
+      setUploadError("Please choose an image smaller than 5MB.");
       event.target.value = "";
       return;
     }
@@ -200,7 +186,7 @@ const PaymentProof = () => {
             <span className="mt-5 text-xl font-bold text-[#142f55]">
               Click to upload
             </span>
-            <span className="mt-1 text-gray-500">PNG, JPG, JPEG (Max 1MB)</span>
+            <span className="mt-1 text-gray-500">PNG, JPG, JPEG (Max 5MB)</span>
           </label>
         )}
         <input
@@ -219,52 +205,17 @@ const PaymentProof = () => {
       </div>
       <button
         type="button"
-        onClick={() => setIsQrOpen(true)}
-        className="mt-8 w-full cursor-pointer rounded-lg bg-[#142f55] py-4 text-xl font-bold text-white"
-      >
-        Pay now
-      </button>
-      <button
-        type="button"
-        disabled={!proof}
         onClick={submitOrder}
-        className="mt-5 w-full cursor-pointer rounded-lg bg-[#142f55] py-4 text-xl font-bold text-white disabled:cursor-not-allowed disabled:opacity-50"
+        disabled={!proof || isSubmitting}
+        className="mt-8 w-full cursor-pointer rounded-lg bg-[#142f55] py-4 text-xl font-bold text-white disabled:cursor-not-allowed disabled:opacity-50"
       >
-        {isSubmitting ? "Submitting…" : "Continue"}
+        {isSubmitting ? "Submitting..." : "Submit Payment"}
       </button>
       {submissionError && (
         <p className="mt-3 text-sm text-red-600" role="alert">
           {submissionError}
         </p>
       )}
-      <Modal
-        isOpen={isQrOpen}
-        onClose={() => setIsQrOpen(false)}
-        contentClassName="w-full max-w-2xl rounded-3xl p-8 text-center"
-      >
-        <h2 className="text-2xl font-bold">Total Amount</h2>
-        <p className="mt-2 text-4xl font-bold text-green-500">
-          ${total.toFixed(2)}
-        </p>
-        <div className="my-8 border-t" />
-        <h3 className="text-2xl font-bold">Scan QR code to pay</h3>
-        <img
-          src={qrForOrder(items[0])}
-          alt="Payment QR code"
-          className="mx-auto mt-6 h-72 w-72 object-contain"
-        />
-        <p className="mt-5 text-left text-gray-700">
-          1. Open your banking app
-          <br />
-          2. Scan the QR code above
-          <br />
-          3. Check amount
-          <br />
-          4. Complete payment
-          <br />
-          5. Upload your payment proof
-        </p>
-      </Modal>
       <Modal
         isOpen={isReviewed}
         onClose={finishOrder}
