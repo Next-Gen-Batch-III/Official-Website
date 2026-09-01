@@ -61,6 +61,20 @@ const Merchandise = () => {
                   : [products[id]?.image],
               )
               .filter(Boolean);
+            const comboImageSets = uniqueIds
+              .map((id) =>
+                (products[id]?.imageUrls?.length
+                  ? products[id].imageUrls
+                  : [products[id]?.image]
+                ).filter(Boolean),
+              )
+              .filter((set) => set.length);
+            const comboProductIndexes = choice.productIds.map((id) =>
+              uniqueIds.indexOf(id),
+            );
+            const comboImages = comboProductIndexes.map(
+              (setIndex) => comboImageSets[setIndex]?.[0],
+            );
 
             return {
               merchandiseId: choice.productIds[0],
@@ -68,6 +82,9 @@ const Merchandise = () => {
               price: choice.price,
               choiceId: choice.id,
               imageUrls: combinedImages,
+              comboImages,
+              comboImageSets,
+              comboProductIndexes,
             };
           })
         : activeOrder?.items || [];
