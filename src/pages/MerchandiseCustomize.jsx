@@ -94,6 +94,7 @@ const MerchandiseCustomize = () => {
     ? product.imageUrls
     : [product?.image]
   ).filter(Boolean);
+  const productImageLabels = ["front", "back", "left side", "right side"];
   const selectedImage = productImages[selectedImageIndex] || productImages[0];
 
   if (!product)
@@ -219,7 +220,7 @@ const MerchandiseCustomize = () => {
                   type="button"
                   onClick={() => setSelectedImageIndex(index)}
                   className={`h-20 w-14 overflow-hidden rounded-lg border-2 bg-brand-secondary-orange ${selectedImageIndex === index ? "border-[#ff8a24]" : "border-transparent"}`}
-                  aria-label={`Show ${index === 0 ? "front" : "back"} image`}
+                  aria-label={`Show ${productImageLabels[index] || `view ${index + 1}`} image`}
                 >
                   <img
                     src={image}

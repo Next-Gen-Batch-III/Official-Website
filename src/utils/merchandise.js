@@ -40,7 +40,7 @@ export const createCatalogProducts = (apiItems) =>
             databaseItemId: item.id,
             name: item.name,
             description: item.description,
-            imageUrls: item.imageUrls ?? [],
+            imageUrls: item.imageUrls?.length ? item.imageUrls : product.imageUrls ?? [],
             image: item.imageUrls?.[0] || product.image,
             sizes: item.availableSizes,
           },

@@ -10,20 +10,22 @@ const ProductCard = ({ product, onChooseSize }) => {
       type="button"
       onClick={() => onChooseSize(product, defaultSize)}
       disabled={!defaultSize}
-      className="block h-70 w-full cursor-pointer bg-neutral-200 disabled:cursor-not-allowed"
+      className="block w-full cursor-pointer text-left disabled:cursor-not-allowed"
       aria-label={`Customize ${product.name}`}
     >
-      <img
-        src={product.image}
-        alt={product.name}
-        className="h-full w-full object-contain p-4"
-      />
+      <span className="flex h-70 w-full items-center justify-center bg-neutral-200">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="h-full w-full object-contain p-4"
+        />
+      </span>
+      <span className="block p-5">
+        <h3 className="font-bold text-[#142f55]">{product.name}</h3>
+        <p className="mt-1 text-sm text-gray-500">Customized</p>
+        <p className="mt-2 text-lg font-bold text-gray-800">{product.price}</p>
+      </span>
     </button>
-    <div className="p-5">
-      <h3 className="font-bold text-[#142f55]">{product.name}</h3>
-      <p className="mt-1 text-sm text-gray-500">Customized</p>
-      <p className="mt-2 text-lg font-bold text-gray-800">{product.price}</p>
-    </div>
     </article>
   );
 };
