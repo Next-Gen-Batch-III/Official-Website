@@ -14,6 +14,7 @@ import NewsDetail from './pages/NewsDetail';
 import ProjectsBatchII from './pages/ProjectsBatchII';
 import ProjectDetail from './pages/ProjectDetail';
 import TrainerJourney from './pages/TrainerJourney';
+import Trainers from './pages/Trainers';
 import Footer from './components/layout/Footer';
 import Merchandise from './pages/Merchandise';
 import MerchandiseCustomize from './pages/MerchandiseCustomize';
@@ -55,6 +56,7 @@ function App() {
           <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/search" element={<Search />} />
           <Route path="/trainer-journey" element={<TrainerJourney/>} />
+          <Route path="/trainers" element={<Trainers />} />
           <Route path="/merchandise" element={<Merchandise/>} />
           <Route path="/merchandise/:productSlug/customize" element={<MerchandiseCustomize/>} />
           <Route path="/my-orders" element={<MyOrders/>} />
