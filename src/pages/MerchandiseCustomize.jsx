@@ -6,6 +6,7 @@ import {
   useSearchParams,
 } from "react-router-dom";
 import { FaPen } from "react-icons/fa";
+import Button from "@/components/ui/Button";
 import SizeChartModal from "@/components/merchandise/SizeChartModal";
 import SleeveCustomizationModal from "@/components/merchandise/SleeveCustomizationModal";
 import {
@@ -26,12 +27,20 @@ import { getProducts } from "@/services/productService";
 const MerchandiseCustomize = () => {
   const { productSlug } = useParams();
   const [searchParams] = useSearchParams();
+  const bundleId = searchParams.get("bundle");
+  const isSecondCoupleProduct = searchParams.get("step") === "2";
   const baseProduct = findMerchandiseProduct(productSlug);
   const [catalogProducts, setCatalogProducts] = useState({});
   const navigate = useNavigate();
   const { addItem, beginOrder, items, updateItem } = useCart();
   const cartItemId = searchParams.get("cartItem");
-  const editingItem = items.find((item) => item.id === cartItemId);
+  const bundleItems = items.filter((item) => item.bundleId === bundleId);
+  const bundleItem = bundleId && baseProduct
+    ? (isSecondCoupleProduct ? bundleItems[1] : bundleItems[0])
+    : null;
+
+  const editingItem = items.find((item) => item.id === cartItemId) || bundleItem;
+  const isEditing = Boolean(editingItem);
   const itemIds = parseItemIds(searchParams.get("itemIds"));
   const databaseItemId =
     editingItem?.product?.databaseItemId || Number(itemIds[baseProduct?.id]);
@@ -42,15 +51,12 @@ const MerchandiseCustomize = () => {
         databaseItemId: databaseItemId || null,
       }
     : null;
-  const isEditing = Boolean(editingItem);
   const selectedOrderType = merchandiseOrderTypes.find(
     (order) => order.id === searchParams.get("order"),
   );
   const coupleChoice = coupleChoices.find(
     (choice) => choice.id === searchParams.get("choice"),
   );
-  const bundleId = searchParams.get("bundle");
-  const isSecondCoupleProduct = searchParams.get("step") === "2";
   const previousCoupleItem = isSecondCoupleProduct
     ? items.find((item) => item.bundleId === bundleId)
     : null;
@@ -94,6 +100,7 @@ const MerchandiseCustomize = () => {
     ? product.imageUrls
     : [product?.image]
   ).filter(Boolean);
+  const productImageLabels = ["front", "back", "left side", "right side"];
   const selectedImage = productImages[selectedImageIndex] || productImages[0];
 
   if (!product)
@@ -142,7 +149,7 @@ const MerchandiseCustomize = () => {
           : fixedPrice,
     };
     if (isEditing) {
-      updateItem(cartItemId, orderLine);
+      updateItem(editingItem.id, orderLine);
       navigate(searchParams.get("returnTo") || "/my-orders");
       return;
     }
@@ -202,6 +209,11 @@ const MerchandiseCustomize = () => {
           <span>Product 1</span>
         )}
       </nav>
+      <div className="mt-4">
+        <Button variant="brand" onClick={() => navigate(-1)}>
+          Back
+        </Button>
+      </div>
       <div className="mt-8 grid items-start gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] lg:gap-16">
         <section>
           <div className="h-120 rounded-2xl bg-brand-secondary-orange p-6 sm:p-10">
@@ -219,7 +231,7 @@ const MerchandiseCustomize = () => {
                   type="button"
                   onClick={() => setSelectedImageIndex(index)}
                   className={`h-20 w-14 overflow-hidden rounded-lg border-2 bg-brand-secondary-orange ${selectedImageIndex === index ? "border-[#ff8a24]" : "border-transparent"}`}
-                  aria-label={`Show ${index === 0 ? "front" : "back"} image`}
+                  aria-label={`Show ${productImageLabels[index] || `view ${index + 1}`} image`}
                 >
                   <img
                     src={image}

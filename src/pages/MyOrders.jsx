@@ -1,7 +1,8 @@
 import { FaPen } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "@/context/CartContext";
 import { merchandiseSleeveCustomization } from "@/data/merchandise";
+import Button from "@/components/ui/Button";
 
 const sleeveLabel = (item) => {
   const left =
@@ -19,6 +20,7 @@ const currency = (amount) => `$${amount.toFixed(2)}`;
 
 const MyOrders = () => {
   const { items } = useCart();
+  const navigate = useNavigate();
   const subtotal = items.reduce(
     (total, item) => total + item.fixedPrice,
     0,
@@ -41,6 +43,11 @@ const MyOrders = () => {
         <span className="px-2">/</span>
         <span>My Order</span>
       </nav>
+      <div className="mt-4">
+        <Button variant="brand" onClick={() => navigate(-1)}>
+          Back
+        </Button>
+      </div>
       <h1 className="mt-6 text-2xl font-bold text-[#142f55]">My Order</h1>
       {items.length === 0 ? (
         <div className="mt-6 rounded-2xl border border-dashed border-gray-300 p-10 text-center">
