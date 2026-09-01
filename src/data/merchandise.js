@@ -4,6 +4,14 @@ import { LuPencilLine } from "react-icons/lu";
 import { PiTShirt } from "react-icons/pi";
 import poloShirt from "@/assets/merchandise/polo.webp";
 import tshirt from "@/assets/merchandise/t_shirt.webp";
+import poloFront from "@/assets/merchandise/poloShirt/polo front.png";
+import poloBack from "@/assets/merchandise/poloShirt/polo back.png";
+import poloSideLeft from "@/assets/merchandise/poloShirt/polo side left.png";
+import poloSideRight from "@/assets/merchandise/poloShirt/polo side right.png";
+import tshirtFront from "@/assets/merchandise/T-shirt/T-shirt front.png";
+import tshirtBack from "@/assets/merchandise/T-shirt/T-shirt back.png";
+import tshirtSideLeft from "@/assets/merchandise/T-shirt/T-shirt side left.png";
+import tshirtSideRight from "@/assets/merchandise/T-shirt/T-shirt side right.png";
 
 export const merchandiseItems = {
     polo: {
@@ -12,6 +20,7 @@ export const merchandiseItems = {
         description: "A white short-sleeve polo shirt with a contrasting dark navy collar and sleeve cuffs, finished with the Next-Gen logo and multicolored lower-right design.",
         name: "Next-Gen Engagement Program – Batch III Polo Shirt",
         image: poloShirt,
+        imageUrls: [poloFront, poloBack, poloSideLeft, poloSideRight],
         sizes: ["S", "M", "L", "XL" ],
     },
     tshirt: {
@@ -20,6 +29,7 @@ export const merchandiseItems = {
         description: "A comfortable white crew-neck T-shirt featuring the Next-Gen logo and a multicolored lower-right design.",
         name: "Next-Gen Engagement Program – Batch III T-Shirt",
         image: tshirt,
+        imageUrls: [tshirtFront, tshirtBack, tshirtSideLeft, tshirtSideRight],
         sizes: ["S", "M", "L", "XL"],
     },
 };
