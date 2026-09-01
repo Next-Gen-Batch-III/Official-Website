@@ -23,7 +23,7 @@ const developers = {
             image: lysovath
         },
         {
-            name: "Nary",
+            name: "Mao Nary",
             role: "Web Developer",
             image: nary
         }

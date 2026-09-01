@@ -42,7 +42,7 @@ const Projects = () => {
     <div className="px-8 sm:px-12 lg:px-16 max-w-full mx-auto">
 
       {/* ================= HEADER ================= */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-2 sm:py-14 md:py-16">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10 py-2 sm:py-14 md:py-16 lg:py-20">
 
         {/* Title */}
         <div className="flex-1 min-w-0 content-top">
@@ -58,7 +58,7 @@ const Projects = () => {
 
         {/* Search */}
         <div className="flex-1 min-w-0 content-center">
-          <div className="search-box mb-10 md:mb-0">
+          <div className="search-box mb-10 md:mb-0 lg:ml-28">
 
             <label className="search-icon" htmlFor="search">
               <svg
