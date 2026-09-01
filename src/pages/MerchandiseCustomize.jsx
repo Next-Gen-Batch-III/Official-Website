@@ -27,12 +27,20 @@ import { getProducts } from "@/services/productService";
 const MerchandiseCustomize = () => {
   const { productSlug } = useParams();
   const [searchParams] = useSearchParams();
+  const bundleId = searchParams.get("bundle");
+  const isSecondCoupleProduct = searchParams.get("step") === "2";
   const baseProduct = findMerchandiseProduct(productSlug);
   const [catalogProducts, setCatalogProducts] = useState({});
   const navigate = useNavigate();
   const { addItem, beginOrder, items, updateItem } = useCart();
   const cartItemId = searchParams.get("cartItem");
-  const editingItem = items.find((item) => item.id === cartItemId);
+  const bundleItems = items.filter((item) => item.bundleId === bundleId);
+  const bundleItem = bundleId && baseProduct
+    ? (isSecondCoupleProduct ? bundleItems[1] : bundleItems[0])
+    : null;
+
+  const editingItem = items.find((item) => item.id === cartItemId) || bundleItem;
+  const isEditing = Boolean(editingItem);
   const itemIds = parseItemIds(searchParams.get("itemIds"));
   const databaseItemId =
     editingItem?.product?.databaseItemId || Number(itemIds[baseProduct?.id]);
@@ -43,15 +51,12 @@ const MerchandiseCustomize = () => {
         databaseItemId: databaseItemId || null,
       }
     : null;
-  const isEditing = Boolean(editingItem);
   const selectedOrderType = merchandiseOrderTypes.find(
     (order) => order.id === searchParams.get("order"),
   );
   const coupleChoice = coupleChoices.find(
     (choice) => choice.id === searchParams.get("choice"),
   );
-  const bundleId = searchParams.get("bundle");
-  const isSecondCoupleProduct = searchParams.get("step") === "2";
   const previousCoupleItem = isSecondCoupleProduct
     ? items.find((item) => item.bundleId === bundleId)
     : null;
@@ -144,7 +149,7 @@ const MerchandiseCustomize = () => {
           : fixedPrice,
     };
     if (isEditing) {
-      updateItem(cartItemId, orderLine);
+      updateItem(editingItem.id, orderLine);
       navigate(searchParams.get("returnTo") || "/my-orders");
       return;
     }
