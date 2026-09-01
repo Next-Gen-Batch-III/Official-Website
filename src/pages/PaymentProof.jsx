@@ -96,7 +96,6 @@ const PaymentProof = () => {
       await createOrder({
         ...checkoutDetails,
         total,
-        deliveryMethod: checkoutDetails.deliveryMethod.toUpperCase(),
         fileId: uploadedFile.id,
         items: orderItems,
       });

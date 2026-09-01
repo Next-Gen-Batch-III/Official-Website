@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Link,
   useNavigate,
@@ -15,16 +15,19 @@ import {
 } from "@/data/merchandise";
 import { useCart } from "@/context/CartContext";
 import {
+  createCatalogProducts,
   findMerchandiseProduct,
   getMerchandiseProduct,
   getPriceAmount,
   parseItemIds,
 } from "@/utils/merchandise";
+import { getProducts } from "@/services/productService";
 
 const MerchandiseCustomize = () => {
   const { productSlug } = useParams();
   const [searchParams] = useSearchParams();
   const baseProduct = findMerchandiseProduct(productSlug);
+  const [catalogProducts, setCatalogProducts] = useState({});
   const navigate = useNavigate();
   const { addItem, beginOrder, items, updateItem } = useCart();
   const cartItemId = searchParams.get("cartItem");
@@ -32,8 +35,12 @@ const MerchandiseCustomize = () => {
   const itemIds = parseItemIds(searchParams.get("itemIds"));
   const databaseItemId =
     editingItem?.product?.databaseItemId || Number(itemIds[baseProduct?.id]);
-  const product = baseProduct
-    ? { ...baseProduct, databaseItemId: databaseItemId || null }
+  const catalogProduct = baseProduct ? catalogProducts[baseProduct.id] : null;
+  const product = (catalogProduct || baseProduct)
+    ? {
+        ...(catalogProduct || baseProduct),
+        databaseItemId: databaseItemId || null,
+      }
     : null;
   const isEditing = Boolean(editingItem);
   const selectedOrderType = merchandiseOrderTypes.find(
@@ -56,6 +63,7 @@ const MerchandiseCustomize = () => {
   const [isSizeChartOpen, setIsSizeChartOpen] = useState(false);
   const [isCustomizerOpen, setIsCustomizerOpen] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [sleeveCustomization, setSleeveCustomization] = useState(
     editingItem?.sleeveCustomization ||
       merchandiseSleeveCustomization.defaultValue,
@@ -65,6 +73,28 @@ const MerchandiseCustomize = () => {
     size:
       editingItem?.size || searchParams.get("size") || product?.sizes[0] || "S",
   });
+
+  useEffect(() => {
+    let isCurrent = true;
+
+    getProducts()
+      .then((items) => {
+        if (isCurrent) setCatalogProducts(createCatalogProducts(items));
+      })
+      .catch(() => {
+        // The static catalogue remains available if the API cannot be reached.
+      });
+
+    return () => {
+      isCurrent = false;
+    };
+  }, []);
+
+  const productImages = (product?.imageUrls?.length
+    ? product.imageUrls
+    : [product?.image]
+  ).filter(Boolean);
+  const selectedImage = productImages[selectedImageIndex] || productImages[0];
 
   if (!product)
     return (
@@ -173,12 +203,33 @@ const MerchandiseCustomize = () => {
         )}
       </nav>
       <div className="mt-8 grid items-start gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] lg:gap-16">
-        <section className="h-120 rounded-2xl bg-brand-secondary-orange p-6 sm:p-10">
-          <img
-            src={product.image}
-            alt={product.name}
-            className="mx-auto h-full w-full object-contain"
-          />
+        <section>
+          <div className="h-120 rounded-2xl bg-brand-secondary-orange p-6 sm:p-10">
+            <img
+              src={selectedImage}
+              alt={product.name}
+              className="mx-auto h-full w-full object-contain"
+            />
+          </div>
+          {productImages.length > 1 && (
+            <div className="mt-4 flex gap-3">
+              {productImages.map((image, index) => (
+                <button
+                  key={image}
+                  type="button"
+                  onClick={() => setSelectedImageIndex(index)}
+                  className={`h-20 w-14 overflow-hidden rounded-lg border-2 bg-brand-secondary-orange ${selectedImageIndex === index ? "border-[#ff8a24]" : "border-transparent"}`}
+                  aria-label={`Show ${index === 0 ? "front" : "back"} image`}
+                >
+                  <img
+                    src={image}
+                    alt=""
+                    className="h-full w-full object-contain"
+                  />
+                </button>
+              ))}
+            </div>
+          )}
         </section>
         <section>
           <h1 className="max-w-xl text-3xl font-bold leading-tight text-black sm:text-4xl">

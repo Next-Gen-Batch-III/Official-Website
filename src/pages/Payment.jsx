@@ -25,9 +25,7 @@ const Payment = () => {
     phoneNumber: "",
     telegramUsername: "",
     email: "",
-    deliveryMethod: "pickup",
     pickupLocation: "",
-    deliveryAddress: "",
   });
   const total = items.reduce((sum, item) => sum + item.fixedPrice, 0);
   const productHref = (item) =>
@@ -79,11 +77,11 @@ const Payment = () => {
       >
         <div className="grid gap-4 sm:grid-cols-2">
           {[
-            ["fullName", "Full Name", "text"],
-            ["phoneNumber", "Phone Number", "tel"],
-            ["telegramUsername", "Telegram Username", "text"],
-            ["email", "Email Address", "email"],
-          ].map(([name, label, type]) => (
+            ["fullName", "Full Name", "text", "John Stone"],
+            ["phoneNumber", "Phone Number", "tel", "0123456767"],
+            ["telegramUsername", "Telegram Username", "text", "@yourusername"],
+            ["email", "Email Address", "email", "yourname@gmail.com"],
+          ].map(([name, label, type, placeholder]) => (
             <label key={name} className="text-sm text-gray-700">
               {label}
               <input
@@ -91,57 +89,29 @@ const Payment = () => {
                 name={name}
                 type={type}
                 value={form[name]}
+                placeholder={placeholder}
                 onChange={update}
                 className="mt-2 block w-full rounded border border-gray-300 px-4 py-3"
               />
             </label>
           ))}
         </div>
-        <p className="mt-5 text-sm text-gray-700">Delivery Methods</p>
-        <div className="mt-3 grid gap-6 sm:grid-cols-2">
-          {["pickup", "delivery"].map((method) => (
-            <button
-              key={method}
-              type="button"
-              onClick={() =>
-                setForm((current) => ({ ...current, deliveryMethod: method }))
-              }
-              className={`cursor-pointer rounded border-2 py-3 font-bold capitalize ${form.deliveryMethod === method ? "border-[#142f55] bg-[#142f55] text-white" : "border-[#142f55] text-[#142f55]"}`}
-            >
-              {method}
-            </button>
-          ))}
-        </div>
-        {form.deliveryMethod === "pickup" ? (
-          <label className="mt-3 block text-sm text-gray-700">
-            Pickup location
-            <select
-              required
-              name="pickupLocation"
-              value={form.pickupLocation}
-              onChange={update}
-              className="mt-2 block w-full rounded border border-gray-300 bg-white px-4 py-3"
-            >
-              <option value="" disabled>
-                Select pickup location
-              </option>
-              <option value="event-day">Event Day</option>
-              <option value="staff-office">Staff Office</option>
-            </select>
-          </label>
-        ) : (
-          <label className="mt-3 block text-sm text-gray-700">
-            Delivery address
-            <textarea
-              required
-              name="deliveryAddress"
-              value={form.deliveryAddress}
-              onChange={update}
-              rows="3"
-              className="mt-2 block w-full resize-y rounded border border-gray-300 px-4 py-3"
-            />
-          </label>
-        )}
+        <label className="mt-5 block text-sm text-gray-700">
+          Pickup location
+          <select
+            required
+            name="pickupLocation"
+            value={form.pickupLocation}
+            onChange={update}
+            className="mt-2 block w-full rounded border border-gray-300 bg-white px-4 py-3"
+          >
+            <option value="" disabled>
+              Select pickup location
+            </option>
+            <option value="event-day">Event Day</option>
+            <option value="staff-office">Staff Office</option>
+          </select>
+        </label>
         <button
           type="submit"
           className="mt-8 w-full cursor-pointer rounded bg-[#142f55] py-3 font-bold text-white"

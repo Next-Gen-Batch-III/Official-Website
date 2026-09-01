@@ -1,4 +1,3 @@
-import { FaTimes } from "react-icons/fa";
 import Modal from "@/components/ui/Modal";
 import { merchandiseSizeChart } from "@/data/merchandise";
 
@@ -8,17 +7,7 @@ const SizeChartModal = ({ isOpen, onClose }) => (
     onClose={onClose}
     contentClassName="w-full max-w-sm rounded-2xl p-6"
   >
-    <div className="flex items-center justify-between gap-4">
-      <h2 className="text-xl font-bold text-[#142f55]">Size chart</h2>
-      <button
-        type="button"
-        onClick={onClose}
-        className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full text-[#142f55] hover:bg-slate-100"
-        aria-label="Close size chart"
-      >
-        <FaTimes />
-      </button>
-    </div>
+    <h2 className="pr-10 text-xl font-bold text-[#142f55]">Size chart</h2>
     <table className="mt-5 w-full border-collapse overflow-hidden rounded-xl text-left text-sm">
       <thead className="bg-[#142f55] text-white">
         <tr>

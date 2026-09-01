@@ -79,7 +79,7 @@ const Merchandise = () => {
 
   return (
     <>
-      <MerchandiseHero />
+      <MerchandiseHero products={products} />
 
       <section
         className="bg-slate-50 px-6 py-14 sm:px-10 lg:px-14 lg:py-20"
@@ -136,19 +136,19 @@ const Merchandise = () => {
 
 export default Merchandise;
 
-const MerchandiseHero = () => {
+const MerchandiseHero = ({ products }) => {
   const [mainImageId, setMainImageId] = useState("primary");
   const [isImageTransitioning, setIsImageTransitioning] = useState(false);
   const [thumbnailOffset, setThumbnailOffset] = useState({ x: 260, y: -150 });
   const images = [
     {
       id: "primary",
-      src: merchandiseHero.primaryImage,
+      src: products.polo?.imageUrls?.[0] || merchandiseHero.primaryImage,
       alt: "Next-Gen polo shirt",
     },
     {
       id: "secondary",
-      src: merchandiseHero.secondaryImage,
+      src: products.tshirt?.imageUrls?.[0] || merchandiseHero.secondaryImage,
       alt: "Next-Gen T-shirt",
     },
   ];
