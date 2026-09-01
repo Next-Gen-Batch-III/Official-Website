@@ -6,18 +6,24 @@ const ProductCard = ({ product, onChooseSize }) => {
   const defaultSize = product.sizes[0];
   const images = product.imageUrls?.length ? product.imageUrls : [product.image];
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [hasInteracted, setHasInteracted] = useState(false);
   const selectedImage = images[selectedIndex] || images[0];
+
+  const handleSelect = () => {
+    setHasInteracted(true);
+    if (defaultSize) onChooseSize(product, defaultSize);
+  };
 
   return (
     <article className="overflow-hidden rounded-2xl bg-white shadow-[0_8px_24px_rgba(15,23,42,0.12)]">
       <div
         role="button"
         tabIndex={defaultSize ? 0 : -1}
-        onClick={() => defaultSize && onChooseSize(product, defaultSize)}
+        onClick={handleSelect}
         onKeyDown={(event) => {
           if (defaultSize && (event.key === "Enter" || event.key === " ")) {
             event.preventDefault();
-            onChooseSize(product, defaultSize);
+            handleSelect();
           }
         }}
         aria-label={`Customize ${product.name}`}
@@ -37,13 +43,16 @@ const ProductCard = ({ product, onChooseSize }) => {
           <p className="mt-2 text-lg font-bold text-gray-800">{product.price}</p>
         </span>
       </div>
-      {images.length > 1 && (
+      {hasInteracted && images.length > 1 && (
         <div className="flex flex-wrap gap-2 px-5 pb-5">
           {images.map((image, index) => (
             <button
               key={image}
               type="button"
-              onClick={() => setSelectedIndex(index)}
+              onClick={(event) => {
+                event.stopPropagation();
+                setSelectedIndex(index);
+              }}
               className={`h-12 w-9 overflow-hidden rounded-md border-2 bg-neutral-100 ${selectedIndex === index ? "border-[#ff8a24]" : "border-transparent"}`}
               aria-label={`Show image ${index + 1} of ${product.name}`}
             >
