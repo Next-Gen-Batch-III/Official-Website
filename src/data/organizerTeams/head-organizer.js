@@ -1,4 +1,4 @@
-import Sreylenn from "@/assets/participants/sreylenn.webp";
+import Sreylenn from "@/assets/participants/seatSreylenn.jpg";
 import Sindy from "@/assets/participants/sindy.webp";
 import Ponharoth from "@/assets/participants/ponharoth.webp";
 import Chanchessika from "@/assets/participants/chanchessika.webp";

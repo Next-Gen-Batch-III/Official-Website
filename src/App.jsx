@@ -16,6 +16,9 @@ import ProjectDetail from './pages/ProjectDetail';
 import TrainerJourney from './pages/TrainerJourney';
 import Footer from './components/layout/Footer';
 import ProjectsBatchIII from './pages/ProjectsBatchIII';
+import Management from './pages/Management';
+import Mentors from './pages/Mentor';
+import Advisor from './pages/Advisor';
 
 const People = lazy(() => import('./pages/People'));
 const Team = lazy(() => import('./pages/Team'));
@@ -48,6 +51,9 @@ function App() {
           <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/search" element={<Search />} />
           <Route path="/trainer-journey" element={<TrainerJourney/>} />
+          <Route path="people/management" element ={<Management />} />
+          <Route path="people/mentors" element ={<Mentors />} />
+          <Route path="people/advisors" element ={<Advisor />} />
         </Routes>
         <Footer />
       </BrowserRouter>

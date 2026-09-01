@@ -2,7 +2,7 @@ import { useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Button from "@/components/ui/Button";
-import Sreylenn from "@/assets/participants/sreylenn.webp";
+import Sreylenn from "@/assets/participants/seatSreylenn.jpg";
 import Sindy from "@/assets/participants/sindy.webp";
 import Ponharoth from "@/assets/participants/ponharoth.webp";
 import Chanchessika from "@/assets/participants/chanchessika.webp";
@@ -73,17 +73,16 @@ const Organizer = () => {
 
   return (
     <div className="section-padding">
-      <div className="flex flex-col text-wrap md:w-1/2">
-        <h1 className="text-[2.5rem] font-bold">
-          Meet Our <span className="text-brand-secondary-orange">People</span>
+      <div className="flex flex-col text-wrap ">
+        <h1 className="text-3xl md:text-4xl font-bold">
+          Meet Our Organizers
         </h1>
-        <p>
-          The Organizer Team is responsible for planning and coordinating events
-          ensuring everything runs smoothly and on time.
+        <p className="text-[12px] md:text-lg text-gray-800">
+          The Organizer Team is responsible for planning and coordinating events ensuring everything runs smoothly and on time.
         </p>
       </div>
 
-      <div className="mt-14 flex flex-col items-center">
+      <div className="mt-18 flex flex-col items-center">
         <div className="relative flex flex-col items-center ">
           <PeopleCard
             className="max-w-[min(78vw,18rem)] md:max-w-[clamp(13rem,20vw,17rem)]"
