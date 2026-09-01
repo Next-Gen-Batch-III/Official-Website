@@ -23,6 +23,9 @@ import Payment from './pages/Payment';
 import PaymentProof from './pages/PaymentProof';
 import { CartProvider } from './context/CartContext';
 import ProjectsBatchIII from './pages/ProjectsBatchIII';
+import Management from './pages/Management';
+import Mentors from './pages/Mentor';
+import Advisor from './pages/Advisor';
 
 const People = lazy(() => import('./pages/People'));
 const Team = lazy(() => import('./pages/Team'));
@@ -62,6 +65,10 @@ function App() {
           <Route path="/my-orders" element={<MyOrders/>} />
           <Route path="/payment" element={<Payment/>} />
           <Route path="/payment/proof" element={<PaymentProof/>} />
+          <Route path="people/management" element ={<Management />} />
+          <Route path="people/mentors" element ={<Mentors />} />
+          <Route path="people/advisors" element ={<Advisor />} />
+
         </Routes>
         <Footer />
         </CartProvider>
