@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Button from "@/components/ui/Button";
 import Modal from "@/components/ui/Modal";
 import { useCart } from "@/context/CartContext";
 import standardPolo from "@/assets/merchandise/price/NGEP-Standard-PoloShirtt.webp";
@@ -64,6 +65,11 @@ const Payment = () => {
         <span className="px-2">/</span>
         <span>Payment</span>
       </nav>
+      <div className="mt-4">
+        <Button variant="brand" onClick={() => navigate(-1)}>
+          Back
+        </Button>
+      </div>
       <h1 className="mt-6 text-2xl font-bold text-[#142f55]">
         Customer Information
       </h1>

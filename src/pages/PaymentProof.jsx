@@ -7,6 +7,7 @@ import {
   FaTrash,
 } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import Button from "@/components/ui/Button";
 import Modal from "@/components/ui/Modal";
 import { useCart } from "@/context/CartContext";
 import { createOrder } from "@/services/orderService";
@@ -145,6 +146,11 @@ const PaymentProof = () => {
         <span className="px-2">/</span>
         <span aria-current="page">Payment Proof</span>
       </nav>
+      <div className="mt-4">
+        <Button variant="brand" onClick={() => navigate(-1)}>
+          Back
+        </Button>
+      </div>
       <h1 className="mt-8 text-3xl font-bold text-[#142f55]">Payment Proof</h1>
       <div className="mt-10 rounded-3xl border border-gray-200 bg-white p-8 shadow-md">
         {proof ? (

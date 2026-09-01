@@ -6,6 +6,7 @@ import {
   useSearchParams,
 } from "react-router-dom";
 import { FaPen } from "react-icons/fa";
+import Button from "@/components/ui/Button";
 import SizeChartModal from "@/components/merchandise/SizeChartModal";
 import SleeveCustomizationModal from "@/components/merchandise/SleeveCustomizationModal";
 import {
@@ -203,6 +204,11 @@ const MerchandiseCustomize = () => {
           <span>Product 1</span>
         )}
       </nav>
+      <div className="mt-4">
+        <Button variant="brand" onClick={() => navigate(-1)}>
+          Back
+        </Button>
+      </div>
       <div className="mt-8 grid items-start gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] lg:gap-16">
         <section>
           <div className="h-120 rounded-2xl bg-brand-secondary-orange p-6 sm:p-10">
