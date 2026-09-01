@@ -23,8 +23,8 @@ const ProductCard = ({ product, onChooseSize }) => {
     : null;
   const sideLabels = ["front", "back", "left side", "right side"];
 
-  const handleSelect = () => {
-    setHasInteracted(true);
+  const handleReveal = () => setHasInteracted(true);
+  const handleOrder = () => {
     if (defaultSize) onChooseSize(product, defaultSize);
   };
 
@@ -32,17 +32,16 @@ const ProductCard = ({ product, onChooseSize }) => {
     <article className="overflow-hidden rounded-2xl bg-white shadow-[0_8px_24px_rgba(15,23,42,0.12)]">
       <div
         role="button"
-        tabIndex={defaultSize ? 0 : -1}
-        onClick={handleSelect}
+        tabIndex={0}
+        onClick={handleReveal}
         onKeyDown={(event) => {
-          if (defaultSize && (event.key === "Enter" || event.key === " ")) {
+          if (event.key === "Enter" || event.key === " ") {
             event.preventDefault();
-            handleSelect();
+            handleReveal();
           }
         }}
-        aria-label={`Customize ${product.name}`}
-        aria-disabled={!defaultSize}
-        className={`block w-full cursor-pointer text-left ${!defaultSize ? "pointer-events-none opacity-60" : ""}`}
+        aria-label={`View ${product.name}`}
+        className="block w-full cursor-pointer text-left"
       >
         {comboImages ? (
           <span className="relative flex h-70 w-full items-center justify-center overflow-hidden bg-neutral-200">
@@ -50,12 +49,12 @@ const ProductCard = ({ product, onChooseSize }) => {
               src={comboImages[0]}
               alt=""
               aria-hidden="true"
-              className="absolute left-[8%] top-[12%] h-[65%] w-[55%] -translate-x-2 rotate-[-8deg] object-contain drop-shadow-md"
+              className="absolute left-[10%] top-[10%] h-[68%] w-[52%] object-contain drop-shadow-md"
             />
             <img
               src={comboImages[1]}
               alt={product.name}
-              className="absolute bottom-[10%] right-[6%] h-[70%] w-[58%] translate-x-2 rotate-6 object-contain drop-shadow-xl"
+              className="absolute bottom-[10%] right-[10%] h-[68%] w-[52%] object-contain drop-shadow-xl"
             />
           </span>
         ) : (
@@ -73,7 +72,7 @@ const ProductCard = ({ product, onChooseSize }) => {
           <p className="mt-2 text-lg font-bold text-gray-800">{product.price}</p>
         </span>
       </div>
-      {comboImageSets && (
+      {comboImageSets && hasInteracted && (
         <div className="flex flex-wrap gap-2 px-5 pb-5">
           {comboImageSets.map((set, setIndex) =>
             set.map((image, sideIndex) => (
@@ -115,6 +114,16 @@ const ProductCard = ({ product, onChooseSize }) => {
           ))}
         </div>
       )}
+      <div className="px-5 pb-5">
+        <button
+          type="button"
+          onClick={handleOrder}
+          disabled={!defaultSize}
+          className="w-full rounded-full bg-black py-2.5 text-sm font-bold text-white transition-colors duration-300 hover:bg-[#142f55] disabled:cursor-not-allowed disabled:opacity-60"
+        >
+          Order Now
+        </button>
+      </div>
     </article>
   );
 };
