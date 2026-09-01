@@ -52,12 +52,24 @@ const Merchandise = () => {
   const modalProducts = useMemo(() => {
     const orderProducts =
       activeOrder?.id === "couple"
-        ? coupleChoices.map((choice) => ({
-            merchandiseId: choice.productIds[0],
-            label: choice.label,
-            price: choice.price,
-            choiceId: choice.id,
-          }))
+        ? coupleChoices.map((choice) => {
+            const uniqueIds = [...new Set(choice.productIds)];
+            const combinedImages = uniqueIds
+              .flatMap((id) =>
+                products[id]?.imageUrls?.length
+                  ? products[id].imageUrls
+                  : [products[id]?.image],
+              )
+              .filter(Boolean);
+
+            return {
+              merchandiseId: choice.productIds[0],
+              label: choice.label,
+              price: choice.price,
+              choiceId: choice.id,
+              imageUrls: combinedImages,
+            };
+          })
         : activeOrder?.items || [];
 
     return orderProducts
