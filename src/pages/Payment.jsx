@@ -71,6 +71,23 @@ const Payment = () => {
         className="mt-6"
         onSubmit={(event) => {
           event.preventDefault();
+
+          // Email validation
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          if (!emailRegex.test(form.email)) {
+            alert("Please enter a valid email address.");
+            return;
+          }
+
+          // Telegram username validation
+          const telegramRegex = /^@[a-zA-Z0-9_]{5,32}$/;
+
+          if (!telegramRegex.test(form.telegramUsername)) {
+            alert("Please enter a valid Telegram username starting with @.");
+            return;
+          }
+
           setCheckoutDetails(form);
           setIsQrOpen(true);
         }}
@@ -80,7 +97,7 @@ const Payment = () => {
             ["fullName", "Full Name", "text", "John Stone"],
             ["phoneNumber", "Phone Number", "tel", "0123456767"],
             ["telegramUsername", "Telegram Username", "text", "@yourusername"],
-            ["email", "Email Address", "email", "yourname@gmail.com"],
+            ["email", "Email Address", "email", "yourname@gmail.com or yourname@student.cadt.edu.kh"],
           ].map(([name, label, type, placeholder]) => (
             <label key={name} className="text-sm text-gray-700">
               {label}
