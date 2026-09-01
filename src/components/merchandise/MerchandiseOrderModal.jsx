@@ -6,33 +6,53 @@ const ProductCard = ({ product, onChooseSize }) => {
   const defaultSize = product.sizes[0];
   const images = product.imageUrls?.length ? product.imageUrls : [product.image];
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [showSides, setShowSides] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
   const selectedImage = images[selectedIndex] || images[0];
+
+  const handleSelect = () => {
+    setHasInteracted(true);
+    if (defaultSize) onChooseSize(product, defaultSize);
+  };
 
   return (
     <article className="overflow-hidden rounded-2xl bg-white shadow-[0_8px_24px_rgba(15,23,42,0.12)]">
-      <button
-        type="button"
-        onClick={() => images.length > 1 && setShowSides((current) => !current)}
-        aria-label={
-          images.length > 1 ? `Show sides of ${product.name}` : product.name
-        }
-        aria-expanded={images.length > 1 ? showSides : undefined}
-        className={`flex h-70 w-full items-center justify-center bg-neutral-200 ${images.length > 1 ? "cursor-pointer" : "cursor-default"}`}
+      <div
+        role="button"
+        tabIndex={defaultSize ? 0 : -1}
+        onClick={handleSelect}
+        onKeyDown={(event) => {
+          if (defaultSize && (event.key === "Enter" || event.key === " ")) {
+            event.preventDefault();
+            handleSelect();
+          }
+        }}
+        aria-label={`Customize ${product.name}`}
+        aria-disabled={!defaultSize}
+        className={`block w-full cursor-pointer text-left ${!defaultSize ? "pointer-events-none opacity-60" : ""}`}
       >
-        <img
-          src={selectedImage}
-          alt={product.name}
-          className="h-full w-full object-contain p-4"
-        />
-      </button>
-      {showSides && images.length > 1 && (
-        <div className="flex flex-wrap gap-2 px-5 pt-4">
+        <span className="flex h-70 w-full items-center justify-center bg-neutral-200">
+          <img
+            src={selectedImage}
+            alt={product.name}
+            className="h-full w-full object-contain p-4"
+          />
+        </span>
+        <span className="block p-5">
+          <h3 className="font-bold text-[#142f55]">{product.name}</h3>
+          <p className="mt-1 text-sm text-gray-500">Customized</p>
+          <p className="mt-2 text-lg font-bold text-gray-800">{product.price}</p>
+        </span>
+      </div>
+      {hasInteracted && images.length > 1 && (
+        <div className="flex flex-wrap gap-2 px-5 pb-5">
           {images.map((image, index) => (
             <button
               key={image}
               type="button"
-              onClick={() => setSelectedIndex(index)}
+              onClick={(event) => {
+                event.stopPropagation();
+                setSelectedIndex(index);
+              }}
               className={`h-12 w-9 overflow-hidden rounded-md border-2 bg-neutral-100 ${selectedIndex === index ? "border-[#ff8a24]" : "border-transparent"}`}
               aria-label={`Show image ${index + 1} of ${product.name}`}
             >
@@ -41,17 +61,6 @@ const ProductCard = ({ product, onChooseSize }) => {
           ))}
         </div>
       )}
-      <button
-        type="button"
-        onClick={() => defaultSize && onChooseSize(product, defaultSize)}
-        disabled={!defaultSize}
-        aria-label={`Customize ${product.name}`}
-        className="block w-full cursor-pointer p-5 text-left disabled:cursor-not-allowed"
-      >
-        <h3 className="font-bold text-[#142f55]">{product.name}</h3>
-        <p className="mt-1 text-sm text-gray-500">Customized</p>
-        <p className="mt-2 text-lg font-bold text-gray-800">{product.price}</p>
-      </button>
     </article>
   );
 };
