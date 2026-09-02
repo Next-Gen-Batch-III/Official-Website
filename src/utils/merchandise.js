@@ -1,4 +1,4 @@
-import { merchandiseItems } from "@/data/merchandise";
+import { merchandiseItems, merchandiseSizeOptions } from "@/data/merchandise";
 
 export const findMerchandiseProduct = (slug) =>
   Object.values(merchandiseItems).find((product) => product.slug === slug);
@@ -42,7 +42,9 @@ export const createCatalogProducts = (apiItems) =>
             description: item.description,
             imageUrls: product.imageUrls?.length ? product.imageUrls : item.imageUrls ?? [],
             image: product.imageUrls?.[0] || item.imageUrls?.[0] || product.image,
-            sizes: item.availableSizes,
+            // Every merchandise item uses the public size set. XS remains a
+            // backend-only enum value and is deliberately not displayed.
+            sizes: merchandiseSizeOptions,
           },
         ];
       })

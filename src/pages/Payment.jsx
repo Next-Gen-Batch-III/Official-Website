@@ -87,7 +87,7 @@ const Payment = () => {
           }
 
           // Telegram username validation
-          const telegramRegex = /^@[a-zA-Z0-9_]{5,32}$/;
+          const telegramRegex = /^@[a-zA-Z0-9_]{5,32}$/;  
 
           if (!telegramRegex.test(form.telegramUsername)) {
             alert("Please enter a valid Telegram username starting with @.");

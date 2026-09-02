@@ -13,6 +13,10 @@ import tshirtBack from "@/assets/merchandise/T-shirt/T-shirt back.png";
 import tshirtSideLeft from "@/assets/merchandise/T-shirt/T-shirt side left.png";
 import tshirtSideRight from "@/assets/merchandise/T-shirt/T-shirt side right.png";
 
+// XS is supported by the backend for existing data, but is not offered in the
+// public merchandise ordering flow.
+export const merchandiseSizeOptions = ["S", "M", "L", "XL", "XXL", "XXXL"];
+
 export const merchandiseItems = {
     polo: {
         id: "polo",
@@ -21,7 +25,7 @@ export const merchandiseItems = {
         name: "Next-Gen Engagement Program – Batch III Polo Shirt",
         image: poloShirt,
         imageUrls: [poloFront, poloBack, poloSideLeft, poloSideRight],
-        sizes: ["S", "M", "L", "XL" ],
+        sizes: merchandiseSizeOptions,
     },
     tshirt: {
         id: "tshirt",
@@ -30,7 +34,7 @@ export const merchandiseItems = {
         name: "Next-Gen Engagement Program – Batch III T-Shirt",
         image: tshirt,
         imageUrls: [tshirtFront, tshirtBack, tshirtSideLeft, tshirtSideRight],
-        sizes: ["S", "M", "L", "XL"],
+        sizes: merchandiseSizeOptions,
     },
 };
 
@@ -104,7 +108,8 @@ export const merchandiseSleeveCustomization = {
         { value: "name", label: "Add My Name" },
     ],
     rightOptions: [
-        { value: "program", label: "Next-Gen Engagement Program - Batch III" },
+        { value: "batch", label: "Next-Gen Engagement Program - Batch III" },
+        { value: "program", label: "Next-Gen Engagement Program" },
         { value: "trainer", label: "Trainer" },
         { value: "trainee", label: "Trainee" },
         { value: "blank", label: "No Customization", detail: "(Blank)" },

@@ -13,6 +13,7 @@ import {
   merchandiseOrderTypes,
   coupleChoices,
   merchandiseSleeveCustomization,
+  merchandiseSizeOptions,
 } from "@/data/merchandise";
 import { useCart } from "@/context/CartContext";
 import {
@@ -76,8 +77,11 @@ const MerchandiseCustomize = () => {
   );
   const [formData, setFormData] = useState({
     quantity: editingItem?.quantity || fixedQuantity,
-    size:
-      editingItem?.size || searchParams.get("size") || product?.sizes[0] || "S",
+    size: merchandiseSizeOptions.includes(editingItem?.size)
+      ? editingItem.size
+      : merchandiseSizeOptions.includes(searchParams.get("size"))
+        ? searchParams.get("size")
+        : merchandiseSizeOptions.find((size) => product?.sizes?.includes(size)) || "S",
   });
 
   useEffect(() => {
@@ -102,6 +106,7 @@ const MerchandiseCustomize = () => {
   ).filter(Boolean);
   const productImageLabels = ["front", "back", "left side", "right side"];
   const selectedImage = productImages[selectedImageIndex] || productImages[0];
+  const sizeOptions = merchandiseSizeOptions.filter((size) => product.sizes?.includes(size));
 
   if (!product)
     return (
@@ -278,7 +283,7 @@ const MerchandiseCustomize = () => {
                 </button>
               </div>
               <div className="mt-3 flex flex-wrap gap-3">
-                {product.sizes.map((size) => (
+                {sizeOptions.map((size) => (
                   <label
                     key={size}
                     className={`flex h-10 min-w-11 cursor-pointer items-center justify-center rounded-lg border px-3 text-sm font-bold transition ${formData.size === size ? "border-[#142f55] bg-[#142f55] text-white" : "border-gray-200 text-black hover:border-[#142f55]"}`}

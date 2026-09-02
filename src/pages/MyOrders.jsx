@@ -21,10 +21,7 @@ const currency = (amount) => `$${amount.toFixed(2)}`;
 const MyOrders = () => {
   const { items } = useCart();
   const navigate = useNavigate();
-  const subtotal = items.reduce(
-    (total, item) => total + item.fixedPrice,
-    0,
-  );
+  const subtotal = items.reduce((total, item) => total + item.fixedPrice, 0);
 
   return (
     <main className="mx-auto w-full max-w-5xl px-6 py-12 sm:px-10 lg:py-16">
@@ -84,9 +81,7 @@ const MyOrders = () => {
                     <p className="mt-2">
                       <strong>Quantity:</strong> {item.quantity}
                     </p>
-                    <p className="mt-2">
-                      <strong>Set price:</strong> {item.price}
-                    </p>
+
                     <div className="mt-3">
                       <strong>Customized:</strong>
                       <p className="ml-6 mt-1">

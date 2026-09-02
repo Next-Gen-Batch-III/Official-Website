@@ -1,14 +1,23 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Modal from "@/components/ui/Modal";
+import { merchandiseSizeOptions } from "@/data/merchandise";
 
 const ProductCard = ({ product, onChooseSize }) => {
-  const defaultSize = product.sizes[0];
-  const images = product.imageUrls?.length ? product.imageUrls : [product.image];
-  const comboImageSets = product.comboImageSets?.length ? product.comboImageSets : null;
-  const comboProductIndexes = product.comboProductIndexes?.length === 2
-    ? product.comboProductIndexes
-    : [0, 1];
+  const sizes = merchandiseSizeOptions.filter((size) =>
+    product.sizes?.includes(size),
+  );
+  const [selectedSize, setSelectedSize] = useState(sizes[0]);
+  const images = product.imageUrls?.length
+    ? product.imageUrls
+    : [product.image];
+  const comboImageSets = product.comboImageSets?.length
+    ? product.comboImageSets
+    : null;
+  const comboProductIndexes =
+    product.comboProductIndexes?.length === 2
+      ? product.comboProductIndexes
+      : [0, 1];
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [comboIndexes, setComboIndexes] = useState(() =>
     comboImageSets ? comboImageSets.map(() => 0) : [],
@@ -25,7 +34,7 @@ const ProductCard = ({ product, onChooseSize }) => {
 
   const handleReveal = () => setHasInteracted(true);
   const handleOrder = () => {
-    if (defaultSize) onChooseSize(product, defaultSize);
+    if (selectedSize) onChooseSize(product, selectedSize);
   };
 
   return (
@@ -69,7 +78,9 @@ const ProductCard = ({ product, onChooseSize }) => {
         <span className="block p-5">
           <h3 className="font-bold text-[#142f55]">{product.name}</h3>
           <p className="mt-1 text-sm text-gray-500">Customized</p>
-          <p className="mt-2 text-lg font-bold text-gray-800">{product.price}</p>
+          <p className="mt-2 text-lg font-bold text-gray-800">
+            {product.price}
+          </p>
         </span>
       </div>
       {comboImageSets && hasInteracted && (
@@ -90,7 +101,11 @@ const ProductCard = ({ product, onChooseSize }) => {
                 className={`h-12 w-9 overflow-hidden rounded-md border-2 bg-neutral-100 ${comboIndexes[setIndex] === sideIndex ? "border-[#ff8a24]" : "border-transparent"}`}
                 aria-label={`Show ${comboImageSets.length > 1 ? `item ${setIndex + 1} ` : ""}${sideLabels[sideIndex] || sideIndex + 1}`}
               >
-                <img src={image} alt="" className="h-full w-full object-contain" />
+                <img
+                  src={image}
+                  alt=""
+                  className="h-full w-full object-contain"
+                />
               </button>
             )),
           )}
@@ -109,7 +124,11 @@ const ProductCard = ({ product, onChooseSize }) => {
               className={`h-12 w-9 overflow-hidden rounded-md border-2 bg-neutral-100 ${selectedIndex === index ? "border-[#ff8a24]" : "border-transparent"}`}
               aria-label={`Show image ${index + 1} of ${product.name}`}
             >
-              <img src={image} alt="" className="h-full w-full object-contain" />
+              <img
+                src={image}
+                alt=""
+                className="h-full w-full object-contain"
+              />
             </button>
           ))}
         </div>
@@ -118,7 +137,7 @@ const ProductCard = ({ product, onChooseSize }) => {
         <button
           type="button"
           onClick={handleOrder}
-          disabled={!defaultSize}
+          disabled={!selectedSize}
           className="w-full rounded-full bg-black py-2.5 text-sm font-bold text-white transition-colors duration-300 hover:bg-[#142f55] disabled:cursor-not-allowed disabled:opacity-60"
         >
           Order Now
@@ -159,7 +178,7 @@ const MerchandiseOrderModal = ({
       <div className="mt-7 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {products.map((product) => (
           <ProductCard
-            key={product.id}  
+            key={product.id}
             product={product}
             onChooseSize={handleChooseSize}
           />
