@@ -31,6 +31,10 @@ import { Calendar } from "lucide-react";
 const Home = () => {
   const navigate = useNavigate();
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+  const latestNews = [...news].sort(
+    (a, b) => new Date(b.date) - new Date(a.date),
+  )[0] ?? news[0];
+
   const Title = ({ children, className = "" }) => {
   return (
     <div>
@@ -383,9 +387,9 @@ const Home = () => {
 
         <Title className="text-2xl md:text-4xl border-b-2">News & Updates</Title>
 
-        <div className="grid md:grid-cols-2 gap-10 md:gap-20 lg:gap-30 items-start">
+        <div className="grid md:grid-cols-[1.2fr_1fr] gap-10 md:gap-20 lg:gap-30 items-center">
 
-          <div className="w-full h-[300px] md:h-[400px] lg:h-[500px]">
+          <div className="w-full h-[300px] md:h-[400px] lg:h-[500px] order-1">
 
             <EdgeContainer
               edges={["bottom-right"]}
@@ -395,7 +399,7 @@ const Home = () => {
             >
 
               <img
-                src={news[2].thumbnail}
+                src={latestNews?.thumbnail}
                 alt=""
                 className="w-full h-full object-cover object-top"
               />
@@ -404,14 +408,14 @@ const Home = () => {
 
           </div>
 
-          <div className="flex flex-col justify-between h-full">
+          <div className="flex flex-col justify-between h-full order-2 md:order-2">
 
-            <div className="mt-5 lg:mt-18 flex flex-col gap-8">
+            <div className="mt-0 md:mt-5 lg:mt-18 flex flex-col gap-8">
               <h3 className="text-2xl font-bold mb-4">
-                {news[2].headline}
+                {latestNews?.headline}
               </h3>
               <p>
-                {news[2].article.slice(0, 207)}
+                {latestNews?.article?.slice(0, 207)}
               </p>
             </div>
 

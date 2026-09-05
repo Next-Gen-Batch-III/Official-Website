@@ -8,6 +8,16 @@ import cctIMG1 from '../assets/newsIMG/cct2025/imgs/cct20251.webp'
 import cctIMG2 from '../assets/newsIMG/cct2025/imgs/cct20252.webp'
 import cctIMG3 from '../assets/newsIMG/cct2025/imgs/cct20253.webp'
 
+import DPC2026 from '../assets/newsIMG/DPCloud/thumbnail/DPC2026.jpg'
+import DPCimg1 from '../assets/newsIMG/DPCloud/DPCimg1.jpg'
+import DPCimg2 from '../assets/newsIMG/DPCloud/DPCimg2.jpg'
+import DPCimg3 from '../assets/newsIMG/DPCloud/DPCimg3.jpg'
+
+import DGA2026 from '../assets/newsIMG/DGAcademy/thumbnail/DGA2026.jpg'
+import DGAimg1 from '../assets/newsIMG/DGAcademy/DGAimg1.jpg'
+import DGAimg2 from '../assets/newsIMG/DGAcademy/DGAimg2.jpg'
+import DGAimg3 from '../assets/newsIMG/DGAcademy/DGAimg3.jpg'
+
 import cadtOH from '../assets/newsIMG/cadt2025/thumbnail/thumbnail.webp'
 import cadtOHIMG1 from '../assets/newsIMG/cadt2025/cadtOpenhouse20251.webp'
 import cadtOHIMG2 from '../assets/newsIMG/cadt2025/cadtOpenhouse20252.webp'
@@ -53,5 +63,24 @@ export const news = [
         date: formatDate("2025-09-26"),
         image: [cadtOHIMG1, cadtOHIMG2, cadtOHIMG3]
     },
-    
+    {
+        id: 4,
+        publisher: "Daun Penh Cloud",
+        slug: "daun-penh-cloud-on-batchIII",
+        thumbnail: DPC2026,
+        headline: "Daun Penh CLOUD ចែករំលែកចំណេះដឹងបច្ចេកវិទ្យា Cloud ជូនដល់និស្សិតក្នុងកម្មវិធី Next-Gen Engagement Program",
+        article: "ក្នុងយុគសម័យបរិវត្តកម្មឌីជីថល ការពង្រឹងសមត្ថភាពយុវជនលើជំនាញបច្ចេកវិទ្យា គឺជាគ្រឹះយ៉ាងរឹងមាំសម្រាប់ការអភិវឌ្ឍសេដ្ឋកិច្ច និងសង្គមជាតិ។ ជាផ្នែកមួយនៃការចូលរួមចំណែកយ៉ាងសកម្មក្នុងសង្គម Daun Penh CLOUD បានសហការជាមួយ កម្មវិធី Next-Gen Engagement Program នៃវិទ្យាស្ថានបច្ចេកវិទ្យាឌីជីថល ក្នុងការផ្តល់វគ្គបណ្តុះបណ្តាលពិសេសជូនដល់និស្សិត ក្រោម កម្មវិធី Next-Gen Engagement Program។វគ្គបណ្តុះបណ្តាលនេះ រៀបចំឡើងក្នុងគោលបំណងពង្រឹងការយល់ដឹង និងផ្ទេរចំណេះដឹងជាក់ស្តែងទាក់ទងនឹង បច្ចេកវិទ្យា Cloud និង ហេដ្ឋារចនាសម្ព័ន្ធឌីជីថល ដែលជាជំនាញស្នូលមានតម្រូវការខ្ពស់ក្នុងយុគសម័យបច្ចុប្បន្ន។ តាមរយៈការរៀបចំនេះ និស្សិតក្នុងកម្មវិធី Next-Gen Engegement Program ទទួលបាននូវបទពិសោធន៍ផ្ទាល់ពីអ្នកជំនាញ ដើម្បីត្រៀមខ្លួនជាស្រេចក្នុងការឈានជើងចូលវិស័យបច្ចេកវិទ្យាដោយទំនុកចិត្ត។Daun Penh CLOUD បានលើកឡើងថា៖ «យើងជឿជាក់យ៉ាងមុតមាំថា ការផ្តល់ចំណេះដឹង និងការបង្កើតឱកាសដល់យុវជន គឺជាផ្នែកដ៏សំខាន់បំផុតក្នុងការអភិវឌ្ឍជំនាញឌីជីថល និងធនធានមនុស្សឱ្យមានចីរភាព។ បច្ចេកវិទ្យាមិនមែនគ្រាន់តែជាការបង្កើតដំណោះស្រាយនោះទេ ប៉ុន្តែក៏ជាការចែករំលែកចំណេះដឹងទៅដល់អ្នកដទៃផងដែរ»។កិច្ចសហការ និងសកម្មភាពបណ្តុះបណ្តាលនេះ រំលេចឱ្យឃើញពីការបេជ្ញាចិត្តយ៉ាងសកម្មរបស់ Daun Penh CLOUD និងកម្មវិធី Next-Gen Engagement Program ក្នុងការបន្តបេសកកម្មរួមគ្នាកសាងអនាគតឌីជីថលដ៏រឹងមាំសម្រាប់ប្រទេសកម្ពុជា តាមរយៈការផ្លាស់ប្តូរ និងអភិវឌ្ឍសមត្ថភាពយុវជនជំនាន់ក្រោយ។",
+        date: formatDate("2026-08-21"),
+        image: [DPCimg1, DPCimg2, DPCimg3]
+    },
+    {
+        id: 5,
+        publisher: "DG Academy",
+        slug: "DG-Academy-on-batchIII",
+        thumbnail: DGA2026,
+        headline: "លោក ហ៊ឹន សុភាព នាយកប្រតិបត្តិ DG Academy អញ្ជើញចែករំលែកបទពិសោធន៍ស្តីពី «ការបង្កើតអាជីវកម្មដើរដោយ AI» ជូនដល់និស្សិត CADT",
+        article: "ភ្នំពេញ៖ នៅក្នុងបរិបទនៃការរីកចម្រើនយ៉ាងរហ័សនៃបច្ចេកវិទ្យាឌីជីថល លោក ហ៊ឹន សុភាព នាយកប្រតិបត្តិនៃ DG Academy បានអញ្ជើញចូលរួមជាវាគ្មិនកិត្តិយសចែករំលែកចំណេះដឹងក្នុងកម្មវិធី Next-Gen Engagement Program និងតភ្ជាប់ទំនាក់ទំនងជាមួយនិស្សិតនៃ វិទ្យាស្ថានបច្ចេកវិទ្យាឌីជីថលកម្ពុជា (Cambodian Academy of Digital Technology - CADT)។ពិធីនេះត្រូវបានរៀបចំឡើងក្នុងគោលបំណងផ្លាស់ប្តូរបទពិសោធន៍ជាក់ស្តែង និងបំផុសគំនិតកសាងអាជីវកម្មបច្ចេកវិទ្យា ស្ថិតក្រោមប្រធានបទ «ការបង្កើតអាជីវកម្មដើរដោយ AI (AI-Powered Startups)» ដែលជាផ្នែកមួយនៃគម្រោងអភិវឌ្ឍន៍អាជីវកម្មជំនាន់ថ្មី សម្រាប់ពង្រឹងសមត្ថភាពយុវជនកម្ពុជា។ក្នុងឱកាសនោះ លោក ហ៊ឹន សុភាព បានលើកឡើងអំពីសក្តានុពលដ៏ធំធេងនៃបច្ចេកវិទ្យាបញ្ញាសិប្បនិម្មិត (Artificial Intelligence) ក្នុងការផ្លាស់ប្តូរទម្រង់អាជីវកម្មបែបប្រពៃណី ទៅជាអាជីវកម្មបែបឌីជីថលដែលប្រកបដោយប្រសិទ្ធភាព និងភាពច្នៃប្រឌិតខ្ពស់។ លោកបានសង្កត់ធ្ងន់ថា AI មិនត្រឹមតែជាឧបករណ៍សម្រួលដល់ការងារប៉ុណ្ណោះទេ ប៉ុន្តែជាកាតាលីករយ៉ាងសំខាន់ក្នុងការបង្កើតគំរូអាជីវកម្មថ្មីៗ (Business Models) ដែលឆ្លើយតបទៅនឹងតម្រូវការទីផ្សារបច្ចុប្បន្ន និងអនាគត។",
+        date: formatDate("2026-08-25"),
+        image: [DGAimg1, DGAimg2, DGAimg3]
+    }
 ];
