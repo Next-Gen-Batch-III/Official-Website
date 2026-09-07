@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 import EdgeContainer from "@/components/ui/EdgeContainer";
@@ -397,13 +397,13 @@ const Home = () => {
               borders={["bottom", "right"]}
               bordersWidth="4"
             >
-
-              <img
-                src={latestNews?.thumbnail}
-                alt=""
-                className="w-full h-full object-cover object-top"
-              />
-
+              <Link to={latestNews?.slug ? `/news/${latestNews.slug}` : "/news"} className="block h-full w-full">
+                <img
+                  src={latestNews?.thumbnail}
+                  alt={latestNews?.headline || "Latest news"}
+                  className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-[1.02]"
+                />
+              </Link>
             </EdgeContainer>
 
           </div>
