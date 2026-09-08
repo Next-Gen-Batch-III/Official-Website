@@ -342,6 +342,7 @@ const MerchandiseCustomize = () => {
       <SizeChartModal
         isOpen={isSizeChartOpen}
         onClose={() => setIsSizeChartOpen(false)}
+        product={product}
       />
       {isCustomizerOpen && (
         <SleeveCustomizationModal
