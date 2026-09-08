@@ -24,7 +24,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
                     <p className="text-[1rem] text-neutral-500">Select an option to join the program</p>
                 </div>
                 <div className="max-w-2xl flex flex-col md:flex-row gap-6 mt-6 mx-auto text-center">
-                    <div className="flex flex-col bg-brand-primary/15 items-center p-4 rounded-lg cursor-pointer hover:scale-105 transition-transform" onClick={() => {setIsQRModalOpen(true)}}>
+                    <div className="flex flex-col bg-brand-primary/15 items-center p-4 rounded-lg cursor-pointer hover:scale-105 transition-transform" onClick={() => {onClose(); navigate("/trainees")}}>
                         <div>
                             <img src={graduationCap} alt="Graduate Icon" className="w-16 h-16 mb-4" />
                         </div>
@@ -34,9 +34,9 @@ const RegisterModal = ({ isOpen, onClose }) => {
                             <Button variant="brand" shadowColor="grey">Continue as Student</Button>
                         </div>
                     </div>
-                    <QRCodeModal isOpen={isQRModalOpen} onClose={() => setIsQRModalOpen(false)} url="https://forms.cloud.microsoft/pages/responsepage.aspx?id=7GGUHmJTKUOuRmH6PpHG0iPUUmdQoLpNrQGZc3nb-d5UQ0dYRjdUVUExNzJOQlQzOUtGQlRDSlUzRS4u&origin=QRCode&route=shorturl" />
+
                     <div>
-                        <div className="flex flex-col bg-brand-secondary-orange/15 items-center p-4 rounded-lg cursor-pointer hover:scale-105 transition-transform" onClick={() => {onClose(); navigate("/trainer-journey")}}>
+                        <div className="flex flex-col bg-brand-secondary-orange/15 items-center p-4 rounded-lg cursor-pointer hover:scale-105 transition-transform" onClick={() => {onClose(); navigate("/trainers")}}>
                             <div>
                                 <img src={trainerIcon} alt="Trainer Icon" className="w-16 h-16 mb-4" />
                             </div>

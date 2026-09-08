@@ -4,7 +4,7 @@ const JourneyHero = ({ headline, subtitle, img }) => {
       <section className="bg-brand-primary grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 py-12 md:py-32 items-center">
         {/* Text Section */}
         <div className="flex flex-col gap-2 items-start items-center px-4 md:px-16">
-          <h1 className="font-bold text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] text-white">
+          <h1 className="font-bold text-[1.6rem] md:text-[2.25rem] lg:text-[2.5rem] text-white">
             {headline.normal}
             <span className="text-brand-secondary-orange">
               <br />

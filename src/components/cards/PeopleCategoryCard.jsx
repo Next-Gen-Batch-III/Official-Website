@@ -1,5 +1,8 @@
+// import { on } from "node:cluster";
+// import { text } from "node:stream/consumers";
 import { FiUsers, FiArrowRight } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
+import {useState} from "react";
+// import { useNavigate } from "react-router-dom";
 const PeopleCategoryCard = ({
   title,
   members,
@@ -8,9 +11,12 @@ const PeopleCategoryCard = ({
   iconBg = "#FFF0E3",
   path,
 }) => {
-  const navigate = useNavigate();
+  const [isHovered, setIsHovered] = useState(false);
+  const [isHoveredCard, setIsHoveredCard] = useState(false);
   return (
     <div
+    onMouseEnter={()=> setIsHoveredCard(true)}
+    onMouseLeave={()=> setIsHoveredCard(false)}
       className="
         w-full
         h-[320px]
@@ -25,6 +31,8 @@ const PeopleCategoryCard = ({
         flex-col
         items-center
         justify-between
+        transition
+        hover:shadow-[0_4px_10px_rgba(0,0,0,0.4)]
       "
     >
 
@@ -50,8 +58,11 @@ const PeopleCategoryCard = ({
 
         {/* UNDERLINE */}
         <div
-          className="w-[50px] h-[2px] mt-1 rounded-full justify-start"
-          style={{ backgroundColor: color }}
+          
+          className="h-[2px] mt-1 rounded-full justify-start transition-all"
+          style={{ backgroundColor: color ,
+            width: isHoveredCard ? "100%" : "50px",
+          }}
         />
 
       </div>
@@ -72,26 +83,34 @@ const PeopleCategoryCard = ({
         </div>
 
         {/* ARROW */}
-       <button
+        <button
         onClick={() => navigate(path)}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
         className="
-            w-[38px]
-            h-[38px]
-            rounded-full
-            flex
-            items-center
-            justify-center
-            transition
-            hover:scale-110
-            hover:color-white
+          w-[38px]
+          h-[38px]
+          rounded-full
+          flex
+          items-center
+          justify-center
+          transition
+          hover:scale-110
         "
-        style={{ backgroundColor: color }}
+        style={{
+          backgroundColor: isHovered || isHoveredCard ? "white" : color,
+          border: `1px solid ${color}`,
+        }}
+      >
+        <span
+          className="text-[18px] transition"
+          style={{
+            color: isHovered || isHoveredCard ? color : "white",
+          }}
         >
-            <span className="text-white text-[18px]">
-                →
-            </span>
-        </button>
-
+          →
+        </span>
+    </button>
       </div>
 
     </div>

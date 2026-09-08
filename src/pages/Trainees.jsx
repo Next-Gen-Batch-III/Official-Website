@@ -1,31 +1,23 @@
-import RegisterCard from "@/components/cards/RegisterCard";
-import JourneyHero from "./../components/layout/JourneyHero";
 
-import trainerJourneyImage from "../assets/journey/trainerJourney.png";
-import qrImage from "../assets/journey/trainerRegisterQR.jpg";
-
+import TraineesHero from "./../components/layout/JourneyHero";
+import traineesImage from "../assets/journey/trainees.jpg";
 import graduate from "../assets/icon_image/graduateO.png"
-import book from "../assets/icon_image/book.png"
-import trendingUp from "../assets/icon_image/diagram.png"
-import team from "../assets/icon_image/user.png"
+
+import start from "../assets/icon_image/start.png"
+import group from "../assets/icon_image/group.png"
+import exchange from "../assets/icon_image/exchange.png"
 
 import laptop from "../assets/icon_image/laptop.png"
-import chat from "../assets/icon_image/chat.png"
-import handshake from "../assets/icon_image/handshake.png"
+import menubook from "../assets/icon_image/menubook.png"
+import active from "../assets/icon_image/active.png"
 
-import diploma from "../assets/icon_image/diploma.png"
-import global from "../assets/icon_image/global.png"
+import graduateblue from "../assets/icon_image/graduateblue.png"
+import skill from "../assets/icon_image/skill.png"
 import team2 from "../assets/icon_image/team.png"
+
 
 import clock from "../assets/icon_image/clock.png"
 import note from "../assets/icon_image/note.png"
-
-import addIcon from "../assets/icon_image/add.png";
-import smartphoneIcon from "../assets/icon_image/smartphone.png";
-import phoneIcon from "../assets/icon_image/phone.png";
-import list from "../assets/icon_image/list.png"
-import checked from "../assets/icon_image/checked.png"
-
 
 import TrackCard from "./../components/cards/TrackCard";
 
@@ -34,30 +26,30 @@ import InfoCard from "@/components/cards/InfoCard";
 
 
 /* ================= ICON SETS ================= */
-const whyIcons = [book, trendingUp, team];
+const whyIcons = [start,group,exchange];
 
-const requirementIcons = [graduate, laptop, chat, handshake];
+const requirementIcons = [graduate, laptop, menubook, active];
 
 const trackIcons = {
   schedule: clock,
   note: note,
 };
 
-const benefitIcons = [diploma, global, team2];
+const benefitIcons = [skill, graduateblue, team2];
 
 /* ================= WHY JOIN ================= */
 const why = [
   {
-    head: "Share Your Knowledge",
-    text: "Teach what you love and help learners gain practical skills.",
+    head: "Start With Confident",
+    text: "Prepare for Year 2 with a strong foundation and greater confidence.",
   },
   {
-    head: "Grow Professionally",
-    text: "Enhance your profile, experience, and career opportunities.",
+    head: "Learn from Experienced Seniors",
+    text: "Gain valuable insights and guidance from students who completed Year 2.",
   },
   {
-    head: "Inspire The Future",
-    text: "Mentor and motivate the next generation of talent.",
+    head: "Connect & Grow",
+    text: "Biuld connections, share knowledge, and grow alongside your peers.",
   },
 ];
 
@@ -65,51 +57,37 @@ const why = [
 const requirement = [
   {
     head: "University Student",
-    text: "Year2 - Year3",
+    text: "Recently completed Year 1 and preparing to enter Year 2.",
   },
   {
     head: "Related Major",
-    text: "Computer Science, IT, Digital Business, Networking, Cybersecurity",
+    text: "Computer Science, IT, Digital Business, Networking, Cybersecurity.",
   },
   {
-    head: "Communication Skills",
-    text: "Comfortable presenting and interacting with students",
+    head: "Willing to Learn",
+    text: "Motivated to learn new skills and knowledge.",
   },
   {
-    head: "Team Player",
-    text: "Able to collaborate and support fellow trainers",
+    head: "Active Participation",
+    text: "Ready to attend training sessions and participate in activities.",
   },
 ];
-/* ================= REQUIREMENT ================= */
+/* ================= BENEFITS ================= */
 const benefit = [
   {
-    head: "Certificate of Appreciation",
-    text: "Receive official recognition for your contribution",
+    head: "Skill Development",
+    text: "Build new knowledge and strengthen your technical skills.",
   },
   {
-    head: "Network Building",
-    text: "Connect with students, trainer and industry professionals.",
+    head: "Year 2 Preparation",
+    text: "Gain skill and confidence to prepare for year 2.",
   },
   {
-    head: "Teamwork & Trainer Experience",
-    text: "Collaborate with a passionate and supportive team.",
+    head: "Learning Community",
+    text: "Explore with Classmates & Biuld Connections with Seniors.",
   },
 ];
-/* ================= REGISTER FEATURES ================= */
-const feature = [
-  {
-    icon: smartphoneIcon,
-    text: "Quick and easy registration.",
-  },
-  {
-    icon: list,
-    text: "Fill out the trainer application form.",
-  },
-  {
-    icon: checked,
-    text: "Our team will review your application.",
-  },
-];
+
 /* ================= TRACKS ================= */
 
 const tracks = [
@@ -126,7 +104,7 @@ const tracks = [
       "Digital Business",
       "Telecommunication & Networking",
     ],
-    note: "Trainer only teaches one course per week, the other three days are for assisting other trainers.",
+    note: "Students choose 1 program with 4 courses: 2 Core course and 2 Elective courses of their choice.",
   },
   {
     title: "High School Tracks",
@@ -137,29 +115,29 @@ const tracks = [
       time: "8:00 AM - 11:00 AM",
     },
     options: ["Technology Starter"],
-    note: "Trainer only teaches one course per week, the other three days are for assisting other trainers.",
+    note: "Students choose 1 program with 4 courses: 2 Core course and 2 Elective courses of their choice.",
   },
 ];
 
-export default function TrainerJourney() {
+export default function Trainees() {
   return (
     <div className="bg-gray-50">
       {/* HERO */}
-      <JourneyHero
+      <TraineesHero
         headline={{
-          normal: "Become a Trainer for the",
+          normal: "Become a Trainee for the",
           highlight: "Next-Gen Engagement Program",
         }}
-        subtitle="Empower the next generation of technology learners by sharing your knowledge and expertise."
-        img={trainerJourneyImage}
+        subtitle="Join a learning community designed to help you build new skills, explore your interests, and prepare for Year 2. As a trainee, you will learn from experienced senior students, take part in engaging activities, and connect with classmates while gaining knowledge and confidence for your next academic year."
+        img={traineesImage}
       />
 
       {/* WHY */}
       <Section
         title={
           <>
-            <span className="text-brand-secondary-orange">Why Become a</span>{" "}
-            <span className="text-brand-primary">Trainer ?</span>
+            <span className="text-brand-secondary-orange text-[1.6rem] md:text-[1.8rem] lg:text-[2rem]">Why Become a</span>{" "}
+            <span className="text-brand-primary text-[1.6rem] md:text-[1.8rem] lg:text-[2rem]">Trainee ?</span>
           </>
         }
       >
@@ -185,8 +163,8 @@ export default function TrainerJourney() {
         bg="bg-white"
         title={
           <>
-            <span className="text-brand-secondary-orange">Trainer</span>{" "}
-            <span className="text-brand-primary">Requirements</span>
+            <span className="text-brand-secondary-orange text-[1.6rem] md:text-[1.8rem] lg:text-[2rem]">Trainee</span>{" "}
+            <span className="text-brand-primary text-[1.6rem] md:text-[1.8rem] lg:text-[2rem]">Requirements</span>
           </>
         }
       >
@@ -213,8 +191,8 @@ export default function TrainerJourney() {
         bg="bg-white"
         title={
           <>
-            <span className="text-brand-secondary-orange">Training</span>{" "}
-            <span className="text-brand-primary">Tracks</span>
+            <span className="text-brand-secondary-orange text-[1.6rem] md:text-[1.8rem] lg:text-[2rem]">Learning</span>{" "}
+            <span className="text-brand-primary text-[1.6rem] md:text-[1.8rem] lg:text-[2rem]">Tracks</span>
           </>
         }
       >
@@ -230,8 +208,8 @@ export default function TrainerJourney() {
         bg="bg-white"
         title={
           <>
-            <span className="text-brand-secondary-orange">Benefits</span>{" "}
-            <span className="text-brand-primary">You’ll Receive</span>
+            <span className="text-brand-secondary-orange text-[1.6rem] md:text-[1.8rem] lg:text-[2rem]">Benefits</span>{" "}
+            <span className="text-brand-primary text-[1.6rem] md:text-[1.8rem] lg:text-[2rem]">You’ll Receive</span>
           </>
         }
       >
@@ -252,20 +230,6 @@ export default function TrainerJourney() {
           })}
         </div>
       </Section>
-
-      {/* REGISTER */}
-      <RegisterCard
-        title="Ready To Join?"
-        subtitle="Scan the QR code to start your trainer registration."
-        features={feature}
-        qrTitle="Register as a Trainer"
-        qrDesc="Scan the QR code below to register"
-        qrImage={qrImage}
-        icons={{
-          main: addIcon,
-          phone: phoneIcon,
-        }}
-      />
     </div>
   );
 }
