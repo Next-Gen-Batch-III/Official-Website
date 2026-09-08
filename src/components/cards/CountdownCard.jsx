@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Calendar } from "lucide-react";
 
 const CountdownCard = () => {
-  // Change this to your actual event date
-  const targetDate = new Date("2026-09-25T12:00:00+07:00").getTime();
+
+  const targetDate = new Date("2026-09-25T08:00:00+07:00").getTime();
 
   const calculateTimeLeft = () => {
     const difference = targetDate - new Date().getTime();
@@ -54,7 +54,7 @@ const CountdownCard = () => {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-center py-5">
 
         <div>
-          <div className="text-5xl font-bold text-[#F88D2A]">
+          <div className="text-5xl font-semibold text-[#F88D2A]">
             {String(timeLeft.days).padStart(2, "0")}
           </div>
           <span className="text-l font-semibold text-[#12284C]">
@@ -66,7 +66,7 @@ const CountdownCard = () => {
           <div className="text-5xl font-semibold text-[#F88D2A]">
             {String(timeLeft.hours).padStart(2, "0")}
           </div>
-          <span className="text-l font-bold text-[#12284C]">
+          <span className="text-l font-semibold text-[#12284C]">
             HOURS
           </span>
         </div>
@@ -75,7 +75,7 @@ const CountdownCard = () => {
           <div className="text-5xl font-semibold text-[#F88D2A]">
             {String(timeLeft.minutes).padStart(2, "0")}
           </div>
-          <span className="text-l font-bold text-[#12284C]">
+          <span className="text-l font-semibold text-[#12284C]">
             MINUTES
           </span>
         </div>
@@ -84,7 +84,7 @@ const CountdownCard = () => {
           <div className="text-5xl font-semibold text-[#F88D2A]">
             {String(timeLeft.seconds).padStart(2, "0")}
           </div>
-          <span className="text-l font-bold text-[#12284C]">
+          <span className="text-l font-semibold text-[#12284C]">
             SECONDS
           </span>
         </div>

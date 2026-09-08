@@ -27,6 +27,7 @@ import {
   FiCheck,
 } from "react-icons/fi";
 import { Calendar } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -339,41 +340,50 @@ const Home = () => {
         <Title className="text-2xl md:text-4xl border-b-2">MEET OUR PEOPLE</Title>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          <PeopleCategoryCard
-            title="Managements"
-            members="8"
-            icon={managementImg}
-            color="#F88D2A"
-            iconBg="#FFF0E3"
-            path="/people/management"
-          />
+         
+          <Link to="/people/management" className="w-full">
+            <PeopleCategoryCard
+              title="Managements"
+              members="8"
+              icon={managementImg}
+              color="#F88D2A"
+              iconBg="#FFF0E3"
+              path="/people/management"
+            />
+          </Link>
+          <Link to="/people/advisors" className="w-full">
+          
+            <PeopleCategoryCard
+              title="Advisors"
+              members="8"
+              icon={advisorImg}
+              color="#12284C"
+              iconBg="#E9EDF3"
+              path="/people/advisors"
+            />
+          </Link>
 
-          <PeopleCategoryCard
-            title="Advisors"
-            members="8"
-            icon={advisorImg}
-            color="#12284C"
-            iconBg="#E9EDF3"
-            path="/people/advisors"
-          />
+          <Link to="/people/mentors" className="w-full">
+            <PeopleCategoryCard
+              title="Mentors"
+              members="16"
+              icon={lightImg}
+              color="#72BE22"
+              iconBg="#F0F8E7"
+              path="/people/mentors"
+            />
+          </Link>
 
-          <PeopleCategoryCard
-            title="Mentors"
-            members="16"
-            icon={lightImg}
-            color="#72BE22"
-            iconBg="#F0F8E7"
-            path="/people/mentors"
-          />
-
-          <PeopleCategoryCard
-            title="Organizers"
-            members="35"
-            icon={handshakeImg}
-            color="#C183D9"
-            iconBg="#F7EFFA"
-            path="/people/organizers"
-          />
+          <Link to="/people/organizers" className="w-full">
+            <PeopleCategoryCard
+              title="Organizers"
+              members="35"
+              icon={handshakeImg}
+              color="#C183D9"
+              iconBg="#F7EFFA"
+              path="/people/organizers"
+            />
+          </Link>
         </div>
       </section>
 

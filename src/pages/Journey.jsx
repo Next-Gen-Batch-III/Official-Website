@@ -253,7 +253,13 @@ const BatchCard = ({ batch }) => {
                       clipPath: clip,
                       margin: isActive ? 0 : "1px",
                     }}
-                    onClick={label === "Trainers" ? () => navigate("/trainers") : undefined}
+                    onClick={
+                      label === "Trainers"
+                        ? () => navigate("/trainers")
+                        : label === "Trainees"
+                        ? () => navigate("/trainees")
+                        : undefined
+                    }
                   >
                     {label}
                   </button>
