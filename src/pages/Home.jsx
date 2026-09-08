@@ -27,7 +27,6 @@ import {
   FiCheck,
 } from "react-icons/fi";
 import { Calendar } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
