@@ -89,14 +89,35 @@ export const merchandiseHero = {
     secondaryImage: tshirt,
 };
 
-export const merchandiseSizeChart = [
-    { size: "S", weight: "42-55 kg" },
-    { size: "M", weight: "56-65 kg" },
-    { size: "L", weight: "66-75 kg" },
-    { size: "XL", weight: "76-85 kg" },
-    { size: "XXL", weight: "86-100 kg" },
-    { size: "XXXL", weight: "101-115 kg" },
-];
+export const merchandiseSizeCharts = {
+    tshirt: [
+        { size: "S", weight: "40 - 45 kg" },
+        { size: "M", weight: "45 - 50 kg" },
+        { size: "L", weight: "50 - 60 kg" },
+        { size: "XL", weight: "60 - 65 kg" },
+        { size: "XXL", weight: "65 - 75 kg" },
+        { size: "XXXL", weight: "75 - 85 kg" },
+    ],
+    polo: [
+        { size: "S", weight: "42 - 55 kg" },
+        { size: "M", weight: "56 - 65 kg" },
+        { size: "L", weight: "66 - 75 kg" },
+        { size: "XL", weight: "76 - 82 kg" },
+        { size: "XXL", weight: "83 - 90 kg" },
+        { size: "XXXL", weight: "91 - 115 kg" },
+    ],
+};
+
+export const getMerchandiseSizeChart = (productIdOrSlug) => {
+    if (!productIdOrSlug) return merchandiseSizeCharts.polo;
+    const key = String(productIdOrSlug).toLowerCase();
+    if (key === "tshirt" || key === "t-shirt" || key.includes("tshirt") || key.includes("t-shirt")) {
+        return merchandiseSizeCharts.tshirt;
+    }
+    return merchandiseSizeCharts.polo;
+};
+
+export const merchandiseSizeChart = merchandiseSizeCharts.polo;
 
 export const merchandiseSleeveCustomization = {
     defaultValue: {
