@@ -10,6 +10,7 @@ import ams from "../../assets/logo/partner/ams.webp";
 
 import dp from "../../assets/logo/partner/dp.webp"
 import bookme from "../../assets/logo/partner/bookme.webp"
+import smartLogo from "../../assets/logo/partner/smart-logo.webp";
 
 
 const partnerGroups = [
@@ -20,6 +21,16 @@ const partnerGroups = [
         img: cadtIdt,
         name: "CADT Institute of Digital Technology",
         imageClassName: "h-16 sm:h-20",
+      },
+    ],
+  },
+  {
+    title: "Smart Sponsor",
+    partners: [
+      {
+        img: smartLogo,
+        name: "Smart Axiata",
+        imageClassName: "h-20 sm:h-28 scale-125 -mt-3 lg:-ml-2",
       },
     ],
   },
@@ -236,7 +247,7 @@ const FooterSocials = () => {
 
 const PartnerIMG = () => {
   return (
-    <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8">
+    <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-6 lg:gap-8">
       {partnerGroups.map((group) => (
         <div
           key={group.title}
