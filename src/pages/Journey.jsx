@@ -256,7 +256,9 @@ const BatchCard = ({ batch }) => {
                       margin: isActive ? 0 : "1px",
                     }}
                     onClick={
-                      label === "Trainers"
+                      label === "Projects"
+                        ? () => navigate("/projects/batch-iii")
+                        : label === "Trainers"
                         ? () => navigate("/trainers")
                         : label === "Trainees"
                         ? () => navigate("/trainees")
