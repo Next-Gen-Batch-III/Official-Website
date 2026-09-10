@@ -25,7 +25,7 @@ const partnerGroups = [
     ],
   },
   {
-    title: "Smart Sponsor",
+    title: "Gold Sponsor",
     partners: [
       {
         img: smartLogo,
@@ -111,7 +111,7 @@ const Footer = () => {
   return (
     <footer className="bg-brand-primary text-white">
       {/* Partners */}
-      <section className="bg-white px-6 py-10 text-brand-primary sm:px-8 lg:px-12">
+      <section className="bg-white px-6 py-6 text-brand-primary sm:px-8 lg:px-12">
         <PartnerIMG />
       </section>
 
@@ -247,13 +247,13 @@ const FooterSocials = () => {
 
 const PartnerIMG = () => {
   return (
-    <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-6 lg:gap-8">
+    <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-6 lg:gap-x-8">
       {partnerGroups.map((group) => (
         <div
           key={group.title}
           className="flex flex-col items-center text-center lg:items-start lg:text-left"
         >
-          <h3 className="mb-5 text-sm font-bold text-brand-primary">
+          <h3 className="mb-3 text-sm font-bold text-brand-primary">
             {group.title}
           </h3>
 
