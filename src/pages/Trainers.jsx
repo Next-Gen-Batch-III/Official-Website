@@ -18,25 +18,20 @@ import team2 from "../assets/icon_image/team.png"
 import clock from "../assets/icon_image/clock.png"
 import note from "../assets/icon_image/note.png"
 
-import TrackCard from "../components/cards/TrackCard";
+import { Users, MessageCircle, Target } from "lucide-react";
 
 import InfoCard from "@/components/cards/InfoCard";
 
-
-
-/* ================= ICON SETS ================= */
 const whyIcons = [book, trendingUp, team];
 
 const requirementIcons = [graduate, laptop, chat, handshake];
 
-const trackIcons = {
-  schedule: clock,
-  note: note,
-};
-
 const benefitIcons = [diploma, global, team2];
 
-/* ================= WHY JOIN ================= */
+const scheduleIcon = clock;
+const optionsIcon = book; 
+const noteIconImg = note;
+
 const why = [
   {
     head: "Share Your Knowledge",
@@ -52,7 +47,6 @@ const why = [
   },
 ];
 
-/* ================= REQUIREMENT ================= */
 const requirement = [
   {
     head: "University Student",
@@ -71,7 +65,7 @@ const requirement = [
     text: "Able to collaborate and support fellow trainers",
   },
 ];
-/* ================= REQUIREMENT ================= */
+
 const benefit = [
   {
     head: "Certificate of Appreciation",
@@ -86,36 +80,71 @@ const benefit = [
     text: "Collaborate with a passionate and supportive team.",
   },
 ];
-/* ================= TRACKS ================= */
 
-const tracks = [
+const track = {
+  schedule: {
+    day: "Monday - Thursday",
+    time: "9:00 AM - 12:15 PM",
+  },
+  options: [
+    "Computer Science",
+    "Digital Business",
+    "Telecommunication & Networking",
+  ],
+  note: "Trainer only teaches one course per week, the other three days are for assisting other trainers.",
+};
+
+const activities = [
   {
-    title: "University Tracks",
-    headerColor: "bg-brand-primary",
-    schedule: {
-      label: "Schedule",
-      day: "Monday - Thursday",
-      time: "8:00 AM - 11:00 AM",
-    },
-    options: [
-      "Computer Science",
-      "Digital Business",
-      "Telecommunication & Networking",
-    ],
-    note: "Trainer only teaches one course per week, the other three days are for assisting other trainers.",
+    step: "01",
+    icon: Users,
+    head: "Work on Project",
+    sub: "Work with your team",
+    text: "Trainer work together with their team in the assigned room to develop and complete their project.",
   },
   {
-    title: "High School Tracks",
-    headerColor: "bg-brand-secondary-orange",
-    schedule: {
-      label: "Schedule",
-      day: "Monday - Friday",
-      time: "8:00 AM - 11:00 AM",
-    },
-    options: ["Technology Starter"],
-    note: "Trainer only teaches one course per week, the other three days are for assisting other trainers.",
+    step: "02",
+    icon: MessageCircle,
+    head: "Weekly Progress Update",
+    sub: "Discuss and update",
+    text: "Meet with your mentor to discuss the project and provide a weekly progress update.",
+  },
+  {
+    step: "03",
+    icon: Target,
+    head: "Advisor Meeting",
+    sub: "Get feedback and advice",
+    text: "Meet your advisor before Pitching Day to receive feedback, guidance, and advice to improve their project.",
   },
 ];
+
+function Section({ title, bg = "bg-white", children }) {
+  return (
+    <section className={`${bg} px-6 md:px-16 py-14`}>
+      <h2 className="text-3xl font-bold text-center mb-10">{title}</h2>
+      {children}
+    </section>
+  );
+}
+
+function ActivityCard({ step, icon: Icon, head, sub, text }) {
+  return (
+    <div className="bg-gray-100 rounded-xl p-6 h-full">
+      <div className="flex items-center mb-4">
+        <span className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-800 text-white text-sm font-semibold shrink-0">
+          {step}
+        </span>
+        <span className="w-6 h-[2px] bg-brand-secondary-orange shrink-0" />
+        <span className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-200 shrink-0">
+          <Icon className="w-4 h-4 text-slate-800" strokeWidth={2} />
+        </span>
+      </div>
+      <h3 className="font-semibold text-slate-900 mb-1">{head}</h3>
+      <p className="text-sm text-slate-500 mb-2">{sub}</p>
+      <p className="text-sm text-slate-500 leading-relaxed">{text}</p>
+    </div>
+  );
+}
 
 export default function Trainers() {
   return (
@@ -135,7 +164,6 @@ export default function Trainers() {
         img={trainerJourneyImage}
       />
 
-      {/* WHY */}
       <Section
         title={
           <>
@@ -161,7 +189,6 @@ export default function Trainers() {
         </div>
       </Section>
 
-      {/* REQUIREMENTS */}
       <Section
         bg="bg-white"
         title={
@@ -174,7 +201,7 @@ export default function Trainers() {
         <div className="grid md:grid-cols-4 divide-x divide-gray-200">
           {requirement.map((item, i) => {
             const icon = requirementIcons[i];
-            return (  
+            return (
               <div key={i} className="px-6 text-center">
                 <InfoCard
                   iconImg={icon}
@@ -189,7 +216,6 @@ export default function Trainers() {
         </div>
       </Section>
 
-      {/* Track */}
       <Section
         bg="bg-white"
         title={
@@ -199,9 +225,62 @@ export default function Trainers() {
           </>
         }
       >
-        <div className="grid md:grid-cols-2 gap-10 items-stretch">
-          {tracks.map((track, i) => (
-            <TrackCard key={i} track={track} icon={trackIcons} />
+        <div className="grid md:grid-cols-4 divide-x divide-gray-200">
+          <div className="px-6">
+            <div className="flex items-center gap-2 mb-2">
+              <img src={scheduleIcon} alt="" className="w-5 h-5" />
+              <h3 className="font-semibold text-slate-900">Schedule</h3>
+            </div>
+            <p className="text-sm text-slate-500 leading-relaxed">
+              {track.schedule.day}
+              <br />
+              {track.schedule.time}
+            </p>
+          </div>
+
+          <div className="px-6">
+            <div className="flex items-center gap-2 mb-2">
+              <img src={optionsIcon} alt="" className="w-5 h-5" />
+              <h3 className="font-semibold text-slate-900">Options</h3>
+            </div>
+            <ul className="text-sm text-slate-500 leading-relaxed list-disc list-inside">
+              {track.options.map((opt, i) => (
+                <li key={i}>{opt}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="px-6 col-span-2">
+            <div className="flex items-center gap-2 mb-2">
+              <img src={noteIconImg} alt="" className="w-5 h-5" />
+              <h3 className="font-semibold text-slate-900">Note</h3>
+            </div>
+            <p className="text-sm text-slate-500 leading-relaxed">
+              {track.note}
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      <Section
+        bg="bg-white"
+        title={
+          <>
+            <span className="text-brand-secondary-orange text-[1.6rem] md:text-[1.8rem] lg:text-[2rem]">Trainer</span>{" "}
+            <span className="text-brand-primary text-[1.6rem] md:text-[1.8rem] lg:text-[2rem]">Project Activities</span>
+          </>
+        }
+      >
+        <div className="grid md:grid-cols-3 gap-6">
+          {activities.map((item, i) => (
+            <ActivityCard
+              key={i}
+              step={item.step}
+              icon={item.icon}
+              head={item.head}
+              sub={item.sub}
+              text={item.text}
+            />
           ))}
         </div>
       </Section>
@@ -237,13 +316,3 @@ export default function Trainers() {
   );
 }
 
-/* ================= COMPONENTS ================= */
-
-function Section({ title, bg = "bg-white", children }) {
-  return (
-    <section className={`${bg} px-6 md:px-16 py-14`}>
-      <h2 className="text-3xl font-bold text-center mb-10">{title}</h2>
-      {children}
-    </section>
-  );
-}
