@@ -53,7 +53,7 @@ const batchIII = [
     rows: [
       { icon: Clock, text: "Duration: week 1-5" },
       { icon: Calendar, text: "Date: Aug 17th - Sep 17th" },
-      { icon: Tag, text: "Classes: 1:00 PM - 3:00 PM" },
+      { icon: Tag, text: "Classes: 9:00 AM - 12:15 PM" },
     ],
     description:
       "The training aims to build leadership, professional skills, networking, personal growth, and meaningful impact through mentoring and teamwork.",
@@ -77,8 +77,8 @@ const batchIII = [
     image: heroImg,
     title: "Phase 3 : Competition & Showcase",
     rows: [
-      { icon: Clock, text: "Duration: 30 days until event" },
-      { icon: Calendar, text: "25-26th Sep, 2026" },
+      { icon: Clock, text: "Duration: 30 Days until event" },
+      { icon: Calendar, text: "22, 23, 25th Sep, 2026" },
       { icon: MapPin, text: "Location: CADT Innovation, Conference hall" },
     ],
     description:
