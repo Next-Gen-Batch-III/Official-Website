@@ -1,4 +1,3 @@
-
 import TraineesHero from "./../components/layout/JourneyHero";
 import traineesImage from "../assets/journey/trainees.jpg";
 import graduate from "../assets/icon_image/graduateO.png"
@@ -19,25 +18,18 @@ import team2 from "../assets/icon_image/team.png"
 import clock from "../assets/icon_image/clock.png"
 import note from "../assets/icon_image/note.png"
 
-import TrackCard from "./../components/cards/TrackCard";
-
 import InfoCard from "@/components/cards/InfoCard";
 
-
-
-/* ================= ICON SETS ================= */
 const whyIcons = [start,group,exchange];
 
 const requirementIcons = [graduate, laptop, menubook, active];
 
-const trackIcons = {
-  schedule: clock,
-  note: note,
-};
-
 const benefitIcons = [skill, graduateblue, team2];
 
-/* ================= WHY JOIN ================= */
+const scheduleIcon = clock;
+const optionsIcon = menubook; 
+const noteIconImg = note;
+
 const why = [
   {
     head: "Start With Confident",
@@ -53,7 +45,6 @@ const why = [
   },
 ];
 
-/* ================= REQUIREMENT ================= */
 const requirement = [
   {
     head: "University Student",
@@ -72,7 +63,7 @@ const requirement = [
     text: "Ready to attend training sessions and participate in activities.",
   },
 ];
-/* ================= BENEFITS ================= */
+
 const benefit = [
   {
     head: "Skill Development",
@@ -88,41 +79,31 @@ const benefit = [
   },
 ];
 
-/* ================= TRACKS ================= */
+const track = {
+  schedule: {
+    day: "Monday - Thursday",
+    time: "9:00 AM - 12:15 PM",
+  },
+  options: [
+    "Computer Science",
+    "Digital Business",
+    "Telecommunication & Networking",
+  ],
+  note: "Students choose 1 program with 4 courses: 2 Core course and 2 Elective courses of their choice.",
+};
 
-const tracks = [
-  {
-    title: "University Tracks",
-    headerColor: "bg-brand-primary",
-    schedule: {
-      label: "Schedule",
-      day: "Monday - Thursday",
-      time: "8:00 AM - 11:00 AM",
-    },
-    options: [
-      "Computer Science",
-      "Digital Business",
-      "Telecommunication & Networking",
-    ],
-    note: "Students choose 1 program with 4 courses: 2 Core course and 2 Elective courses of their choice.",
-  },
-  {
-    title: "High School Tracks",
-    headerColor: "bg-brand-secondary-orange",
-    schedule: {
-      label: "Schedule",
-      day: "Monday - Friday",
-      time: "8:00 AM - 11:00 AM",
-    },
-    options: ["Technology Starter"],
-    note: "Students choose 1 program with 4 courses: 2 Core course and 2 Elective courses of their choice.",
-  },
-];
+function Section({ title, bg = "bg-white", children }) {
+  return (
+    <section className={`${bg} px-6 md:px-16 py-14`}>
+      <h2 className="text-3xl font-bold text-center mb-10">{title}</h2>
+      {children}
+    </section>
+  );
+}
 
 export default function Trainees() {
   return (
     <div className="bg-gray-50">
-      {/* HERO */}
       <TraineesHero
         headline={{
           normal: "Become a Trainee for the",
@@ -132,7 +113,6 @@ export default function Trainees() {
         img={traineesImage}
       />
 
-      {/* WHY */}
       <Section
         title={
           <>
@@ -158,7 +138,6 @@ export default function Trainees() {
         </div>
       </Section>
 
-      {/* REQUIREMENTS */}
       <Section
         bg="bg-white"
         title={
@@ -186,7 +165,6 @@ export default function Trainees() {
         </div>
       </Section>
 
-      {/* Track */}
       <Section
         bg="bg-white"
         title={
@@ -196,14 +174,43 @@ export default function Trainees() {
           </>
         }
       >
-        <div className="grid md:grid-cols-2 gap-10 items-stretch">
-          {tracks.map((track, i) => (
-            <TrackCard key={i} track={track} icon={trackIcons} />
-          ))}
+        <div className="grid md:grid-cols-4 divide-x divide-gray-200">
+          <div className="px-6">
+            <div className="flex items-center gap-2 mb-2">
+              <img src={scheduleIcon} alt="" className="w-5 h-5" />
+              <h3 className="font-semibold text-slate-900">Schedule</h3>
+            </div>
+            <p className="text-sm text-slate-500 leading-relaxed">
+              {track.schedule.day}
+              <br />
+              {track.schedule.time}
+            </p>
+          </div>
+
+          <div className="px-6">
+            <div className="flex items-center gap-2 mb-2">
+              <img src={optionsIcon} alt="" className="w-5 h-5" />
+              <h3 className="font-semibold text-slate-900">Options</h3>
+            </div>
+            <ul className="text-sm text-slate-500 leading-relaxed list-disc list-inside">
+              {track.options.map((opt, i) => (
+                <li key={i}>{opt}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="px-6 col-span-2">
+            <div className="flex items-center gap-2 mb-2">
+              <img src={noteIconImg} alt="" className="w-5 h-5" />
+              <h3 className="font-semibold text-slate-900">Note</h3>
+            </div>
+            <p className="text-sm text-slate-500 leading-relaxed">
+              {track.note}
+            </p>
+          </div>
         </div>
       </Section>
 
-      {/* BENEFITS */}
       <Section
         bg="bg-white"
         title={
@@ -234,13 +241,3 @@ export default function Trainees() {
   );
 }
 
-/* ================= COMPONENTS ================= */
-
-function Section({ title, bg = "bg-white", children }) {
-  return (
-    <section className={`${bg} px-6 md:px-16 py-14`}>
-      <h2 className="text-3xl font-bold text-center mb-10">{title}</h2>
-      {children}
-    </section>
-  );
-}
