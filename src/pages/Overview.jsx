@@ -2,8 +2,7 @@
 import EdgeContainer from "../components/ui/EdgeContainer";
 import Button from "../components/ui/Button";
 import RegisterModal from "../components/ui/RegisterModal";
-
-
+import RegisterPopUp from "../components/cards/RegisterPopUp";
 
 import heroBg from "../assets/overview/heroImg.webp";
 import Logo from "../assets/logo/logoBlueNobg2.png";
@@ -16,6 +15,7 @@ import { useState } from "react";
 
 const Overview = () => {
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+  const [isRegisterPopUpOpen, setIsRegisterPopUpOpen] = useState(false);
   return (
     <div className="font-family text-brand-primary bg-white flex flex-col gap-20 w-full">
 
@@ -35,11 +35,14 @@ const Overview = () => {
           <div className="flex flex-row gap-3">
             <Button onClick={() => setIsRegisterModalOpen(true)}>Join the Program</Button>
 
-            <Button variant="primary" onClick={() => open("https://next-gen-registration.vercel.app/")}>
+            <Button variant="primary" onClick={() => setIsRegisterPopUpOpen(true)}>
               Register for Events
             </Button>
           </div>
           <RegisterModal isOpen={isRegisterModalOpen} onClose={() => setIsRegisterModalOpen(false)} />
+          {isRegisterPopUpOpen && (
+            <RegisterPopUp onClose={() => setIsRegisterPopUpOpen(false)} />
+          )}
         </div>
       </section>
 
