@@ -12,8 +12,8 @@ import coupleMixed from "@/assets/merchandise/price/NGEP-Couple-1PoloShirtn1TShi
 const qrForOrder = (item) => {
   if (item?.orderType === "standard")
     return item.product.id === "polo" ? standardPolo : standardTshirt;
-  if (item?.price === "$13.96") return couplePolo;
-  if (item?.price === "$7.96") return coupleTshirt;
+  if (item?.price === "$13.99") return couplePolo;
+  if (item?.price === "$7.99") return coupleTshirt;
   return coupleMixed;
 };
 
