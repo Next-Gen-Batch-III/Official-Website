@@ -45,8 +45,8 @@ export const merchandiseOrderTypes = [
         subtitle: "Order for 1 person",
         icon: FaUser,
         items: [
-            { merchandiseId: "polo", label: "Polo-Shirt", price: "$7.60" },
-            { merchandiseId: "tshirt", label: "T-Shirt", price: "$4.60" },
+            { merchandiseId: "polo", label: "Polo-Shirt", price: "$7.99" },
+            { merchandiseId: "tshirt", label: "T-Shirt", price: "$4.99" },
         ],
     },
     {
@@ -55,9 +55,9 @@ export const merchandiseOrderTypes = [
         subtitle: "Order for 2 people",
         icon: FaUserFriends,
         items: [
-            { merchandiseId: "polo", label: "(2) Polo-Shirts", price: "$13.96" },
-            { merchandiseId: "tshirt", label: "(2) T-Shirts", price: "$7.96" },
-            { merchandiseId: "polo", label: "Polo + T-Shirt", price: "$10.96" },
+            { merchandiseId: "polo", label: "(2) Polo-Shirts", price: "$13.99" },
+            { merchandiseId: "tshirt", label: "(2) T-Shirts", price: "$7.99" },
+            { merchandiseId: "polo", label: "Polo + T-Shirt", price: "$10.99" },
         ],
     },
     {
@@ -66,16 +66,16 @@ export const merchandiseOrderTypes = [
         subtitle: "Order for 4 or more people",
         icon: FaUsers,
         items: [
-            { merchandiseId: "polo", label: "Polo-Shirt", price: "$6.69 (Each)" },
-            { merchandiseId: "tshirt", label: "T-Shirt", price: "$3.69 (Each)" },
+            { merchandiseId: "polo", label: "Polo-Shirt", price: "$6.99 (Each)" },
+            { merchandiseId: "tshirt", label: "T-Shirt", price: "$3.99 (Each)" },
         ],
     },
 ];
 
 export const coupleChoices = [
-    { id: "polo-tshirt", label: "1 Polo-Shirt + 1 T-Shirt", productIds: ["polo", "tshirt"], price: "$10.96" },
-    { id: "two-polos", label: "2 Polo-Shirts", productIds: ["polo", "polo"], price: "$13.96" },
-    { id: "two-tshirts", label: "2 T-Shirts", productIds: ["tshirt", "tshirt"], price: "$7.96" },
+    { id: "polo-tshirt", label: "1 Polo-Shirt + 1 T-Shirt", productIds: ["polo", "tshirt"], price: "$10.99" },
+    { id: "two-polos", label: "2 Polo-Shirts", productIds: ["polo", "polo"], price: "$13.99" },
+    { id: "two-tshirts", label: "2 T-Shirts", productIds: ["tshirt", "tshirt"], price: "$7.99" },
 ];
 
 export const merchandiseFeatures = [
