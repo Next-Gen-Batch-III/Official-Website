@@ -5,14 +5,11 @@ import {
   useParams,
   useSearchParams,
 } from "react-router-dom";
-import { FaPen } from "react-icons/fa";
 import Button from "@/components/ui/Button";
 import SizeChartModal from "@/components/merchandise/SizeChartModal";
-import SleeveCustomizationModal from "@/components/merchandise/SleeveCustomizationModal";
 import {
   merchandiseOrderTypes,
   coupleChoices,
-  merchandiseSleeveCustomization,
   merchandiseSizeOptions,
 } from "@/data/merchandise";
 import { useCart } from "@/context/CartContext";
@@ -68,13 +65,7 @@ const MerchandiseCustomize = () => {
     !searchParams.get("bundle") &&
     !isEditing;
   const [isSizeChartOpen, setIsSizeChartOpen] = useState(false);
-  const [isCustomizerOpen, setIsCustomizerOpen] = useState(false);
-  const [isSaved, setIsSaved] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [sleeveCustomization, setSleeveCustomization] = useState(
-    editingItem?.sleeveCustomization ||
-      merchandiseSleeveCustomization.defaultValue,
-  );
   const [formData, setFormData] = useState({
     quantity: editingItem?.quantity || fixedQuantity,
     size: merchandiseSizeOptions.includes(editingItem?.size)
@@ -129,17 +120,21 @@ const MerchandiseCustomize = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const orderType = selectedOrderType;
+    const quantity = Number(formData.quantity);
     const price =
       coupleChoice?.price ||
       orderType?.items.find((item) => item.merchandiseId === product.id)
         ?.price ||
       "$0.00";
-    const fixedPrice = getPriceAmount(price);
+    const fixedPrice = getPriceAmount(price) * quantity;
     const orderLine = {
       product,
-      quantity: Number(formData.quantity),
+      quantity,
       size: formData.size,
-      sleeveCustomization,
+      sleeveCustomization: {
+        left: { option: "blank", text: "" },
+        right: "blank",
+      },
       orderType: orderType?.id || "standard",
       bundleId: editingItem?.bundleId || bundleId,
       // Editing must retain the original package price. Recalculating from the
@@ -180,18 +175,8 @@ const MerchandiseCustomize = () => {
       return;
     }
     beginOrder(orderLine);
-    setIsSaved(true);
     navigate("/my-orders");
   };
-  const leftSleeveText =
-    sleeveCustomization.left.option === "name"
-      ? sleeveCustomization.left.text || "None"
-      : "None";
-  const rightSleeveText =
-    merchandiseSleeveCustomization.rightOptions.find(
-      (option) => option.value === sleeveCustomization.right,
-    )?.label || "None";
-
   return (
     <main className="mx-auto w-full max-w-7xl px-6 py-12 sm:px-10 lg:px-14 lg:py-16">
       <nav aria-label="Breadcrumb" className="text-sm text-gray-500">
@@ -264,8 +249,8 @@ const MerchandiseCustomize = () => {
               <input
                 name="quantity"
                 type="number"
-                min={fixedQuantity}
-                value={formData.quantity}
+                min="1"
+                value="1"
                 readOnly
                 aria-readonly="true"
                 className="mt-2 block w-full cursor-not-allowed rounded-lg border border-gray-300 bg-slate-50 px-3 py-2 font-normal text-gray-800"
@@ -301,26 +286,6 @@ const MerchandiseCustomize = () => {
                 ))}
               </div>
             </fieldset>
-            <fieldset className="border-t border-gray-200 pt-5">
-              <legend className="font-bold text-black">Customization</legend>
-              <dl className="mt-3 flex flex-col gap-3 text-sm ">
-                <div>
-                  <dt className="font-semibold text-gray-700">Left Sleeve</dt>
-                  <dd className="mt-1 text-gray-500">{leftSleeveText}</dd>
-                </div>
-                <div>
-                  <dt className="font-semibold text-gray-700">Right Sleeve</dt>
-                  <dd className="mt-1 text-gray-500">{rightSleeveText}</dd>
-                </div>
-              </dl>
-            </fieldset>
-            <button
-              type="button"
-              onClick={() => setIsCustomizerOpen(true)}
-              className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg border-2 border-[#142f55] px-5 py-3 font-bold text-brand-primary transition hover:bg-slate-50"
-            >
-              <FaPen aria-hidden="true" /> Customize Shirt
-            </button>
             <button
               type="submit"
               className="w-full cursor-pointer rounded-lg bg-[#142f55] px-5 py-3 font-bold text-white transition hover:bg-[#0d2340]"
@@ -331,11 +296,6 @@ const MerchandiseCustomize = () => {
                   ? "Next"
                   : "Add to Order"}
             </button>
-            {isSaved && (
-              <p className="text-sm font-medium text-black" role="status">
-                Customization saved. Ready for order integration.
-              </p>
-            )}
           </form>
         </section>
       </div>
@@ -344,16 +304,6 @@ const MerchandiseCustomize = () => {
         onClose={() => setIsSizeChartOpen(false)}
         product={product}
       />
-      {isCustomizerOpen && (
-        <SleeveCustomizationModal
-          initialValue={sleeveCustomization}
-          onClose={() => setIsCustomizerOpen(false)}
-          onSave={(value) => {
-            setSleeveCustomization(value);
-            setIsCustomizerOpen(false);
-          }}
-        />
-      )}
     </main>
   );
 };

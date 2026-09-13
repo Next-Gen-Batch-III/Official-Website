@@ -1,20 +1,6 @@
-import { FaPen } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "@/context/CartContext";
-import { merchandiseSleeveCustomization } from "@/data/merchandise";
 import Button from "@/components/ui/Button";
-
-const sleeveLabel = (item) => {
-  const left =
-    item.sleeveCustomization.left.option === "name"
-      ? item.sleeveCustomization.left.text || "None"
-      : "None";
-  const right =
-    merchandiseSleeveCustomization.rightOptions.find(
-      (option) => option.value === item.sleeveCustomization.right,
-    )?.label || "None";
-  return { left, right };
-};
 
 const currency = (amount) => `$${amount.toFixed(2)}`;
 
@@ -60,7 +46,6 @@ const MyOrders = () => {
         <>
           <div className="mt-5 space-y-4">
             {items.map((item) => {
-              const sleeves = sleeveLabel(item);
               return (
                 <article
                   key={item.id}
@@ -82,24 +67,6 @@ const MyOrders = () => {
                       <strong>Quantity:</strong> {item.quantity}
                     </p>
 
-                    <div className="mt-3">
-                      <strong>Customized:</strong>
-                      <p className="ml-6 mt-1">
-                        <strong>Left Sleeve:</strong> {sleeves.left}
-                      </p>
-                      <p className="ml-6 mt-1">
-                        <strong>Right Sleeve:</strong> {sleeves.right}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex justify-self-end">
-                    <Link
-                      to={`/merchandise/${item.product.slug}/customize?size=${item.size}&order=${item.orderType}&cartItem=${item.id}`}
-                      aria-label={`Edit ${item.product.name}`}
-                      className="rounded-full p-3 text-[#142f55] transition hover:bg-slate-100"
-                    >
-                      <FaPen />
-                    </Link>
                   </div>
                 </article>
               );

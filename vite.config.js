@@ -26,4 +26,13 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://nextgen-api.sovanpisothyan.workers.dev',
+        changeOrigin: true,
+        secure: true,
+      },
+    },
+  },
 })

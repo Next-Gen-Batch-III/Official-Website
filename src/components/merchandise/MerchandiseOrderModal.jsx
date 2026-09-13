@@ -7,7 +7,7 @@ const ProductCard = ({ product, onChooseSize }) => {
   const sizes = merchandiseSizeOptions.filter((size) =>
     product.sizes?.includes(size),
   );
-  const [selectedSize, setSelectedSize] = useState(sizes[0]);
+  const [selectedSize] = useState(sizes[0]);
   const images = product.imageUrls?.length
     ? product.imageUrls
     : [product.image];
@@ -77,7 +77,7 @@ const ProductCard = ({ product, onChooseSize }) => {
         )}
         <span className="block p-5">
           <h3 className="font-bold text-[#142f55]">{product.name}</h3>
-          <p className="mt-1 text-sm text-gray-500">Customized</p>
+          <p className="mt-1 text-sm text-gray-500">Official design</p>
           <p className="mt-2 text-lg font-bold text-gray-800">
             {product.price}
           </p>
