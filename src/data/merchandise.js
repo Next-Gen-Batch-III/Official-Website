@@ -80,7 +80,7 @@ export const coupleChoices = [
 
 export const merchandiseFeatures = [
     { title: "Premium Quality", icon: PiTShirt },
-    { title: "Personalized", icon: LuPencilLine },
+    { title: "Official Design", icon: LuPencilLine },
     { title: "Group Order", icon: HiOutlineUserGroup },
 ];
 

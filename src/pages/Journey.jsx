@@ -86,8 +86,8 @@ const batchIII = [
     footer: {
       type: "pills",
       items: [
-        { label: "Pitching Day", date: "Sep 25, 8:00 AM" }, 
-        { label: "Showcase Day", date: "Sep 26, 8:00 AM" }, 
+        { label: "Pitching Day", date: "Sep 23, 8:00 AM" }, 
+        { label: "Showcase Day", date: "Sep 25, 8:00 AM" }, 
       ],
     },
   },

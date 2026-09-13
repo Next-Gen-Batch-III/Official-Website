@@ -33,9 +33,6 @@ const PaymentProof = () => {
     [],
   );
 
-  const productHref = (item) =>
-    `/merchandise/${item.product.slug}/customize?size=${item.size}&order=${item.orderType}&cartItem=${item.id}`;
-
   const selectProof = (event) => {
     const file = event.target.files?.[0];
     if (!file) return;
@@ -122,7 +119,7 @@ const PaymentProof = () => {
         {items[0] && (
           <>
             <span className="px-2">/</span>
-            <Link to={productHref(items[0])} className="hover:text-[#142f55]">
+            <Link to="/merchandise" className="hover:text-[#142f55]">
               Product 1
             </Link>
           </>
@@ -130,7 +127,7 @@ const PaymentProof = () => {
         {items[1] && (
           <>
             <span className="px-2">/</span>
-            <Link to={productHref(items[1])} className="hover:text-[#142f55]">
+            <Link to="/merchandise" className="hover:text-[#142f55]">
               Product 2
             </Link>
           </>

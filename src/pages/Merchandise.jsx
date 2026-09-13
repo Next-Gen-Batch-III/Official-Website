@@ -8,6 +8,7 @@ import {
   merchandiseHero,
   merchandiseOrderTypes,
   coupleChoices,
+  merchandiseItems,
 } from "@/data/merchandise";
 import { getProducts } from "@/services/productService";
 import { createCatalogProducts, getProductItemIds } from "@/utils/merchandise";
@@ -18,7 +19,7 @@ const Merchandise = () => {
     (order) => order.id === searchParams.get("order"),
   );
   const [activeOrder, setActiveOrder] = useState(resumedOrder || null);
-  const [products, setProducts] = useState({});
+  const [products, setProducts] = useState(merchandiseItems);
   const [isLoadingProducts, setIsLoadingProducts] = useState(true);
   const [productsError, setProductsError] = useState("");
 
@@ -78,6 +79,7 @@ const Merchandise = () => {
 
             return {
               merchandiseId: choice.productIds[0],
+              productIds: choice.productIds,
               label: choice.label,
               price: choice.price,
               choiceId: choice.id,
@@ -234,7 +236,7 @@ const MerchandiseHero = ({ products }) => {
             {/* Description */}
             <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/65 sm:text-base">
               High-quality shirts designed for the Next-Gen Engagement Program
-              community. Customize it your way and make it uniquely yours.
+              community.
             </p>
 
             {/* Features */}
