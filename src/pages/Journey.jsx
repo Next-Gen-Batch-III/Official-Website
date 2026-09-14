@@ -78,7 +78,7 @@ const batchIII = [
     title: "Phase 3 : Competition & Showcase",
     rows: [
       { icon: Clock, text: "Duration: 30 Days until event" },
-      { icon: Calendar, text: "22, 23, 25th Sep, 2026" },
+      { icon: Calendar, text: "Sep 22, 23, and 25, 2026" },
       { icon: MapPin, text: "Location: CADT Innovation, Conference hall" },
     ],
     description:
