@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
-import { projects } from "../data/projects";
+import { projectsBatch2 } from "../data/projectsBatch2";
+import { projectsBatch3 } from "../data/projectsBatch3";
 import HighlightCard from "../components/Projects/HighlightsCard";
 import ProblemImg from "../assets/icon_image/problemIcon.png";
 import ImpactImg from "../assets/icon_image/impactIcon.png";
@@ -9,7 +10,7 @@ import ProjectDetailHero from "../components/Projects/ProjectDetailHero";
 
 const ProjectDetail = () => {
   const { slug } = useParams();
-  const project = projects.find((p) => p.slug === slug);
+  const project = projectsBatch2.find((p) => p.slug === slug) || projectsBatch3.find((p) => p.slug === slug);
   const showQR = Boolean(project.qrCode);
   const showImageProject = Boolean(project.projectImages);
 

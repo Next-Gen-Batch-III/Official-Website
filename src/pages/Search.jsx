@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom';
 
 // Data imports
 import { news } from '../data/news';
-import { projects } from '../data/projects';
+import { projects } from '../data/projectsBatch2';
 import { people } from '../data/people';
 import { organizers } from '../data/organizers';
 import { management } from '../data/management';

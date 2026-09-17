@@ -323,7 +323,7 @@ const Home = () => {
 
               <ul className="mt-1 space-y-1 text-xl lg:text-2xl list-disc list-inside marker:text-[#F88D2A]">
                 <p className="flex items-center justify-left gap-2">
-                  <Calendar className="w-4 h-4 text-[#F88D2A]" />Date: 25-26th Sep, 2026</p>
+                  <Calendar className="w-4 h-4 text-[#F88D2A]" />Date: 23rd and 25th Sep 2026</p>
                 <li className="ml-2 ">Final presentation</li>
                 <li className="ml-2 ">Pitch & live demo</li>
                 <li className="ml-2 ">Judges'evaluation</li>
