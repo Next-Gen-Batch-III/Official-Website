@@ -342,7 +342,7 @@ const Home = () => {
 
         <Title className="text-2xl md:text-4xl border-b-2">MEET OUR PEOPLE</Title>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
          
           <Link to="/people/management" className="w-full">
             <PeopleCategoryCard
@@ -354,6 +354,7 @@ const Home = () => {
               path="/people/management"
             />
           </Link>
+          {/*
           <Link to="/people/advisors" className="w-full">
           
             <PeopleCategoryCard
@@ -365,6 +366,7 @@ const Home = () => {
               path="/people/advisors"
             />
           </Link>
+          */}
 
           <Link to="/people/mentors" className="w-full">
             <PeopleCategoryCard
