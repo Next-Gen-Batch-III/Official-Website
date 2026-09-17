@@ -49,9 +49,6 @@ const LegacyNavbar = () => {
                 </NavLink>
               </li>
             ))}
-            <Button variant="primary">
-              <NavLink to="merchandise">Order Now</NavLink>
-            </Button>
           </ul>
         )}
         {!isSearching && !isMenuOpen && (
@@ -305,12 +302,6 @@ const Navbar = () => {
                             </li>
                         ))}
                     </ul>
-                )}
-
-                {!isSearching && (
-                    <Button variant="primary" className="font-cadt">
-                        <NavLink to="/merchandise">Order Now</NavLink>
-                    </Button>
                 )}
 
                 {/* ================= MOBILE MENU ICON ================= */}
