@@ -2,7 +2,8 @@ import { useLocation } from 'react-router-dom';
 
 // Data imports
 import { news } from '../data/news';
-import { projects } from '../data/projectsBatch2';
+import { projectsBatch2 } from '../data/projectsBatch2';
+import { projectsBatch3 } from '../data/projectsBatch3';
 import { people } from '../data/people';
 import { organizers } from '../data/organizers';
 import { management } from '../data/management';
@@ -31,8 +32,8 @@ export default function Search() {
     n.subtitle?.toLowerCase().includes(lowercaseQuery) ||
     n.article?.toLowerCase().includes(lowercaseQuery)
   );
-
-  const matchedProjects = showAllProjects ? projects : (projects || []).filter(p => 
+  const allProjects = [projectsBatch2, projectsBatch3];
+  const matchedProjects = showAllProjects ? allProjects : allProjects.filter(p => 
     p.title?.toLowerCase().includes(lowercaseQuery) ||
     p.description?.toLowerCase().includes(lowercaseQuery)
   );
