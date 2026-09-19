@@ -35,14 +35,20 @@ const Overview = () => {
           <div className="flex flex-row gap-3">
             <Button onClick={() => setIsRegisterModalOpen(true)}>Join the Program</Button>
 
-            <Button variant="primary" onClick={() => setIsRegisterPopUpOpen(true)}>
+            <Button 
+              variant="primary" 
+              // onClick={() => setIsRegisterPopUpOpen(true)}
+              onClick={() =>
+                open("https://www.bookme.plus/t/events/next-gen-engagement-program-batch-iii")
+              }
+            >
               Register for Events
             </Button>
           </div>
           <RegisterModal isOpen={isRegisterModalOpen} onClose={() => setIsRegisterModalOpen(false)} />
-          {isRegisterPopUpOpen && (
+          {/* {isRegisterPopUpOpen && (
             <RegisterPopUp onClose={() => setIsRegisterPopUpOpen(false)} />
-          )}
+          )} */}
         </div>
       </section>
 
