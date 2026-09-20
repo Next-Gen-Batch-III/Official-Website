@@ -108,8 +108,10 @@ const Home = () => {
                 <Button
                   variant="primary"
                   className="flex-1 w-[240px]"
-                  onClick={() => setIsRegisterModalOpen(true)}
-                  
+                  // onClick={() => setIsRegisterModalOpen(true)}
+                  onClick={() =>
+                    open("https://www.bookme.plus/t/events/next-gen-engagement-program-batch-iii")
+                  }
                 >
                   REGISTER FOR EVENTS
                 </Button>
@@ -449,11 +451,11 @@ const Home = () => {
         </div>
 
       </section>
-    {isRegisterModalOpen && (
+    {/* {isRegisterModalOpen && (
       <RegisterPopUp
         onClose={() => setIsRegisterModalOpen(false)}
       />
-    )}  
+    )}   */}
     </div>
   );
 };
