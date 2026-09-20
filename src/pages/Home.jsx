@@ -244,7 +244,9 @@ const Home = () => {
             {/* DESKTOP ICON */}
             <div className="absolute left-1/2 bottom-34 -translate-x-1/2 z-10 hidden md:block">
               <div className="w-10 h-10 rounded-full bg-white border-3 border-[#F88D2A] shadow-md flex items-center justify-center">
-                <FiMapPin className="text-[#12284C] w-6 h-6" />
+                <div className="w-6 h-6 rounded-full bg-[#12284C] flex items-center justify-center">
+                  <FiCheck className="text-white w-6 h-6" />
+                </div>
               </div>
             </div>
 
@@ -303,9 +305,8 @@ const Home = () => {
 
             {/* DESKTOP ICON */}
             <div className="absolute left-1/2 bottom-34 -translate-x-1/2 z-10 hidden md:block">
-              <div className="w-10 h-10 rounded-full bg-white border-3 border-[#F88D2A] shadow-md flex items-center justify-center">
-                <div className="w-6 h-6 rounded-full bg-[#12284C] flex items-center justify-center">
-                </div>
+             <div className="w-10 h-10 rounded-full bg-white border-3 border-[#F88D2A] shadow-md flex items-center justify-center">
+                <FiMapPin className="text-[#12284C] w-6 h-6" />
               </div>
             </div>
 
