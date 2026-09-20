@@ -33,7 +33,7 @@ const Overview = () => {
             Empowering students through innovation, collaboration, and real-world project experience.
           </p>
           <div className="flex flex-row gap-3">
-            <Button onClick={() => setIsRegisterModalOpen(true)}>Join the Program</Button>
+            <Button onClick={() => setIsRegisterModalOpen(true)}>Explore</Button>
 
             <Button 
               variant="primary" 
