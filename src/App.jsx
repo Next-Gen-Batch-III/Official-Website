@@ -1,79 +1,90 @@
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css'
+import './App.css';
 
 import ScrollToTop from './components/layout/ScrollToTop';
 import ScrollToTopButton from './components/ui/ScrollToTopButton';
 import Navbar from './components/layout/Navbar';
-import Home from './pages/Home';
-import Overview from './pages/Overview';
-import Journey from './pages/Journey';
-import Faq from './pages/Faq';
-import News from './pages/News';
-import NewsDetail from './pages/NewsDetail';
-import ProjectsBatchII from './pages/ProjectsBatchII';
-import ProjectDetail from './pages/ProjectDetail';
-import Trainers from './pages/Trainers';
-import Trainees from './pages/Trainees';
 import Footer from './components/layout/Footer';
-import Merchandise from './pages/Merchandise';
-import MerchandiseCustomize from './pages/MerchandiseCustomize';
-import MyOrders from './pages/MyOrders';
-import Payment from './pages/Payment';
-import PaymentProof from './pages/PaymentProof';
 import { CartProvider } from './context/CartContext';
-import ProjectsBatchIII from './pages/ProjectsBatchIII';
-import Management from './pages/Management';
-import Mentors from './pages/Mentor';
-import Advisor from './pages/Advisor';
 
+// Lazy loaded pages for performance optimization
+const Home = lazy(() => import('./pages/Home'));
+const Overview = lazy(() => import('./pages/Overview'));
+const Journey = lazy(() => import('./pages/Journey'));
+const Faq = lazy(() => import('./pages/Faq'));
 const People = lazy(() => import('./pages/People'));
-const Team = lazy(() => import('./pages/Team'));
-const OrganizerTeam = lazy(() => import('./pages/OrganizerTeam'));
 const Organizer = lazy(() => import('./pages/Organizer'));
+const OrganizerTeam = lazy(() => import('./pages/OrganizerTeam'));
+const Team = lazy(() => import('./pages/Team'));
+const News = lazy(() => import('./pages/News'));
+const NewsDetail = lazy(() => import('./pages/NewsDetail'));
+const ProjectsBatchII = lazy(() => import('./pages/ProjectsBatchII'));
+const ProjectsBatchIII = lazy(() => import('./pages/ProjectsBatchIII'));
+const ProjectDetail = lazy(() => import('./pages/ProjectDetail'));
 const Search = lazy(() => import('./pages/Search'));
-
+const Trainers = lazy(() => import('./pages/Trainers'));
+const Trainees = lazy(() => import('./pages/Trainees'));
+const Merchandise = lazy(() => import('./pages/Merchandise'));
+const MerchandiseCustomize = lazy(() => import('./pages/MerchandiseCustomize'));
+const MyOrders = lazy(() => import('./pages/MyOrders'));
+const Payment = lazy(() => import('./pages/Payment'));
+const PaymentProof = lazy(() => import('./pages/PaymentProof'));
+const Management = lazy(() => import('./pages/Management'));
+const Mentors = lazy(() => import('./pages/Mentor'));
+const Advisor = lazy(() => import('./pages/Advisor'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 function App() {
-
   return (
     <>
       <BrowserRouter>
         <CartProvider>
-        <ScrollToTop />
-        <ScrollToTopButton/>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/overview" element={<Overview />} />
-          <Route path="/journey" element={<Journey />} />
-          <Route path="/faq" element={<Faq />} />
-          <Route path="/people" element={<People />} />
-          <Route path="/people/organizers" element={<Organizer />} />
-          <Route path="/people/organizers/:teamId" element={<OrganizerTeam />} />
-          <Route path="people/:teamId" element={<Team />} />
-          <Route path='/news' element={<News />}/>
-          <Route path="/news/:slug" element={<NewsDetail />} />
-          <Route path="/projects/batch-ii" element={<ProjectsBatchII />} />
-          <Route path="/projects/batch-iii" element={<ProjectsBatchIII />} />
-          <Route path="/projects/:slug" element={<ProjectDetail />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/trainers" element={<Trainers/>} />
-          <Route path ="/trainees" element={<Trainees />} />
-          <Route path="/merchandise" element={<Merchandise/>} />
-          <Route path="/merchandise/:productSlug/customize" element={<MerchandiseCustomize/>} />
-          <Route path="/my-orders" element={<MyOrders/>} />
-          <Route path="/payment" element={<Payment/>} />
-          <Route path="/payment/proof" element={<PaymentProof/>} />
-          <Route path="people/management" element ={<Management />} />
-          <Route path="people/mentors" element ={<Mentors />} />
-          <Route path="people/advisors" element ={<Advisor />} />
+          <ScrollToTop />
+          <ScrollToTopButton />
+          <Navbar />
+          <Suspense
+            fallback={
+              <div className="min-h-[60vh] flex items-center justify-center">
+                <div className="w-10 h-10 border-4 border-brand-secondary-orange border-t-transparent rounded-full animate-spin" />
+              </div>
+            }
+          >
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/overview" element={<Overview />} />
+              <Route path="/journey" element={<Journey />} />
+              <Route path="/faq" element={<Faq />} />
+              <Route path="/people" element={<People />} />
+              <Route path="/people/organizers" element={<Organizer />} />
+              <Route path="/people/organizers/:teamId" element={<OrganizerTeam />} />
+              <Route path="people/:teamId" element={<Team />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/news/:slug" element={<NewsDetail />} />
+              <Route path="/projects/batch-ii" element={<ProjectsBatchII />} />
+              <Route path="/projects/batch-iii" element={<ProjectsBatchIII />} />
+              <Route path="/projects/:slug" element={<ProjectDetail />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/trainers" element={<Trainers />} />
+              <Route path="/trainees" element={<Trainees />} />
+              <Route path="/merchandisee" element={<Merchandise />} />
+              <Route path="/merchandise/:productSlug/customize" element={<MerchandiseCustomize />} />
+              <Route path="/my-orders" element={<MyOrders />} />
+              <Route path="/payment" element={<Payment />} />
+              <Route path="/payment/proof" element={<PaymentProof />} />
+              <Route path="people/management" element={<Management />} />
+              <Route path="people/mentors" element={<Mentors />} />
+              <Route path="people/advisors" element={<Advisor />} />
 
-        </Routes>
-        <Footer />
+              {/* 404 Not Found Catch-All Route */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+          <Footer />
         </CartProvider>
       </BrowserRouter>
     </>
-  )
+  );
 }
-export default App
+
+export default App;
