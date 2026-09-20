@@ -108,8 +108,10 @@ const Home = () => {
                 <Button
                   variant="primary"
                   className="flex-1 w-[240px]"
-                  onClick={() => setIsRegisterModalOpen(true)}
-                  
+                  // onClick={() => setIsRegisterModalOpen(true)}
+                  onClick={() =>
+                    open("https://www.bookme.plus/t/events/next-gen-engagement-program-batch-iii")
+                  }
                 >
                   REGISTER FOR EVENTS
                 </Button>
@@ -323,7 +325,7 @@ const Home = () => {
 
               <ul className="mt-1 space-y-1 text-xl lg:text-2xl list-disc list-inside marker:text-[#F88D2A]">
                 <p className="flex items-center justify-left gap-2">
-                  <Calendar className="w-4 h-4 text-[#F88D2A]" />Date: 25-26th Sep, 2026</p>
+                  <Calendar className="w-4 h-4 text-[#F88D2A]" />Date: 23rd and 25th Sep 2026</p>
                 <li className="ml-2 ">Final presentation</li>
                 <li className="ml-2 ">Pitch & live demo</li>
                 <li className="ml-2 ">Judges'evaluation</li>
@@ -342,7 +344,7 @@ const Home = () => {
 
         <Title className="text-2xl md:text-4xl border-b-2">MEET OUR PEOPLE</Title>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
          
           <Link to="/people/management" className="w-full">
             <PeopleCategoryCard
@@ -354,6 +356,7 @@ const Home = () => {
               path="/people/management"
             />
           </Link>
+          {/*
           <Link to="/people/advisors" className="w-full">
           
             <PeopleCategoryCard
@@ -365,6 +368,7 @@ const Home = () => {
               path="/people/advisors"
             />
           </Link>
+          */}
 
           <Link to="/people/mentors" className="w-full">
             <PeopleCategoryCard
@@ -446,11 +450,11 @@ const Home = () => {
         </div>
 
       </section>
-    {isRegisterModalOpen && (
+    {/* {isRegisterModalOpen && (
       <RegisterPopUp
         onClose={() => setIsRegisterModalOpen(false)}
       />
-    )}  
+    )}   */}
     </div>
   );
 };

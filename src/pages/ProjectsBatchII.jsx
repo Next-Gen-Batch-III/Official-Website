@@ -15,7 +15,7 @@ import AkharaImg from "../assets/student_project_image/akhara.webp";
 import SastraImg from "../assets/student_project_image/sastra.webp";
 import EduquestImg from "../assets/student_project_image/eduquest.webp";
 
-const Projects = () => {
+const ProjectsBatchII = () => {
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
   const [suggestions, setSuggestions] = useState([]);
@@ -261,4 +261,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default ProjectsBatchII;

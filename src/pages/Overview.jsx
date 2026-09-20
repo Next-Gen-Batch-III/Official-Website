@@ -12,6 +12,7 @@ import commerceImg from "../assets/overview/commerceReason.webp";
 import missionIcon from "../assets/overview/mission.png";
 import visionIcon from "../assets/overview/vision.png";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Overview = () => {
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
@@ -33,16 +34,25 @@ const Overview = () => {
             Empowering students through innovation, collaboration, and real-world project experience.
           </p>
           <div className="flex flex-row gap-3">
-            <Button onClick={() => setIsRegisterModalOpen(true)}>Join the Program</Button>
+            {/*<Button onClick={() => setIsRegisterModalOpen(true)}>Explore</Button>*/}
+            <Link to="/journey">
+              <Button>Explore</Button>
+            </Link>
 
-            <Button variant="primary" onClick={() => setIsRegisterPopUpOpen(true)}>
+            <Button 
+              variant="primary" 
+              // onClick={() => setIsRegisterPopUpOpen(true)}
+              onClick={() =>
+                open("https://www.bookme.plus/t/events/next-gen-engagement-program-batch-iii")
+              }
+            >
               Register for Events
             </Button>
           </div>
           <RegisterModal isOpen={isRegisterModalOpen} onClose={() => setIsRegisterModalOpen(false)} />
-          {isRegisterPopUpOpen && (
+          {/* {isRegisterPopUpOpen && (
             <RegisterPopUp onClose={() => setIsRegisterPopUpOpen(false)} />
-          )}
+          )} */}
         </div>
       </section>
 

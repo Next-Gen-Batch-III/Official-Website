@@ -39,7 +39,7 @@ import komPlexQR from "../assets/Qr_code_project/komplex.png";
 import phsarDesignQR from "../assets/Qr_code_project/phsarDesign.png";
 import sastraQR from "../assets/Qr_code_project/sastra.png";
 
-export const projects = [
+export const projectsBatch2 = [
   {
     id: 1,
     title: "KOMPLEX",
@@ -86,7 +86,7 @@ export const projects = [
     slug: "domra",
     projectImages: [Domra1Img, Domra2Img, Domra3Img],
     qrCode: domraQR,
-    link: "https://domra-tech.vercel.app/",
+    link: "",
     problem:
       "No reliable, standardized Khmer translations exist for technical terms, causing inconsistency in academic writing and research.",
     impact:
@@ -103,7 +103,7 @@ export const projects = [
     id: 4,
     title: "ACET",
     slug: "acet",
-    projectImages: null,
+    projectImages:null,
     qrCode: null,
     link: null,
     problem:
@@ -272,3 +272,5 @@ export const projects = [
         "Bay is a digital voting platform designed for CADT students, allowing them to vote daily on their preferred canteen dishes. By collecting real-time student preferences, the platform helps the canteen kitchen plan and prepare meals that students actually want to eat. Beyond voting, students can browse the menu, save favorite dishes to a wishlist, and submit feedback.\n\nThe System is connection between students and the canteen. The goal is to transform the canteen experience by ensuring fresher, tastier, and more varied meals while minimizing food waste caused by unpopular or repetitive dishes."
     }
 ];
+
+export default projectsBatch2;
