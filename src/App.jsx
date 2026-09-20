@@ -67,7 +67,7 @@ function App() {
               <Route path="/search" element={<Search />} />
               <Route path="/trainers" element={<Trainers />} />
               <Route path="/trainees" element={<Trainees />} />
-              <Route path="/merchandisee" element={<Merchandise />} />
+              <Route path="/merchandise" element={<Merchandise />} />
               <Route path="/merchandise/:productSlug/customize" element={<MerchandiseCustomize />} />
               <Route path="/my-orders" element={<MyOrders />} />
               <Route path="/payment" element={<Payment />} />
