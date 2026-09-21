@@ -108,8 +108,10 @@ const Home = () => {
                 <Button
                   variant="primary"
                   className="flex-1 w-[240px]"
-                  onClick={() => setIsRegisterModalOpen(true)}
-                  
+                  // onClick={() => setIsRegisterModalOpen(true)}
+                  onClick={() =>
+                    open("https://www.bookme.plus/t/events/next-gen-engagement-program-batch-iii")
+                  }
                 >
                   REGISTER FOR EVENTS
                 </Button>
@@ -246,6 +248,9 @@ const Home = () => {
             {/* DESKTOP ICON */}
             <div className="absolute left-1/2 bottom-34 -translate-x-1/2 z-10 hidden md:block">
               <div className="w-10 h-10 rounded-full bg-white border-3 border-[#F88D2A] shadow-md flex items-center justify-center">
+                <div className="w-6 h-6 rounded-full bg-[#12284C] flex items-center justify-center">
+                  <FiCheck className="text-white w-6 h-6" />
+                </div>
                 <div className="w-6 h-6 rounded-full bg-[#12284C] flex items-center justify-center">
                   <FiCheck className="text-white w-6 h-6" />
                 </div>
@@ -450,11 +455,11 @@ const Home = () => {
         </div>
 
       </section>
-    {isRegisterModalOpen && (
+    {/* {isRegisterModalOpen && (
       <RegisterPopUp
         onClose={() => setIsRegisterModalOpen(false)}
       />
-    )}  
+    )}   */}
     </div>
   );
 };
