@@ -143,6 +143,7 @@ const Home = () => {
             <div className="absolute left-0 bottom-52 md:hidden z-10">
               <div className="w-5 h-5 rounded-full bg-white border-3 border-[#F88D2A] shadow-md flex items-center justify-center">
                 <div className="w-3 h-3 rounded-full bg-[#12284C] flex items-center justify-center">
+                  <FiCheck className="text-white w-3 h-3" />
                 </div>
               </div>
             </div>
@@ -193,10 +194,10 @@ const Home = () => {
 
               <ul className=" mt-1 space-y-1 text-l lg:text-2xl list-disc list-inside marker:text-[#F88D2A]">
                 <p className="flex items-center justify-left gap-2">
-                  <Calendar className="w-4 h-4 text-[#F88D2A]" />Date: July 30, 2026</p>
+                  <Calendar className="w-4 h-4 text-[#F88D2A]" />Date: July 30th, 2026</p>
                 <li className="ml-2 ">Program overview</li>
                 <li className="ml-2 ">Team formation</li>
-                <li className="ml-2 ">Meet mentors</li>
+                <li className="ml-2 ">Mentors Meetup</li>
                 <li className="ml-2 ">Project briefing</li>
               </ul>
 
@@ -212,6 +213,7 @@ const Home = () => {
             <div className="absolute left-0 bottom-52 md:hidden z-10">
               <div className="w-5 h-5 rounded-full bg-white border-3 border-[#F88D2A] shadow-md flex items-center justify-center">
                 <div className="w-3 h-3 rounded-full bg-[#12284C] flex items-center justify-center">
+                  <FiCheck className="text-white w-3 h-3" />
                 </div>
               </div>
             </div>
@@ -230,9 +232,9 @@ const Home = () => {
 
               <ul className="mt-1 space-y-1 text-xl lg:text-2xl list-disc list-inside marker:text-[#F88D2A]">
                 <p className="flex items-center justify-left gap-2">
-                  <Calendar className="w-4 h-4 text-[#F88D2A]" />Date: Aug 17, 2026 - Sep 17, 2026</p>
+                  <Calendar className="w-4 h-4 text-[#F88D2A]" />Date: Aug 17th, 2026 - Sep 17th, 2026</p>
                 <li className="ml-2 ">Weekly training</li>
-                <li className="ml-2 ">Skil development</li>
+                <li className="ml-2 ">Skills development</li>
                 <li className="ml-2 ">Team collaboration</li>
                 <li className="ml-2 ">Project development</li>
                 <li className="ml-2 ">Mentor feedback</li>
@@ -244,7 +246,9 @@ const Home = () => {
             {/* DESKTOP ICON */}
             <div className="absolute left-1/2 bottom-34 -translate-x-1/2 z-10 hidden md:block">
               <div className="w-10 h-10 rounded-full bg-white border-3 border-[#F88D2A] shadow-md flex items-center justify-center">
-                <FiMapPin className="text-[#12284C] w-6 h-6" />
+                <div className="w-6 h-6 rounded-full bg-[#12284C] flex items-center justify-center">
+                  <FiCheck className="text-white w-6 h-6" />
+                </div>
               </div>
             </div>
 
@@ -276,8 +280,7 @@ const Home = () => {
             {/* MOBILE ICON */}
             <div className="absolute left-0 bottom-52 md:hidden z-10">
               <div className="w-5 h-5 rounded-full bg-white border-3 border-[#F88D2A] shadow-md flex items-center justify-center">
-                <div className="w-3 h-3 rounded-full bg-[#12284C] flex items-center justify-center">
-                </div>
+                <FiMapPin className="text-[#12284C] w-3 h-3" />
               </div>
             </div>
 
@@ -304,8 +307,7 @@ const Home = () => {
             {/* DESKTOP ICON */}
             <div className="absolute left-1/2 bottom-34 -translate-x-1/2 z-10 hidden md:block">
               <div className="w-10 h-10 rounded-full bg-white border-3 border-[#F88D2A] shadow-md flex items-center justify-center">
-                <div className="w-6 h-6 rounded-full bg-[#12284C] flex items-center justify-center">
-                </div>
+                <FiMapPin className="text-[#12284C] w-6 h-6" />
               </div>
             </div>
 
@@ -323,10 +325,10 @@ const Home = () => {
 
               <ul className="mt-1 space-y-1 text-xl lg:text-2xl list-disc list-inside marker:text-[#F88D2A]">
                 <p className="flex items-center justify-left gap-2">
-                  <Calendar className="w-4 h-4 text-[#F88D2A]" />Date: 23rd and 25th Sep 2026</p>
+                  <Calendar className="w-4 h-4 text-[#F88D2A]" />Date: Sept 23rd and 25th, 2026</p>
                 <li className="ml-2 ">Final presentation</li>
-                <li className="ml-2 ">Pitch & live demo</li>
-                <li className="ml-2 ">Judges'evaluation</li>
+                <li className="ml-2 ">Pitching & live demo</li>
+                <li className="ml-2 ">Judges' evaluation</li>
                 <li className="ml-2 ">Awards & recognition</li>
               </ul>
 

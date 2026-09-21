@@ -34,7 +34,7 @@ const LegacyNavbar = () => {
       </button>
       <nav className="nav flex items-center gap-3 grow justify-end">
         {!isSearching && (
-          <ul className="hidden lg:flex items-center divide-x divide-neutral-300 font-cadt font-bold">
+          <ul className="hidden lg:flex items-center divide-x divide-neutral-300 font-niradei font-bold">
             {navItems.map((item, index) => (
               <li key={index} className="flex items-center">
                 <NavLink
@@ -231,7 +231,7 @@ const Navbar = () => {
 
                 {/* ================= DESKTOP NAV ================= */}
                 {!isSearching && (
-                    <ul className="hidden lg:flex items-center divide-x divide-neutral-300 font-cadt font-bold">
+                    <ul className="hidden lg:flex items-center divide-x divide-neutral-300 font-niradei font-bold">
                         {navItems.map((item, index) => (
                             <li
                                 key={index}

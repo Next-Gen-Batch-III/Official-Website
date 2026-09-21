@@ -19,7 +19,7 @@ const partnerGroups = [
     partners: [
       {
         img: cadtIdt,
-        name: "CADT Institute of Digital Technology",
+        name: "CADT - Institute of Digital Technology",
         imageClassName: "h-16 sm:h-20",
       },
     ],
@@ -89,19 +89,19 @@ const partnerGroups = [
 const socials = [
   {
     id: 0,
-    title: "NextGen Facebook",
+    title: "Next-Gen Facebook",
     name: "facebook",
     url: "https://www.facebook.com/share/1HxhfFEHC5/?mibextid=wwXIfr",
   },
   {
     id: 1,
-    title: "NextGen TikTok",
+    title: "Next-Gen TikTok",
     name: "tiktok",
     url: "https://www.tiktok.com/@nextgenengagementprogram?_r=1&_t=ZS-972l3PJm5jz",
   },
   {
     id: 2,
-    title: "NextGen Telegram",
+    title: "Next-Gen Telegram",
     name: "telegram",
     url: "https://t.me/nextgenengagementprogram",
   },
@@ -171,13 +171,13 @@ const Footer = () => {
             <ul className="space-y-1">
               <li>
                 <Link to="/overview" className="hover:underline">
-                  Project Overview
+                  Program Overview
                 </Link>
               </li>
 
               <li>
                 <Link to="/journey" className="hover:underline">
-                  Project Journey
+                  Program Journey
                 </Link>
               </li>
 

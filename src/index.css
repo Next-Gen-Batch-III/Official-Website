@@ -8,6 +8,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Niradei";
+  src: url("/src/assets/fonts/Niradei-Bold.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-neutral-100: #f2f2f2;
   --color-neutral-200: #e6e6e6;
@@ -31,6 +39,7 @@
   --font-sans: "Kantumruy Pro", system-ui, sans-serif;
   --font-kantumruy: "Kantumruy Pro", sans-serif;
   --font-cadt: "CADTMono", monospace;
+  --font-niradei: "Niradei", sans-serif;
 }
 
 

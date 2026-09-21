@@ -58,7 +58,7 @@ const Overview = () => {
           </div>
           <div className="max-w-200">
             <EdgeContainer
-              edges={["top-right", "bottom-left"]}
+              edges={["top-right"]}
               edgesSize="80px"
             >
               <div className="bg-brand-secondary-orange font-semibold px-6 lg:px-8 py-8 leading-relaxed flex flex-col gap-0">
@@ -236,27 +236,37 @@ const Overview = () => {
 
         <div className="flex flex-col lg:flex-row justify-between gap-25">
 
-          <div className="bg-brand-primary text-white flex flex-col items-center py-14 lg:py-20 px-8 gap-6 text-center w-full">
-            <p className="font-bold text-xl lg:text-2xl tracking-widest uppercase">Our Mission</p>
-            <div className="bg-brand-secondary-orange p-6 lg:p-8">
-              <img src={missionIcon} alt="Mission" className="w-12 h-12 lg:w-16 lg:h-16 object-contain" />
+          <EdgeContainer
+              edges={["top-right"]}
+              edgesSize="80px"
+          >
+            <div className="bg-brand-primary text-white flex flex-col items-center py-14 lg:py-20 px-8 gap-6 text-center w-full">
+              <p className="font-bold text-xl lg:text-2xl tracking-widest uppercase">Our Mission</p>
+              <div className="bg-brand-secondary-orange p-6 lg:p-8">
+                <img src={missionIcon} alt="Mission" className="w-12 h-12 lg:w-16 lg:h-16 object-contain" />
+              </div>
+              <p className="text-sm lg:text-base text-white/85 leading-relaxed max-w-xs">
+                To connect scholars and foster collaboration on real-world projects,
+                enabling them to create and showcase impactful innovations.
+              </p>
             </div>
-            <p className="text-sm lg:text-base text-white/85 leading-relaxed max-w-xs">
-              To connect scholars and foster collaboration on real-world projects,
-              enabling them to create and showcase impactful innovations.
-            </p>
-          </div>
+          </EdgeContainer>
 
-          <div className="bg-brand-primary text-white flex flex-col items-center py-14 lg:py-20 px-8 gap-6 text-center w-full">
-            <p className="font-bold text-xl lg:text-2xl tracking-widest uppercase">Our Vision</p>
-            <div className="bg-brand-secondary-orange p-6 lg:p-8">
-              <img src={visionIcon} alt="Vision" className="w-12 h-12 lg:w-16 lg:h-16 object-contain" />
+          <EdgeContainer
+              edges={["top-right"]}
+              edgesSize="80px"
+          >
+            <div className="bg-brand-primary text-white flex flex-col items-center py-14 lg:py-20 px-8 gap-6 text-center w-full">
+              <p className="font-bold text-xl lg:text-2xl tracking-widest uppercase">Our Vision</p>
+              <div className="bg-brand-secondary-orange p-6 lg:p-8">
+                <img src={visionIcon} alt="Vision" className="w-12 h-12 lg:w-16 lg:h-16 object-contain" />
+              </div>
+              <p className="text-sm lg:text-base text-white/85 leading-relaxed max-w-xs">
+                To empower future technology leaders through collaborative learning,
+                innovation, leadership, and advanced ICT skills.
+              </p>
             </div>
-            <p className="text-sm lg:text-base text-white/85 leading-relaxed max-w-xs">
-              To empower future technology leaders through collaborative learning,
-              innovation, leadership, and advanced ICT skills.
-            </p>
-          </div>
+          </EdgeContainer>
 
         </div>
       </section>

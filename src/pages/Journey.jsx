@@ -51,8 +51,8 @@ const batchIII = [
     image: phase1BatchIII, 
     title: "Phase 1 : Training",
     rows: [
-      { icon: Clock, text: "Duration: week 1-5" },
-      { icon: Calendar, text: "Date: Aug 17th - Sep 17th" },
+      { icon: Clock, text: "Duration: Week 1-5" },
+      { icon: Calendar, text: "Date: Aug 17th - Sept 17th" },
       { icon: Tag, text: "Classes: 9:00 AM - 12:15 PM" },
     ],
     description:
@@ -64,8 +64,8 @@ const batchIII = [
     image: phase2BatchIII,
     title: "Phase 2 : Project Development",
     rows: [
-      { icon: Clock, text: "Duration: phases 1-5" },
-      { icon: Calendar, text: "Date: Aug 17th - Sep 17th" },
+      { icon: Clock, text: "Duration: Phases 1-5" },
+      { icon: Calendar, text: "Date: Aug 17th - Sept 17th" },
       { icon: Tag, text: "Classes: 1:00 PM - 3:00 PM" },
     ],
     description:
@@ -78,7 +78,7 @@ const batchIII = [
     title: "Phase 3 : Competition & Showcase",
     rows: [
       { icon: Clock, text: "Duration: 30 Days until event" },
-      { icon: Calendar, text: "Sep 22, 23, and 25, 2026" },
+      { icon: Calendar, text: "Sept 23rd and 25th, 2026" },
       { icon: MapPin, text: "Location: CADT Innovation, Conference hall" },
     ],
     description:
@@ -86,8 +86,8 @@ const batchIII = [
     footer: {
       type: "pills",
       items: [
-        { label: "Pitching Day", date: "Sep 23, 8:00 AM" }, 
-        { label: "Showcase Day", date: "Sep 25, 8:00 AM" }, 
+        { label: "Pitching Day", date: "Sept 23rd, 8:00 AM" }, 
+        { label: "Showcase Day", date: "Sept 25th, 8:00 AM" }, 
       ],
     },
   },
