@@ -251,9 +251,6 @@ const Home = () => {
                 <div className="w-6 h-6 rounded-full bg-[#12284C] flex items-center justify-center">
                   <FiCheck className="text-white w-6 h-6" />
                 </div>
-                <div className="w-6 h-6 rounded-full bg-[#12284C] flex items-center justify-center">
-                  <FiCheck className="text-white w-6 h-6" />
-                </div>
               </div>
             </div>
 
