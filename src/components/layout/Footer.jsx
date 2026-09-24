@@ -50,12 +50,12 @@ const partnerGroups = [
       {
         img: ams,
         name: "Apsara Media Services",
-        imageClassName: "h-10 sm:h-10",
+        imageClassName: "h-10",
       },
       {
         img: cambodiaChinaTimes,
         name: "The Cambodia China Times",
-        imageClassName: "h-10 sm:h-20",
+        imageClassName: "h-20",
       },
     ],
   },
@@ -111,7 +111,7 @@ const Footer = () => {
   return (
     <footer className="bg-brand-primary text-white">
       {/* Partners */}
-      <section className="bg-white px-6 py-6 text-brand-primary sm:px-8 lg:px-12">
+      <section className="bg-white px-6 py-6 text-brand-primary sm:px-8 lg:px-8">
         <PartnerIMG />
       </section>
 
@@ -247,7 +247,7 @@ const FooterSocials = () => {
 
 const PartnerIMG = () => {
   return (
-    <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-6 lg:gap-x-8">
+    <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 lg:gap-x-4 xl:grid-cols-6">
       {partnerGroups.map((group) => (
         <div
           key={group.title}
