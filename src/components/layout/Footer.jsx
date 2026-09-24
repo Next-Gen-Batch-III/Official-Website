@@ -35,6 +35,16 @@ const partnerGroups = [
     ],
   },
   {
+    title: "Silver Sponsor",
+    partners: [
+      {
+        img: dp,
+        name: "Daun Penh Cloud",
+        imageClassName: "h-14 sm:h-16",
+      },
+    ],
+  },
+  {
     title: "Media Sponsor",
     partners: [
       {
@@ -46,16 +56,6 @@ const partnerGroups = [
         img: cambodiaChinaTimes,
         name: "The Cambodia China Times",
         imageClassName: "h-10 sm:h-20",
-      },
-    ],
-  },
-  {
-    title: "Cloud Partner",
-    partners: [
-      {
-        img: dp,
-        name: "Daun Penh Cloud",
-        imageClassName: "h-14 sm:h-16",
       },
     ],
   },
@@ -251,7 +251,7 @@ const PartnerIMG = () => {
       {partnerGroups.map((group) => (
         <div
           key={group.title}
-          className="flex flex-col items-center text-center lg:items-start lg:text-left"
+          className="flex flex-col items-center text-center lg:text-left"
         >
           <h3 className="mb-3 text-sm font-bold text-brand-primary">
             {group.title}
