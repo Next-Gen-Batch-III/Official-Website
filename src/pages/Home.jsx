@@ -52,7 +52,7 @@ const Home = () => {
       {/* ================= HERO ================= */}
       <section
         id="hero"
-        className="relative overflow-hidden text-white min-h-[600px] lg:min-h-[680px] flex items-center"
+        className="relative overflow-hidden text-white min-h-[380px] lg:min-h-[680px] flex items-top lg:items-center justify-center"
       >
         {/* Background Image */}
         <div className="absolute inset-0 overflow-hidden">
@@ -71,11 +71,11 @@ const Home = () => {
 
         {/* Hero Content */}
         <div className="relative z-10 px-4 lg:px-20 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-1 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-5 lg:gap-10 items-top lg:items-center py-5 lg:py-10 justify-top lg:justify-center">
 
             {/* TEXT */}
             <div>
-              <h1 className="font-semibold text-[1.4rem] lg:text-[2.8rem] leading-tight">
+              <h1 className="font-semibold text-[1.4rem] lg:text-[2.8rem] leading-tight mt-10 lg:mt-0">
                 Next-Gen Engagement Program
                 <br />
                 Batch 3 - 3 Departments
@@ -86,15 +86,25 @@ const Home = () => {
                 learning and growth experience.
               </p>
             </div>
+            <div className="flex flex-col gap-3 mt-20 lg:mt-10 items-bottom lg:items-start justify-start lg:justify-start">
+            <Button
+                  className="flex-1 w-[240px]"
+                   onClick={() =>
+                    open("/journey")
+                  }
+                >
+                  Explore
+            </Button>
+            </div>
 
             {/* COUNTDOWN + BUTTONS */}
-            <div className="flex flex-col items-center lg:items-end">
+            {/* <div className="flex flex-col items-left lg:items-left gap-5 mt-5 lg:mt-10"> */}
 
-              <div className="w-full max-w-[420px] md:max-w-[720px]">
+              {/* <div className="w-full max-w-[420px] md:max-w-[720px]">
                 <CountdownCard />
-              </div>
+              </div> */}
 
-              <div className="flex flex-col sm:flex-row gap-3 mt-5 w-full max-w-[520px]">
+              {/* <div className="flex flex-col sm:flex-row gap-3 mt-5 w-full max-w-[520px]">
 
                 <Button
                   className="flex-1 w-[240px]"
@@ -103,9 +113,9 @@ const Home = () => {
                   }
                 >
                   Explore
-                </Button>
+                </Button> */}
 
-                <Button
+                {/* <Button
                   variant="primary"
                   className="flex-1 w-[240px]"
                   // onClick={() => setIsRegisterModalOpen(true)}
@@ -114,10 +124,10 @@ const Home = () => {
                   }
                 >
                   REGISTER FOR EVENTS
-                </Button>
+                </Button> */}
 
-              </div>
-            </div>
+              {/* </div> */}
+            {/* </div> */}
 
           </div>
         </div>
