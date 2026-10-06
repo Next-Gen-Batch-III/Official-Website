@@ -3,8 +3,15 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import logo from "../../assets/logo/logoBlueNobg.png";
 import Button from "../ui/Button";
+
+const getNavItemPath = (item) => {
+  if (item === "HOME") return "/";
+  if (item === "PARTNER & SPONSORS") return "/partner-sponsors";
+  return `/${item.toLowerCase()}`;
+};
+
 const LegacyNavbar = () => {
-  const navItems = ["HOME", "OVERVIEW", "JOURNEY", "PROJECTS", "NEWS", "FAQ"];
+  const navItems = ["HOME", "OVERVIEW", "JOURNEY", "PROJECTS", "NEWS", "FAQ", "PARTNER & SPONSORS"];
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearching, setIsSearching] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(null);
@@ -38,7 +45,7 @@ const LegacyNavbar = () => {
             {navItems.map((item, index) => (
               <li key={index} className="flex items-center">
                 <NavLink
-                  to={item === "HOME" ? "/" : `/${item.toLowerCase()}`}
+                  to={getNavItemPath(item)}
                   className={({ isActive }) =>
                     `px-6 cursor-pointer transition-colors hover:text-brand-secondary-orange ${
                       isActive ? "text-brand-secondary-orange" : "text-black"
@@ -104,7 +111,7 @@ const LegacyNavbar = () => {
               style={{ "--i": index }}
             >
               <NavLink
-                to={item === "HOME" ? "/" : `/${item.toLowerCase()}`}
+                to={getNavItemPath(item)}
                 className={({ isActive }) =>
                   `cursor-pointer transition-colors hover:text-brand-secondary-orange ${
                     isActive ? "text-brand-secondary-orange" : "text-black"
@@ -186,7 +193,7 @@ const LegacyNavbar = () => {
 };
 
 const Navbar = () => {
-    const navItems = ["HOME", "OVERVIEW", "JOURNEY", "PROJECTS", "NEWS", "FAQ"];
+    const navItems = ["HOME", "OVERVIEW", "JOURNEY", "PROJECTS", "NEWS", "FAQ", "PARTNER & SPONSORS"];
 
     const [searchQuery, setSearchQuery] = useState("");
     const [isSearching, setIsSearching] = useState(false);
@@ -283,11 +290,7 @@ const Navbar = () => {
                                     </div>
                                 ) : (
                                     <NavLink
-                                        to={
-                                            item === "HOME"
-                                                ? "/"
-                                                : `/${item.toLowerCase()}`
-                                        }
+                                        to={getNavItemPath(item)}
                                         className={({ isActive }) =>
                                             `px-6 cursor-pointer transition-colors hover:text-brand-secondary-orange ${
                                                 isActive
@@ -423,11 +426,7 @@ const Navbar = () => {
                                 </>
                             ) : (
                                 <NavLink
-                                    to={
-                                        item === "HOME"
-                                            ? "/"
-                                            : `/${item.toLowerCase()}`
-                                    }
+                                    to={getNavItemPath(item)}
                                     className={({ isActive }) =>
                                         `cursor-pointer transition-colors hover:text-brand-secondary-orange ${
                                             isActive
@@ -529,4 +528,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
