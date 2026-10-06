@@ -12,6 +12,8 @@ import { CartProvider } from './context/CartContext';
 const Home = lazy(() => import('./pages/Home'));
 const Overview = lazy(() => import('./pages/Overview'));
 const Journey = lazy(() => import('./pages/Journey'));
+const PitchingDay = lazy(() => import('./pages/PitchingDay'));
+const AwardDay = lazy(() => import('./pages/AwardDay'));
 const Faq = lazy(() => import('./pages/Faq'));
 const People = lazy(() => import('./pages/People'));
 const Organizer = lazy(() => import('./pages/Organizer'));
@@ -33,6 +35,7 @@ const PaymentProof = lazy(() => import('./pages/PaymentProof'));
 const Management = lazy(() => import('./pages/Management'));
 const Mentors = lazy(() => import('./pages/Mentor'));
 const Advisor = lazy(() => import('./pages/Advisor'));
+const PartnerSponsors = lazy(() => import('./pages/PartnerSponsors'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 function App() {
@@ -54,7 +57,10 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/overview" element={<Overview />} />
               <Route path="/journey" element={<Journey />} />
+              <Route path="/pitching-day" element={<PitchingDay />} />
+              <Route path="/award-day" element={<AwardDay />} />
               <Route path="/faq" element={<Faq />} />
+              <Route path="/partner-sponsors" element={<PartnerSponsors />} />
               <Route path="/people" element={<People />} />
               <Route path="/people/organizers" element={<Organizer />} />
               <Route path="/people/organizers/:teamId" element={<OrganizerTeam />} />

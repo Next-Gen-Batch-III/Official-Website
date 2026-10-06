@@ -1,7 +1,7 @@
 import EdgeContainer from "../components/ui/EdgeContainer";
 import { Clock, Calendar, Tag, MapPin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import heroImg from "../assets/journey/heroImg.webp";
+import heroImg from "../assets/journey/heroJourneyImg.png";
 import phase1 from "../assets/journey/phase1.png";
 import phase2 from "../assets/journey/phase2.jpg";
 import phase3 from "../assets/journey/phase3.jpg";
@@ -51,8 +51,8 @@ const batchIII = [
     image: phase1BatchIII, 
     title: "Phase 1 : Training",
     rows: [
-      { icon: Clock, text: "Duration: Week 1-5" },
-      { icon: Calendar, text: "Date: Aug 17th - Sept 17th" },
+      { icon: Clock, text: "Duration: week 1-5" },
+      { icon: Calendar, text: "Date: Aug 17th - Sep 17th" },
       { icon: Tag, text: "Classes: 9:00 AM - 12:15 PM" },
     ],
     description:
@@ -64,8 +64,8 @@ const batchIII = [
     image: phase2BatchIII,
     title: "Phase 2 : Project Development",
     rows: [
-      { icon: Clock, text: "Duration: Phases 1-5" },
-      { icon: Calendar, text: "Date: Aug 17th - Sept 17th" },
+      { icon: Clock, text: "Duration: phases 1-5" },
+      { icon: Calendar, text: "Date: Aug 17th - Sep 17th" },
       { icon: Tag, text: "Classes: 1:00 PM - 3:00 PM" },
     ],
     description:
@@ -74,11 +74,11 @@ const batchIII = [
   },
   {
     number: 3,
-    image: heroImg,
+    image: phase3BatchIII,
     title: "Phase 3 : Competition & Showcase",
     rows: [
       { icon: Clock, text: "Duration: 30 Days until event" },
-      { icon: Calendar, text: "Sept 23rd and 25th, 2026" },
+      { icon: Calendar, text: "Sep 22, 23, and 25, 2026" },
       { icon: MapPin, text: "Location: CADT Innovation, Conference hall" },
     ],
     description:
@@ -86,8 +86,8 @@ const batchIII = [
     footer: {
       type: "pills",
       items: [
-        { label: "Pitching Day", date: "Sept 23rd, 8:00 AM" }, 
-        { label: "Showcase Day", date: "Sept 25th, 8:00 AM" }, 
+        { label: "Pitching Day", tone: "orange" },
+        { label: "Showcase Day", tone: "dark-blue" },
       ],
     },
   },
@@ -107,7 +107,7 @@ const PhaseBadge = ({ number }) => (
 
 /** Phase Card */
 const PhaseCard = ({ phase }) => (
-  <div className="bg-[#0E2A57] shadow-lg overflow-hidden relative h-full flex flex-col">
+  <div className="bg-[#0E2A57] shadow-lg overflow-hidden relative flex h-full flex-col">
     <PhaseBadge number={phase.number} />
     <div className="relative p-3 sm:p-4 pb-0">
       <EdgeContainer
@@ -164,7 +164,7 @@ const BatchCard = ({ batch }) => {
   const navigate = useNavigate();
   
   return (
-  <div className="bg-[#0E2A57] shadow-lg overflow-hidden relative h-full flex flex-col">
+  <div className="bg-[#0E2A57] shadow-lg overflow-hidden relative flex h-full flex-col">
     <PhaseBadge number={batch.number} />
 
     <div className="relative p-3 sm:p-4 pb-0">
@@ -184,7 +184,7 @@ const BatchCard = ({ batch }) => {
       </EdgeContainer>
     </div>
 
-    <div className="px-4 sm:px-5 py-5 flex flex-col flex-1">
+    <div className="px-4 sm:px-5 py-5 flex flex-1 flex-col">
       <h3 className="text-lg sm:text-[20px] font-extrabold text-[#F7931E] leading-snug mb-3">
         {batch.title}
       </h3>
@@ -215,7 +215,7 @@ const BatchCard = ({ batch }) => {
       </p>
 
       {/* Footer */}
-      <div className="mt-auto h-24 pt-4 border-t border-white/10">
+      <div className="mt-auto pt-4 border-t border-white/10">
         {batch.footer.type === "buttons" ? (
           <div className="flex gap-3">
             {batch.footer.items.map((label, i) => {
@@ -242,7 +242,7 @@ const BatchCard = ({ batch }) => {
 
                   <button
                     className={`
-                      relative px-4 py-2 text-xs sm:text-sm font-semibold
+                      relative px-4 py-2 text-xs sm:text-sm font-normal
                       transition-all duration-200 ease-in-out
                       hover:-translate-y-1 hover:shadow-lg
                       ${
@@ -285,25 +285,38 @@ const BatchCard = ({ batch }) => {
               )`;
 
               return (
-                <div key={pill.label} className="relative">
-                  <div
-                    className="absolute inset-0 bg-white/30"
-                    style={{ clipPath: clip }}
-                  />
-                  <div
-                    className="relative bg-[#0E2A57] px-3 py-2"
+                <div key={pill.label} className="relative w-full">
+                  {pill.tone !== "orange" && (
+                    <div
+                      className="absolute inset-0 bg-white/40"
+                      style={{ clipPath: clip }}
+                    />
+                  )}
+                  <button
+                    type="button"
+                    onClick={
+                      pill.label === "Pitching Day"
+                        ? () => navigate("/pitching-day")
+                        : pill.label === "Showcase Day"
+                        ? () => navigate("/award-day")
+                        : undefined
+                    }
+                    className={`relative flex items-center justify-center px-4 py-2 text-xs sm:text-sm font-normal text-white text-center transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg ${
+                      pill.tone === "orange"
+                        ? "w-full bg-brand-secondary-orange hover:bg-orange-500"
+                        : "bg-[#0E2A57] hover:bg-[#163A73]"
+                    }`}
                     style={{
                       clipPath: clip,
-                      margin: "1px",
+                      width:
+                        pill.tone === "orange" ? undefined : "calc(100% - 2px)",
+                      margin: pill.tone === "orange" ? 0 : "1px",
                     }}
                   >
-                    <p className="text-xs sm:text-sm font-bold text-white">
+                    <p className="text-xs sm:text-sm font-normal text-white">
                       {pill.label}
                     </p>
-                    <p className="text-[10px] sm:text-xs text-brand-secondary-orange mt-0.5">
-                      {pill.date}
-                    </p>
-                  </div>
+                  </button>
                 </div>
               );
             })}
