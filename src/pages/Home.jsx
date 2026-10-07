@@ -11,24 +11,24 @@ import lightImg from "@/assets/icon_image/light.png";
 import handshakeImg from "@/assets/icon_image/hand-shake.png";
 import PeopleCategoryCard from "@/components/cards/PeopleCategoryCard";
 
-import Phase11 from "@/assets/images/home/phase1-1.png";
-import Phase12 from "@/assets/images/home/phase1-2.jpg";
-import Phase13 from "@/assets/images/home/phase1-3.png";
-import Phase21 from "@/assets/images/home/phase2-1.png";
-import Phase22 from "@/assets/images/home/phase2-2.png";
-import Phase23 from "@/assets/images/home/phase2-3.png";
-import Phase31 from "@/assets/images/home/phase3-1.png";
-import Phase32 from "@/assets/images/home/phase3-2.png";
-import Phase33 from "@/assets/images/home/phase3-3.png";
-import Phase41 from "@/assets/images/home/phase4-1.png";
-import Phase42 from "@/assets/images/home/phase4-2.png";
-import Phase43 from "@/assets/images/home/phase4-3.png";
-import Phase51 from "@/assets/images/home/phase5-1.png";
-import Phase52 from "@/assets/images/home/phase5-2.png";
-import Phase53 from "@/assets/images/home/phase5-3.png";
-import Phase61 from "@/assets/images/home/phase6-1.png";
-import Phase62 from "@/assets/images/home/phase6-2.png";
-import Phase63 from "@/assets/images/home/phase6-3.png";
+import Phase11 from "@/assets/images/home/phase11.png";
+import Phase12 from "@/assets/images/home/phase12.jpg";
+import Phase13 from "@/assets/images/home/phase13.png";
+import Phase21 from "@/assets/images/home/phase21.png";
+import Phase22 from "@/assets/images/home/phase22.png";
+import Phase23 from "@/assets/images/home/phase23.png";
+import Phase31 from "@/assets/images/home/phase31.png";
+import Phase32 from "@/assets/images/home/phase32.png";
+import Phase33 from "@/assets/images/home/phase33.png";
+import Phase41 from "@/assets/images/home/phase41.png";
+import Phase42 from "@/assets/images/home/phase42.png";
+import Phase43 from "@/assets/images/home/phase43.png";
+import Phase51 from "@/assets/images/home/phase51.png";
+import Phase52 from "@/assets/images/home/phase52.png";
+import Phase53 from "@/assets/images/home/phase53.png";
+import Phase61 from "@/assets/images/home/phase61.png";
+import Phase62 from "@/assets/images/home/phase62.png";
+import Phase63 from "@/assets/images/home/phase63.png";
 
 
 const Home = () => {
