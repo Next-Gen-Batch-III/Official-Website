@@ -10,23 +10,35 @@ import CountdownCard from "@/components/cards/CountdownCard";
 // import codeReason from "@/assets/overview/codeReason.webp";
 // import connectivityReason from "@/assets/overview/connectivityReason.webp";
 // import commerceReason from "@/assets/overview/commerceReason.webp";
-import heroImage from "@/assets/images/home/heroImage.webp";
-import orientationImage from "@/assets/images/home/orientationImage.png";
-import trainingImage from "@/assets/images/home/trainingImage.png";
-import nextGenDayImage from "@/assets/images/home/nextGenDayImage.jpg";
+
 
 import { news } from "@/data/news";
+import homeImage from "@/assets/images/home/homeImage.png";
 import managementImg from "@/assets/icon_image/management.png";
 import lightImg from "@/assets/icon_image/light.png";
 import handshakeImg from "@/assets/icon_image/hand-shake.png";
 import  advisorImg from "@/assets/icon_image/advisor.png";
 import PeopleCategoryCard from "@/components/cards/PeopleCategoryCard";
-import RegisterPopUp from "@/components/cards/RegisterPopUp";
-import {
-  FiMapPin,
-  FiCheck,
-} from "react-icons/fi";
-import { Calendar } from "lucide-react";
+
+import Phase11 from "@/assets/images/home/phase1-1.png";
+import Phase12 from "@/assets/images/home/phase1-2.jpg";
+import Phase13 from "@/assets/images/home/phase1-3.png";
+import Phase21 from "@/assets/images/home/phase2-1.png";
+import Phase22 from "@/assets/images/home/phase2-2.png";
+import Phase23 from "@/assets/images/home/phase2-3.png";
+import Phase31 from "@/assets/images/home/phase3-1.png";
+import Phase32 from "@/assets/images/home/phase3-2.png";
+import Phase33 from "@/assets/images/home/phase3-3.png";
+import Phase41 from "@/assets/images/home/phase4-1.png";
+import Phase42 from "@/assets/images/home/phase4-2.png";
+import Phase43 from "@/assets/images/home/phase4-3.png";
+import Phase51 from "@/assets/images/home/phase5-1.png";
+import Phase52 from "@/assets/images/home/phase5-2.png";
+import Phase53 from "@/assets/images/home/phase5-3.png";
+import Phase61 from "@/assets/images/home/phase6-1.png";
+import Phase62 from "@/assets/images/home/phase6-2.png";
+import Phase63 from "@/assets/images/home/phase6-3.png";
+
 
 const Home = () => {
   const navigate = useNavigate();
@@ -52,14 +64,14 @@ const Home = () => {
       {/* ================= HERO ================= */}
       <section
         id="hero"
-        className="relative overflow-hidden text-white min-h-[380px] lg:min-h-[680px] flex items-top lg:items-center justify-center"
+        className="relative overflow-hidden text-white min-h-[400px] md:min-h-[500px] lg:min-h-[680px] flex items-top lg:items-center justify-center"
       >
         {/* Background Image */}
         <div className="absolute inset-0 overflow-hidden">
           <img
-            src={heroImage}
-            alt=""
-            className="w-full h-full object-cover object-top sm:scale-100 scale-[1.4]"
+            src={homeImage}
+            alt="Hero Image"
+            className="w-full h-full object-cover object-top scale-110 md:scale-110 lg:scale-100"
             style={{
               transformOrigin: "center top",
             }}
@@ -67,287 +79,375 @@ const Home = () => {
         </div>
 
         {/* Blue Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#003B73]/100 via-[#003B73]/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#12284C]/80 via-[#12284C]/80 to-transparent" />
 
-        {/* Hero Content */}
-        <div className="relative z-10 px-4 lg:px-20 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-1 gap-5 lg:gap-10 items-top lg:items-center py-5 lg:py-10 justify-top lg:justify-center">
+          {/* Hero Content */}
+          <div className="relative z-10 px-4 lg:px-20 w-full h-full">
+            <div className="flex flex-col justify-between h-full py-10 lg:py-16 md:mb-10 lg:mb-5">
 
-            {/* TEXT */}
-            <div>
-              <h1 className="font-semibold text-[1.4rem] lg:text-[2.8rem] leading-tight mt-10 lg:mt-0">
-                Next-Gen Engagement Program
-                <br />
-                Batch 3 - 3 Departments
-              </h1>
+              {/* TEXT - TOP */}
+              <div className="flex flex-col gap-4 lg:gap-6 items-start">
+                <h1 className="font-semibold text-[1.4rem] md:text-[2.4rem] lg:text-[2.8rem] leading-tight">
+                  Next-Gen Engagement Program
+                  <br />
+                  Batch 3 - 3 Departments
+                </h1>
 
-              <p className="mt-4 text-sm lg:text-xl max-w-xl">
-                Get ready for the Next-Gen Event and be part of a meaningful
-                learning and growth experience.
-              </p>
-            </div>
-            <div className="flex flex-col gap-3 mt-20 lg:mt-10 items-bottom lg:items-start justify-start lg:justify-start">
-            <Button
-                  className="flex-1 w-[240px]"
-                   onClick={() =>
-                    open("/journey")
-                  }
-                >
-                  Explore
-            </Button>
-            </div>
+                <p className="text-sm md:text-xl lg:text-2xl max-w-xl">
+                  Get ready for the Next-Gen Event and be part of a meaningful
+                  learning and growth experience.
+                </p>
+              </div>
 
-            {/* COUNTDOWN + BUTTONS */}
-            {/* <div className="flex flex-col items-left lg:items-left gap-5 mt-5 lg:mt-10"> */}
-
-              {/* <div className="w-full max-w-[420px] md:max-w-[720px]">
-                <CountdownCard />
-              </div> */}
-
-              {/* <div className="flex flex-col sm:flex-row gap-3 mt-5 w-full max-w-[520px]">
-
+              {/* BUTTON - BOTTOM */}
+              <div className="flex justify-end md:justify-end lg:justify-end mt-4 mt-40 md:mt-60 lg:mt-60 ">
                 <Button
-                  className="flex-1 w-[240px]"
-                   onClick={() =>
-                    open("/journey")
-                  }
+                  className="w-[200px] md:w-[300px] lg:w-[300px] h-[40px] md:h-[50px] lg:h-[50px] text-sm md:text-lg lg:text-lg font-semibold"
+                  onClick={() => open("/journey")}
                 >
                   Explore
-                </Button> */}
+                </Button>
+              </div>
 
-                {/* <Button
-                  variant="primary"
-                  className="flex-1 w-[240px]"
-                  // onClick={() => setIsRegisterModalOpen(true)}
-                  onClick={() =>
-                    open("https://www.bookme.plus/t/events/next-gen-engagement-program-batch-iii")
-                  }
-                >
-                  REGISTER FOR EVENTS
-                </Button> */}
-
-              {/* </div> */}
-            {/* </div> */}
-
+            </div>
           </div>
-        </div>
       </section>
 
-      {/* ================= TIMELINE ================= */}
-      <section className="timeline flex flex-col gap-8 px-4 lg:px-20 py-10 w-full">
+      {/* ================= HIGHLIGHT ================= */}
+      <section className="highlight flex flex-col gap-8 px-4 lg:px-20 py-10 w-full">
+        <Title className="text-2xl md:text-4xl border-b-2">
+          HIGHLIGHT
+        </Title>
+              {/* ================= PHASE 01 ================= */}
+              <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_3fr] gap-8 lg:gap-2 mt-5 lg:mt-10 ">
 
-        <Title className="text-2xl md:text-4xl border-b-2">TIMELINE</Title>
+              {/* Phase 1 */}
+              <div className="flex flex-col gap-2 lg:gap-2 justify-start lg:justify-center items-start lg:items-start px-0 md:px-4 lg:px-0">
+                <p className="text-[#12284C] font-semibold text-2xl md:text-4xl">
+                  PHASE 01
+                </p>
 
-        {/* TIMELINE */}
-        <div className="relative mt-4">
+                <h3 className="text-brand-secondary-orange font-semibold text-xl md:text-2xl">
+                Orientation Day
+                </h3>
 
-          {/* MOBILE LINE */}
-          <div className="absolute left-[10px] top-0 bottom-52 w-[1px] bg-brand-secondary-orange md:hidden" />
-
-          {/* DESKTOP LINE */}
-          <div className="absolute left-1/2 top-0 bottom-34 hidden md:block w-[1px] bg-brand-secondary-orange -translate-x-1/2" />
-
-
-          {/* ================= ORIENTATION DAY ================= */}
-          <div className="relative mb-16 flex flex-col md:grid md:grid-cols-2">
-
-            {/* MOBILE ICON */}
-            <div className="absolute left-0 bottom-52 md:hidden z-10">
-              <div className="w-5 h-5 rounded-full bg-white border-3 border-[#F88D2A] shadow-md flex items-center justify-center">
-                <div className="w-3 h-3 rounded-full bg-[#12284C] flex items-center justify-center">
-                </div>
+                <ul className="list-disc pl-8 space-y-1 text-xl md:text-2xl text-[#12284C] marker:text-brand-secondary-orange">
+                  <li>Program overview</li>
+                  <li>Team formation</li>
+                  <li>Meet mentors</li>
+                  <li>Project briefing</li>
+                </ul>
               </div>
-            </div>
 
+              {/* ================= IMAGES ================= */}
+              <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-2 md:gap-2 lg:gap-3 ">
 
-            {/* IMAGE */}
-            <div className="order-2 pl-8 mt-6 md:order-none md:pl-0 md:pr-12 md:mt-0">
-              <div className="w-full max-h-[340px] max-w-[580px] overflow-hidden">
-                <EdgeContainer
-                  edges={["top-right"]}
-                  edgesSize="var(--edge-size)"
-                  borderColor="white"
-                  className="[--edge-size:40px] md:[--edge-size:80px]"
-                >
+                {/* Main Image */}
+                <div className="w-full h-[220px] md:h-[380px] lg:h-[380px] overflow-hidden rounded-[10px] md:rounded-[20px]">
                   <img
-                    src={orientationImage}
-                    alt="Orientation Day"
-                    className="block w-full h-full object-cover object-top scale-[1.2]"
-                    style={{
-                      transformOrigin: "center top",
-                    }}
+                    src={Phase11}
+                    alt="Example"
+                    className="w-full h-full object-cover object-center scale-125"
                   />
-                </EdgeContainer>
-              </div>
-            </div>
+                </div>
 
+                {/* Two Side Images */}
+                <div className=" h-[120px] md:h-[280px] lg:h-[380px] grid grid-cols-2 md:grid-cols-2 lg:grid-cols-1 gap-2 md:gap-3 items-center justify-center">
+                  <div className="min-h-0 h-[120px] md:h-[240px] lg:h-[180px] overflow-hidden rounded-[10px] md:rounded-[20px]">
+                    <img
+                      src={Phase12}
+                      alt="Example"
+                      className="w-full h-full object-cover object-center scale-140 md:scale-140 lg:scale-140"
+                    />
+                  </div>
 
-            {/* DESKTOP ICON */}
-            <div className="absolute left-1/2 bottom-34 -translate-x-1/2 z-10 hidden md:block">
-              <div className="w-10 h-10 rounded-full bg-white border-3 border-[#F88D2A] shadow-md flex items-center justify-center">
-                <div className="w-6 h-6 rounded-full bg-[#12284C] flex items-center justify-center">
-                  <FiCheck className="text-white w-6 h-6" />
+                  <div className="min-h-0 h-[120px] md:h-[240px] lg:h-[180px] overflow-hidden rounded-[10px] md:rounded-[20px]">
+                    <img
+                      src={Phase13}
+                      alt="Example"
+                      className="w-full h-full object-cover object-center scale-140 md:scale-130 lg:scale-125"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-
-
-            {/* CONTENT */}
-            <div className="order-1 pl-8 mt-0 md:order-none md:mt-0 md:pl-[100px] flex flex-col justify-top md:mt-4">
-
-              <h3 className="text-2xl lg:text-4xl font-semibold text-brand-primary">
-                ORIENTATION DAY
-              </h3>
-
-              <p className="text-brand-secondary-orange font-semibold text-xl md:text-2xl mt-1">
-                Project Introduction
-              </p>
-
-              <ul className=" mt-1 space-y-1 text-l lg:text-2xl list-disc list-inside marker:text-[#F88D2A]">
-                <p className="flex items-center justify-left gap-2">
-                  <Calendar className="w-4 h-4 text-[#F88D2A]" />Date: July 30, 2026</p>
-                <li className="ml-2 ">Program overview</li>
-                <li className="ml-2 ">Team formation</li>
-                <li className="ml-2 ">Meet mentors</li>
-                <li className="ml-2 ">Project briefing</li>
-              </ul>
-
-            </div>
-
-          </div>
-
-
-          {/* ================= WEEK 1 - WEEK 5 ================= */}
-          <div className="relative mb-16 flex flex-col md:grid md:grid-cols-2">
-
-            {/* MOBILE ICON */}
-            <div className="absolute left-0 bottom-52 md:hidden z-10">
-              <div className="w-5 h-5 rounded-full bg-white border-3 border-[#F88D2A] shadow-md flex items-center justify-center">
-                <div className="w-3 h-3 rounded-full bg-[#12284C] flex items-center justify-center">
-                </div>
               </div>
-            </div>
+            
+          {/*===================== PHASE 02 =========================*/}
+          <div className="grid grid-cols-1 lg:grid-cols-[3fr_1.5fr] gap-8 lg:gap-2 mt-5 lg:mt-10">
 
+              {/* ================= IMAGES ================= */}
+              <div className="order-2 lg:order-1 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-[1fr_2fr] gap-2 md:gap-2 lg:gap-3 ">
 
-            {/* DESKTOP CONTENT */}
-            <div className="order-1 pl-8 mt-0 md:order-none md:pr-12 flex flex-col justify-top mt-4">
+                {/* Two Side Images */}
+                <div className="order-2 lg:order-1 h-[120px] md:h-[280px] lg:h-[380px] grid grid-cols-2 md:grid-cols-2 lg:grid-cols-1 gap-2 md:gap-3 items-center justify-center">
+                  <div className="min-h-0 h-[120px] md:h-[240px] lg:h-[180px] overflow-hidden rounded-[10px] md:rounded-[20px]">
+                    <img
+                      src={Phase22}
+                      alt="Example"
+                      className="w-full h-full object-cover object-center scale-140 md:scale-140 lg:scale-125"
+                    />
+                  </div>
 
-              <h3 className="text-2xl lg:text-4xl font-semibold text-brand-primary">
-                WEEK 1 - WEEK 5
-              </h3>
-
-              <p className="text-brand-secondary-orange font-semibold mt-1 text-xl md:text-2xl">
-                Training & Project Development
-              </p>
-
-              <ul className="mt-1 space-y-1 text-xl lg:text-2xl list-disc list-inside marker:text-[#F88D2A]">
-                <p className="flex items-center justify-left gap-2">
-                  <Calendar className="w-4 h-4 text-[#F88D2A]" />Date: Aug 17, 2026 - Sep 17, 2026</p>
-                <li className="ml-2 ">Weekly training</li>
-                <li className="ml-2 ">Skil development</li>
-                <li className="ml-2 ">Team collaboration</li>
-                <li className="ml-2 ">Project development</li>
-                <li className="ml-2 ">Mentor feedback</li>
-              </ul>
-
-            </div>
-
-
-            {/* DESKTOP ICON */}
-            <div className="absolute left-1/2 bottom-34 -translate-x-1/2 z-10 hidden md:block">
-              <div className="w-10 h-10 rounded-full bg-white border-3 border-[#F88D2A] shadow-md flex items-center justify-center">
-                <div className="w-6 h-6 rounded-full bg-[#12284C] flex items-center justify-center">
-                  <FiCheck className="text-white w-6 h-6" />
+                  <div className="min-h-0 h-[120px] md:h-[240px] lg:h-[180px] overflow-hidden rounded-[10px] md:rounded-[20px]">
+                    <img
+                      src={Phase23}
+                      alt="Example"
+                      className="w-full h-full object-cover object-center scale-140 md:scale-125 lg:scale-125"
+                    />
+                  </div>
                 </div>
-              </div>
-            </div>
 
-
-            {/* IMAGE */}
-            <div className="order-2 pl-8 mt-6 md:order-none md:pl-12 md:mt-0 flex justify-end">
-              <div className="w-full max-h-[340px] max-w-[580px]">
-                <EdgeContainer
-                  edges={["bottom-left"]}
-                  edgesSize="var(--edge-size)"
-                  borderColor="white"
-                  className="[--edge-size:40px] md:[--edge-size:80px]"
-                >
+                {/* Main Image */}
+                <div className="order-1 lg:order-2 w-full h-[220px] md:h-[380px] lg:h-[380px] overflow-hidden rounded-[10px] md:rounded-[20px]">
                   <img
-                    src={trainingImage}
-                    alt="Training week 1 - week 5"
-                    className="block w-full h-full aspect-[1.7/1] object-cover object-top"
+                    src={Phase21}
+                    alt="Example"
+                    className="w-full h-full object-cover object-center scale-125"
                   />
-                </EdgeContainer>
+                </div>
+
+              </div>
+
+              {/* ======= Text ======== */}
+              <div className="order-1 lg:order-2 flex flex-col gap-2 lg:gap-2 justify-start lg:justify-center items-start lg:items-startq px-0 md:px-4 lg:px-0 ml-0 md:ml-0 lg:ml-16">
+                <p className="text-[#12284C] font-semibold text-2xl md:text-4xl">
+                  PHASE 02
+                </p>
+
+                <h3 className="text-brand-secondary-orange font-semibold text-xl md:text-2xl">
+                Training
+                </h3>
+
+                <ul className="list-disc pl-8 space-y-1 text-xl md:text-2xl text-[#12284C] marker:text-brand-secondary-orange">
+                  <li >Weekly training</li>
+                  <li>Technical knowledge sharing</li>
+                  <li>Hands-on training activities</li>
+                  <li>Trainee skills development</li>
+                </ul>
               </div>
             </div>
 
-          </div>
+            {/* ================= PHASE 03================= */}
+              <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_3fr] gap-8 lg:gap-2 mt-5 lg:mt-10">
 
+              {/* Phase 3 */}
+              <div className="flex flex-col gap-2 lg:gap-2 justify-start lg:justify-center items-start lg:items-start px-0 md:px-4 lg:px-0">
+                <p className="text-[#12284C] font-semibold text-2xl md:text-4xl">
+                  PHASE 03
+                </p>
 
-          {/* ================= NEXT-GEN DAY ================= */}
-          <div className="relative flex flex-col md:grid md:grid-cols-2">
+                <h3 className="text-brand-secondary-orange font-semibold text-xl md:text-2xl">
+                Project Development
+                </h3>
 
-            {/* MOBILE ICON */}
-            <div className="absolute left-0 bottom-52 md:hidden z-10">
-              <div className="w-5 h-5 rounded-full bg-white border-3 border-[#F88D2A] shadow-md flex items-center justify-center">
-                <div className="w-3 h-3 rounded-full bg-[#12284C] flex items-center justify-center">
+                <ul className="list-disc pl-8 space-y-1 text-xl md:text-2xl text-[#12284C] marker:text-brand-secondary-orange">
+                  <li>Brainstorm ideas</li>
+                  <li>Define problems</li>
+                  <li>Design and develop team projects</li>
+                  <li>Receive mentor feedback</li>
+                  <li>Test and improve project solutions</li>
+                </ul>
+              </div>
+
+              {/* ================= IMAGES ================= */}
+              <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-2 md:gap-2 lg:gap-3">
+
+                {/* Main Image */}
+                <div className="w-full h-[220px] md:h-[380px] lg:h-[380px] overflow-hidden rounded-[10px] md:rounded-[20px]">
+                  <img
+                    src={Phase31}
+                    alt="Example"
+                    className="w-full h-full object-cover object-center scale-125 md:scale-140 lg:scale-125"
+                  />
+                </div>
+
+                {/* Two Side Images */}
+                <div className=" h-[120px] md:h-[280px] lg:h-[380px] grid grid-cols-2 md:grid-cols-2 lg:grid-cols-1 gap-2 md:gap-3 items-center justify-center">
+                  <div className="min-h-0 h-[120px] md:h-[240px] lg:h-[180px] overflow-hidden rounded-[10px] md:rounded-[20px]">
+                    <img
+                      src={Phase32}
+                      alt="Example"
+                      className="w-full h-full object-cover object-center scale-140 md:scale-140 lg:scale-125"
+                    />
+                  </div>
+
+                  <div className="min-h-0 h-[120px] md:h-[240px] lg:h-[180px] overflow-hidden rounded-[10px] md:rounded-[20px]">
+                    <img
+                      src={Phase33}
+                      alt="Example"
+                      className="w-full h-full object-cover object-center scale-140 md:scale-115 lg:scale-110"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
+              </div>
 
+          {/*===================== PHASE 04 =========================*/}
+          <div className="grid grid-cols-1 lg:grid-cols-[3fr_1.5fr] gap-8 lg:gap-2 mt-5 lg:mt-10 ">
 
-            {/* IMAGE */}
-            <div className="order-2 pl-8 mt-6 md:order-none md:pl-0 md:pr-12 md:mt-0">
-              <div className="w-full max-h-[340px] max-w-[580px]">
-                <EdgeContainer
-                  edges={["top-right"]}
-                  edgesSize="var(--edge-size)"
-                  borderColor="white"
-                  className="[--edge-size:40px] md:[--edge-size:80px]"
-                >
+              {/* ================= IMAGES ================= */}
+              <div className="order-2 lg:order-1 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-[1fr_2fr] gap-2 md:gap-2 lg:gap-3 ">
+
+                {/* Two Side Images */}
+                <div className="order-2 lg:order-1 h-[120px] md:h-[280px] lg:h-[380px] grid grid-cols-2 md:grid-cols-2 lg:grid-cols-1 gap-2 md:gap-3 items-center justify-center">
+                  <div className="min-h-0 h-[120px] md:h-[240px] lg:h-[180px] overflow-hidden rounded-[10px] md:rounded-[20px]">
+                    <img
+                      src={Phase42}
+                      alt="Example"
+                      className="w-full h-full object-cover object-center scale-145 md:scale-150 lg:scale-140"
+                    />
+                  </div>
+
+                  <div className="min-h-0 h-[120px] md:h-[240px] lg:h-[180px] overflow-hidden rounded-[10px] md:rounded-[20px]">
+                    <img
+                      src={Phase43}
+                      alt="Example"
+                      className="w-full h-full object-cover object-center scale-125 md:scale-125 lg:scale-130"
+                    />
+                  </div>
+                </div>
+
+                {/* Main Image */}
+                <div className="order-1 lg:order-2 w-full h-[220px] md:h-[380px] lg:h-[380px] overflow-hidden rounded-[10px] md:rounded-[20px]">
                   <img
-                    src={nextGenDayImage}
-                    alt="Next-Gen Day"
-                    className="block w-full h-full aspect-[1.7/1] object-cover object-top"
+                    src={Phase41}
+                    alt="Example"
+                    className="w-full h-full object-cover object-center scale-150 md:scale-140 lg:scale-140"
                   />
-                </EdgeContainer>
+                </div>
+
+              </div>
+
+              {/* Phase 4 */}
+              <div className="order-1 lg:order-2 flex flex-col gap-2 lg:gap-2 justify-start lg:justify-center items-start lg:items-start px-0 md:px-4 lg:px-0 ml-0 md:ml-0 lg:ml-16">
+                <p className="text-[#12284C] font-semibold text-2xl md:text-4xl">
+                  PHASE 04
+                </p>
+
+                <h3 className="text-brand-secondary-orange font-semibold text-xl md:text-2xl">
+                Pitching Day
+                </h3>
+
+                <ul className="list-disc pl-8 space-y-1 text-xl md:text-2xl text-[#12284C] marker:text-brand-secondary-orange">
+                  <li>Present project ideas</li>
+                  <li>Demonstrate key features</li>
+                  <li>Answer judges' questions</li>
+                  <li>Receive feedback</li>
+                </ul>
               </div>
             </div>
 
 
-            {/* DESKTOP ICON */}
-            <div className="absolute left-1/2 bottom-34 -translate-x-1/2 z-10 hidden md:block">
-             <div className="w-10 h-10 rounded-full bg-white border-3 border-[#F88D2A] shadow-md flex items-center justify-center">
-                <FiMapPin className="text-[#12284C] w-6 h-6" />
+              {/* ================= PHASE 05================= */}
+              <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_3fr] gap-8 lg:gap-2 mt-5 lg:mt-10 ">
+
+              {/* Phase 5 */}
+              <div className="flex flex-col gap-2 lg:gap-2 justify-start lg:justify-center items-start lg:items-start px-0 md:px-4 lg:px-0">
+                <p className="text-[#12284C] font-semibold text-2xl md:text-4xl">
+                  PHASE 05
+                </p>
+
+                <h3 className="text-brand-secondary-orange font-semibold text-xl md:text-2xl">
+                Showcase
+                </h3>
+
+                <ul className="list-disc pl-8 space-y-1 text-xl md:text-2xl text-[#12284C] marker:text-brand-secondary-orange">
+                  <li>Showcase completed projects</li>
+                  <li>Live project demonstrations</li>
+                  <li>Interact with visitors and guests</li>
+                  <li>Share ideas and innovations</li>
+                </ul>
+              </div>
+
+              {/* ================= IMAGES ================= */}
+               <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-[2fr_1fr] gap-2 md:gap-2 lg:gap-3">
+
+                {/* Main Image */}
+                <div className="w-full h-[220px] md:h-[380px] lg:h-[380px] overflow-hidden rounded-[10px] md:rounded-[20px]">
+                  <img
+                    src={Phase51}
+                    alt="Example"
+                    className="w-full h-full object-cover object-center scale-125 md:scale-140 lg:scale-125"
+                  />
+                </div>
+
+                {/* Two Side Images */}
+                <div className=" h-[120px] md:h-[280px] lg:h-[380px] grid grid-cols-2 md:grid-cols-2 lg:grid-cols-1 gap-2 md:gap-3 lg:gap-3 items-center justify-center">
+                  <div className="min-h-0 h-[120px] md:h-[240px] lg:h-[180px] overflow-hidden rounded-[10px] md:rounded-[20px]">
+                    <img
+                      src={Phase52}
+                      alt="Example"
+                      className="w-full h-full object-cover object-center scale-145 md:scale-145 lg:scale-140"
+                    />
+                  </div>
+
+                  <div className="min-h-0 h-[120px] md:h-[240px] lg:h-[180px] overflow-hidden rounded-[10px] md:rounded-[20px]">
+                    <img
+                      src={Phase53}
+                      alt="Example"
+                      className="w-full h-full object-cover object-center scale-145 md:scale-145 lg:scale-140"
+                    />
+                  </div>
+                </div>
+              </div>
+              </div>
+            
+          {/*===================== PHASE 06 =========================*/}
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-[3fr_1.5fr] gap-8 lg:gap-2 lg:mt-10">
+
+              {/* ================= IMAGES ================= */}
+              <div className="order-2 lg:order-1 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-[1fr_2fr] gap-2 md:gap-2 lg:gap-3 ">
+
+                
+                {/* Two Side Images */}
+                <div className="order-2 lg:order-1 h-[120px] md:h-[280px] lg:h-[380px] grid grid-cols-2 md:grid-cols-2 lg:grid-cols-1 gap-2 md:gap-3 lg:gap-3 items-center justify-center">
+                  <div className="min-h-0 h-[120px] md:h-[240px] lg:h-[180px] overflow-hidden rounded-[10px] md:rounded-[20px]">
+                    <img
+                      src={Phase62}
+                      alt="Example"
+                      className="w-full h-full object-cover object-center scale-140 md:scale-145 lg:scale-125"
+                    />
+                  </div>
+
+                  <div className="min-h-0 h-[120px] md:h-[240px] lg:h-[180px] overflow-hidden rounded-[10px] md:rounded-[20px]">
+                    <img
+                      src={Phase63}
+                      alt="Example"
+                      className="w-full h-full object-cover object-center scale-140 md:scale-145 lg:scale-125"
+                    />
+                  </div>
+                </div>
+
+                {/* Main Image */}
+                <div className="order-1 lg:order-2 w-full h-[220px] md:h-[380px] lg:h-[380px] overflow-hidden rounded-[10px] md:rounded-[20px]">
+                  <img
+                    src={Phase61}
+                    alt="Example"
+                    className="w-full h-full object-cover object-center scale-125 md:scale-145 lg:scale-125"
+                  />
+                </div>
+
+              </div>
+
+              {/* Phase 6 */}
+              <div className="order-1 lg:order-2 flex flex-col gap-2 lg:gap-2 justify-start lg:justify-center items-start lg:items-start px-0 md:px-4 lg:px-0 ml-0 md:ml-0 lg:ml-16">
+                <p className="text-[#12284C] font-semibold text-2xl md:text-4xl">
+                  PHASE 06
+                </p>
+
+                <h3 className="text-brand-secondary-orange font-semibold text-xl md:text-2xl">
+                Awards & Closing Ceremony
+                </h3>
+
+                <ul className="list-disc pl-8 space-y-1 text-xl md:text-2xl text-[#12284C] marker:text-brand-secondary-orange">
+                  <li >Awards presentation</li>
+                  <li>Certificate distribution</li>
+                  <li>Achievements recognition</li>
+                  <li>Closing remarks</li>
+                  <li>Group photos</li>
+                </ul>
               </div>
             </div>
-
-
-            {/* CONTENT */}
-            <div className="order-1 pl-8 mt-0 md:order-none md:mt-0 md:pl-[100px] flex flex-col justify-top md:mt-4">
-
-              <h3 className="text-2xl lg:text-4xl font-semibold text-brand-primary">
-                NEXT-GEN DAY
-              </h3>
-
-              <p className="text-brand-secondary-orange font-semibold mt-1 text-xl md:text-2xl">
-                Competition & Showcase
-              </p>
-
-              <ul className="mt-1 space-y-1 text-xl lg:text-2xl list-disc list-inside marker:text-[#F88D2A]">
-                <p className="flex items-center justify-left gap-2">
-                  <Calendar className="w-4 h-4 text-[#F88D2A]" />Date: 23rd and 25th Sep 2026</p>
-                <li className="ml-2 ">Final presentation</li>
-                <li className="ml-2 ">Pitch & live demo</li>
-                <li className="ml-2 ">Judges'evaluation</li>
-                <li className="ml-2 ">Awards & recognition</li>
-              </ul>
-
-            </div>
-
-          </div>
-
-        </div>
       </section>
 
       {/* ================= MEET OUR PEOPLE ================= */}
