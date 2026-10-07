@@ -245,7 +245,7 @@ const Home = () => {
                   <img
                     src={Phase31}
                     alt="Example"
-                    className="w-full h-full object-cover object-center scale-125 md:scale-140 lg:scale-125"
+                    className="w-full h-full object-cover object-center scale-[1.25] md:scale-[1.4] lg:scale-[1.25]"
                   />
                 </div>
 
@@ -283,7 +283,7 @@ const Home = () => {
                     <img
                       src={Phase42}
                       alt="Example"
-                      className="w-full h-full object-cover object-center scale-145 md:scale-150 lg:scale-140"
+                      className="w-full h-full object-cover object-center scale-[1.45] md:scale-[1.50] lg:scale-[1.40]"
                     />
                   </div>
 
