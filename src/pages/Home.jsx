@@ -1,15 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
-// import { useState } from "react";
 
 import EdgeContainer from "@/components/ui/EdgeContainer";
 import Button from "@/components/ui/Button";
-// import PeopleCard from "@/components/cards/PeopleCard";
-// import RegisterModal from "@/components/ui/RegisterModal";
-// import CountdownCard from "@/components/cards/CountdownCard";
-
-// import codeReason from "@/assets/overview/codeReason.webp";
-// import connectivityReason from "@/assets/overview/connectivityReason.webp";
-// import commerceReason from "@/assets/overview/commerceReason.webp";
 
 
 import { news } from "@/data/news";
@@ -17,7 +9,6 @@ import homeImage from "@/assets/images/home/homeImage.png";
 import managementImg from "@/assets/icon_image/management.png";
 import lightImg from "@/assets/icon_image/light.png";
 import handshakeImg from "@/assets/icon_image/hand-shake.png";
-// import  advisorImg from "@/assets/icon_image/advisor.png";
 import PeopleCategoryCard from "@/components/cards/PeopleCategoryCard";
 
 import Phase11 from "@/assets/images/home/phase1-1.png";
@@ -82,7 +73,7 @@ const Home = () => {
 
           {/* Hero Content */}
           <div className="relative z-10 px-4 lg:px-20 w-full h-full">
-            <div className="flex flex-col justify-between h-full py-10 lg:py-16 md:mb-10 lg:mb-2">
+            <div className="flex flex-col justify-between h-full py-10 lg:py-16 md:mb-10 lg:mb-0 lg:mt-10">
 
               {/* TEXT - TOP */}
               <div className="flex flex-col gap-4 lg:gap-6 items-start">
@@ -146,7 +137,7 @@ const Home = () => {
                   <img
                     src={Phase11}
                     alt="Example"
-                    className="w-full h-full object-cover object-center scale-125"
+                    className="w-full h-full object-cover object-center scale-[1.25] md:scale-[1.4] lg:scale-[1.25]"
                   />
                 </div>
 
@@ -156,7 +147,7 @@ const Home = () => {
                     <img
                       src={Phase12}
                       alt="Example"
-                      className="w-full h-full object-cover object-center scale-140 md:scale-140 lg:scale-140"
+                      className="w-full h-full object-cover object-center scale-[1.4] md:scale-[1.4] lg:scale-[1.4]"
                     />
                   </div>
 
@@ -164,7 +155,7 @@ const Home = () => {
                     <img
                       src={Phase13}
                       alt="Example"
-                      className="w-full h-full object-cover object-center scale-140 md:scale-130 lg:scale-125"
+                      className="w-full h-full object-cover object-center scale-[1.4] md:scale-[1.3] lg:scale-[1.25]"
                     />
                   </div>
                 </div>
@@ -183,14 +174,14 @@ const Home = () => {
                     <img
                       src={Phase22}
                       alt="Example"
-                      className="w-full h-full object-cover object-center scale-140 md:scale-140 lg:scale-125"
+                      className="w-full h-full object-cover object-center scale-[1.4] md:scale-[1.4] lg:scale-[1.25]"
                     />
                   </div>
                   <div className="min-h-0 h-[120px] md:h-[240px] lg:h-[180px] overflow-hidden rounded-[10px] md:rounded-[20px]">
                     <img
                       src={Phase23}
                       alt="Example"
-                      className="w-full h-full object-cover object-center scale-140 md:scale-125 lg:scale-125"
+                      className="w-full h-full object-cover object-center scale-[1.4] md:scale-[1.25] lg:scale-[1.25]"
                     />
                   </div>
                 </div>
@@ -199,7 +190,7 @@ const Home = () => {
                   <img
                     src={Phase21}
                     alt="Example"
-                    className="w-full h-full object-cover object-center scale-125"
+                    className="w-full h-full object-cover object-center scale-[1.25] md:scale-[1.4] lg:scale-[1.25]"
                   />
                 </div>
 
@@ -264,7 +255,7 @@ const Home = () => {
                     <img
                       src={Phase32}
                       alt="Example"
-                      className="w-full h-full object-cover object-center scale-140 md:scale-140 lg:scale-125"
+                      className="w-full h-full object-cover object-center scale-[1.4] md:scale-[1.4] lg:scale-[1.25]"
                     />
                   </div>
 
@@ -272,7 +263,7 @@ const Home = () => {
                     <img
                       src={Phase33}
                       alt="Example"
-                      className="w-full h-full object-cover object-center scale-140 md:scale-115 lg:scale-110"
+                      className="w-full h-full object-cover object-center scale-[1.4] md:scale-[1.15] lg:scale-[1.10]"
                     />
                   </div>
                 </div>
@@ -300,7 +291,7 @@ const Home = () => {
                     <img
                       src={Phase43}
                       alt="Example"
-                      className="w-full h-full object-cover object-center scale-125 md:scale-125 lg:scale-130"
+                      className="w-full h-full object-cover object-center scale-[1.25] md:scale-[1.25] lg:scale-[1.30]"
                     />
                   </div>
                 </div>
@@ -310,7 +301,7 @@ const Home = () => {
                   <img
                     src={Phase41}
                     alt="Example"
-                    className="w-full h-full object-cover object-center scale-150 md:scale-140 lg:scale-140"
+                    className="w-full h-full object-cover object-center scale-[1.50] md:scale-[1.40] lg:scale-[1.40]"
                   />
                 </div>
 
@@ -364,7 +355,7 @@ const Home = () => {
                   <img
                     src={Phase51}
                     alt="Example"
-                    className="w-full h-full object-cover object-center scale-125 md:scale-140 lg:scale-125"
+                    className="w-full h-full object-cover object-center scale-[1.25] md:scale-[1.40] lg:scale-[1.25]"
                   />
                 </div>
 
@@ -374,7 +365,7 @@ const Home = () => {
                     <img
                       src={Phase52}
                       alt="Example"
-                      className="w-full h-full object-cover object-center scale-145 md:scale-145 lg:scale-140"
+                      className="w-full h-full object-cover object-center scale-[1.45] md:scale-[1.45] lg:scale-[1.40]"
                     />
                   </div>
 
@@ -382,7 +373,7 @@ const Home = () => {
                     <img
                       src={Phase53}
                       alt="Example"
-                      className="w-full h-full object-cover object-center scale-145 md:scale-145 lg:scale-140"
+                      className="w-full h-full object-cover object-center scale-[1.45] md:scale-[1.45] lg:scale-[1.40]"
                     />
                   </div>
                 </div>
@@ -402,7 +393,7 @@ const Home = () => {
                     <img
                       src={Phase62}
                       alt="Example"
-                      className="w-full h-full object-cover object-center scale-140 md:scale-145 lg:scale-125"
+                      className="w-full h-full object-cover object-center scale-[1.40] md:scale-[1.45] lg:scale-[1.25]"
                     />
                   </div>
 
@@ -410,7 +401,7 @@ const Home = () => {
                     <img
                       src={Phase63}
                       alt="Example"
-                      className="w-full h-full object-cover object-center scale-140 md:scale-145 lg:scale-125"
+                      className="w-full h-full object-cover object-center scale-[1.40] md:scale-[1.45] lg:scale-[1.25]"
                     />
                   </div>
                 </div>
@@ -420,7 +411,7 @@ const Home = () => {
                   <img
                     src={Phase61}
                     alt="Example"
-                    className="w-full h-full object-cover object-center scale-125 md:scale-145 lg:scale-125"
+                    className="w-full h-full object-cover object-center scale-[1.25] md:scale-[1.45] lg:scale-[1.25]"
                   />
                 </div>
 
@@ -566,16 +557,4 @@ const Home = () => {
     </div>
   );
 };
-
-
-const Title = ({ children }) => {
-  return (
-    <div>
-      <h2 className="text-[2.5rem] font-bold text-brand-secondary-orange border-b border-black pb-4">
-        {children}
-      </h2>
-    </div>
-  );
-};
-
 export default Home;
