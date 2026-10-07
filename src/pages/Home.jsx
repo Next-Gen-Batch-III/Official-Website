@@ -1,11 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+// import { useState } from "react";
 
 import EdgeContainer from "@/components/ui/EdgeContainer";
 import Button from "@/components/ui/Button";
-import PeopleCard from "@/components/cards/PeopleCard";
-import RegisterModal from "@/components/ui/RegisterModal";
-import CountdownCard from "@/components/cards/CountdownCard";
+// import PeopleCard from "@/components/cards/PeopleCard";
+// import RegisterModal from "@/components/ui/RegisterModal";
+// import CountdownCard from "@/components/cards/CountdownCard";
 
 // import codeReason from "@/assets/overview/codeReason.webp";
 // import connectivityReason from "@/assets/overview/connectivityReason.webp";
@@ -17,7 +17,7 @@ import homeImage from "@/assets/images/home/homeImage.png";
 import managementImg from "@/assets/icon_image/management.png";
 import lightImg from "@/assets/icon_image/light.png";
 import handshakeImg from "@/assets/icon_image/hand-shake.png";
-import  advisorImg from "@/assets/icon_image/advisor.png";
+// import  advisorImg from "@/assets/icon_image/advisor.png";
 import PeopleCategoryCard from "@/components/cards/PeopleCategoryCard";
 
 import Phase11 from "@/assets/images/home/phase1-1.png";
@@ -82,7 +82,7 @@ const Home = () => {
 
           {/* Hero Content */}
           <div className="relative z-10 px-4 lg:px-20 w-full h-full">
-            <div className="flex flex-col justify-between h-full py-10 lg:py-16 md:mb-10 lg:mb-5">
+            <div className="flex flex-col justify-between h-full py-10 lg:py-16 md:mb-10 lg:mb-2">
 
               {/* TEXT - TOP */}
               <div className="flex flex-col gap-4 lg:gap-6 items-start">
