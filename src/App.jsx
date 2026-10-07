@@ -78,9 +78,9 @@ function App() {
               {/* <Route path="/my-orders" element={<MyOrders />} /> */}
               {/* <Route path="/payment" element={<Payment />} /> */}
               {/* <Route path="/payment/proof" element={<PaymentProof />} /> */}
-              <Route path="people/management" element={<Management />} />
-              <Route path="people/mentors" element={<Mentors />} />
-              <Route path="people/advisors" element={<Advisor />} />
+              <Route path="/people/management" element={<Management />} />
+              <Route path="/people/mentors" element={<Mentors />} />
+              <Route path="/people/advisors" element={<Advisor />} />
 
               {/* 404 Not Found Catch-All Route */}
               <Route path="*" element={<NotFound />} />
