@@ -19,7 +19,7 @@ const partnerGroups = [
     partners: [
       {
         img: cadtIdt,
-        name: "CADT Institute of Digital Technology",
+        name: "CADT - Institute of Digital Technology",
         imageClassName: "h-16 sm:h-20",
       },
     ],
@@ -35,27 +35,27 @@ const partnerGroups = [
     ],
   },
   {
-    title: "Media Sponsor",
-    partners: [
-      {
-        img: ams,
-        name: "Apsara Media Services",
-        imageClassName: "h-10 sm:h-10",
-      },
-      {
-        img: cambodiaChinaTimes,
-        name: "The Cambodia China Times",
-        imageClassName: "h-10 sm:h-20",
-      },
-    ],
-  },
-  {
-    title: "Cloud Partner",
+    title: "Silver Sponsor",
     partners: [
       {
         img: dp,
         name: "Daun Penh Cloud",
         imageClassName: "h-14 sm:h-16",
+      },
+    ],
+  },
+  {
+    title: "Media Sponsor",
+    partners: [
+      {
+        img: ams,
+        name: "Apsara Media Services",
+        imageClassName: "h-10",
+      },
+      {
+        img: cambodiaChinaTimes,
+        name: "The Cambodia China Times",
+        imageClassName: "h-20",
       },
     ],
   },
@@ -89,19 +89,19 @@ const partnerGroups = [
 const socials = [
   {
     id: 0,
-    title: "NextGen Facebook",
+    title: "Next-Gen Facebook",
     name: "facebook",
     url: "https://www.facebook.com/share/1HxhfFEHC5/?mibextid=wwXIfr",
   },
   {
     id: 1,
-    title: "NextGen TikTok",
+    title: "Next-Gen TikTok",
     name: "tiktok",
     url: "https://www.tiktok.com/@nextgenengagementprogram?_r=1&_t=ZS-972l3PJm5jz",
   },
   {
     id: 2,
-    title: "NextGen Telegram",
+    title: "Next-Gen Telegram",
     name: "telegram",
     url: "https://t.me/nextgenengagementprogram",
   },
@@ -111,7 +111,7 @@ const Footer = () => {
   return (
     <footer className="bg-brand-primary text-white">
       {/* Partners */}
-      <section className="bg-white px-6 py-6 text-brand-primary sm:px-8 lg:px-12">
+      <section className="bg-white px-6 py-6 text-brand-primary sm:px-8 lg:px-8">
         <PartnerIMG />
       </section>
 
@@ -171,13 +171,13 @@ const Footer = () => {
             <ul className="space-y-1">
               <li>
                 <Link to="/overview" className="hover:underline">
-                  Project Overview
+                  Program Overview
                 </Link>
               </li>
 
               <li>
                 <Link to="/journey" className="hover:underline">
-                  Project Journey
+                  Program Journey
                 </Link>
               </li>
 
@@ -247,11 +247,11 @@ const FooterSocials = () => {
 
 const PartnerIMG = () => {
   return (
-    <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-6 lg:gap-x-8">
+    <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 lg:gap-x-4 xl:grid-cols-6">
       {partnerGroups.map((group) => (
         <div
           key={group.title}
-          className="flex flex-col items-center text-center lg:items-start lg:text-left"
+          className="flex flex-col items-center text-center lg:text-left"
         >
           <h3 className="mb-3 text-sm font-bold text-brand-primary">
             {group.title}
