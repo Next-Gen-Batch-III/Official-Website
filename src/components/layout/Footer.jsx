@@ -112,7 +112,12 @@ const Footer = () => {
     <footer className="bg-brand-primary text-white">
       {/* Partners */}
       <section className="bg-white px-6 py-6 text-brand-primary sm:px-8 lg:px-8">
+        <div className="mb-8 mt-8 text-center">
+          <h1 className="text-2xl font-semibold text-brand-secondary-orange">BATCH III</h1>
+        </div>
+        <div>
         <PartnerIMG />
+        </div>
       </section>
 
       {/* Stay Connected */}
