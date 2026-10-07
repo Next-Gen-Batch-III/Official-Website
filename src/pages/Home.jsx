@@ -42,7 +42,6 @@ import Phase63 from "@/assets/images/home/phase6-3.png";
 
 const Home = () => {
   const navigate = useNavigate();
-  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
   const latestNews = [...news].sort(
     (a, b) => new Date(b.date) - new Date(a.date),
   )[0] ?? news[0];
@@ -103,7 +102,7 @@ const Home = () => {
               <div className="flex justify-end md:justify-end lg:justify-end  mt-40 md:mt-60 lg:mt-60 ">
                 <Button
                   className="w-[200px] md:w-[300px] lg:w-[300px] h-[40px] md:h-[50px] lg:h-[50px] text-sm md:text-lg lg:text-lg font-semibold"
-                  onClick={() => open("/journey")}
+                  onClick={() => navigate("/journey")}
                 >
                   Explore
                 </Button>
@@ -207,7 +206,7 @@ const Home = () => {
               </div>
 
               {/* ======= Text ======== */}
-              <div className="order-1 lg:order-2 flex flex-col gap-2 lg:gap-2 justify-start lg:justify-center items-start lg:items-startq px-0 md:px-4 lg:px-0 ml-0 md:ml-0 lg:ml-16">
+              <div className="order-1 lg:order-2 flex flex-col gap-2 lg:gap-2 justify-start lg:justify-center items-start lg:items-start px-0 md:px-4 lg:px-0 ml-0 md:ml-0 lg:ml-16">
                 <p className="text-[#12284C] font-semibold text-2xl md:text-4xl">
                   PHASE 02
                 </p>
@@ -251,7 +250,7 @@ const Home = () => {
               <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-2 md:gap-2 lg:gap-3">
 
                 {/* Main Image */}
-                <div className="w-full h-[220px] md:h-[80px] lg:h-[380px] overflow-hidden rounded-[10px] md:rounded-[20px]">
+                <div className="w-full h-[220px] md:h-[380px] lg:h-[380px] overflow-hidden rounded-[10px] md:rounded-[20px]">
                   <img
                     src={Phase31}
                     alt="Example"
