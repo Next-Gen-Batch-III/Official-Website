@@ -113,6 +113,15 @@ const ProjectDetail = () => {
           Gallery
         </h1>
 
+        {project.projectImages.length === 1 ? (
+          <div className="flex min-h-[380px] w-full items-center justify-center rounded-xl p-4 sm:min-h-[460px] sm:p-6 md:min-h-[580px] md:p-8">
+            <img
+              src={project.projectImages[0]}
+              alt={`${project.title} gallery`}
+              className="max-h-[90vh] max-w-full w-auto rounded-lg object-contain shadow-sm"
+            />
+          </div>
+        ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
           {/* Main Image */}
@@ -141,7 +150,7 @@ const ProjectDetail = () => {
               />
             ) : (
               <div className="w-full h-[255px] border-2 border-dashed border-gray-400 rounded-2xl flex items-center justify-center text-gray-500 bg-gray-100">
-                Image
+                Image 
               </div>
             )}
 
@@ -160,6 +169,7 @@ const ProjectDetail = () => {
           </div>
 
         </div>
+        )}
 
       </section>
       )}

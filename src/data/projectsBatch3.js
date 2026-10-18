@@ -3,20 +3,35 @@ import domner1 from "../assets/student_project_image/batch-iii/t1/domner1.png"
 import domner2 from "../assets/student_project_image/batch-iii/t1/domner2.png"
 import domner3 from "../assets/student_project_image/batch-iii/t1/domner3.png"
 import safetyU from "../assets/student_project_image/batch-iii/t2/SafetyU.webp"
+import safetyU0 from "../assets/student_project_image/batch-iii/t2/safetyu0.jpg"
 import meateka from "../assets/student_project_image/batch-iii/t3/Meteka.webp"
+import meateka0 from "../assets/student_project_image/batch-iii/t3/meateka0.jpg"
 import invos from "../assets/student_project_image/batch-iii/t4/Invos.webp"
+import invos0 from "../assets/student_project_image/batch-iii/t4/invos0.jpg"
 import jakkho from "../assets/student_project_image/batch-iii/t5/Jakho.webp"
+import jakkho0 from "../assets/student_project_image/batch-iii/t5/jakkho0.jpg"
 import songket from "../assets/student_project_image/batch-iii/t6/Songket.webp"
+import songket0 from "../assets/student_project_image/batch-iii/t6/sangket0.jpg"
 import portify from "../assets/student_project_image/batch-iii/t7/portify.webp"
+import portify0 from "../assets/student_project_image/batch-iii/t7/portify.jpg"
 import lifeGoods from "../assets/student_project_image/batch-iii/t8/Lifegoods.webp"
+import lifeGoods0 from "../assets/student_project_image/batch-iii/t8/lifegood0.jpg"
 import kotChomnol from "../assets/student_project_image/batch-iii/t9/KotJomnol.webp"
+import kotChomnol0 from "../assets/student_project_image/batch-iii/t9/kotchomnol0.jpg"
 import banteayDigital from "../assets/student_project_image/batch-iii/t10/BanteayDigital.webp"
+import banteayDigital0 from "../assets/student_project_image/batch-iii/t10/banteaydigital0.jpg"
 import passKru from "../assets/student_project_image/batch-iii/t11/Passkru.webp"
+import passKru0 from "../assets/student_project_image/batch-iii/t11/passkru0.jpg"
 import veaja from "../assets/student_project_image/batch-iii/t12/veaja.webp"
+import veaja0 from "../assets/student_project_image/batch-iii/t12/veaja0.jpg"
 import angket from "../assets/student_project_image/batch-iii/t13/angket.webp"
+import angket0 from "../assets/student_project_image/batch-iii/t13/angket0.jpg"
 import jorjek from "../assets/student_project_image/batch-iii/t14/jerjeak.webp"
+import jorjek0 from "../assets/student_project_image/batch-iii/t14/jorjek0.jpg"
 import guideMe from "../assets/student_project_image/batch-iii/t15/Guideme.webp"
+import guideMe0 from "../assets/student_project_image/batch-iii/t15/guideme0.jpg"
 import hiOring from "../assets/student_project_image/batch-iii/t16/hioring.webp"
+import hiOring0 from "../assets/student_project_image/batch-iii/t16/hioring0.jpg"
 
 export const projectsBatch3 = [
   {
@@ -38,7 +53,7 @@ export const projectsBatch3 = [
     id: 2,
     title: "SafetyU",
     slug: "safetyu",
-    projectImages: null,
+    projectImages: [safetyU0],
     qrCode: null,
     link: "https://safetyu.vercel.app",
     problem: "Many people face safety risk when they are alone - like walking at nigh , travelling, or meeting strangers, If something goes wrong. It' s not always easy to get help quickly.",
@@ -53,7 +68,7 @@ export const projectsBatch3 = [
     id: 3,
     title: "MEATEKA",
     slug: "meateka",
-    projectImages: null,
+    projectImages: [meateka0],
     qrCode: null,
     link: null,
     problem: "Business owneres and Content creators struggle to create the right content, choose the right platform and posting time, and optimize captions, hastags, and reach.",
@@ -67,7 +82,7 @@ export const projectsBatch3 = [
     id: 4,
     title: "Invos",
     slug: "invos",
-    projectImages: null,
+    projectImages: [invos0],
     qrCode: null,
     link: "https://hedgehog-rosy.vercel.app",
     problem: "Incoming invoices are verified and approved expense records manual data entry",
@@ -81,7 +96,7 @@ export const projectsBatch3 = [
     id: 5,
     title: "Jakkho",
     slug: "jakkho",
-    projectImages: null,
+    projectImages: [jakkho0],
     qrCode: null,
     link: "https://jakkho.vercel.app",
     problem: "Existing awareness campaigns rely on passive posters and videos, gicing citizens no safe enviroment to practice cybersecurity decisions before real money is lost",
@@ -95,7 +110,7 @@ export const projectsBatch3 = [
     id: 6,
     title: "Songket",
     slug: "songket",
-    projectImages: null,
+    projectImages: [songket0],
     qrCode: null,
     link: "https://t.me/songket_beyda_bot",
     problem: "Everyday Telgram user recieve links, files that may contain scams or malicious.",
@@ -109,7 +124,7 @@ export const projectsBatch3 = [
     id: 7,
     title: "GuideMe",
     slug: "guideme",
-    projectImages: null,
+    projectImages: [guideMe0],
     qrCode: null,
     link: null,
     problem: "70% of Cambodians struggle with basic digital literacy",
@@ -124,7 +139,7 @@ export const projectsBatch3 = [
     id: 8,
     title: "LifeGoods",
     slug: "lifegoods",
-    projectImages: null,
+    projectImages: [lifeGoods0],
     qrCode: null,
     link: null,
     problem: "No actual source of the product, unsure ingredients such as; allergier, halal, etc.",
@@ -138,7 +153,7 @@ export const projectsBatch3 = [
     id: 9,
     title: "KotChomnol",
     slug: "kotchomnol",
-    projectImages: null,
+    projectImages: [kotChomnol0],
     qrCode: null,
     link: null,
     problem: "Sales still recorings by hands which cause slow entries, easy mistakes, and unclear revenue.",
@@ -152,7 +167,7 @@ export const projectsBatch3 = [
     id: 10,
     title: "BanteayDigital",
     slug: "banteaydigital",
-    projectImages: null,
+    projectImages: [banteayDigital0],
     qrCode: null,
     link: "https://banteaydigital.vercel.app",
     problem: "Online scams are getting heated in today's community includes fake investments, impersonation, suspicious links, etc.",
@@ -168,7 +183,7 @@ export const projectsBatch3 = [
     slug: "passkru",
     qrCode: null,
     link: "https://pass-kru.vercel.app",
-    projectImages: null,
+    projectImages: [passKru0],
     problem: "Scattered and Unofficial Study Materials​, Lack of Structured Study Plan & Practice​, No Helping access when getting stuck​",
     impact: "Cambodia's state teacher exam prep platform, with a personalized AI study plan, practice and mock exams",
     achievement: "Practice quizes, mock exams, weakness analysis, mentorships, progress tracking.",
@@ -182,7 +197,7 @@ export const projectsBatch3 = [
     slug: "veaja",
     qrCode: null,
     link: null,
-    projectImages: null,
+    projectImages: [veaja0],
     problem: "70% Call Concentration, Lost Revenue & High Churn​, Prohibitive Human Overhead​, The Local Language Gap",
     impact: "AI voice agent calls, handle customers inquires, provides menu and business information, automates booking assistence.",
     achievement: "VEAJA answer, qualifies, books, or disptaches around the clock, then shows exactly what happened and who owns the next steps.",
@@ -196,7 +211,7 @@ export const projectsBatch3 = [
     slug: "angket",
     qrCode: null,
     link: "https://t.me/Angkets_bot",
-    projectImages: null,
+    projectImages: [angket0],
     problem: "10M+ Telegram users and $45M+ lost to online scams in 2025, users need a simple way to spot scams before they click, trust or pays",
     impact: "Awareness of scam risks, difficulty identifying scams, demand for angket",
     achievement: "Scam analysis, live stect, risk explaination, recommended actions",
@@ -210,7 +225,7 @@ export const projectsBatch3 = [
     slug: "jorjek",
     qrCode: null,
     link: "https://ngep-jor-jek.vercel.app",
-    projectImages: null,
+    projectImages: [jorjek0],
     problem: "Widespread skill gap, High need for students, Essential for growths",
     impact: "Structured QnA community, Community-driven growths.",
     achievement: "Ask questions, share lessons and discuss coursework, find useful content and students based on practical digital skills, earn points, Safe verified platform",
@@ -224,7 +239,7 @@ export const projectsBatch3 = [
     slug: "portify",
     qrCode: null,
     link: "https://portify-sand.vercel.app",
-    projectImages: null,
+    projectImages: [portify0],
     problem: "People need professional portfolios to showcase their skilss and experience, but creating one can be difficult without design or technical skills. It can also take alot of time to organize and maintain, especially when updating new skilss, projects, or experience.",
     impact: null,
     achievement: "Guided infromation input, Portfolio Preview, Showcase & Cimmunity, Website + PDF Genration",
@@ -238,7 +253,7 @@ export const projectsBatch3 = [
     slug: "hioring",
     qrCode: null,
     link: null,
-    projectImages: null,
+    projectImages: [hiOring0],
     problem: "Hiring is slow and manual, HR teams sift through hundreds of CVs, stuggle to consistenlty judge who fits a role, and leave applicants waiting with no update, costing time, good candidates.",
     impact: "HiORing automates CV screening and ranks candidates against a role's real requirement, uploads CVs in bulk, review a scored shortlist, handles interview invitations and status updates automatically cutting manual work at every steps",
     achievement: "Upload CVs , Scores candidates against the JDs and ranks, Automated messaging, Scedule booking.",
