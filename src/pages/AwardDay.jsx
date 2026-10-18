@@ -1,12 +1,12 @@
 import EdgeContainer from "../components/ui/EdgeContainer";
 import heroImg from "../assets/awardDay/heroImg.png";
 
-import songket from "../assets/pitchingday/songket.png";
-import passkru from "../assets/pitchingday/passkru.png";
-import veaja from "../assets/pitchingday/veaja.png";
+import songket from "../assets/pitchingDay/songket.png";
+import passkru from "../assets/pitchingDay/passkru.png";
+import veaja from "../assets/pitchingDay/veaja.png";
 import jakkho from "../assets/pitchingDay/jakkho.png";
-import angket from "../assets/pitchingday/angket.png";
-import domner from "../assets/pitchingday/domner.png";
+import angket from "../assets/pitchingDay/angket.png";
+import domner from "../assets/pitchingDay/domner.png";
 
 import {
   Scan,
@@ -244,12 +244,6 @@ const AwardDay = () => {
             <GrayCard key={card.title} {...card} />
           ))}
         </div>
-      </section>
-
-      <section className="border-t border-gray-200 px-4 sm:px-6 md:px-10 py-6 sm:py-8">
-        <p className="text-center text-brand-secondary-orange font-bold text-lg sm:text-xl tracking-wide mb-6">
-          BATCH III
-        </p>
       </section>
     </main>
   );
