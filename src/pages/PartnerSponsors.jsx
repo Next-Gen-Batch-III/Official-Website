@@ -1,4 +1,4 @@
-import heroImg from "../assets/partner&sponsors/heroImg.png";
+// import heroImg from "../assets/partner&sponsors/heroImg.png";
 
 import smartLogo from "../assets/logo/partner/smart-logo.webp";
 import daunpenhLogo from "../assets/logo/partner/dp.webp";
@@ -97,13 +97,13 @@ const SponsorRow = ({ sponsor, reverse }) => (
 const SponsorsPartners = () => {
   return (
     <main className="bg-white text-brand-primary">
-      <section>
+      {/* <section>
         <img
           src={heroImg}
           alt="Final Stage Jury Panel"
           className="w-full h-72 sm:h-96 md:h-[480px] object-cover"
         />
-      </section>
+      </section> */}
 
       <section className="px-4 sm:px-6 md:px-10 pt-10 sm:pt-14 md:pt-10">
         <div className="max-w-6xl mx-auto">

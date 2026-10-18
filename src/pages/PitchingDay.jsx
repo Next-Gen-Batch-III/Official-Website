@@ -1,14 +1,14 @@
 import EdgeContainer from "../components/ui/EdgeContainer";
-import heroImg from "../assets/pitchingday/heroImg.png";
+import heroImg from "../assets/pitchingDay/heroImg.png";
 
-import team1 from "../assets/pitchingday/domner.png";
-import team2 from "../assets/pitchingday/invos.png";
-import team3 from "../assets/pitchingday/songket.png";
-import team4 from "../assets/pitchingday/lifegood.png";
-import team5 from "../assets/pitchingday/kotchomnol.png";
-import team6 from "../assets/pitchingday/passkru.png";
-import team7 from "../assets/pitchingday/veaja.png";
-import team8 from "../assets/pitchingday/angket.png";
+import team1 from "../assets/pitchingDay/domner.png";
+import team2 from "../assets/pitchingDay/invos.png";
+import team3 from "../assets/pitchingDay/songket.png";
+import team4 from "../assets/pitchingDay/lifegood.png";
+import team5 from "../assets/pitchingDay/kotchomnol.png";
+import team6 from "../assets/pitchingDay/passkru.png";
+import team7 from "../assets/pitchingDay/veaja.png";
+import team8 from "../assets/pitchingDay/angket.png";
 
 import {
   UserCircle,
@@ -215,13 +215,6 @@ const PitchingDay = () => {
           ))}
         </div>
       </section>
-      
-      <section className="border-t border-gray-200 px-4 sm:px-6 md:px-10 py-6 sm:py-8">
-        <p className="text-center text-brand-secondary-orange font-bold text-3xl tracking-wide mb-6">
-          BATCH III
-        </p>
-      </section>
-
     </main>
   );
 };
