@@ -3,7 +3,7 @@ import heroImg from "../assets/pitchingDay/heroImg.png";
 
 import team1 from "../assets/pitchingDay/domner.png";
 import team2 from "../assets/pitchingDay/invos.png";
-import team3 from "../assets/pitchingday/songket.png";
+import team3 from "../assets/pitchingDay/songket.png";
 import team4 from "../assets/pitchingDay/lifegood.png";
 import team5 from "../assets/pitchingDay/kotchomnol.png";
 import team6 from "../assets/pitchingDay/passkru.png";
