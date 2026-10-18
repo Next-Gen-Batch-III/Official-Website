@@ -2,18 +2,18 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProjectCard from "../components/Projects/ProjectCard";
 
-import PhsarDesignImg from "../assets/student_project_image/phsarDesign.webp";
-import KomplexImg from "../assets/student_project_image/komplex.webp";
-import DomraImg from "../assets/student_project_image/domra.webp";
-import CatagangImg from "../assets/student_project_image/catagang.webp";
-import BayCanteenImg from "../assets/student_project_image/bayCanteen.webp";
-import Y5Img from "../assets/student_project_image/y5.webp";
-import ContractwiseImg from "../assets/student_project_image/contractwise.webp";
-import LifverseImg from "../assets/student_project_image/lifverse.webp";
-import Bithero6Img from "../assets/student_project_image/bithero6.webp";
-import AkharaImg from "../assets/student_project_image/akhara.webp";
-import SastraImg from "../assets/student_project_image/sastra.webp";
-import EduquestImg from "../assets/student_project_image/eduquest.webp";
+import PhsarDesignImg from "../assets/student_project_image/batch-ii/phsarDesign.webp";
+import KomplexImg from "../assets/student_project_image/batch-ii/komplex.webp";
+import DomraImg from "../assets/student_project_image/batch-ii/domra.webp";
+import CatagangImg from "../assets/student_project_image/batch-ii/catagang.webp";
+import BayCanteenImg from "../assets/student_project_image/batch-ii/bayCanteen.webp";
+import Y5Img from "../assets/student_project_image/batch-ii/y5.webp";
+import ContractwiseImg from "../assets/student_project_image/batch-ii/contractwise.webp";
+import LifverseImg from "../assets/student_project_image/batch-ii/lifverse.webp";
+import Bithero6Img from "../assets/student_project_image/batch-ii/bithero6.webp";
+import AkharaImg from "../assets/student_project_image/batch-ii/akhara.webp";
+import SastraImg from "../assets/student_project_image/batch-ii/sastra.webp";
+import EduquestImg from "../assets/student_project_image/batch-ii/eduquest.webp";
 
 const ProjectsBatchII = () => {
   const [search, setSearch] = useState("");

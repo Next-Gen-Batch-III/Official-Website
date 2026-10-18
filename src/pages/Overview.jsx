@@ -388,7 +388,7 @@ const Overview = () => {
       {/* MISSION & VISION */}
       <section className="px-6 lg:px-40 pt-6 pb-24 lg:pt-6 lg:pb-24 bg-white">
         <div className="border-b-2 border-gray-300 pb-2 mb-24">
-          <h2 className="text-3``xl font-bold text-brand-secondary-orange uppercase md:text-4xl lg:text-5xl">
+          <h2 className="border-b border-black pb-4 text-3xl font-bold text-brand-secondary-orange md:text-4xl lg:text-5xl">
             Mission & Vision
           </h2>
         </div>

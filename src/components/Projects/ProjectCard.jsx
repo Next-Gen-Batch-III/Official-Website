@@ -7,12 +7,13 @@ const ProjectCard = ({
   description,
   image,
   slug,
+  hideImageWhenMissing = false,
 }) => {
   return (
     <div className="w-full max-w-[420px] bg-black/10 overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.08)] transition duration-300 ease-in-out flex flex-col">
 
       {/* Image */}
-      <div
+      {(!hideImageWhenMissing || image) && (<div
         className="m-6 aspect-[1.7/1] overflow-hidden"
         style={{
           clipPath:
@@ -24,7 +25,7 @@ const ProjectCard = ({
           alt={title}
           className="h-full w-full object-cover object-top"
         />
-      </div>
+      </div>)}
 
       {/* Content */}
       <div className="px-5 pb-5 flex flex-col flex-1">

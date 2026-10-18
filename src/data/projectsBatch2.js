@@ -1,36 +1,36 @@
-import KomplexImg from "../assets/student_project_image/komplex.webp";
-import PhsarDesignImg from "../assets/student_project_image/phsarDesign.webp";
-import DomraImg from "../assets/student_project_image/domra.webp";
-import Y5Img from "../assets/student_project_image/y5.webp";
-import ContractwiseImg from "../assets/student_project_image/contractwise.webp";
-import LifverseImg from "../assets/student_project_image/lifverse.webp";
-import Bithero6Img from "../assets/student_project_image/bithero6.webp";
-import AkharaImg from "../assets/student_project_image/akhara.webp";
-import SastraImg from "../assets/student_project_image/sastra.webp";
-import EduquestImg from "../assets/student_project_image/eduquest.webp";
-import CatagangImg from "../assets/student_project_image/catagang.webp";
-import BayCanteenImg from "../assets/student_project_image/bayCanteen.webp";
-import Komplex1Img from "../assets/student_project_image/komplex1.webp";
-import Komplex2Img from "../assets/student_project_image/komplex2.webp";
-import Komplex3Img from "../assets/student_project_image/komplex3.webp";
-import BayCanteen1Img from "../assets/student_project_image/bayCanteen1.webp";
-import BayCanteen2Img from "../assets/student_project_image/bayCanteen2.webp";
-import BayCanteen3Img from "../assets/student_project_image/bayCanteen3.webp";
-import BitCamoous1Img from "../assets/student_project_image/bitCampus1.webp";
-import BitCamoous2Img from "../assets/student_project_image/bitCampus2.webp";
-import BitCamoous3Img from "../assets/student_project_image/bitCampus3.webp";
-import Catabloc1Img from "../assets/student_project_image/catabloc1.webp";
-import Catabloc2Img from "../assets/student_project_image/catabloc2.webp";
-import Catabloc3Img from "../assets/student_project_image/catabloc3.webp";
-import Domra1Img from "../assets/student_project_image/domra1.webp";
-import Domra2Img from "../assets/student_project_image/domra2.webp";
-import Domra3Img from "../assets/student_project_image/domra3.webp";
-import Phsar1Img from "../assets/student_project_image/phsar1.webp";
-import Phsar2Img from "../assets/student_project_image/phsar2.webp";
-import Phsar3Img from "../assets/student_project_image/phsar3.webp";
-import Sastra1Img from "../assets/student_project_image/sastra1.webp";
-import Sastra2Img from "../assets/student_project_image/sastra2.webp";
-import Sastra3Img from "../assets/student_project_image/sastra3.webp";
+import KomplexImg from "../assets/student_project_image/batch-ii/komplex.webp";
+import PhsarDesignImg from "../assets/student_project_image/batch-ii/phsarDesign.webp";
+import DomraImg from "../assets/student_project_image/batch-ii/domra.webp";
+import Y5Img from "../assets/student_project_image/batch-ii/y5.webp";
+import ContractwiseImg from "../assets/student_project_image/batch-ii/contractwise.webp";
+import LifverseImg from "../assets/student_project_image/batch-ii/lifverse.webp";
+import Bithero6Img from "../assets/student_project_image/batch-ii/bithero6.webp";
+import AkharaImg from "../assets/student_project_image/batch-ii/akhara.webp";
+import SastraImg from "../assets/student_project_image/batch-ii/sastra.webp";
+import EduquestImg from "../assets/student_project_image/batch-ii/eduquest.webp";
+import CatagangImg from "../assets/student_project_image/batch-ii/catagang.webp";
+import BayCanteenImg from "../assets/student_project_image/batch-ii/bayCanteen.webp";
+import Komplex1Img from "../assets/student_project_image/batch-ii/komplex1.webp";
+import Komplex2Img from "../assets/student_project_image/batch-ii/komplex2.webp";
+import Komplex3Img from "../assets/student_project_image/batch-ii/komplex3.webp";
+import BayCanteen1Img from "../assets/student_project_image/batch-ii/bayCanteen1.webp";
+import BayCanteen2Img from "../assets/student_project_image/batch-ii/bayCanteen2.webp";
+import BayCanteen3Img from "../assets/student_project_image/batch-ii/bayCanteen3.webp";
+import BitCamoous1Img from "../assets/student_project_image/batch-ii/bitCampus1.webp";
+import BitCamoous2Img from "../assets/student_project_image/batch-ii/bitCampus2.webp";
+import BitCamoous3Img from "../assets/student_project_image/batch-ii/bitCampus3.webp";
+import Catabloc1Img from "../assets/student_project_image/batch-ii/catabloc1.webp";
+import Catabloc2Img from "../assets/student_project_image/batch-ii/catabloc2.webp";
+import Catabloc3Img from "../assets/student_project_image/batch-ii/catabloc3.webp";
+import Domra1Img from "../assets/student_project_image/batch-ii/domra1.webp";
+import Domra2Img from "../assets/student_project_image/batch-ii/domra2.webp";
+import Domra3Img from "../assets/student_project_image/batch-ii/domra3.webp";
+import Phsar1Img from "../assets/student_project_image/batch-ii/phsar1.webp";
+import Phsar2Img from "../assets/student_project_image/batch-ii/phsar2.webp";
+import Phsar3Img from "../assets/student_project_image/batch-ii/phsar3.webp";
+import Sastra1Img from "../assets/student_project_image/batch-ii/sastra1.webp";
+import Sastra2Img from "../assets/student_project_image/batch-ii/sastra2.webp";
+import Sastra3Img from "../assets/student_project_image/batch-ii/sastra3.webp";
 import bayCanteenQR from "../assets/Qr_code_project/baycanteen.png";
 import bitCampusQR from "../assets/Qr_code_project/bitCampus.png";
 import domraQR from "../assets/Qr_code_project/domra.png";
@@ -58,13 +58,13 @@ export const projectsBatch2 = [
     image: KomplexImg,
     article:
       "KOMPLEX is a free, collaborative educational platform built by Khmer students, for Khmer students. It brings together interactive STEM lessons featuring 3D object interactions and graph visualizations, practice exercises, AI-powered tutoring through Tara AI, community forum discussions, video content, and curated articles, all aligned with the Khmer curriculum.\n\nKOMPLEX is not just a learning tool; it is a community space where students can share experiences, celebrate achievements, and support each other's academic journeys in a way no existing platform currently offers.By providing a comprehensive, interactive, and community-driven learning environment, KOMPLEX aims to enhance STEM education accessibility and engagement for Cambodian students, empowering them to reach their full potential in the digital age."
-    },
+  },
 
   {
     id: 2,
     title: "PHSARDESIGN",
     slug: "phsar-design",
-    projectImages: [ Phsar1Img, Phsar2Img, Phsar3Img],
+    projectImages: [Phsar1Img, Phsar2Img, Phsar3Img],
     qrCode: phsarDesignQR,
     link: "https://qrco.de/bgmk09",
     problem:
@@ -79,7 +79,7 @@ export const projectsBatch2 = [
     article:
       "PhsarDesign is an all-in-one creative marketplace built for Cambodia's growing digital economy. It connects local artists, designers, and fresh graduates with SMBs, startups, and clients who need branding, illustration, and social media design services.\n\nThe platform features artist profile pages, a client application and project posting system, a rating-based credibility system to help artists build reputation, and a smart pricing tool that recommends fair rates, ensuring both artists and clients are treated with consistency and transparency."
   },
-  
+
   {
     id: 3,
     title: "DOMRA",
@@ -103,7 +103,7 @@ export const projectsBatch2 = [
     id: 4,
     title: "ACET",
     slug: "acet",
-    projectImages:null,
+    projectImages: null,
     qrCode: null,
     link: null,
     problem:
@@ -113,7 +113,7 @@ export const projectsBatch2 = [
     achievement:
       "Delivered conference creation, paper submission, peer review workflow, and real-time status tracking.",
     description:
-       "ACET Conference Management System",
+      "ACET Conference Management System",
     image: Y5Img,
     article:
       "ACET is a comprehensive Conference Management System that brings researchers, reviewers, students, lecturers, and event organizers together on a single unified platform. It replaces the fragmented combination of emails, spreadsheets, and informal communication channels that currently define academic conference workflows in Cambodia.\n\nFrom paper submission and peer review to final decisions and event announcements, ACET streamlines every step of the research dissemination process and making it faster, fairer, and fully transparent for all stakeholders involved.  "
@@ -132,7 +132,7 @@ export const projectsBatch2 = [
     achievement:
       "Delivered lecturer management, digital contract generation with e-signature, role-based dashboards, and course mapping.",
     description:
-      "Smart contract management", 
+      "Smart contract management",
     image: ContractwiseImg,
     article:
       "ContractWise is a web-based Lecturer Management and Contract Generation System that centralizes all aspects of academic staffing into one platform. It replaces the fragmented use of Excel, Word documents, and email chains with a unified system that handles lecturer profiles, course and class assignments, workload tracking, and automated digital contract creation.\n\nThe system supports four distinct roles  Admin, Lecturer, and Management, each with tailored dashboards and access controls to ensure the right people see and do the right things."
@@ -142,7 +142,7 @@ export const projectsBatch2 = [
     id: 6,
     title: "FinWise",
     slug: "finewise",
-    projectImages:null,
+    projectImages: null,
     qrCode: null,
     link: null,
     problem:
@@ -152,11 +152,11 @@ export const projectsBatch2 = [
     achievement:
       "Delivered expense tracker, OCR receipt scanner, budget planner, bank import, and Telegram bot integration.",
     description:
-    "Smart and simple finance management",
+      "Smart and simple finance management",
     image: LifverseImg,
     article:
-      "Finwise is a modern personal finance tracker inspired by the Japanese Kakeibo tradition of mindful household expense recording. The web application makes personal financial management simple, engaging, and educational for everyday Cambodians.\n\nIt allows users to track daily income and expenses, plan budgets, set savings goals, scan receipts using OCR, import bank transactions directly from ABA and ACLEDA, and access their finances on the go through a synchronized Telegram bot, bringing smart money management to both desktop and mobile users."  
-    },
+      "Finwise is a modern personal finance tracker inspired by the Japanese Kakeibo tradition of mindful household expense recording. The web application makes personal financial management simple, engaging, and educational for everyday Cambodians.\n\nIt allows users to track daily income and expenses, plan budgets, set savings goals, scan receipts using OCR, import bank transactions directly from ABA and ACLEDA, and access their finances on the go through a synchronized Telegram bot, bringing smart money management to both desktop and mobile users."
+  },
   {
     id: 7,
     title: "BitCampus",
@@ -171,7 +171,7 @@ export const projectsBatch2 = [
     achievement:
       "Delivered free HTML/CSS/JS courses, built-in IDE, video lessons, quizzes, and payment system.",
     description:
-       "Learn programming one bit at a time",
+      "Learn programming one bit at a time",
     image: Bithero6Img,
     article:
       "BitCampus is a beginner-friendly programming learning platform built on the philosophy that learning to code should be as simple as learning the alphabet.\nThe platform offers structured lessons with clear explanations, real code examples, embedded video tutorials, and a built-in online IDE so learners can practice directly in the browser without any setup.\n\nIt is designed to serve as a confident first step for students, hobbyists, and self-learners who want to enter the world of programming at their own pace."
@@ -180,21 +180,21 @@ export const projectsBatch2 = [
     id: 8,
     title: "KHMER DATA ANNOTATION TOOL",
     slug: "khmer-data-annotation-tool",
-    projectImages:null,
+    projectImages: null,
     qrCode: null,
     link: null,
-    problem: 
+    problem:
       "High-quality annotated Khmer datasets are critically lacking, and manual annotation is too slow and error-prone for researchers.",
     impact:
-       "Accelerates Khmer AI and OCR research by making dataset creation faster, more accurate, and more accessible.",    
+      "Accelerates Khmer AI and OCR research by making dataset creation faster, more accurate, and more accessible.",
     achievement:
       "Delivered upload, region annotation, semi-automated OCR suggestions, and ground truth validation tools.",
     description:
       "Khmer text annotation tool for accorate OCR Dataset creation",
     image: AkharaImg,
     article:
-      "Akhara is a specialized web-based data annotation tool built to support the creation of high-quality Khmer language datasets. Users can upload their Khmer text image datasets, draw annotation regions on text areas, and leverage semi-automated OCR suggestions to speed up the labeling process. The tool then validates annotated text against ground truth to ensure accuracy.\n\nIt is designed for data scientists, researchers, and educators who are working to advance Khmer OCR and natural language processing research in Cambodia." 
-    },
+      "Akhara is a specialized web-based data annotation tool built to support the creation of high-quality Khmer language datasets. Users can upload their Khmer text image datasets, draw annotation regions on text areas, and leverage semi-automated OCR suggestions to speed up the labeling process. The tool then validates annotated text against ground truth to ensure accuracy.\n\nIt is designed for data scientists, researchers, and educators who are working to advance Khmer OCR and natural language processing research in Cambodia."
+  },
   {
     id: 9,
     title: "Sastra",
@@ -212,7 +212,7 @@ export const projectsBatch2 = [
       "Online learning platform",
     image: SastraImg,
     article:
-      "Sastra is a Khmer-language online learning platform that allows users to browse, purchase, and complete courses entirely in Khmer, removing the English language barrier that excludes a large portion of Cambodia's adult learners from quality online education. Upon completing a course, users earn verifiable digital certificates issued in their name, providing official recognition of their self-learning achievements.\n\nThe platform is built to serve Khmer speakers of all ages who want to grow their knowledge and career prospects on their own terms."  
+      "Sastra is a Khmer-language online learning platform that allows users to browse, purchase, and complete courses entirely in Khmer, removing the English language barrier that excludes a large portion of Cambodia's adult learners from quality online education. Upon completing a course, users earn verifiable digital certificates issued in their name, providing official recognition of their self-learning achievements.\n\nThe platform is built to serve Khmer speakers of all ages who want to grow their knowledge and career prospects on their own terms."
   },
   {
     id: 10,
@@ -232,45 +232,45 @@ export const projectsBatch2 = [
     image: EduquestImg,
     article:
       "QuizKH is a free, interactive quiz platform that transforms how quizzes are created, hosted, and analyzed for educators, students, trainers, and event organizers. Teachers can build quizzes in minutes, instantly convert PDF documents into quiz questions, host live sessions in solo or team play mode, and export detailed performance reports to Excel, all without paying for premium tools or navigating complex setups.\n\nThe platform is designed to make interactive learning accessible to everyone, anywhere in Cambodia."
-    },  
-    {
-      id: 11,
-      title: "GATABLOC",
-      slug: "gatabloc",
-      qrCode: gataQR,
-      link: "https://www.figma.com/proto/lakxCpIoj6x2ztubrPZqTE/CATABLOC-V2?page-id=697%3A7227&node-id=697-7668&p=f&viewport=1420%2C-555%2C0.05&t=CJ12fZ2Lw6kwzFnC-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=697%3A7668",
-      projectImages: [Catabloc1Img, Catabloc2Img, Catabloc3Img],
-      problem:
-          "Learning algorithms on paper is abstract and frustrating for beginners, with no visual feedback to help them understand where their logic fails.",
-      impact:
-          "Makes algorithm learning visual, engaging, and stress-free, improving comprehension and motivating students to practice more.",
-      achievement:
-        "Delivered step-by-step visual puzzle games, student progress tracking, classroom assignment tools, and a community space.",
-      description:
+  },
+  {
+    id: 11,
+    title: "GATABLOC",
+    slug: "gatabloc",
+    qrCode: gataQR,
+    link: "https://www.figma.com/proto/lakxCpIoj6x2ztubrPZqTE/CATABLOC-V2?page-id=697%3A7227&node-id=697-7668&p=f&viewport=1420%2C-555%2C0.05&t=CJ12fZ2Lw6kwzFnC-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=697%3A7668",
+    projectImages: [Catabloc1Img, Catabloc2Img, Catabloc3Img],
+    problem:
+      "Learning algorithms on paper is abstract and frustrating for beginners, with no visual feedback to help them understand where their logic fails.",
+    impact:
+      "Makes algorithm learning visual, engaging, and stress-free, improving comprehension and motivating students to practice more.",
+    achievement:
+      "Delivered step-by-step visual puzzle games, student progress tracking, classroom assignment tools, and a community space.",
+    description:
       " A gamified learning platform",
-      image: CatagangImg,
-      article:
-        "CATABLOC is a gamified learning platform that teaches algorithms, loops, conditionals, and logic through visual, step-by-step interactive puzzle games, designed specifically for absolute beginners who find traditional algorithm study on paper confusing and disengaging. Students can see each step of an algorithm visualized in real time as they solve puzzles, helping them truly understand the logic rather than just memorizing steps.\n\nThe platform also includes classroom features for instructors to assign work and track student progress, as well as a community space for peer engagement and collaboration."   
-      },
-    {
-      id: 12,
-      title: "BAY-CANTEEN",
-      slug: "bay-canteen", 
-      qrCode: bayCanteenQR,
-      link: "https://baycanteen.vercel.app/",
-      projectImages: [BayCanteen1Img, BayCanteen2Img, BayCanteen3Img],   
-      problem:
-        "Students avoid the canteen due to repetitive, overpriced meals that don't match their preferences, with no way for the kitchen to know what students actually want.",
-      impact:
-        "Shifts meal planning from guesswork to student-driven data, reducing food waste and increasing canteen satisfaction.",
-      achievement:
-        "Delivered daily voting, menu browsing, wishlist, and feedback system.",
-      description:
-         "Smart voting for better canteen meals",
-      image: BayCanteenImg,
-      article:
-        "Bay is a digital voting platform designed for CADT students, allowing them to vote daily on their preferred canteen dishes. By collecting real-time student preferences, the platform helps the canteen kitchen plan and prepare meals that students actually want to eat. Beyond voting, students can browse the menu, save favorite dishes to a wishlist, and submit feedback.\n\nThe System is connection between students and the canteen. The goal is to transform the canteen experience by ensuring fresher, tastier, and more varied meals while minimizing food waste caused by unpopular or repetitive dishes."
-    }
+    image: CatagangImg,
+    article:
+      "CATABLOC is a gamified learning platform that teaches algorithms, loops, conditionals, and logic through visual, step-by-step interactive puzzle games, designed specifically for absolute beginners who find traditional algorithm study on paper confusing and disengaging. Students can see each step of an algorithm visualized in real time as they solve puzzles, helping them truly understand the logic rather than just memorizing steps.\n\nThe platform also includes classroom features for instructors to assign work and track student progress, as well as a community space for peer engagement and collaboration."
+  },
+  {
+    id: 12,
+    title: "BAY-CANTEEN",
+    slug: "bay-canteen",
+    qrCode: bayCanteenQR,
+    link: "https://baycanteen.vercel.app/",
+    projectImages: [BayCanteen1Img, BayCanteen2Img, BayCanteen3Img],
+    problem:
+      "Students avoid the canteen due to repetitive, overpriced meals that don't match their preferences, with no way for the kitchen to know what students actually want.",
+    impact:
+      "Shifts meal planning from guesswork to student-driven data, reducing food waste and increasing canteen satisfaction.",
+    achievement:
+      "Delivered daily voting, menu browsing, wishlist, and feedback system.",
+    description:
+      "Smart voting for better canteen meals",
+    image: BayCanteenImg,
+    article:
+      "Bay is a digital voting platform designed for CADT students, allowing them to vote daily on their preferred canteen dishes. By collecting real-time student preferences, the platform helps the canteen kitchen plan and prepare meals that students actually want to eat. Beyond voting, students can browse the menu, save favorite dishes to a wishlist, and submit feedback.\n\nThe System is connection between students and the canteen. The goal is to transform the canteen experience by ensuring fresher, tastier, and more varied meals while minimizing food waste caused by unpopular or repetitive dishes."
+  }
 ];
 
 export default projectsBatch2;
